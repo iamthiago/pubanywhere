@@ -1,0 +1,46 @@
+/**
+ * Regras para highlight de TR nas DataTables 
+ */
+.data-table tbody tr.even:hover,
+.data-table tbody tr.even td.highlighted {
+	background-color: #909090;
+}
+
+.data-table tbody tr.odd:hover,
+.data-table tbody tr.odd td.highlighted {
+	background-color: #909090;
+}
+
+.data-table tr.even:hover {
+	background-color: #909090;
+}
+
+.data-table tr.even:hover td.sorting_1 {
+	background-color: #909090;
+}
+
+.data-table tr.even:hover td.sorting_2 {
+	background-color: #909090;
+}
+
+.data-table tr.even:hover td.sorting_3 {
+	background-color: #909090;
+}
+
+.data-table tr.odd:hover {
+	background-color: #909090;
+}
+
+.data-table tr.odd:hover td.sorting_1 {
+	background-color: #909090;
+}
+
+.data-table tr.odd:hover td.sorting_2 {
+	background-color: #909090;
+}
+
+.data-table tr.odd:hover td.sorting_3 {
+	background-color: #909090;
+}
+
+/********* FIM do highlight ************/
