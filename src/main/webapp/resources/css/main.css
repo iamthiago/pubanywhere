@@ -1,10 +1,21 @@
 body {
-	font-size: 12px;
 	margin: 0;
-	min-height: 700px;
+	font-size: 12px;
+	min-height: 100%;
 }
 
 #nav_bar {
+	background: rgb(0,0,0); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(69,72,77,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(69,72,77,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=0 ); /* IE6-9 */
+
+	box-shadow: 0px 0px 5px 5px #777777;
+
 	height: 35px;
 	min-width: 310px;
 	width: 100%;
@@ -17,13 +28,24 @@ body {
 }
 
 #main_image {
+	background-image: url("../imgs/cerveja1_1280x800.jpg");
 	background-color: #EEEEEE;
 	background-repeat: no-repeat;
 	background-size: cover;
-	min-height: 600px;
+	min-height: 700px;
 	width: 100%;
 	position: relative;
 	overflow: hidden;
+}
+
+#pubName {
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 5px 30px;
+	float: left;
+	color: white;
+	font-family: 'helvetica neue',Helvetica,Arial,tahoma,sans-serif;
 }
 
 #signIn {
@@ -39,4 +61,32 @@ body {
 	padding: 7px 30px;
 	text-decoration: none;
 	margin-right: 100px;
+	color: white;
+}
+
+#main_content {
+	max-width: 940px;
+	position: relative;
+	float: right;
+	padding: 0 150px 0 0;
+}
+
+#search_area {
+	margin-top: 250px;
+}
+
+.main_input {
+	width: 400px;
+	height: 32px;
+	font-size: 16px;
+}
+
+#main_form {
+  background: none repeat scroll 0 0 rgba(57, 60, 61, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+  padding: 4px;
+  float: left;
 }

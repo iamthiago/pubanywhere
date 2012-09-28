@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	$('#main_image').css({
+	/*$('#main_image').css({
 		'background-image': 'url(resources/imgs/guinness1.jpg)'
 	});
 	
@@ -15,7 +15,7 @@ $(document).ready(function() {
 	var preloadArr = new Array();
 	 var i;
 	 
-	 /* preload images */
+	  preload images 
 	 for(i=0; i < images.length; i++){
 		 preloadArr[i] = new Image();
 		 preloadArr[i].src = images[i];
@@ -24,10 +24,10 @@ $(document).ready(function() {
 	 var currImg = 1;
 	 var intID = setInterval(changeImg, 6000);
 	 
-	 /* image rotator */
+	  image rotator 
 	 function changeImg(){
 		 $('#main_image').animate({opacity: 0}, 1000, function(){
 			 $(this).css('background','url(' + preloadArr[currImg++%preloadArr.length].src +') top ');
 		 }).animate({opacity: 1}, 1000);
-	 }	
+	 }*/
 });

@@ -6,12 +6,23 @@
 <jsp:include page="includes/header.jsp" />
 
 <body>
-	<div id="nav_bar" class="ui-widget-header ui-corner-all">
+	<div id="nav_bar">
+		<div id="pubName">
+			Pub Anywhere
+		</div>
 		<div id="signIn">
 			<a href="#" id="btnSignIn">Entrar</a>
 		</div>
 	</div>
 	<div id="content">
-		<div id="main_image"></div>
+		<div id="main_image">
+			<div id="main_content">
+				<div id="search_area">
+					<form action="#" id="main_form">
+						<input type="text" size="50" value="Pesquise aqui..." class="main_input">
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
