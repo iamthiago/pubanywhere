@@ -6,23 +6,24 @@
 <jsp:include page="includes/header.jsp" />
 
 <body>
-	<div id="nav_bar">
-		<div id="pubName">
-			Pub Anywhere
-		</div>
-		<div id="signIn">
-			<a href="#" id="btnSignIn">Entrar</a>
-		</div>
+	<div id="div-navigator">
+		<span>
+			<button id="signin" class="buttons">Sign In</button>
+		</span>
 	</div>
-	<div id="content">
-		<div id="main_image">
-			<div id="main_content">
-				<div id="search_area">
-					<form action="#" id="main_form">
-						<input type="text" size="50" value="Pesquise aqui..." class="main_input">
-					</form>
+	<div id="main_content">
+		<div class="div-pub-image">
+			<img alt="Pub Anywhere" src="<c:url value='/resources/imgs/pub-full-logo.png'/>">
+		</div>
+		<div class="div-search-bar">
+			<form action="#" method='POST'>
+				<div class="input-box">
+					<input type='text'>
+					<span class="search">
+						<button id="btnSearch" class="icons"></button>
+					</span>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 </body>
