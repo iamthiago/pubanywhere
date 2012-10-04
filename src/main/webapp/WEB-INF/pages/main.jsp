@@ -8,7 +8,7 @@
 <body>
 	<div id="div-navigator">
 		<span>
-			<button id="signin" class="buttons">Sign In</button>
+			<!-- <button id="signin" class="buttons">Sign In</button> -->
 		</span>
 	</div>
 	<div id="main_content">
