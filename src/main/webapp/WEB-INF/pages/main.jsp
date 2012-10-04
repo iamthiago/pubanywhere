@@ -16,9 +16,9 @@
 			<img alt="Pub Anywhere" src="<c:url value='/resources/imgs/pub-full-logo.png'/>">
 		</div>
 		<div class="div-search-bar">
-			<form action="#" method='POST'>
+			<form action="teste" method='POST'>
 				<div class="input-box">
-					<input type='text'>
+					<input type='text' id="location" name="location" placeholder="Onde você quer beber?" autocomplete="off">
 					<span class="search">
 						<button id="btnSearch" class="icons"></button>
 					</span>
