@@ -22,9 +22,13 @@ time, mark, audio, video {
 /**
 * buttons and icons
 */
-.buttons {
+button {
 	font-size: 13px !important;
 	font-weight: bold !important;
+}
+
+.nav-buttons {
+	margin-right: 10px !important;
 }
 
 .icons {
@@ -87,7 +91,7 @@ body {
 	text-align: center;
 }
 
-#location {
+.location {
 	width: 600px;
 	height: 32px;
 	font-size: 20px;
@@ -101,10 +105,6 @@ body {
 	float: left;
 	line-height: 1.2;
 	padding: 4px;
-}
-
-#signin {
-	right: 10px;
 }
 
 .search {
