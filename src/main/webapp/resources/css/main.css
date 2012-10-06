@@ -79,7 +79,7 @@ body {
 
 .div-search-bar {
 	position: absolute;
-	bottom: 0;
+	bottom: -10px;
 }
 
 .div-pub-image {
@@ -91,7 +91,7 @@ body {
 	text-align: center;
 }
 
-.location {
+#location {
 	width: 600px;
 	height: 32px;
 	font-size: 20px;
