@@ -2,41 +2,138 @@
 elementos para a tela de pubs
 */
 
+fieldset {
+	border: 0 none;
+	margin: 0;
+}
 
-#main {
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 35px;
+    line-height: 36px;
+}
+
+h3 {
+	margin: 10px 0;
+}
+
+textarea {
+  height: 105px;
+  resize: none;
+  width: 530px;
+}
+
+ul {
+	list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+	margin-top: 3px;
+	line-height: 18px;
+}
+
+/* #main {
 	border: 1px solid black;
 	border-radius: 5px 5px 5px 5px;
 	box-shadow: 3px 3px 5px 6px #777777;
-	top: 30%;
+	top: 45%;
 	left: 50%;
-	width: 290px;
-	margin-left: -145px;
-	height: 240px;
-	margin-top: -120px;
-	padding: 10px;
+	width: 700px;
+	margin-left: -350px;
+	height: 480px;
+	margin-top: -240px;
 	position: absolute;
-}
+} */
 
-.div-content {
-	margin: 0 0 1.5em;
-}
-
-.h2 {
-	font-size: 16px;
-	height: 16px;
-	line-height: 17px;
-	margin: 0 0 1.2em;
+#main {
+	display: table;
+	margin: 0 auto;;
+	width: 1050px;
+	clear: both;
 	position: relative;
 }
 
-#buttons {
+#control-panel {
+	border: 1px solid black;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 3px 3px 5px 6px #777777;
+	margin: 0px;
+	width: 700px;
+	top: 30px;
+	position: relative;
+}
+
+#control-title {
+	padding-top: 30px;
+	width: 400px;
+}
+
+#control-title-description {
+    line-height: 24px;
+}
+
+.title {
+	border-bottom: 1px solid #000000;
+	padding: 10px 15px;
+}
+
+.control-main {
+	padding-left: 30px;
+}
+
+.control-group {
+	margin-bottom: 18px;
+}
+
+.control-label {
+	float: left;
+	padding-top: 5px;
+	text-align: right;
+	width: 100px;
+}
+
+.controls {
+	margin-left: 110px;
+}
+
+#right {
+  display: inline;
+  float: right;
+  bottom: 600px;
+  position: relative;
+}
+
+.padtop {
+	padding-top: 30px;
+}
+
+
+.buttons {
+	font-size: 13px !important;
+	font-weight: bold !important;
 	margin-top: 5px;
 }
 
 .inputs {
-	width: 283px;
-	height: 32px;
-	font-size: 16px;
+	width: 280px;
+	height: 20px;
+	font-size: 15px;
+	border: 1px solid #000000;
+    border-radius: 3px 3px 3px 3px;
+    padding: 4px;
+}
+
+.text-area-input {
+	font-size: 15px;
+	border: 1px solid #000000;
+    border-radius: 3px 3px 3px 3px;
+    padding: 4px;
 }
 
 .ui-button {

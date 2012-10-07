@@ -8,7 +8,7 @@ $(document).ready(function() {
 	});
 	
 	//toolbar
-	$('#signin, #insertPub').button();
+	$('#signin, #listYourPub, #insertPub').button();
 	
 	$('#config').button({
 		icons : {

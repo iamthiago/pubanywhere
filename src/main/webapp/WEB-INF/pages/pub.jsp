@@ -14,27 +14,84 @@
 		
 			<input type="hidden" id="lat" name="lat">
 	    	<input type="hidden" id="lng" name="lng">
-		
-			<h2 class="h2">
-				List Your Place
-			</h2>
-			<div>
-				<div class="div-content">
-					<label for="name">
-						Name:
-					</label>
-					<input type='text' name='name' class="inputs">
+			
+			<div id="left">
+				<div id="control-title">
+					<h1>
+						List your place.
+					</h1>
+					<div id="control-title-description">
+						<h3>
+							Pub Anywhere make your pub to be discovered in the entire world!
+						</h3>
+					</div>
 				</div>
-				<div class="div-content">
-					<label for="location">
-						Location:
-					</label>
-					<input id="location" name="location" type="text" placeholder="" class="inputs">
+				<div id="control-panel">
+					<div class="title">
+						<h3>About your Pub</h3>
+						<p>
+							Tell us how great is your pub.
+						</p>
+					</div>
+					<fieldset class="padtop">
+						<div class="control-main">
+							<div class="control-group">
+								<label for="name" class="control-label">
+									Pub's Name:
+								</label>
+								<div class="controls">
+									<input type='text' id="pubs-name" name="pubs-name" class="inputs">
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="location_new" class="control-label">
+									Location:
+								</label>
+								<div class="controls">
+									<input id="location_new" name="location_new" type="text" placeholder="" class="inputs">
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="pubs-description" class="control-label">
+									Description:
+								</label>
+								<div class="controls">
+									<textarea id="pubs-description" name="pubs-description" rows="20" cols="40" class="text-area-input"></textarea>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="pubs-phone" class="control-label">
+									Phone:
+								</label>
+								<div class="controls">
+									<input id="pubs-phone" name="pubs-phone" class="inputs">
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="pubs-email" class="control-label">
+									Email:
+								</label>
+								<div class="controls">
+									<input id="pubs-email" name="pubs-email" class="inputs">
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<span>
+									<input id="insertPub" type="submit" name="submit" value="Save Pub" class="buttons"/>
+								</span>
+							</div>
+						</div>
+					</fieldset>
 				</div>
-				<div class="div-content">
-					<span>
-						<input id="btnCreate" type="submit" name="submit" value="Insert Pub" class="buttons"/>
-					</span>
+			</div>
+			<div id="right">
+				<h3>Question & Answer</h3>
+				<div>
+					<ul>
+						<li>Is it free to list your pub?</li>
+						<li>How does Pub Anywhere promote your pub?</li>
+					</ul>
 				</div>
 			</div>
 		</form>

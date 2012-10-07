@@ -16,5 +16,5 @@
 		<script type="text/javascript" src="<c:url value='/resources/js/main.js' />"></script>
 		
 		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
-		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/google-maps.js' />"></script>
 	</head>

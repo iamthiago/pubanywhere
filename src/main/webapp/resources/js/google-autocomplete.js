@@ -5,8 +5,16 @@ $(document).ready(function(){
 	/**
 	* autocomplete
 	*/
-	var input = document.getElementById('location');
-	input.focus();
+	var input = null;
+	
+	if(document.getElementById('location') != null) {
+		input = document.getElementById('location');
+		input.focus();
+	} else {
+		document.getElementById('pubs-name').focus();
+		input = document.getElementById('location_new');
+	}
+	
     autocomplete = new google.maps.places.Autocomplete(input);
 	
 	$('#form').submit(function(e) {

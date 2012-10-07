@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<jsp:include page="includes/header.jsp"/>
+<jsp:include page="includes/header-maps.jsp"/>
 	
 	<body onload="initialize()">
 		<input type="hidden" id="lat" name="lat" value="${param.lat}">
