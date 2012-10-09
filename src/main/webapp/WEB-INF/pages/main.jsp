@@ -5,7 +5,7 @@
 
 <jsp:include page="includes/header.jsp"/>
 
-<body>
+<body style="overflow: hidden;">
 	
 	<jsp:include page="includes/navigator.jsp"/>
 	

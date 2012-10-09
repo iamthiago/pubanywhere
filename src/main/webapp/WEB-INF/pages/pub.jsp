@@ -89,8 +89,7 @@
 				<h3>Question & Answer</h3>
 				<div>
 					<ul>
-						<li>Is it free to list your pub?</li>
-						<li>How does Pub Anywhere promote your pub?</li>
+						<li>Why list your pub or bar on Pub Anywhere?</li>
 					</ul>
 				</div>
 			</div>
