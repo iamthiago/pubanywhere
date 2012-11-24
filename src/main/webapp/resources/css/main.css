@@ -21,7 +21,7 @@ time, mark, audio, video {
 /**
 * buttons and icons
 */
-button {
+button, a {
 	font-size: 13px !important;
 	font-weight: bold !important;
 }
@@ -65,8 +65,10 @@ body {
 }
 
 #right-buttons {
-	text-align: right;
+	margin-left: auto;
 	margin-right: 100px;
+	position: relative;
+	width: 240px;
 }
 
 #main_content {

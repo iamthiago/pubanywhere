@@ -5,7 +5,7 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	    <title>Pub Anywhere</title>
 	    <link type="text/css" href="<c:url value='/resources/css/main.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/pubs.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/registerPub.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/black-tie/jquery-ui-1.8.23.custom.css' />" rel="stylesheet" />
 	    
 	    <script type="text/javascript" src="<c:url value='/resources/js/jquery-1.8.0.min.js' />"></script>

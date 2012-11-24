@@ -5,22 +5,11 @@ $(document).ready(function() {
 			primary : 'ui-icon ui-icon-search'
 		},
 		text : false
+	
+	}).click(function() {
+		$('#form').submit();
 	});
 	
-	//toolbar
-	$('#signin, #listYourPub, #insertPub').button();
-	
-	$('#config').button({
-		icons : {
-			primary : 'ui-icon-wrench'
-		},
-		text : false
-	});
-	
-	$('#logout').button({
-		icons : {
-			primary : 'ui-icon-circle-close'
-		},
-		text : false
-	});
+	// toolbar
+	$('#signin, #listYourPub, #insertPub').button();	
 });

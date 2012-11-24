@@ -38,6 +38,13 @@
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<!-- Jackson JSON Mapper -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.11</version>
+		</dependency>
 
 		<!-- JSTL implementation -->
 		<dependency>
@@ -262,7 +269,7 @@
 	</repositories>
 
 	<build>
-		<!-- <plugins>
+		<plugins>
 			<plugin>
 				<configuration>
 					<configurationDir>C:\apache-tomcat-7.0.26</configurationDir>
@@ -287,8 +294,8 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-		</plugins> -->
-		<plugins>
+		</plugins>
+		<!-- <plugins>
 			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-dependency-plugin</artifactId>
@@ -310,7 +317,7 @@
 			        </execution>
 			    </executions>
 			</plugin>
-		</plugins>
+		</plugins> -->
 		<finalName>pubanywhere</finalName>
 	</build>
 </project>

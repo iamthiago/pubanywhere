@@ -14,15 +14,15 @@
 			<img alt="Pub Anywhere" src="<c:url value='/resources/imgs/pub-full-logo.png'/>">
 		</div>
 		<div class="div-search-bar">
-			<form action="maps" method='POST' id="form">
+			<form action="maps" method='POST' id="mainForm">
 			
 				<input type="hidden" id="lat" name="lat">
     			<input type="hidden" id="lng" name="lng">
-			
+    			
 				<div class="input-box">
-					<input type='text' id="location" name="location" placeholder="Search for pubs in cities, streets etc" autocomplete="off" class="location">
+					<input type='text' id="location" name="location" placeholder="Find bars and pubs in cities, streets etc" autocomplete="off" class="location">
 					<span class="search">
-						<button type="submit" id="btnSearch" class="icons">
+						<button type="button" id="btnSearch" class="icons">
 					</span>
 				</div>
 			</form>

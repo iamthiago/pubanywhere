@@ -17,7 +17,7 @@ $(document).ready(function(){
 	
     autocomplete = new google.maps.places.Autocomplete(input);
 	
-	$('#form').submit(function(e) {
+	$('#mainForm').submit(function(e) {
 		var place = autocomplete.getPlace();
 	    if (!place) {
 	      input.className = 'notfound';
@@ -30,6 +30,6 @@ $(document).ready(function(){
 	});
 
 	google.maps.event.addListener(autocomplete, 'place_changed', function() {
-		$('#form').submit();
+		$('#mainForm').submit();
 	});
 });
