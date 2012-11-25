@@ -1,31 +1,20 @@
-package br.com.pub.controller;
+package br.com.pub.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.pub.domain.Pub;
+import br.com.pub.repository.PubRepository;
 
-@Controller
-public class TesteController {
+@Service
+public class PubService {
 	
-	@RequestMapping(value = "maps")
-	public String maps() {
-		return "maps";
-	}
+	@Autowired private PubRepository pubRepository;
 	
-	@RequestMapping(value = "registerPub")
-	public String pubs() {
-		return "registerPub";
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "praias", method = RequestMethod.GET)
-	public List<Pub> praias() {
+	public List<Pub> listNearPubs(Double lat, Double lng) {
 		
 		List<Pub> pubs = new ArrayList<Pub>();
 		
@@ -61,5 +50,9 @@ public class TesteController {
 		pubs.add(pub5);
 		
 		return pubs;
+	}
+	
+	public void registerPub(Pub pub) {
+		pubRepository.insert(pub);
 	}
 }

@@ -22,7 +22,7 @@ function initialize() {
 
     var marker;
     
-    $.getJSON('praias', function(data) {
+    $.post('pubs/listNearPubs', {lat:$('#lat').val(), lng:$('#lng').val()}, function(data) {
     	var i=0;
     	for(i = 0; i < data.length; i++) {
     		marker = new google.maps.Marker({
@@ -37,5 +37,5 @@ function initialize() {
         		}
         	})(marker, i));
     	}
-    });
+    }, "json");
 }
