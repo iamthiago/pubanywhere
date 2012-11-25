@@ -16,6 +16,10 @@ $(document).ready(function(){
 	}
 	
     autocomplete = new google.maps.places.Autocomplete(input);
+
+	google.maps.event.addListener(autocomplete, 'place_changed', function() {
+		$('#mainForm').submit();
+	});
 	
 	$('#mainForm').submit(function(e) {
 		var place = autocomplete.getPlace();
@@ -27,9 +31,5 @@ $(document).ready(function(){
 	    	$('#lat').val(place.geometry.location.lat());
 	    	$('#lng').val(place.geometry.location.lng());
 	    }
-	});
-
-	google.maps.event.addListener(autocomplete, 'place_changed', function() {
-		$('#mainForm').submit();
 	});
 });
