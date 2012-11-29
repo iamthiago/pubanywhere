@@ -21,10 +21,9 @@ $(document).ready(function(){
 		$('#mainForm').submit();
 	});
 	
-	$('#mainForm').submit(function(e) {
+	$('#mainForm, #pubForm').submit(function(e) {
 		var place = autocomplete.getPlace();
 	    if (!place) {
-	      input.className = 'notfound';
 	      e.preventDefault();
 	      return;
 	    } else {	    	

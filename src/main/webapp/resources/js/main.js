@@ -11,5 +11,7 @@ $(document).ready(function() {
 	});
 	
 	// toolbar
-	$('#signin, #listYourPub, #insertPub').button();	
+	$('#signin, #listYourPub, #insertPub').button();
+	
+	$('#pubTable').dataTable();
 });

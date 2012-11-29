@@ -14,20 +14,20 @@ function initialize() {
     var marker1 = new google.maps.Marker({
         position: positionSearch,
         map: map,
-        title: "Your Current Search",
-        icon: "http://maps.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png"
+        title: "Your Current Search Location"
     });
 	
 	var infowindow = new google.maps.InfoWindow();
 
     var marker;
     
-    $.post('pubs/listNearPubs', {lat:$('#lat').val(), lng:$('#lng').val()}, function(data) {
+    $.post('listNearPubs', {lat:$('#lat').val(), lng:$('#lng').val()}, function(data) {
     	var i=0;
     	for(i = 0; i < data.length; i++) {
     		marker = new google.maps.Marker({
         		position: new google.maps.LatLng(data[i].lat, data[i].lng),
-        		map: map
+        		map: map,
+        		icon: "../resources/imgs/bar.png"
         	});
     		
     		google.maps.event.addListener(marker, 'click', (function(marker, i) {

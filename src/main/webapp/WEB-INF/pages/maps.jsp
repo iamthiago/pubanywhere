@@ -9,5 +9,30 @@
     	<input type="hidden" id="lng" name="lng" value="${param.lng}">
 
 		<div style="width: 400px; height: 400px;" id="map_canvas"></div>
+		
+		<div id="listPubDiv">
+			<table id="pubTable" class="data-table">
+				<thead>
+					<tr>
+						<th>Pub's Name</th>
+						<th>Location</th>
+						<th>Description</th>
+						<th>Phone</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${listPubs}" var="pb">
+						<tr>
+							<td>${pb.nome}</td>
+							<td>${pb.local}</td>
+							<td>${pb.descricao}</td>
+							<td>${pb.phone}</td>
+							<td>${pb.email}</td>
+						</tr>
+					</c:forEach>	
+				</tbody>
+			</table>
+		</div>
 	</body>
 </html>

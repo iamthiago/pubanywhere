@@ -6,7 +6,11 @@
 	    <title>Pub Anywhere</title>
 	    <link type="text/css" href="<c:url value='/resources/css/main.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/registerPub.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/dataTablesCustom.css' />" rel="stylesheet" />
+	    
 	    <link type="text/css" href="<c:url value='/resources/css/black-tie/jquery-ui-1.8.23.custom.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/datatables/css/jquery.dataTables.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/datatables/css/jquery.dataTables_themeroller.css' />" rel="stylesheet" />
 	    
 	    <script type="text/javascript" src="<c:url value='/resources/js/jquery-1.8.0.min.js' />"></script>
 	    <script type="text/javascript" src="<c:url value='/resources/js/jquery-ui-1.8.23.custom.min.js' />"></script>

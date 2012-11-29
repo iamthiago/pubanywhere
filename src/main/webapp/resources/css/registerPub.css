@@ -129,3 +129,9 @@ li {
 	font-size: 13px;
 	font-weight: bold;
 }
+
+.errors {
+	color: red;
+	font-size: 13px;
+	font-weight: bold;
+}

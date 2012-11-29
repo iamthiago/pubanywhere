@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Pub implements Serializable {
 
@@ -21,9 +23,15 @@ public class Pub implements Serializable {
 	@Column(name = "PUB_ID", insertable = true, updatable = false)
 	private Long pubId;
 	
+	@NotEmpty
 	@Column(name = "NOME")
 	private String nome;
 	
+	@NotEmpty
+	@Column(name = "LOCAL")
+	private String local;
+	
+	@NotEmpty
 	@Column(name = "DESCRICAO")
 	private String descricao;
 	
@@ -33,10 +41,10 @@ public class Pub implements Serializable {
 	@Column(name = "EMAIL")
 	private String email;
 	
-	@Column(name = "LAT")
+	@Column(name = "LAT", precision = 15, scale = 20)
 	private Double lat;
 	
-	@Column(name = "LNG")
+	@Column(name = "LNG", precision = 15, scale = 20)
 	private Double lng;
 
 	public Long getPubId() {
@@ -53,6 +61,14 @@ public class Pub implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getLocal() {
+		return local;
+	}
+
+	public void setLocal(String local) {
+		this.local = local;
 	}
 
 	public String getDescricao() {

@@ -10,10 +10,10 @@
 	<jsp:include page="includes/navigator.jsp"/>
 
 	<div id="main">
-		<form action="#" method='POST'>
+		<form:form action="pubs/registerPub" method='POST' id="pubForm" commandName="pubForm" acceptCharset="UTF-8">
 		
-			<input type="hidden" id="lat" name="lat">
-	    	<input type="hidden" id="lng" name="lng">
+			<form:hidden path="lat" id="lat"/>
+			<form:hidden path="lng" id="lng"/>
 			
 			<div id="left">
 				<div id="control-title">
@@ -22,7 +22,7 @@
 					</h1>
 					<div id="control-title-description">
 						<h3>
-							Pub Anywhere make your pub to be discovered in the entire world!
+							Pub Anywhere make your bar, pub to be discovered in the entire world!
 						</h3>
 					</div>
 				</div>
@@ -30,17 +30,18 @@
 					<div class="title">
 						<h3>About your Pub</h3>
 						<p>
-							Tell us how great is your pub.
+							Tell us how great is the pub.
 						</p>
 					</div>
 					<fieldset class="padtop">
 						<div class="control-main">
 							<div class="control-group">
-								<label for="name" class="control-label">
+								<label for="pubs-name" class="control-label">
 									Pub's Name:
 								</label>
 								<div class="controls">
-									<input type='text' id="pubs-name" name="pubs-name" class="inputs">
+									<form:input path="nome" id="pubs-name" cssClass="inputs"/>
+									<form:errors path="nome" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							<div class="control-group">
@@ -48,7 +49,8 @@
 									Location:
 								</label>
 								<div class="controls">
-									<input id="location_new" name="location_new" type="text" placeholder="" class="inputs">
+									<form:input path="local" id="location_new" cssClass="inputs"/>
+									<form:errors path="local" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							<div class="control-group">
@@ -56,7 +58,8 @@
 									Description:
 								</label>
 								<div class="controls">
-									<textarea id="pubs-description" name="pubs-description" rows="20" cols="40" class="text-area-input"></textarea>
+									<form:textarea path="descricao" id="pubs-description" rows="20" cols="40" cssClass="text-area-input"/>
+									<form:errors path="descricao" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							<div class="control-group">
@@ -64,7 +67,8 @@
 									Phone:
 								</label>
 								<div class="controls">
-									<input id="pubs-phone" name="pubs-phone" class="inputs">
+									<form:input path="phone" id="pubs-phone" cssClass="inputs"/>
+									<form:errors path="phone" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							<div class="control-group">
@@ -72,7 +76,8 @@
 									Email:
 								</label>
 								<div class="controls">
-									<input id="pubs-email" name="pubs-email" class="inputs">
+									<form:input path="email" id="pubs-email" cssClass="inputs"/>
+									<form:errors path="email" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							
@@ -93,7 +98,7 @@
 					</ul>
 				</div>
 			</div>
-		</form>
+		</form:form>
 	</div>
 </body>
 </html>

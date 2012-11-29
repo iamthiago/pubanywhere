@@ -118,3 +118,12 @@ body {
 	right: 10px;
 	top: 10px;
 }
+
+#listPubDiv {
+	float: right;
+	margin-right: 20px;
+	margin-top: 20px;
+	top: -400px;
+	width: 900px;
+	position: relative;
+}
