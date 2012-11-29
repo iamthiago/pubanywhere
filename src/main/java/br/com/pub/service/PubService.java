@@ -17,7 +17,11 @@ public class PubService {
 		return pubRepository.listAll();
 	}
 	
-	public void registerPub(Pub pub) {
-		pubRepository.insert(pub);
+	public void registerPub(Pub pub) throws NullPointerException {
+		if (pub.getLat() != null || pub.getLng() != null) {
+			pubRepository.insert(pub);
+		} else {
+			throw new NullPointerException("latitude ou longitude null");
+		}
 	}
 }

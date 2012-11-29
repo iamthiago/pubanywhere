@@ -38,9 +38,7 @@ public class PubController {
 	public List<Pub> listNearPubs(HttpServletRequest request, HttpSession session) {
 		Double lat = Double.parseDouble(request.getParameter("lat"));
 		Double lng = Double.parseDouble(request.getParameter("lng"));
-		List<Pub> listNearPubs = pubService.listNearPubs(lat, lng);
-		session.setAttribute("listPubs", listNearPubs);
-		return listNearPubs;
+		return pubService.listNearPubs(lat, lng);
 	}
 	
 	@RequestMapping(value = "registerPub")
