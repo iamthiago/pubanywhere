@@ -10,6 +10,13 @@ $(document).ready(function() {
 		$('#form').submit();
 	});
 	
+	$('#btnHome').button({
+		icons : {
+			primary : 'ui-icon ui-icon-home'
+		},
+		text: false
+	});
+	
 	// toolbar
 	$('#signin, #listYourPub, #insertPub').button();
 	

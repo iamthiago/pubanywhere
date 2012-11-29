@@ -11,7 +11,7 @@
 	
 	<div id="main_content">
 		<div class="div-pub-image">
-			<img alt="Pub Anywhere" src="<c:url value='/resources/imgs/pub-full-logo.png'/>">
+			<img src="<c:url value='/resources/imgs/pub-full-logo.png'/>">
 		</div>
 		<div class="div-search-bar">
 			<form action="pubs/maps" method='POST' id="mainForm">
