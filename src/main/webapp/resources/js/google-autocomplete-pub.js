@@ -7,21 +7,21 @@ $(document).ready(function(){
 	*/
 	var input = null;
 	
-	if(document.getElementById('location') != null) {
-		input = document.getElementById('location');
-		input.focus();
-	} else {
-		document.getElementById('pubs-name').focus();
+	if(document.getElementById('pubs-name') != null) {
 		input = document.getElementById('location_new');
+		input.focus();
 	}
 	
     autocomplete = new google.maps.places.Autocomplete(input);
-
-	google.maps.event.addListener(autocomplete, 'place_changed', function() {
-		$('#mainForm').submit();
-	});
 	
-	$('#mainForm, #pubForm').submit(function(e) {
+    $(window).keydown(function(e){
+		if(e.keyCode == 13) {
+			e.preventDefault();
+			return false;
+		}
+	});
+    
+	$('#pubForm').submit(function(e) {		
 		var place = autocomplete.getPlace();
 	    if (!place) {
 	      e.preventDefault();

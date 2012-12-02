@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
 
 @Entity
 public class Pub implements Serializable {
@@ -35,17 +37,24 @@ public class Pub implements Serializable {
 	@Column(name = "DESCRICAO")
 	private String descricao;
 	
+	@NumberFormat(style = Style.NUMBER)
 	@Column(name = "PHONE")
-	private String phone;
+	private Integer phone;
 	
 	@Column(name = "EMAIL")
 	private String email;
+	
+	@Column(name = "WEBSITE")
+	private String website;
 	
 	@Column(name = "LAT", precision = 15, scale = 20)
 	private Double lat;
 	
 	@Column(name = "LNG", precision = 15, scale = 20)
 	private Double lng;
+	
+	@Column(name = "ENABLED")
+	private boolean enabled;
 
 	public Long getPubId() {
 		return pubId;
@@ -79,11 +88,11 @@ public class Pub implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public String getPhone() {
+	public Integer getPhone() {
 		return phone;
 	}
 
-	public void setPhone(String phone) {
+	public void setPhone(Integer phone) {
 		this.phone = phone;
 	}
 
@@ -93,6 +102,14 @@ public class Pub implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getWebsite() {
+		return website;
+	}
+
+	public void setWebsite(String website) {
+		this.website = website;
 	}
 
 	public Double getLat() {
@@ -109,5 +126,13 @@ public class Pub implements Serializable {
 
 	public void setLng(Double lng) {
 		this.lng = lng;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 }

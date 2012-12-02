@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,13 +43,19 @@ public class PubController {
 	}
 	
 	@RequestMapping(value = "registerPub")
-	public String registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result) {
+	public String registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result, HttpServletRequest request) {
 		if (result.hasErrors()) {
 			return "registerPub";
 		} else {
-			pubService.registerPub(form);
+			pubService.registerPub(form, request);
 		}
 		
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value = "activePub/{id}")
+	public String activePub(@PathVariable("id") Long id) {
+		pubService.activePub(id);
 		return "redirect:/";
 	}
 }

@@ -32,7 +32,10 @@ function initialize() {
     		
     		google.maps.event.addListener(marker, 'click', (function(marker, i) {
         		return function() {
-        			infowindow.setContent(String(data[i].nome));
+        			infowindow.setContent(
+        					String(data[i].nome) + '<br>' + 
+        					'website: <a href="'+ String(data[i].website) +'" target="_blank">'+ String(data[i].website) +'</a>' + '<br>' +
+        					'phone: ' + String(data[i].phone));
         			infowindow.open(map, marker);
         		}
         	})(marker, i));

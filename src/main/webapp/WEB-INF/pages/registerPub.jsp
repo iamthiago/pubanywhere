@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<jsp:include page="includes/header.jsp"/>
+<jsp:include page="includes/header-pub.jsp"/>
 
 <body>
 	
@@ -68,7 +68,16 @@
 								</label>
 								<div class="controls">
 									<form:input path="phone" id="pubs-phone" cssClass="inputs"/>
-									<form:errors path="phone" element="div" cssClass="errors"/>
+									<form:errors path="phone" element="div" cssClass="errors">Phone must be number</form:errors>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="pubs-website" class="control-label">
+									Website:
+								</label>
+								<div class="controls">
+									<form:input path="website" id="pubs-website" cssClass="inputs"/>
+									<form:errors path="website" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							<div class="control-group">
