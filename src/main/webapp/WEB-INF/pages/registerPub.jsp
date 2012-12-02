@@ -40,7 +40,7 @@
 									Pub's Name:
 								</label>
 								<div class="controls">
-									<form:input path="nome" id="pubs-name" cssClass="inputs"/>
+									<form:input path="nome" id="pubs-name" cssClass="inputs" tabindex="1"/>
 									<form:errors path="nome" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -49,7 +49,7 @@
 									Location:
 								</label>
 								<div class="controls">
-									<form:input path="local" id="location_new" cssClass="inputs"/>
+									<form:input path="local" id="location_new" cssClass="inputs" tabindex="2"/>
 									<form:errors path="local" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -58,7 +58,7 @@
 									Description:
 								</label>
 								<div class="controls">
-									<form:textarea path="descricao" id="pubs-description" rows="20" cols="40" cssClass="text-area-input"/>
+									<form:textarea path="descricao" id="pubs-description" rows="20" cols="40" cssClass="text-area-input" tabindex="3"/>
 									<form:errors path="descricao" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -67,7 +67,7 @@
 									Phone:
 								</label>
 								<div class="controls">
-									<form:input path="phone" id="pubs-phone" cssClass="inputs"/>
+									<form:input path="phone" id="pubs-phone" cssClass="inputs" tabindex="1"/>
 									<form:errors path="phone" element="div" cssClass="errors">Phone must be number</form:errors>
 								</div>
 							</div>
@@ -76,7 +76,7 @@
 									Website:
 								</label>
 								<div class="controls">
-									<form:input path="website" id="pubs-website" cssClass="inputs"/>
+									<form:input path="website" id="pubs-website" cssClass="inputs" tabindex="1"/>
 									<form:errors path="website" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -85,7 +85,7 @@
 									Email:
 								</label>
 								<div class="controls">
-									<form:input path="email" id="pubs-email" cssClass="inputs"/>
+									<form:input path="email" id="pubs-email" cssClass="inputs" tabindex="1"/>
 									<form:errors path="email" element="div" cssClass="errors"/>
 								</div>
 							</div>

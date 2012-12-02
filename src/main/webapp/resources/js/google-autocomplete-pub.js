@@ -9,7 +9,6 @@ $(document).ready(function(){
 	
 	if(document.getElementById('pubs-name') != null) {
 		input = document.getElementById('location_new');
-		input.focus();
 	}
 	
     autocomplete = new google.maps.places.Autocomplete(input);
