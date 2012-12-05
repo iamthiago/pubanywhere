@@ -12,7 +12,7 @@
 	
 	<div id="main_content">
 		<div class="div-pub-image">
-			<img src="<c:url value='/resources/imgs/pub-full-logo.png'/>">
+			<img src="<c:url value='/resources/imgs/pub-full-logo-beta.png'/>">
 		</div>
 		<div class="div-search-bar">
 			<form action="pubs/maps" method='POST' id="mainForm">
