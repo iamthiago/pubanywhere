@@ -12,6 +12,7 @@ import javax.servlet.ServletResponse;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import br.com.pub.domain.Pub;
+import br.com.pub.form.ContactForm;
 
 public class ValidaFormFilter implements Filter {
 
@@ -26,6 +27,7 @@ public class ValidaFormFilter implements Filter {
 		
 		//inicia forms
 		request.setAttribute("pubForm", new Pub());
+		request.setAttribute("contactForm", new ContactForm());
 		
 		chain.doFilter(request, response);
 	}

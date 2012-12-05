@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
@@ -41,6 +42,7 @@ public class Pub implements Serializable {
 	@Column(name = "PHONE")
 	private Integer phone;
 	
+	@Email
 	@Column(name = "EMAIL")
 	private String email;
 	

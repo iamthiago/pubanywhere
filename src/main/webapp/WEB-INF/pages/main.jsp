@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <jsp:include page="includes/header.jsp"/>
 
@@ -20,7 +21,7 @@
     			<input type="hidden" id="lng" name="lng">
     			
 				<div class="input-box">
-					<input type='text' id="location" name="location" placeholder="Find bars and pubs in cities, streets etc" autocomplete="off" class="location">
+					<input type='text' id="location" name="location" placeholder="<spring:message code="main.search"/>" autocomplete="off" class="location">
 					<span class="search">
 						<button type="button" id="btnSearch" class="icons">
 					</span>

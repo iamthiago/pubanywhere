@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <jsp:include page="includes/header-pub.jsp"/>
 
@@ -18,26 +19,26 @@
 			<div id="left">
 				<div id="control-title">
 					<h1>
-						List your place.
+						<spring:message code="form.pub.title"/>
 					</h1>
 					<div id="control-title-description">
 						<h3>
-							Pub Anywhere make your bar, pub to be discovered in the entire world!
+							<spring:message code="form.pub.title.description"/>
 						</h3>
 					</div>
 				</div>
 				<div id="control-panel">
 					<div class="title">
-						<h3>About your Pub</h3>
+						<h3><spring:message code="form.pub.panel.title"/></h3>
 						<p>
-							Tell us how great is the pub.
+							<spring:message code="form.pub.panel.description"/>
 						</p>
 					</div>
 					<fieldset class="padtop">
 						<div class="control-main">
 							<div class="control-group">
 								<label for="pubs-name" class="control-label">
-									Pub's Name:
+									<spring:message code="form.pub.name"/>
 								</label>
 								<div class="controls">
 									<form:input path="nome" id="pubs-name" cssClass="inputs" tabindex="1"/>
@@ -46,7 +47,7 @@
 							</div>
 							<div class="control-group">
 								<label for="location_new" class="control-label">
-									Location:
+									<spring:message code="form.pub.location"/>
 								</label>
 								<div class="controls">
 									<form:input path="local" id="location_new" cssClass="inputs" tabindex="2"/>
@@ -55,7 +56,7 @@
 							</div>
 							<div class="control-group">
 								<label for="pubs-description" class="control-label">
-									Description:
+									<spring:message code="form.pub.description"/>
 								</label>
 								<div class="controls">
 									<form:textarea path="descricao" id="pubs-description" rows="20" cols="40" cssClass="text-area-input" tabindex="3"/>
@@ -64,35 +65,35 @@
 							</div>
 							<div class="control-group">
 								<label for="pubs-phone" class="control-label">
-									Phone:
+									<spring:message code="form.pub.phone"/>
 								</label>
 								<div class="controls">
-									<form:input path="phone" id="pubs-phone" cssClass="inputs" tabindex="1"/>
+									<form:input path="phone" id="pubs-phone" cssClass="inputs" tabindex="4"/>
 									<form:errors path="phone" element="div" cssClass="errors">Phone must be number</form:errors>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="pubs-website" class="control-label">
-									Website:
+									<spring:message code="form.pub.website"/>
 								</label>
 								<div class="controls">
-									<form:input path="website" id="pubs-website" cssClass="inputs" tabindex="1"/>
+									<form:input path="website" id="pubs-website" cssClass="inputs" tabindex="5"/>
 									<form:errors path="website" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="pubs-email" class="control-label">
-									Email:
+									<spring:message code="form.pub.email"/>
 								</label>
 								<div class="controls">
-									<form:input path="email" id="pubs-email" cssClass="inputs" tabindex="1"/>
+									<form:input path="email" id="pubs-email" cssClass="inputs" tabindex="6"/>
 									<form:errors path="email" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							
 							<div class="control-group">
 								<span>
-									<input id="insertPub" type="submit" name="submit" value="Save Pub" class="buttons"/>
+									<input id="insertPub" type="submit" name="submit" value="<spring:message code="form.pub.button.send"/>" class="buttons"/>
 								</span>
 							</div>
 						</div>
@@ -100,12 +101,7 @@
 				</div>
 			</div>
 			<div id="right">
-				<h3>Question & Answer</h3>
-				<div>
-					<ul>
-						<li>Why list your pub or bar on Pub Anywhere?</li>
-					</ul>
-				</div>
+				
 			</div>
 		</form:form>
 	</div>

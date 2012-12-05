@@ -16,17 +16,16 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import br.com.pub.domain.Pub;
+import br.com.pub.form.ContactForm;
 
-//TODO: futuramente qnd houver necessidade, implementar como servico generico, para atender não só um unico email, mas sim vários
-public class EmailSender {
+public class EmailUtils {
 	
 	final static String username = "pubanywhere@gmail.com";
 	final static String password = "pubanywhere250586!";
 	
-	private static Logger log = LoggerFactory.getLogger(EmailSender.class);
+	private static Logger log = LoggerFactory.getLogger(EmailUtils.class);
 	
-	public static void sendMail(Pub pub, HttpServletRequest request) {
+	public static void sendMail(ContactForm contactForm, HttpServletRequest request) {
 		
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -43,10 +42,10 @@ public class EmailSender {
 		try {
 			
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("pubanywhere@gmail.com"));
+			message.setFrom(new InternetAddress(contactForm.getEmail()));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("thiagoandrade6@gmail.com"));
-			message.setSubject("Register a bar/pub");
-			message.setContent("Click the link below to activate the bar/pub.<br/> <a href="+ createURL(request, pub.getPubId()) + ">" + createURL(request, pub.getPubId()) +"</a>", "text/html");
+			message.setSubject(contactForm.getSubject());
+			message.setContent("Name: " + contactForm.getName() + "<br>" + "Email: " + contactForm.getEmail() + "<br>" + "Description: " + contactForm.getDescription(), "text/html");
 			
 			Transport.send(message);
 			
@@ -60,9 +59,19 @@ public class EmailSender {
 		
 	}
 
-	private static String createURL(HttpServletRequest request, Long id) {
+	public static String createURL(HttpServletRequest request, Long id) {
 		String path = request.getRequestURL().toString();
 		String newPath = path.replace("/registerPub", "/activePub/");
 		return newPath.concat(id.toString());
-	}	
+	}
+	
+	public static void validEmail(String email) throws AddressException {
+		try {
+			InternetAddress mail = new InternetAddress(email);
+			mail.validate();
+		} catch (AddressException e) {
+			log.error(e.getMessage());
+			throw new AddressException("Invalid Email");
+		}
+	}
 }

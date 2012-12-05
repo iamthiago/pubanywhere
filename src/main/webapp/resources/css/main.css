@@ -67,7 +67,8 @@ body {
 #right-buttons {
 	margin-left: auto;
 	position: relative;
-	width: 150px;
+	width: 270px;
+	text-align: right;
 }
 
 #left-buttons {

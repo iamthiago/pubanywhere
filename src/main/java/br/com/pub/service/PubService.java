@@ -2,8 +2,6 @@ package br.com.pub.service;
 
 import java.util.List;
 
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -12,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.pub.domain.Pub;
-import br.com.pub.mail.EmailSender;
+import br.com.pub.form.ContactForm;
+import br.com.pub.mail.EmailUtils;
 import br.com.pub.repository.PubRepository;
 
 @Service
@@ -29,18 +28,20 @@ public class PubService {
 	
 	public void registerPub(Pub pub, HttpServletRequest request) {
 		if (pub.getLat() != null || pub.getLng() != null) {
-			
-			try {
-				pubRepository.insert(valid(pub));
-			} catch (AddressException e) {
-				e.printStackTrace();
-			}
-			
-			EmailSender.sendMail(pub, request);
-			
+			pubRepository.insert(valid(pub));
+			sendMail(pub, request);
 		} else {
 			log.error("Lat or Lng null");
 		}
+	}
+
+	private void sendMail(Pub pub, HttpServletRequest request) {
+		ContactForm form = new ContactForm();
+		form.setName("Pub to Register");
+		form.setEmail("pubanywhere@gmail.com");
+		form.setSubject("Register a bar/pub");
+		form.setDescription("Click the link below to activate the bar/pub.<br/> <a href="+ EmailUtils.createURL(request, pub.getPubId()) + ">" + EmailUtils.createURL(request, pub.getPubId()) +"</a>");
+		EmailUtils.sendMail(form, request);
 	}
 	
 	public void activePub(Long id) {
@@ -49,25 +50,14 @@ public class PubService {
 		pubRepository.update(pub);
 	}
 
-	private Pub valid(Pub pub) throws AddressException {
+	private Pub valid(Pub pub) {
 		pub.getNome().toUpperCase();
 		pub.getEmail().toLowerCase();
 		
-		validEmail(pub.getEmail());
 		validWebSite(pub);
 		
 		pub.setEnabled(false);
 		return pub;
-	}
-
-	private void validEmail(String email) throws AddressException {
-		try {
-			InternetAddress mail = new InternetAddress(email);
-			mail.validate();
-		} catch (AddressException e) {
-			log.error(e.getMessage());
-			throw new AddressException();
-		}
 	}
 
 	private void validWebSite(Pub pub) {

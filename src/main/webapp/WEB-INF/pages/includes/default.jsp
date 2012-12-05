@@ -17,6 +17,6 @@
 		<script type="text/javascript" src="<c:url value='/resources/js/jquery.dataTables.min.js' />"></script>
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/dataTablesDefault.js' />"></script>
-		<script type="text/javascript" src="<c:url value='/resources/js/main.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/main.js' />"></script>		
 		
 		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
