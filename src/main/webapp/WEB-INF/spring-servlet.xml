@@ -14,29 +14,10 @@
 	<mvc:resources location="/resources/imgs/" mapping="/imgs" />
 	<mvc:resources location="/resources/js/" mapping="/js" />
 	
-	<bean id="localeChangeInterceptor"
-	      class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-	    <property name="paramName" value="locale"/>
-	</bean>
-	
-	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-	     <property name="defaultLocale" value="en_US" />
-	</bean>
- 
-	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" >
-		<property name="interceptors">
-		   <list>
-			<ref bean="localeChangeInterceptor" />
-		   </list>
-		</property>
-	</bean>
-	
 	<!-- Register the welcome.properties -->
-	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-	    <property name="useCodeAsDefaultMessage" value="true" />
-	    <property name="basenames" value="/WEB-INF/messages"/>
-	    <property name="cacheSeconds" value="0" />
-	    <property name="defaultEncoding" value="UTF-8"/>
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="messages" />
 	</bean>
 
     <bean id="viewResolver"

@@ -10,8 +10,6 @@ import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.NumberFormat;
-import org.springframework.format.annotation.NumberFormat.Style;
 
 @Entity
 public class Pub implements Serializable {
@@ -35,12 +33,11 @@ public class Pub implements Serializable {
 	private String local;
 	
 	@NotEmpty
-	@Column(name = "DESCRICAO")
+	@Column(name = "DESCRICAO", length = 1000)
 	private String descricao;
 	
-	@NumberFormat(style = Style.NUMBER)
 	@Column(name = "PHONE")
-	private Integer phone;
+	private String phone;
 	
 	@Email
 	@Column(name = "EMAIL")
@@ -90,11 +87,11 @@ public class Pub implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public Integer getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(Integer phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
