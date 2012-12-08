@@ -41,7 +41,7 @@
 									<spring:message code="form.pub.name"/>
 								</label>
 								<div class="controls">
-									<form:input path="nome" id="pubs-name" cssClass="inputs" tabindex="1"/>
+									<form:input path="nome" id="pubs-name" cssClass="inputs" tabindex="1" maxlength="50"/>
 									<form:errors path="nome" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -50,7 +50,7 @@
 									<spring:message code="form.pub.location"/>
 								</label>
 								<div class="controls">
-									<form:input path="local" id="location_new" cssClass="inputs" tabindex="2"/>
+									<form:input path="local" id="location_new" cssClass="inputs" tabindex="2" maxlength="200"/>
 									<form:errors path="local" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -68,8 +68,8 @@
 									<spring:message code="form.pub.phone"/>
 								</label>
 								<div class="controls">
-									<form:input path="phone" id="pubs-phone" cssClass="inputs" tabindex="4"/>
-									<form:errors path="phone" element="div" cssClass="errors">Phone must be number</form:errors>
+									<form:input path="phone" id="pubs-phone" cssClass="inputs" tabindex="4" maxlength="50"/>
+									<form:errors path="phone" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							<div class="control-group">
@@ -77,7 +77,7 @@
 									<spring:message code="form.pub.website"/>
 								</label>
 								<div class="controls">
-									<form:input path="website" id="pubs-website" cssClass="inputs" tabindex="5"/>
+									<form:input path="website" id="pubs-website" cssClass="inputs" tabindex="5" maxlength="50"/>
 									<form:errors path="website" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -86,7 +86,7 @@
 									<spring:message code="form.pub.email"/>
 								</label>
 								<div class="controls">
-									<form:input path="email" id="pubs-email" cssClass="inputs" tabindex="6"/>
+									<form:input path="email" id="pubs-email" cssClass="inputs" tabindex="6" maxlength="50"/>
 									<form:errors path="email" element="div" cssClass="errors"/>
 								</div>
 							</div>
