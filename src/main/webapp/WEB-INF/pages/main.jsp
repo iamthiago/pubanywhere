@@ -22,12 +22,9 @@
     			
 				<div class="input-box">
 					<input type='text' id="location" name="location" placeholder="<spring:message code="main.search"/>" autocomplete="off" class="location">
-					<span class="search">
-						<button type="button" id="btnSearch" class="icons">
-					</span>
 				</div>
 			</form>
-		</div>
+		</div>		
 	</div>
 </body>
 </html>

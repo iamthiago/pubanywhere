@@ -21,6 +21,30 @@ function initialize() {
 
     var marker;
     
+    function getWebsite(data, i){
+    	var website;
+    	
+    	if (data[i].website == null) {
+    		website = '';
+		} else {
+			website = '<img border="0" align="left" src="../resources/imgs/laptop.png"><a href="'+ String(data[i].website) +'" target="_blank">'+ String(data[i].website) +'</a>' + '<br>';
+		}
+    	
+    	return website;
+    }
+    
+    function getPhone(data, i){
+    	var phone;
+    	
+    	if (data[i].phone == null) {
+    		phone = '';
+		} else {
+			phone = '<img border="0" align="left" src="../resources/imgs/phone.png">' + String(data[i].phone);
+		}
+    	
+    	return phone;
+    }
+    
     $.post('listNearPubs', {lat:$('#lat').val(), lng:$('#lng').val()}, function(data) {
     	var i=0;
     	for(i = 0; i < data.length; i++) {
@@ -32,10 +56,7 @@ function initialize() {
     		
     		google.maps.event.addListener(marker, 'click', (function(marker, i) {
         		return function() {
-        			infowindow.setContent(
-        					String(data[i].nome) + '<br>' + 
-        					'website: <a href="'+ String(data[i].website) +'" target="_blank">'+ String(data[i].website) +'</a>' + '<br>' +
-        					'phone: ' + String(data[i].phone));
+        			infowindow.setContent(String(data[i].nome) + '<br>' + getWebsite(data, i) + getPhone(data, i));
         			infowindow.open(map, marker);
         		}
         	})(marker, i));

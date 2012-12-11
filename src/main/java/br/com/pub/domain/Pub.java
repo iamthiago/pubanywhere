@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -33,7 +34,8 @@ public class Pub implements Serializable {
 	private String local;
 	
 	@NotEmpty
-	@Column(name = "DESCRICAO", length = 1000)
+	@Length(max = 2000)
+	@Column(name = "DESCRICAO", length = 2000)
 	private String descricao;
 	
 	@Column(name = "PHONE")

@@ -20,19 +20,27 @@ public class PubService {
 	private static Logger log = LoggerFactory.getLogger(PubService.class);
 	
 	@Autowired private PubRepository pubRepository;
+	@Autowired private MessageService messageService;
 	
 	public List<Pub> listNearPubs(Double lat, Double lng) {
 		//TODO: listar somente pubs ativos
 		return pubRepository.listAll();
 	}
 	
-	public void registerPub(Pub pub, HttpServletRequest request) {
+	public String registerPub(Pub pub, HttpServletRequest request) {
+		
+		String result = null;
+		
 		if (pub.getLat() != null || pub.getLng() != null) {
 			pubRepository.insert(valid(pub));
 			sendMail(pub, request);
+			result = messageService.getMessageFromResource(request, "message.pub.success");
 		} else {
 			log.error("Lat or Lng null");
+			result = messageService.getMessageFromResource(request, "message.error");
 		}
+		
+		return result;
 	}
 
 	private void sendMail(Pub pub, HttpServletRequest request) {
@@ -48,6 +56,10 @@ public class PubService {
 		Pub pub = pubRepository.find(id);		
 		pub.setEnabled(true);
 		pubRepository.update(pub);
+	}
+	
+	public List<Pub> listPubJdbc() {
+		return pubRepository.listaPubsJdbc();
 	}
 
 	private Pub valid(Pub pub) {
@@ -66,6 +78,4 @@ public class PubService {
 			pub.setWebsite("http://" + pub.getWebsite());
 		}
 	}
-	
-	
 }

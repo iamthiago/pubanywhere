@@ -1,6 +1,7 @@
 package br.com.pub.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import br.com.pub.constants.PUB_CONSTANTS;
 import br.com.pub.domain.Pub;
 import br.com.pub.service.PubService;
 
@@ -43,10 +45,13 @@ public class PubController {
 	}
 	
 	@RequestMapping(value = "registerPub")
-	public String registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result, HttpServletRequest request) {
+	public String registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result,
+			HttpServletRequest request, Map<String, String> map) {
+		
 		if (result.hasErrors()) {
 			return "registerPub";
 		} else {
+			//map.put(PUB_CONSTANTS.PUB_MSG, pubService.registerPub(form, request));
 			pubService.registerPub(form, request);
 		}
 		
@@ -57,5 +62,11 @@ public class PubController {
 	public String activePub(@PathVariable("id") Long id) {
 		pubService.activePub(id);
 		return "redirect:/";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "listPubJdbc")
+	public List<Pub> listPubJdbc() {
+		return pubService.listPubJdbc();
 	}
 }

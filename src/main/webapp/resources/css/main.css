@@ -117,9 +117,7 @@ body {
 	padding: 4px;
 }
 
-.search {
-	float: right;
-	position: absolute;
-	right: 10px;
-	top: 10px;
+.messageAlert {
+	color: red;
+	font-weight: bold;
 }

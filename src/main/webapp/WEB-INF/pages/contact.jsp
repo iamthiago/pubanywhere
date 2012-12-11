@@ -28,7 +28,7 @@
 					<div class="title">
 						<h3><spring:message code="form.contact.panel.title"/></h3>
 						<p>
-							<spring:message code="form.contact.panel.description"/>
+							<span class="messageAlert"><c:out value="${mailSuccess}"/></span>
 						</p>
 					</div>
 					<fieldset class="padtop">
@@ -71,7 +71,7 @@
 							</div>
 							<div class="control-group">
 								<span>
-									<input id="insertPub" type="submit" name="submit" value="<spring:message code="form.contact.button.send"/>" class="buttons"/>
+									<input id="sendMail" type="submit" name="submit" value="<spring:message code="form.contact.button.send"/>" class="buttons"/>
 								</span>
 							</div>
 						</div>

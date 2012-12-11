@@ -31,7 +31,7 @@
 					<div class="title">
 						<h3><spring:message code="form.pub.panel.title"/></h3>
 						<p>
-							<spring:message code="form.pub.panel.description"/>
+							<span class="messageAlert"><c:out value="${pubSuccess}"/></span>
 						</p>
 					</div>
 					<fieldset class="padtop">
@@ -41,7 +41,7 @@
 									<spring:message code="form.pub.name"/>
 								</label>
 								<div class="controls">
-									<form:input path="nome" id="pubs-name" cssClass="inputs" tabindex="1" maxlength="50"/>
+									<form:input path="nome" id="pubs-name" cssClass="inputs" tabindex="1" maxlength="100"/>
 									<form:errors path="nome" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -50,7 +50,7 @@
 									<spring:message code="form.pub.location"/>
 								</label>
 								<div class="controls">
-									<form:input path="local" id="location_new" cssClass="inputs" tabindex="2" maxlength="200"/>
+									<form:input path="local" id="location_new" cssClass="inputs" tabindex="2"/>
 									<form:errors path="local" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -68,7 +68,7 @@
 									<spring:message code="form.pub.phone"/>
 								</label>
 								<div class="controls">
-									<form:input path="phone" id="pubs-phone" cssClass="inputs" tabindex="4" maxlength="50"/>
+									<form:input path="phone" id="pubs-phone" cssClass="inputs" tabindex="4" maxlength="100"/>
 									<form:errors path="phone" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -77,7 +77,7 @@
 									<spring:message code="form.pub.website"/>
 								</label>
 								<div class="controls">
-									<form:input path="website" id="pubs-website" cssClass="inputs" tabindex="5" maxlength="50"/>
+									<form:input path="website" id="pubs-website" cssClass="inputs" tabindex="5" maxlength="100"/>
 									<form:errors path="website" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -86,7 +86,7 @@
 									<spring:message code="form.pub.email"/>
 								</label>
 								<div class="controls">
-									<form:input path="email" id="pubs-email" cssClass="inputs" tabindex="6" maxlength="50"/>
+									<form:input path="email" id="pubs-email" cssClass="inputs" tabindex="6" maxlength="100"/>
 									<form:errors path="email" element="div" cssClass="errors"/>
 								</div>
 							</div>

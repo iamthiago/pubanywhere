@@ -18,5 +18,5 @@ $(document).ready(function() {
 	});
 	
 	// toolbar
-	$('#signin, #listYourPub, #insertPub, #btnContact').button();
+	$('#signin, #listYourPub, #insertPub, #btnContact, #sendMail').button();
 });
