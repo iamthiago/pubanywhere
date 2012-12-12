@@ -27,7 +27,7 @@ function initialize() {
     	if (data[i].website == null) {
     		website = '';
 		} else {
-			website = '<img border="0" align="left" src="../resources/imgs/laptop.png"><a href="'+ String(data[i].website) +'" target="_blank">'+ String(data[i].website) +'</a>' + '<br>';
+			website = '<img border="0" align="left" src="../resources/imgs/laptop.png">&nbsp; <a href="'+ String(data[i].website) +'" target="_blank">'+ String(data[i].website) +'</a>' + '<br>';
 		}
     	
     	return website;
@@ -39,10 +39,22 @@ function initialize() {
     	if (data[i].phone == null) {
     		phone = '';
 		} else {
-			phone = '<img border="0" align="left" src="../resources/imgs/phone.png">' + String(data[i].phone);
+			phone = '<img border="0" align="left" src="../resources/imgs/phone.png">&nbsp;' + String(data[i].phone) + '<br>';
 		}
     	
     	return phone;
+    }
+    
+    function getEmail(data, i){
+    	var email;
+    	
+    	if (data[i].email == null) {
+    		email = '';
+		} else {
+			email = '<img border="0" align="left" src="../resources/imgs/mail.png">&nbsp; <a href="mailto:' + String(data[i].email) + '?subject=Info">' + String(data[i].email) + '</a>';
+		}
+    	
+    	return email;
     }
     
     $.post('listNearPubs', {lat:$('#lat').val(), lng:$('#lng').val()}, function(data) {
@@ -56,7 +68,7 @@ function initialize() {
     		
     		google.maps.event.addListener(marker, 'click', (function(marker, i) {
         		return function() {
-        			infowindow.setContent(String(data[i].nome) + '<br>' + getWebsite(data, i) + getPhone(data, i));
+        			infowindow.setContent(String(data[i].nome) + '<br>' + getWebsite(data, i) + getPhone(data, i) + getEmail(data, i));
         			infowindow.open(map, marker);
         		}
         	})(marker, i));

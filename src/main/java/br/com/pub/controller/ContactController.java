@@ -24,16 +24,16 @@ public class ContactController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public String sendSuggestion(@ModelAttribute("contactForm") @Valid ContactForm form, BindingResult result,
-			HttpServletRequest request, Map<String, String> map) {
+			HttpServletRequest request, Map<String, Object> map) {
 		
 		if (result.hasErrors()) {
 			return "contact";
 		} else {
-			//map.put(PUB_CONSTANTS.EMAIL_MSG, contactService.sendMessage(form, request));
-			contactService.sendMessage(form, request);
+			map.put(PUB_CONSTANTS.EMAIL_MSG, contactService.sendMessage(form, request));
+			map.put("contactForm", new ContactForm());
 		}
 		
-		return "redirect:/";
+		return "contact";
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)

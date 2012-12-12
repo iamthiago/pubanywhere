@@ -46,16 +46,16 @@ public class PubController {
 	
 	@RequestMapping(value = "registerPub")
 	public String registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result,
-			HttpServletRequest request, Map<String, String> map) {
+			HttpServletRequest request, Map<String, Object> map) {
 		
 		if (result.hasErrors()) {
 			return "registerPub";
 		} else {
-			//map.put(PUB_CONSTANTS.PUB_MSG, pubService.registerPub(form, request));
-			pubService.registerPub(form, request);
+			map.put(PUB_CONSTANTS.PUB_MSG, pubService.registerPub(form, request));
+			map.put("pubForm", new Pub());
 		}
 		
-		return "redirect:/";
+		return "registerPub";
 	}
 	
 	@RequestMapping(value = "activePub/{id}")
