@@ -24,7 +24,7 @@ function initialize() {
     function getWebsite(data, i){
     	var website;
     	
-    	if (data[i].website == null) {
+    	if (data[i].website == null || data[i].website == '') {
     		website = '';
 		} else {
 			website = '<img border="0" align="left" src="../resources/imgs/laptop.png">&nbsp; <a href="'+ String(data[i].website) +'" target="_blank">'+ String(data[i].website) +'</a>' + '<br>';
@@ -36,7 +36,7 @@ function initialize() {
     function getPhone(data, i){
     	var phone;
     	
-    	if (data[i].phone == null) {
+    	if (data[i].phone == null || data[i].phone == '') {
     		phone = '';
 		} else {
 			phone = '<img border="0" align="left" src="../resources/imgs/phone.png">&nbsp;' + String(data[i].phone) + '<br>';
@@ -48,7 +48,7 @@ function initialize() {
     function getEmail(data, i){
     	var email;
     	
-    	if (data[i].email == null) {
+    	if (data[i].email == null || data[i].email == '') {
     		email = '';
 		} else {
 			email = '<img border="0" align="left" src="../resources/imgs/mail.png">&nbsp; <a href="mailto:' + String(data[i].email) + '?subject=Info">' + String(data[i].email) + '</a>';
