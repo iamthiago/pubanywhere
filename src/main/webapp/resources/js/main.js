@@ -1,15 +1,5 @@
 $(document).ready(function() {
 	
-	$('#btnSearch').button({
-		icons : {
-			primary : 'ui-icon ui-icon-search'
-		},
-		text : false
-	
-	}).click(function() {
-		$('#form').submit();
-	});
-	
 	$('#btnHome').button({
 		icons : {
 			primary : 'ui-icon ui-icon-home'
@@ -18,5 +8,5 @@ $(document).ready(function() {
 	});
 	
 	// toolbar
-	$('#signin, #listYourPub, #insertPub, #btnContact, #sendMail').button();
+	$('#listYourPub, #insertPub, #btnContact, #sendMail').button();
 });
