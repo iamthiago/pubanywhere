@@ -8,6 +8,29 @@
 		<a href="${home}" id="btnHome" class="icons"/>
 	</div>
 	
+	<div id="socialPlugins">
+		<div id="googleOne">
+			<div class="g-plusone"></div>
+		</div>
+		
+		<div id="facebookLike">
+			<div 
+				class="fb-like" 
+				data-href="http://www.facebook.com/pubanywhere" 
+				data-send="false" 
+				data-layout="button_count" 
+				data-width="450" 
+				data-show-faces="false" 
+				data-font="arial" 
+				data-colorscheme="light">
+			</div>
+		</div>
+		
+		<div id="twitterFollow">
+			<a href="https://twitter.com/pubanywhere" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow @pubanywhere</a>
+		</div>
+	</div>
+	
 	<div id="right-buttons">
 		<c:url value="/pubs" var="pubs"></c:url>
 		<a href="${pubs}" id="listYourPub" class="nav-buttons"><spring:message code="nav.button.place"/></a>

@@ -8,22 +8,9 @@ ul.unstyled, ol.unstyled {
 }
 
 #footer {
-	display: table;
-	margin: 100px auto 50px;
-	width: auto;
-	clear: both;
-}
-
-.div-footer {
-	width: 200px;
-	float: left;
-	margin-left: 25px;
-}
-
-#footer h5 {
-  border-bottom: 1px solid;
-  margin-bottom: 5px;
-  padding-bottom: 3px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) inset, 0 0 0 #000000;
+	position: relative;
+	text-align: center;
 }
 
 #footer a {

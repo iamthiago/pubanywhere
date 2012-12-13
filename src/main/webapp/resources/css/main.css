@@ -38,7 +38,7 @@ button, a {
 body {
 	font-family: 'PT Sans', sans-serif;
 	font-size: 15px;
-    min-height: 740px;
+    min-height: 820px;
     background: rgb(215, 215, 215);
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
     background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
@@ -120,4 +120,34 @@ body {
 .messageAlert {
 	color: red;
 	font-weight: bold;
+}
+
+#socialPlugins {
+	position: absolute;
+	top: 15%;
+	width: 140px;
+	right: 2%;
+}
+
+#main-large {
+	display: table;
+	margin: 0 auto;;
+	width: 1050px;
+	clear: both;
+	position: relative;
+	height: 880px;
+}
+
+.body-large {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 15px;
+    min-height: 960px;
+    background: rgb(215, 215, 215);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+
+    -webkit-font-smoothing: antialiased;
 }
