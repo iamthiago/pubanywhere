@@ -41,5 +41,9 @@
 	
 	</script>
 	
+	<div class="footerDown">
+		<jsp:include page="includes/footer.jsp"/>
+	</div>
+	
 </body>
 </html>

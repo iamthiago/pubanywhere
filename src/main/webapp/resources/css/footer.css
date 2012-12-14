@@ -8,7 +8,15 @@ ul.unstyled, ol.unstyled {
 }
 
 #footer {
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) inset, 0 0 0 #000000;
+	background: linear-gradient(to bottom, #000000 0%, #45484D 100%) repeat scroll 0 0 transparent;
+	bottom: 0;
+	box-shadow: 0 0 5px 5px #777777;
+	color: white;
+	padding: 10px;
+	margin-top: 50px;
+}
+
+.div-footer {
 	position: relative;
 	text-align: center;
 }
