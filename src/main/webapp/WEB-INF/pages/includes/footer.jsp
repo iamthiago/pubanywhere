@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<div id="footer">
+<div id="footer" class="navigator">
 	<div class="div-footer">
 		<a href="#"><spring:message code="footer.discover.howitworks"/></a> |
 		<a href="http://twitter.com/pubanywhere" target="_blank">Twitter</a> |

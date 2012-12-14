@@ -8,9 +8,6 @@ ul.unstyled, ol.unstyled {
 }
 
 #footer {
-	background: linear-gradient(to bottom, #000000 0%, #45484D 100%) repeat scroll 0 0 transparent;
-	bottom: 0;
-	box-shadow: 0 0 5px 5px #777777;
 	color: white;
 	padding: 10px;
 	margin-top: 50px;

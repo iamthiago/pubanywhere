@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<div id="div-navigator">
+<div id="div-navigator" class="navigator">
 	
 	<div id="left-buttons">
 		<c:url value="/" var="home"></c:url>
