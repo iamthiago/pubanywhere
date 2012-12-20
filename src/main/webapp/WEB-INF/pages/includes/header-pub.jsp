@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 	    <jsp:include page="default.jsp"/>
+		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-pub.js' />"></script>
 	    <script language="javascript" src="jquery.maxlength.js"></script>
 	    <script type="text/javascript">
 		    jQuery(document).ready(function($) {
@@ -9,5 +10,4 @@
 	             $().maxlength();
 		    })
 		</script>
-		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-pub.js' />"></script>
 	</head>
