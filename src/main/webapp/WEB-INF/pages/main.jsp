@@ -6,7 +6,7 @@
 
 <jsp:include page="includes/header.jsp"/>
 
-<body style="overflow: hidden;">
+<body class="overflow">
 	
 	<jsp:include page="includes/navigator.jsp"/>
 	
@@ -39,11 +39,6 @@
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
 	
-	</script>
-	
-	<div class="footerDown">
-		<jsp:include page="includes/footer.jsp"/>
-	</div>
-	
+	</script>	
 </body>
 </html>

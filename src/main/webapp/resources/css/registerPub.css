@@ -40,7 +40,7 @@ li {
 
 #main {
 	display: table;
-	margin: 0 auto;;
+	margin: 0 auto;
 	width: 1050px;
 	clear: both;
 	position: relative;
@@ -88,13 +88,6 @@ li {
 
 .controls {
 	margin-left: 110px;
-}
-
-#right {
-  display: inline;
-  float: right;
-  bottom: 600px;
-  position: relative;
 }
 
 .padtop {

@@ -58,8 +58,8 @@ public class PubService {
 		pubRepository.update(pub);
 	}
 	
-	public List<Pub> listPubJdbc() {
-		return pubRepository.listaPubsJdbc();
+	public Pub findPubById(Long pubId) {
+		return pubRepository.find(pubId);		
 	}
 
 	private Pub valid(Pub pub) {

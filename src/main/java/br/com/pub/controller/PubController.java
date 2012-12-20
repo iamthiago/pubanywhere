@@ -58,15 +58,15 @@ public class PubController {
 		return "registerPub";
 	}
 	
+	@RequestMapping(value = "{pubId}", method = RequestMethod.GET)
+	public String pubDetails(@PathVariable("pubId") Long pubId, Map<String, Object> map) {
+		map.put("pub", pubService.findPubById(pubId));
+		return "details";
+	}
+	
 	@RequestMapping(value = "activePub/{id}")
 	public String activePub(@PathVariable("id") Long id) {
 		pubService.activePub(id);
 		return "redirect:/";
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "listPubJdbc")
-	public List<Pub> listPubJdbc() {
-		return pubService.listPubJdbc();
 	}
 }

@@ -23,7 +23,7 @@
 					</h1>
 					<div id="control-title-description">
 						<h3>
-							<spring:message code="form.pub.title.description"/>
+							<spring:message code="form.pub.title.description"/>:
 						</h3>
 					</div>
 				</div>
@@ -56,10 +56,10 @@
 							</div>
 							<div class="control-group">
 								<label for="pubs-description" class="control-label">
-									<spring:message code="form.pub.description"/>
+									<spring:message code="form.pub.description"/>:
 								</label>
 								<div class="controls">
-									<form:textarea path="descricao" id="pubs-description" rows="20" cols="40" cssClass="text-area-input" tabindex="3"/>
+									<form:textarea path="descricao" id="pubs-description" rows="20" cols="40" cssClass="text-area-input" tabindex="3" maxlength="2000"/>
 									<form:errors path="descricao" element="div" cssClass="errors"/>
 								</div>
 							</div>

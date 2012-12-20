@@ -5,6 +5,7 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	    <title>Pub Anywhere</title>
 	    <link type="text/css" href="<c:url value='/resources/css/main.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/detail.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/registerPub.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/footer.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/dataTablesCustom.css' />" rel="stylesheet" />

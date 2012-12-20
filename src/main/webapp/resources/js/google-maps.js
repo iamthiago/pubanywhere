@@ -1,6 +1,8 @@
 var map;
 function initialize() {
-    
+	
+	var legend = document.getElementById('legend');
+	
 	var positionSearch = new google.maps.LatLng($('#lat').val(), $('#lng').val());
 	
 	var mapOptions = {
@@ -10,6 +12,8 @@ function initialize() {
     };
     
     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
     
     var marker1 = new google.maps.Marker({
         position: positionSearch,
@@ -68,7 +72,12 @@ function initialize() {
     		
     		google.maps.event.addListener(marker, 'click', (function(marker, i) {
         		return function() {
-        			infowindow.setContent(String(data[i].nome) + '<br>' + getWebsite(data, i) + getPhone(data, i) + getEmail(data, i));
+        			infowindow.setContent(
+        					'<center>' + String(data[i].nome) + '&nbsp <a href="/pubanywhere/pubs/'+ String(data[i].pubId) + '"><img border="0" align="center" src="../resources/imgs/detail.png"></a></center>' +
+        					getWebsite(data, i) + 
+        					getPhone(data, i) + 
+        					getEmail(data, i));
+        			
         			infowindow.open(map, marker);
         		}
         	})(marker, i));

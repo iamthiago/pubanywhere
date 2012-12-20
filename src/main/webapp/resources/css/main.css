@@ -138,8 +138,24 @@ body {
 	height: 880px;
 }
 
-.footerDown {
-	position: absolute;
-	width: 100%;
-	bottom: 0;
+.overflow {
+	overflow: hidden;
+}
+
+#legend {
+	background: white;
+	border: 3px solid #000000;
+	margin: 10px;
+	padding: 10px;
+}
+
+#right {
+  float: left;
+  margin-left: 20px;
+  width: 290px;
+}
+
+#legend, #right span {
+	bottom: 3px;
+	position: relative;
 }
