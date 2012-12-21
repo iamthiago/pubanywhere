@@ -31,4 +31,14 @@
   	float: left;
 	margin-left: 10px;
   	width: 650px;
+  	margin-bottom: 15px;
+}
+
+#fbComment {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+#socialDetails {
+	
 }

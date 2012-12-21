@@ -2,4 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 		
 		<jsp:include page="default.jsp"/>
+		
+		<meta property="fb:app_id" content="[FB App ID]" />
 	</head>

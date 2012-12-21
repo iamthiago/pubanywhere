@@ -3,4 +3,6 @@
 		
 		<jsp:include page="default.jsp"/>
 		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-home.js' />"></script>
+		
+		<meta property="fb:app_id" content="[FB App ID]" />
 	</head>

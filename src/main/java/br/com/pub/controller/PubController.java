@@ -59,8 +59,9 @@ public class PubController {
 	}
 	
 	@RequestMapping(value = "{pubId}", method = RequestMethod.GET)
-	public String pubDetails(@PathVariable("pubId") Long pubId, Map<String, Object> map) {
+	public String pubDetails(@PathVariable("pubId") Long pubId, Map<String, Object> map, HttpServletRequest request) {
 		map.put("pub", pubService.findPubById(pubId));
+		map.put("fbUrlComments", request.getRequestURL());
 		return "details";
 	}
 	

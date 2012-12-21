@@ -1,8 +1,6 @@
 var map;
 function initialize() {
 	
-	var legend = document.getElementById('legend');
-	
 	var positionSearch = new google.maps.LatLng($('#lat').val(), $('#lng').val());
 	
 	var mapOptions = {
@@ -13,7 +11,7 @@ function initialize() {
     
     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     
-    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('legend'));
     
     var marker1 = new google.maps.Marker({
         position: positionSearch,
