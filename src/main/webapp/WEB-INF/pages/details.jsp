@@ -12,7 +12,7 @@
 
 	<div class="borderAll">
 		<div id="left">
-			<div id="pubName">
+			<div id="pubHeader">
 				<h1>
 					${pub.nome}
 				</h1>
