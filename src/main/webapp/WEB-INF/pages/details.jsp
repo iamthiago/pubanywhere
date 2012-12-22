@@ -67,13 +67,13 @@
 						
 						<img src="<c:url value='/resources/imgs/facebook.png'/>">&nbsp;
 						<span>
-							<a href="http://www.facebook.com/${pub.facebook}">${pub.facebook}</a>
+							<a href="http://www.facebook.com/${pub.facebook}" target="_blank">${pub.facebook}</a>
 						</span>
 						<br>
 						
 						<img src="<c:url value='/resources/imgs/twitter.png'/>">&nbsp;
 						<span>
-							<a href="http://www.twitter.com/${pub.twitter}">${pub.twitter}</a>
+							<a href="http://www.twitter.com/${pub.twitter}" target="_blank">${pub.twitter}</a>
 						</span>
 					</div>
 					
