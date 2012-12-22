@@ -6,5 +6,5 @@
 		
 		<meta property="fb:app_id" content="[FB App ID]" />
 		
-		<title>Pub Anywhere</title>
+		<title>Pub Anywhere - ${pub.nome}</title>
 	</head>

@@ -4,18 +4,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<jsp:include page="includes/header-contact.jsp"/>
+<jsp:include page="includes/header-detail.jsp"/>
 
 <body>
-	
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
 	
 	<jsp:include page="includes/navigator.jsp"/>
 
@@ -49,7 +40,7 @@
 			<div id="right" class="pubPanel">
 				<div>
 				
-					<div style="text-align: center;" class="margin15px">
+					<div class="margin15px center">
 						<h3>
 							<spring:message code="nav.button.contact"/>
 						</h3>
@@ -58,7 +49,7 @@
 					<div class="margin15px">
 						<img src="<c:url value='/resources/imgs/laptop.png'/>">&nbsp;
 						<span>
-							${pub.website}
+							<a href="${pub.website}" target="_blank">${pub.website}</a>
 						</span>
 						<br>
 						
@@ -70,14 +61,26 @@
 						
 						<img src="<c:url value='/resources/imgs/mail.png'/>">&nbsp;
 						<span>
-							${pub.email}
+							<a href="mailto:'${pub.email}'">${pub.email}</a>
+						</span>
+						<br>
+						
+						<img src="<c:url value='/resources/imgs/facebook.png'/>">&nbsp;
+						<span>
+							<a href="http://www.facebook.com/${pub.facebook}">${pub.facebook}</a>
+						</span>
+						<br>
+						
+						<img src="<c:url value='/resources/imgs/twitter.png'/>">&nbsp;
+						<span>
+							<a href="http://www.twitter.com/${pub.twitter}">${pub.twitter}</a>
 						</span>
 					</div>
 					
-					<div class="title" style="text-align: center;">
+					<div class="title center">
 						<h3><spring:message code="details.promote"/></h3>
 					</div>
-					<div id="socialDetails" class="margin15px">
+					<div class="margin15px center">
 						<div id="googleOne">
 							<div class="g-plusone"></div>
 						</div>
@@ -91,6 +94,25 @@
 								data-show-faces="true"
 								data-action="recommend">
 							</div>
+						</div>
+					</div>
+					
+					<div class="title center">
+						<h3><spring:message code="details.follow"/></h3>
+					</div>
+					<div id="fbLikeBox">
+						<br>
+						<div class="center">
+							<a href="https://twitter.com/pubanywhere" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow @pubanywhere</a>
+						</div>
+						<br>
+						<div 
+							class="fb-like-box" 
+							data-href="http://www.facebook.com/pubanywhere" 
+							data-width="292" 
+							data-show-faces="true" 
+							data-stream="false" 
+							data-header="false">
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,7 @@
 package br.com.pub.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -47,6 +48,15 @@ public class Pub implements Serializable {
 	
 	@Column(name = "WEBSITE")
 	private String website;
+	
+	@Column(name = "FACEBOOK")
+	private String facebook;
+	
+	@Column(name = "TWITTER")
+	private String twitter;
+	
+	@Column(name = "DESDE")
+	private Date desde;
 	
 	@Column(name = "LAT", precision = 15, scale = 20)
 	private Double lat;
@@ -111,6 +121,30 @@ public class Pub implements Serializable {
 
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+
+	public String getFacebook() {
+		return facebook;
+	}
+
+	public void setFacebook(String facebook) {
+		this.facebook = facebook;
+	}
+
+	public String getTwitter() {
+		return twitter;
+	}
+
+	public void setTwitter(String twitter) {
+		this.twitter = twitter;
+	}
+
+	public Date getDesde() {
+		return desde;
+	}
+
+	public void setDesde(Date desde) {
+		this.desde = desde;
 	}
 
 	public Double getLat() {

@@ -9,6 +9,7 @@
 	clear: both;
 	position: relative;
 	height: 740px;
+	padding-bottom: 50px;
 }
 
 #pubName {
@@ -39,6 +40,6 @@
 	margin-bottom: 15px;
 }
 
-#socialDetails {
-	
+#fbLikeBox {
+	margin: 5px 5px 10px;
 }

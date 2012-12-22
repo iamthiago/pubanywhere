@@ -3,5 +3,5 @@
 		
 		<jsp:include page="default.jsp"/>
 		
-		<meta property="fb:app_id" content="[FB App ID]" />
+		<title>Pub Anywhere</title>
 	</head>

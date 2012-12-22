@@ -151,11 +151,15 @@ body {
 
 #right {
   float: left;
-  margin-left: 20px;
-  width: 290px;
+  margin-left: 15px;
+  width: 300px;
 }
 
 #legend, #right span {
 	bottom: 3px;
 	position: relative;
+}
+
+.center {
+	text-align: center;
 }

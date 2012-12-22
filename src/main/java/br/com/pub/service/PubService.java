@@ -1,5 +1,6 @@
 package br.com.pub.service;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -47,8 +48,13 @@ public class PubService {
 		ContactForm form = new ContactForm();
 		form.setName("Pub to Register");
 		form.setEmail("pubanywhere@gmail.com");
-		form.setSubject("Register a bar/pub");
-		form.setDescription("Click the link below to activate the bar/pub.<br/> <a href="+ EmailUtils.createURL(request, pub.getPubId()) + ">" + EmailUtils.createURL(request, pub.getPubId()) +"</a>");
+		form.setSubject("Register " + pub.getNome());
+		form.setDescription(
+				"Pub: " + pub.getNome() + "<br/>" +
+				"Location: " + pub.getLocal() + "<br/>" +
+				"Description: " + pub.getDescricao() + "<br/>" +
+				"<a href="+ EmailUtils.createURL(request, pub.getPubId()) + ">" + EmailUtils.createURL(request, pub.getPubId()) +"</a>");
+		
 		EmailUtils.sendMail(form, request);
 	}
 	
@@ -63,18 +69,20 @@ public class PubService {
 	}
 
 	private Pub valid(Pub pub) {
-		pub.getNome().toUpperCase();
-		pub.getEmail().toLowerCase();
+		pub.setEmail(pub.getEmail().toLowerCase());
+		pub.setFacebook(pub.getFacebook().toLowerCase());
+		pub.setTwitter(pub.getTwitter().toLowerCase());
 		
 		validWebSite(pub);
 		
+		pub.setDesde(new Date());
 		pub.setEnabled(false);
 		return pub;
 	}
 
 	private void validWebSite(Pub pub) {
-		pub.getWebsite().toLowerCase();
-		if (!pub.getWebsite().contains("http://")) {
+		pub.setWebsite(pub.getWebsite().toLowerCase());
+		if (!pub.getWebsite().contains("http://") && !pub.getWebsite().contains("https://")) {
 			pub.setWebsite("http://" + pub.getWebsite());
 		}
 	}

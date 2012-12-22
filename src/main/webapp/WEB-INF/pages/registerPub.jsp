@@ -11,7 +11,7 @@
 	<jsp:include page="includes/navigator.jsp"/>
 
 	<div id="main">
-		<form:form action="pubs/registerPub" method='POST' id="pubForm" commandName="pubForm" acceptCharset="UTF-8">
+		<form:form action="/pubs/registerPub" method='POST' id="pubForm" commandName="pubForm" acceptCharset="UTF-8">
 		
 			<form:hidden path="lat" id="lat"/>
 			<form:hidden path="lng" id="lng"/>
@@ -88,6 +88,24 @@
 								<div class="controls">
 									<form:input path="email" id="pubs-email" cssClass="inputs" tabindex="6" maxlength="100"/>
 									<form:errors path="email" element="div" cssClass="errors"/>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="pubs-facebook" class="control-label">
+									facebook.com/
+								</label>
+								<div class="controls">
+									<form:input path="facebook" id="pubs-facebook" cssClass="inputs" tabindex="6" maxlength="100"/>
+									<form:errors path="facebook" element="div" cssClass="errors"/>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="pubs-twitter" class="control-label">
+									twitter.com/
+								</label>
+								<div class="controls">
+									<form:input path="twitter" id="pubs-twitter" cssClass="inputs" tabindex="6" maxlength="100"/>
+									<form:errors path="twitter" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							

@@ -11,7 +11,7 @@
 	<jsp:include page="includes/navigator.jsp"/>
 
 	<div id="main">
-		<form:form action="contact" method='POST' id="contactForm" commandName="contactForm" acceptCharset="UTF-8">
+		<form:form action="/contact" method='POST' id="contactForm" commandName="contactForm" acceptCharset="UTF-8">
 			
 			<div id="left">
 				<div id="control-title">

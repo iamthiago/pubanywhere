@@ -3,4 +3,6 @@
 
 	    <jsp:include page="default.jsp"/>
 		<script type="text/javascript" src="<c:url value='/resources/js/google-maps.js' />"></script>
+		
+		<title>Pub Anywhere</title>
 	</head>

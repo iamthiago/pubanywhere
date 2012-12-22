@@ -15,7 +15,7 @@
 			<img src="<c:url value='/resources/imgs/pub-full-logo-beta.png'/>">
 		</div>
 		<div class="div-search-bar">
-			<form action="pubs/maps" method='POST' id="mainForm">
+			<form action="/pubs/maps" method='POST' id="mainForm">
 			
 				<input type="hidden" id="lat" name="lat">
     			<input type="hidden" id="lng" name="lng">
@@ -33,15 +33,13 @@
 		</div>
 		
 		<div id="facebookLike">
-			<div 
-				class="fb-like" 
-				data-href="http://www.facebook.com/pubanywhere" 
-				data-send="false" 
-				data-layout="button_count" 
-				data-width="450" 
-				data-show-faces="false" 
-				data-font="arial" 
-				data-colorscheme="light">
+			<div
+				class="fb-like-box"
+				data-href="http://www.facebook.com/pubanywhere"
+				data-width="292"
+				data-show-faces="false"
+				data-stream="false"
+				data-header="false">
 			</div>
 		</div>
 		
