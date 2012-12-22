@@ -32,6 +32,10 @@
 			<div class="g-plusone"></div>
 		</div>
 		
+		<div id="twitterFollow">
+			<a href="https://twitter.com/pubanywhere" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow @pubanywhere</a>
+		</div>
+
 		<div id="facebookLike">
 			<div
 				class="fb-like-box"
@@ -41,10 +45,6 @@
 				data-stream="false"
 				data-header="false">
 			</div>
-		</div>
-		
-		<div id="twitterFollow">
-			<a href="https://twitter.com/pubanywhere" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow @pubanywhere</a>
 		</div>
 	</div>
 	
