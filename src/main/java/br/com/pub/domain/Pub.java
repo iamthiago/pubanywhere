@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
@@ -55,6 +57,7 @@ public class Pub implements Serializable {
 	@Column(name = "TWITTER")
 	private String twitter;
 	
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DESDE")
 	private Date desde;
 	

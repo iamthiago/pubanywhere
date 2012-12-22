@@ -49,31 +49,41 @@
 					<div class="margin15px">
 						<img src="<c:url value='/resources/imgs/laptop.png'/>">&nbsp;
 						<span>
-							<a href="${pub.website}" target="_blank">${pub.website}</a>
+							<c:if test="${pub.website != ''}">
+								<a href="${pub.website}" target="_blank">${pub.website}</a>
+							</c:if>
 						</span>
 						<br>
 						
 						<img src="<c:url value='/resources/imgs/phone.png'/>">&nbsp;
 						<span>
-							${pub.phone}
+							<c:if test="${pub.phone != ''}">
+								${pub.phone}
+							</c:if>
 						</span>
 						<br>
 						
 						<img src="<c:url value='/resources/imgs/mail.png'/>">&nbsp;
 						<span>
-							<a href="mailto:'${pub.email}'">${pub.email}</a>
+							<c:if test="${pub.email != ''}">
+								<a href="mailto:'${pub.email}'">${pub.email}</a>
+							</c:if>
 						</span>
 						<br>
 						
 						<img src="<c:url value='/resources/imgs/facebook.png'/>">&nbsp;
 						<span>
-							<a href="http://www.facebook.com/${pub.facebook}" target="_blank">${pub.facebook}</a>
+							<c:if test="${pub.facebook != ''}">
+								<a href="http://www.facebook.com/${pub.facebook}" target="_blank">${pub.facebook}</a>
+							</c:if>
 						</span>
 						<br>
 						
 						<img src="<c:url value='/resources/imgs/twitter.png'/>">&nbsp;
 						<span>
-							<a href="http://www.twitter.com/${pub.twitter}" target="_blank">${pub.twitter}</a>
+							<c:if test="${pub.twitter != ''}">
+								<a href="http://www.twitter.com/${pub.twitter}" target="_blank">${pub.twitter}</a>
+							</c:if>
 						</span>
 					</div>
 					

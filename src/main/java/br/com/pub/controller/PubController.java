@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.pub.constants.PUB_CONSTANTS;
 import br.com.pub.domain.Pub;
 import br.com.pub.service.PubService;
 
@@ -48,14 +47,15 @@ public class PubController {
 	public String registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result,
 			HttpServletRequest request, Map<String, Object> map) {
 		
+		Pub pub = null;
+		
 		if (result.hasErrors()) {
 			return "registerPub";
 		} else {
-			map.put(PUB_CONSTANTS.PUB_MSG, pubService.registerPub(form, request));
-			map.put("pubForm", new Pub());
+			pub = pubService.registerPub(form, request);
 		}
 		
-		return "registerPub";
+		return "redirect:/pubs/" + pub.getPubId();
 	}
 	
 	@RequestMapping(value = "{pubId}", method = RequestMethod.GET)

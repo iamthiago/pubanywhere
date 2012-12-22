@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,27 +22,26 @@ public class PubService {
 	private static Logger log = LoggerFactory.getLogger(PubService.class);
 	
 	@Autowired private PubRepository pubRepository;
-	@Autowired private MessageService messageService;
+	//@Autowired private MessageService messageService;
 	
 	public List<Pub> listNearPubs(Double lat, Double lng) {
 		//TODO: listar somente pubs ativos
 		return pubRepository.listAll();
 	}
 	
-	public String registerPub(Pub pub, HttpServletRequest request) {
+	public Pub registerPub(Pub pub, HttpServletRequest request) {
 		
-		String result = null;
+		Pub insertedPub = null;
 		
 		if (pub.getLat() != null || pub.getLng() != null) {
-			pubRepository.insert(valid(pub));
+			insertedPub = pubRepository.insert(valid(pub));
+			//TODO: fazer envio de email asynchronous para não demorar a redirecionar para a pagina de detalhes do pub
 			sendMail(pub, request);
-			result = messageService.getMessageFromResource(request, "message.pub.success");
 		} else {
 			log.error("Lat or Lng null");
-			result = messageService.getMessageFromResource(request, "message.error");
 		}
 		
-		return result;
+		return insertedPub;
 	}
 
 	private void sendMail(Pub pub, HttpServletRequest request) {
@@ -50,9 +50,10 @@ public class PubService {
 		form.setEmail("pubanywhere@gmail.com");
 		form.setSubject("Register " + pub.getNome());
 		form.setDescription(
+				"<br/><br/>" +
 				"Pub: " + pub.getNome() + "<br/>" +
 				"Location: " + pub.getLocal() + "<br/>" +
-				"Description: " + pub.getDescricao() + "<br/>" +
+				"Description: " + pub.getDescricao() + "<br/><br/>" +
 				"<a href="+ EmailUtils.createURL(request, pub.getPubId()) + ">" + EmailUtils.createURL(request, pub.getPubId()) +"</a>");
 		
 		EmailUtils.sendMail(form, request);
@@ -83,7 +84,9 @@ public class PubService {
 	private void validWebSite(Pub pub) {
 		pub.setWebsite(pub.getWebsite().toLowerCase());
 		if (!pub.getWebsite().contains("http://") && !pub.getWebsite().contains("https://")) {
-			pub.setWebsite("http://" + pub.getWebsite());
+			if (StringUtils.isNotEmpty(pub.getWebsite())) {
+				pub.setWebsite("http://" + pub.getWebsite());
+			}
 		}
 	}
 }
