@@ -31,7 +31,8 @@ public class PubController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String pubs() {
+	public String pubs(Map<String, Object> map) {
+		map.put("pubForm", new Pub());
 		return "registerPub";
 	}
 	
@@ -43,24 +44,25 @@ public class PubController {
 		return pubService.listNearPubs(lat, lng);
 	}
 	
-	@RequestMapping(value = "registerPub")
+	@RequestMapping(value = "registerPub", headers={"content-type=multipart/form-data"})
 	public String registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result,
 			HttpServletRequest request, Map<String, Object> map) {
 		
-		Pub pub = null;
+		Long pubId = null;
 		
 		if (result.hasErrors()) {
 			return "registerPub";
 		} else {
-			pub = pubService.registerPub(form, request);
+			pubId = pubService.registerPub(form, request);
 		}
 		
-		return "redirect:/pubs/" + pub.getPubId();
+		return "redirect:/pubs/" + pubId;
 	}
 	
 	@RequestMapping(value = "{pubId}", method = RequestMethod.GET)
 	public String pubDetails(@PathVariable("pubId") Long pubId, Map<String, Object> map, HttpServletRequest request) {
-		map.put("pub", pubService.findPubById(pubId));
+		Pub pub = pubService.findPubById(pubId);
+		map.put("pub", pub);
 		map.put("fbUrlComments", request.getRequestURL());
 		return "details";
 	}

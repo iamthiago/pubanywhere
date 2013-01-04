@@ -11,7 +11,7 @@
 	<jsp:include page="includes/navigator.jsp"/>
 
 	<div id="main">
-		<form:form action="/pubs/registerPub" method='POST' id="pubForm" commandName="pubForm" acceptCharset="UTF-8">
+		<form:form action="/pubs/registerPub" method='POST' id="pubForm" commandName="pubForm" acceptCharset="UTF-8" enctype="multipart/form-data">
 		
 			<form:hidden path="lat" id="lat"/>
 			<form:hidden path="lng" id="lng"/>
@@ -106,6 +106,14 @@
 								<div class="controls">
 									<form:input path="twitter" id="pubs-twitter" cssClass="inputs" tabindex="6" maxlength="100"/>
 									<form:errors path="twitter" element="div" cssClass="errors"/>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="file" class="control-label">
+									Image
+								</label>
+								<div class="controls">
+									<form:input path="file" id="image" type="file" />
 								</div>
 							</div>
 							

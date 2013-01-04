@@ -10,10 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 @Entity
 public class Pub implements Serializable {
@@ -60,7 +62,7 @@ public class Pub implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DESDE")
 	private Date desde;
-	
+
 	@Column(name = "LAT", precision = 15, scale = 20)
 	private Double lat;
 	
@@ -69,6 +71,12 @@ public class Pub implements Serializable {
 	
 	@Column(name = "ENABLED")
 	private boolean enabled;
+	
+	@Transient
+	private CommonsMultipartFile file;
+	
+	@Column
+	private String imageName;
 
 	public Long getPubId() {
 		return pubId;
@@ -172,5 +180,21 @@ public class Pub implements Serializable {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public CommonsMultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(CommonsMultipartFile file) {
+		this.file = file;
+	}
+
+	public String getImageName() {
+		return imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
 	}
 }

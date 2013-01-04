@@ -23,6 +23,9 @@
 				</div>
 			</div>
 			<div class="pubPanel panelLeft">
+				<div class="title" id="divImg">
+					<img src="https://s3.amazonaws.com/pubanywhere/${pub.imageName}"/>
+				</div>
 				<div class="title">
 					<h3><spring:message code="form.pub.description"/></h3>
 				</div>
@@ -105,6 +108,13 @@
 								data-action="recommend">
 							</div>
 						</div>
+					</div>
+					
+					<div class="title center">
+						<h3><spring:message code="details.advertising.title"/></h3>
+					</div>
+					<div id="advertising" class="title center">
+						<spring:message code="details.advertising.detail"/>
 					</div>
 					
 					<div class="title center">

@@ -54,17 +54,6 @@
       <filter-name>springSecurityFilterChain</filter-name>
       <url-pattern>/*</url-pattern>
     </filter-mapping>
-    
-    <filter>
-        <filter-name>ValidaFormFilter</filter-name>
-        <filter-class>br.com.pub.filter.ValidaFormFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>ValidaFormFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>FORWARD</dispatcher>
-    </filter-mapping>
  
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

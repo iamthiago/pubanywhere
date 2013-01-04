@@ -22,26 +22,46 @@ public class PubService {
 	private static Logger log = LoggerFactory.getLogger(PubService.class);
 	
 	@Autowired private PubRepository pubRepository;
-	//@Autowired private MessageService messageService;
 	
 	public List<Pub> listNearPubs(Double lat, Double lng) {
 		//TODO: listar somente pubs ativos
 		return pubRepository.listAll();
 	}
 	
-	public Pub registerPub(Pub pub, HttpServletRequest request) {
+	public Long registerPub(Pub pub, HttpServletRequest request) {
 		
-		Pub insertedPub = null;
-		
-		if (pub.getLat() != null || pub.getLng() != null) {
-			insertedPub = pubRepository.insert(valid(pub));
-			//TODO: fazer envio de email asynchronous para não demorar a redirecionar para a pagina de detalhes do pub
-			sendMail(pub, request);
-		} else {
-			log.error("Lat or Lng null");
+		if (!pub.getFile().isEmpty()) {
+			AmazonService.upload(pub);
 		}
 		
-		return insertedPub;
+		Pub newPub = pubRepository.insert(valid(pub));
+		//TODO: fazer envio de email asynchronous para não demorar a redirecionar para a pagina de detalhes do pub
+		sendMail(pub, request);
+		
+		return newPub.getPubId();
+	}
+	
+	private Pub valid(Pub pub) {
+		pub.setEmail(pub.getEmail().toLowerCase());
+		pub.setFacebook(pub.getFacebook().toLowerCase());
+		pub.setTwitter(pub.getTwitter().toLowerCase());
+		
+		validWebSite(pub);
+		
+		pub.setDesde(new Date());
+		pub.setEnabled(false);
+		
+		pub.setImageName(PubUtils.replaceSpaceByUnderline(pub.getNome()).toLowerCase());
+		return pub;
+	}
+
+	private void validWebSite(Pub pub) {
+		pub.setWebsite(pub.getWebsite().toLowerCase());
+		if (!pub.getWebsite().contains("http://") && !pub.getWebsite().contains("https://")) {
+			if (StringUtils.isNotEmpty(pub.getWebsite())) {
+				pub.setWebsite("http://" + pub.getWebsite());
+			}
+		}
 	}
 
 	private void sendMail(Pub pub, HttpServletRequest request) {
@@ -67,26 +87,5 @@ public class PubService {
 	
 	public Pub findPubById(Long pubId) {
 		return pubRepository.find(pubId);		
-	}
-
-	private Pub valid(Pub pub) {
-		pub.setEmail(pub.getEmail().toLowerCase());
-		pub.setFacebook(pub.getFacebook().toLowerCase());
-		pub.setTwitter(pub.getTwitter().toLowerCase());
-		
-		validWebSite(pub);
-		
-		pub.setDesde(new Date());
-		pub.setEnabled(false);
-		return pub;
-	}
-
-	private void validWebSite(Pub pub) {
-		pub.setWebsite(pub.getWebsite().toLowerCase());
-		if (!pub.getWebsite().contains("http://") && !pub.getWebsite().contains("https://")) {
-			if (StringUtils.isNotEmpty(pub.getWebsite())) {
-				pub.setWebsite("http://" + pub.getWebsite());
-			}
-		}
 	}
 }

@@ -37,8 +37,8 @@ public class ContactController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String contact() {
-		new ContactForm();
+	public String contact(Map<String, Object> map) {
+		map.put("contactForm", new ContactForm());
 		return "contact";
 	}
 }
