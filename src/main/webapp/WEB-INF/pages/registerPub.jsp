@@ -23,7 +23,7 @@
 					</h1>
 					<div id="control-title-description">
 						<h3>
-							<spring:message code="form.pub.title.description"/>:
+							<spring:message code="form.pub.title.description"/>
 						</h3>
 					</div>
 				</div>
@@ -110,7 +110,7 @@
 							</div>
 							<div class="control-group">
 								<label for="file" class="control-label">
-									Image
+									<spring:message code="form.pub.image"/>
 								</label>
 								<div class="controls">
 									<form:input path="file" id="image" type="file" />
