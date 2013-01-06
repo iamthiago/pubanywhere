@@ -24,7 +24,7 @@ public class PubService {
 		return pubRepository.listAll();
 	}
 	
-	public String registerPub(Pub pub, HttpServletRequest request) {		
+	public String registerPub(Pub pub, HttpServletRequest request) {
 		Pub newPub = pubRepository.insert(valid(pub));
 		
 		if (!newPub.getFile().isEmpty()) {
