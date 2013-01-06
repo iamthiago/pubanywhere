@@ -5,8 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -17,6 +15,8 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import br.com.pub.annotation.MaxSizeUpload;
+
 @Entity
 public class Pub implements Serializable {
 
@@ -26,9 +26,8 @@ public class Pub implements Serializable {
 	private static final long serialVersionUID = -2798520271567297643L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
 	@Column(name = "PUB_ID", insertable = true, updatable = false)
-	private Long pubId;
+	private String pubId;
 	
 	@NotEmpty
 	@Column(name = "NOME")
@@ -73,16 +72,20 @@ public class Pub implements Serializable {
 	private boolean enabled;
 	
 	@Transient
+	@MaxSizeUpload
 	private CommonsMultipartFile file;
 	
-	@Column
-	private String imageName;
+	@Column(name = "PUBVIEWS")
+	private long pubViews;
+	
+	@Column(name = "PUBRATING")
+	private long pubRating;
 
-	public Long getPubId() {
+	public String getPubId() {
 		return pubId;
 	}
 
-	public void setPubId(Long pubId) {
+	public void setPubId(String pubId) {
 		this.pubId = pubId;
 	}
 
@@ -190,11 +193,19 @@ public class Pub implements Serializable {
 		this.file = file;
 	}
 
-	public String getImageName() {
-		return imageName;
+	public long getPubViews() {
+		return pubViews;
 	}
 
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
+	public void setPubViews(long pubViews) {
+		this.pubViews = pubViews;
+	}
+
+	public long getPubRating() {
+		return pubRating;
+	}
+
+	public void setPubRating(long pubRating) {
+		this.pubRating = pubRating;
 	}
 }

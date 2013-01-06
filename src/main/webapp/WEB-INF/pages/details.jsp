@@ -23,17 +23,17 @@
 				</div>
 			</div>
 			<div class="pubPanel panelLeft">
-				<div class="title" id="divImg">
-					<img src="https://s3.amazonaws.com/pubanywhere/${pub.imageName}"/>
+				<div id="divImg" class="padding">
+					<img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}"/>
 				</div>
-				<div class="title">
+				<div class="title padding">
 					<h3><spring:message code="form.pub.description"/></h3>
 				</div>
 				<div id="pubDescription" class="margin15px">
 					${pub.descricao}
 				</div>
 				
-				<div class="title">
+				<div class="title padding">
 					<h3><spring:message code="details.comments"/></h3>
 				</div>
 				<div id="fbComment">
@@ -113,7 +113,7 @@
 					<div class="title center">
 						<h3><spring:message code="details.advertising.title"/></h3>
 					</div>
-					<div id="advertising" class="title center">
+					<div id="advertising" class="title center padding">
 						<spring:message code="details.advertising.detail"/>
 					</div>
 					

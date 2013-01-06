@@ -59,10 +59,10 @@ public class EmailUtils {
 		
 	}
 
-	public static String createURL(HttpServletRequest request, Long id) {
+	public static String createURL(HttpServletRequest request, String string) {
 		String path = request.getRequestURL().toString();
 		String newPath = path.replace("/registerPub", "/activePub/");
-		return newPath.concat(id.toString());
+		return newPath.concat(string);
 	}
 	
 	public static void validEmail(String email) throws AddressException {

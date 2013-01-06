@@ -25,7 +25,7 @@
 					</div>
 				</div>
 				<div id="control-panel">
-					<div class="title">
+					<div class="register-title">
 						<h3><spring:message code="form.contact.panel.title"/></h3>
 						<p>
 							<span class="messageAlert"><c:out value="${mailSuccess}"/></span>

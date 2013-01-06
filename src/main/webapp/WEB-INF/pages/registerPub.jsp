@@ -28,7 +28,7 @@
 					</div>
 				</div>
 				<div id="control-panel">
-					<div class="title">
+					<div class="register-title">
 						<h3><spring:message code="form.pub.panel.title"/></h3>
 						<p>
 							<span class="messageAlert"><c:out value="${pubSuccess}"/></span>
@@ -114,6 +114,7 @@
 								</label>
 								<div class="controls">
 									<form:input path="file" id="image" type="file" />
+									<form:errors path="file" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							

@@ -29,10 +29,6 @@ public class AmazonService {
 		
 		CommonsMultipartFile image = pub.getFile();
 		
-		if (image.getSize() > 1000000) {
-			return "erro";
-		}
-		
 		try {
 			
 			s3Service = new RestS3Service(AWSCREDENTIALS);
@@ -41,8 +37,7 @@ public class AmazonService {
 			pubanywhere = s3Service.getBucket("pubanywhere");
 			
 			if (pubanywhere != null) {
-				
-				S3Object object = new S3Object(PubUtils.replaceSpaceByUnderline(pub.getNome()).toLowerCase(), image.getBytes());
+				S3Object object = new S3Object(pub.getPubId(), image.getBytes());
 				object.setContentLength(image.getSize());
 				object.setContentType(image.getContentType());
 				object.setAcl(bucketAcl);

@@ -6,8 +6,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +17,6 @@ import br.com.pub.repository.PubRepository;
 @Service
 public class PubService {
 	
-	private static Logger log = LoggerFactory.getLogger(PubService.class);
-	
 	@Autowired private PubRepository pubRepository;
 	
 	public List<Pub> listNearPubs(Double lat, Double lng) {
@@ -28,15 +24,15 @@ public class PubService {
 		return pubRepository.listAll();
 	}
 	
-	public Long registerPub(Pub pub, HttpServletRequest request) {
+	public String registerPub(Pub pub, HttpServletRequest request) {		
+		Pub newPub = pubRepository.insert(valid(pub));
 		
-		if (!pub.getFile().isEmpty()) {
-			AmazonService.upload(pub);
+		if (!newPub.getFile().isEmpty()) {
+			AmazonService.upload(newPub);
 		}
 		
-		Pub newPub = pubRepository.insert(valid(pub));
 		//TODO: fazer envio de email asynchronous para não demorar a redirecionar para a pagina de detalhes do pub
-		sendMail(pub, request);
+		sendMail(newPub, request);
 		
 		return newPub.getPubId();
 	}
@@ -51,7 +47,7 @@ public class PubService {
 		pub.setDesde(new Date());
 		pub.setEnabled(false);
 		
-		pub.setImageName(PubUtils.replaceSpaceByUnderline(pub.getNome()).toLowerCase());
+		pub.setPubId(PubUtils.replaceSpaceByUnderline(pub.getNome()).toLowerCase());
 		return pub;
 	}
 
@@ -79,13 +75,18 @@ public class PubService {
 		EmailUtils.sendMail(form, request);
 	}
 	
-	public void activePub(Long id) {
-		Pub pub = pubRepository.find(id);		
+	public void activePub(String id) {
+		Pub pub = pubRepository.find(id);
 		pub.setEnabled(true);
 		pubRepository.update(pub);
 	}
 	
-	public Pub findPubById(Long pubId) {
-		return pubRepository.find(pubId);		
+	public Pub findPubById(String pubId) {
+		return pubRepository.find(pubId);
+	}
+
+	public void setPageCount(Pub pub) {
+		pub.setPubViews(pub.getPubViews() + 1);
+		pubRepository.update(pub);
 	}
 }

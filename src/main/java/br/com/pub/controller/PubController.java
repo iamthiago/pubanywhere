@@ -48,7 +48,7 @@ public class PubController {
 	public String registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result,
 			HttpServletRequest request, Map<String, Object> map) {
 		
-		Long pubId = null;
+		String pubId = null;
 		
 		if (result.hasErrors()) {
 			return "registerPub";
@@ -60,15 +60,16 @@ public class PubController {
 	}
 	
 	@RequestMapping(value = "{pubId}", method = RequestMethod.GET)
-	public String pubDetails(@PathVariable("pubId") Long pubId, Map<String, Object> map, HttpServletRequest request) {
+	public String pubDetails(@PathVariable("pubId") String pubId, Map<String, Object> map, HttpServletRequest request) {
 		Pub pub = pubService.findPubById(pubId);
+		pubService.setPageCount(pub);
 		map.put("pub", pub);
 		map.put("fbUrlComments", request.getRequestURL());
 		return "details";
 	}
 	
 	@RequestMapping(value = "activePub/{id}")
-	public String activePub(@PathVariable("id") Long id) {
+	public String activePub(@PathVariable("id") String id) {
 		pubService.activePub(id);
 		return "redirect:/";
 	}

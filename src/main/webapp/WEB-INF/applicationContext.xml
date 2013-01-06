@@ -17,6 +17,19 @@
 
 	<mvc:annotation-driven />
 	
+	<!-- Invokes Spring MVC @Controller methods -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="webBindingInitializer">
+			<!-- Configures Spring MVC DataBinder instances -->
+			<bean class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+				<property name="validator" ref="validator" />
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- Creates the JSR-303 Validator -->
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+	
 	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 	
 	<bean class="java.net.URI" id="dbUrl">
@@ -56,7 +69,6 @@
 	<tx:annotation-driven transaction-manager="txManager" />
 	
 	<!-- configurações do JDBC -->
-	
 	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<constructor-arg ref="dataSource"/>
 	</bean>
@@ -67,7 +79,6 @@
 	</bean>
 	
 	<tx:annotation-driven transaction-manager="txJDBC"/>
-	
 	<!-- fim configurações do JDBC -->
 
 	<!-- Configures Spring MVC -->
