@@ -96,6 +96,8 @@
 								</label>
 								<div class="controls">
 									<form:input path="facebook" id="pubs-facebook" cssClass="inputs" tabindex="6" maxlength="100"/>
+									&nbsp;
+									<img src="<c:url value='/resources/imgs/info.png'/>" title="Please, do not put facebook.com. Ex: facebook.com/pubanywhere, write only pubanywhere" class="tooltip"/>
 									<form:errors path="facebook" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -105,6 +107,8 @@
 								</label>
 								<div class="controls">
 									<form:input path="twitter" id="pubs-twitter" cssClass="inputs" tabindex="6" maxlength="100"/>
+									&nbsp;
+									<img src="<c:url value='/resources/imgs/info.png'/>" title="Please, do not put twitter.com. Ex: twitter.com/pubanywhere, write only pubanywhere" class="tooltip"/>
 									<form:errors path="twitter" element="div" cssClass="errors"/>
 								</div>
 							</div>

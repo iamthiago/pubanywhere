@@ -38,6 +38,8 @@ public class PubService {
 	}
 	
 	private Pub valid(Pub pub) {
+		//PubUtils.removeWhiteSpaces(pub);
+		
 		pub.setEmail(pub.getEmail().toLowerCase());
 		pub.setFacebook(pub.getFacebook().toLowerCase());
 		pub.setTwitter(pub.getTwitter().toLowerCase());

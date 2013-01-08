@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 	    <jsp:include page="default.jsp"/>
-		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-pub.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-pub-07-01-13.js' />"></script>
 	    <script language="javascript" src="<c:url value='/resources/js/jquery.maxlenght.min.js' />"></script>
 	    <script type="text/javascript">
 		    jQuery(document).ready(function($) {

@@ -3,10 +3,10 @@
 <html>
 	<head>
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	    <link type="text/css" href="<c:url value='/resources/css/main.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/detail.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/registerPub.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/footer.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/main-07-01-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/detail-07-01-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/registerPub-07-01-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/footer-07-01-13.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/dataTablesCustom.css' />" rel="stylesheet" />
 	    
 	    <link type="text/css" href="<c:url value='/resources/css/black-tie/jquery-ui-1.8.23.custom.css' />" rel="stylesheet" />
@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="<c:url value='/resources/js/jquery.dataTables.min.js' />"></script>
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/dataTablesDefault.js' />"></script>
-		<script type="text/javascript" src="<c:url value='/resources/js/main.js' />"></script>		
+		<script type="text/javascript" src="<c:url value='/resources/js/main-07-01-13.js' />"></script>		
 		
 		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
