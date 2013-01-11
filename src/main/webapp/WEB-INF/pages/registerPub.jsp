@@ -61,7 +61,7 @@
 									<spring:message code="form.pub.description"/>:
 								</label>
 								<div class="controls">
-									<form:textarea path="descricao" id="pubs-description" rows="20" cols="40" cssClass="text-area-input" tabindex="3" maxlength="2000"/>
+									<form:textarea path="descricao" id="pubs-description" rows="20" cols="40" cssClass="text-area-input" tabindex="3" maxlength="3000"/>
 									<form:errors path="descricao" element="div" cssClass="errors"/>
 								</div>
 							</div>

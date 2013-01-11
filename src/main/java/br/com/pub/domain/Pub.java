@@ -50,8 +50,8 @@ public class Pub implements Serializable {
 	private String country;
 	
 	@NotEmpty
-	@Length(max = 2000)
-	@Column(name = "DESCRICAO", length = 2000)
+	@Length(max = 3000)
+	@Column(name = "DESCRICAO", length = 3000)
 	private String descricao;
 	
 	@Column(name = "PHONE")
