@@ -7,10 +7,7 @@ public class TestUtils {
 	
 	public static void main(String[] args) {
 		Pub pub = new Pub();
-		pub.setNome(" Thiago ");
-		pub.setEmail(" thiago@gmail.com ");
-		Pub newPub = (Pub) PubUtils.removeWhiteSpaces(pub);
-		System.out.println(newPub.getNome());
-		System.out.println(newPub.getEmail());
+		pub.setName(" Thiago's é outro ");
+		System.out.println(PubUtils.removeInvalidCharacters(pub.getName().toLowerCase()));
 	}
 }

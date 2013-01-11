@@ -9,10 +9,10 @@
 	</div>
 	
 	<div id="right-buttons">
-		<c:url value="/pubs" var="pubs"></c:url>
-		<a href="${pubs}" id="listYourPub" class="nav-buttons"><spring:message code="nav.button.place"/></a>
+		<%-- <c:url value="/pubs" var="pubs"></c:url>
+		<a href="${pubs}" id="listYourPub" class="nav-buttons"><spring:message code="nav.button.place"/></a> --%>
 		
-		<c:url value="/contact" var="contact"></c:url>
-		<a href="${contact}" id="btnContact" class="nav-buttons"><spring:message code="nav.button.contact"/></a>
+		<c:url value="/help" var="help"></c:url>
+		<a href="${help}" id="btnHelp" class="nav-buttons"><spring:message code="nav.button.help"/></a>
 	</div>
 </div>

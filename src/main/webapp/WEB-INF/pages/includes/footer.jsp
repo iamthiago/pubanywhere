@@ -3,10 +3,9 @@
 
 <div id="footer" class="navigator">
 	<div class="div-footer">
-		<a href="#"><spring:message code="footer.discover.howitworks"/></a> |
 		<a href="http://twitter.com/pubanywhere" target="_blank">Twitter</a> |
 		<a href="http://facebook.com/pubanywhere" target="_blank">Facebook</a> |
-		<a href="<c:url value="/about"/>"><spring:message code="footer.company.about"/></a>
+		<a href="<c:url value="/help"/>"><spring:message code="footer.company.help"/></a>
 	</div>
 	
 	<script type="text/javascript">

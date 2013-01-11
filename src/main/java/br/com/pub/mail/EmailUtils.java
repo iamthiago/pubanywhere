@@ -13,6 +13,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,9 +44,9 @@ public class EmailUtils {
 			
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(contactForm.getEmail()));
-			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("thiagoandrade6@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(setTo(contactForm)));
 			message.setSubject(contactForm.getSubject());
-			message.setContent("Name: " + contactForm.getName() + "<br>" + "Email: " + contactForm.getEmail() + "<br>" + "Description: " + contactForm.getDescription(), "text/html");
+			message.setContent(setName(contactForm) + contactForm.getDescription(), "text/html");
 			
 			Transport.send(message);
 			
@@ -57,6 +58,21 @@ public class EmailUtils {
 			e.printStackTrace();
 		}
 		
+	}
+
+	private static String setName(ContactForm contactForm) {
+		if (!StringUtils.isEmpty(contactForm.getName())) {
+			return "Name: " + contactForm.getName() + "<br>";
+		}
+		return "";
+	}
+	
+	private static String setTo(ContactForm contactForm) {
+		if (StringUtils.isEmpty(contactForm.getTo())) {
+			return "thiagoandrade6@gmail.com";
+		}
+		
+		return contactForm.getTo();
 	}
 
 	public static String createURL(HttpServletRequest request, String string) {

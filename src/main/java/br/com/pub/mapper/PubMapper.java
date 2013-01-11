@@ -11,7 +11,7 @@ public class PubMapper implements  RowMapper<Pub>{
 
 	public Pub mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Pub pub = new Pub();
-		pub.setNome(rs.getString("NOME"));
+		pub.setName(rs.getString("NAME"));
 		pub.setLocal(rs.getString("LOCAL"));
 		pub.setDescricao(rs.getString("DESCRICAO"));
 		pub.setPhone(rs.getString("PHONE"));

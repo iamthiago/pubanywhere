@@ -71,7 +71,7 @@ function initialize() {
     		google.maps.event.addListener(marker, 'click', (function(marker, i) {
         		return function() {
         			infowindow.setContent(
-        					'<center>' + String(data[i].nome) + '&nbsp <a href="/pubs/'+ String(data[i].pubId) + '"><img border="0" align="center" src="../resources/imgs/detail.png"></a></center>' +
+        					'<center>' + String(data[i].name) + '&nbsp <a href="/pubs/'+ String(data[i].pubId) + '"><img border="0" align="center" src="../resources/imgs/detail.png"></a></center>' +
         					getWebsite(data, i) + 
         					getPhone(data, i) + 
         					getEmail(data, i));

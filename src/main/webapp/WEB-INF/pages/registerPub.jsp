@@ -41,8 +41,8 @@
 									<spring:message code="form.pub.name"/>
 								</label>
 								<div class="controls">
-									<form:input path="nome" id="pubs-name" cssClass="inputs" tabindex="1" maxlength="100"/>
-									<form:errors path="nome" element="div" cssClass="errors"/>
+									<form:input path="name" id="pubs-name" cssClass="inputs" tabindex="1" maxlength="100"/>
+									<form:errors path="name" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							<div class="control-group">
@@ -51,6 +51,8 @@
 								</label>
 								<div class="controls">
 									<form:input path="local" id="location_new" cssClass="inputs" tabindex="2"/>
+									&nbsp;
+									<img src="<c:url value='/resources/imgs/info.png'/>" title="<spring:message code="config.note.location"/>"/>
 									<form:errors path="local" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -97,7 +99,7 @@
 								<div class="controls">
 									<form:input path="facebook" id="pubs-facebook" cssClass="inputs" tabindex="6" maxlength="100"/>
 									&nbsp;
-									<img src="<c:url value='/resources/imgs/info.png'/>" title="<spring:message code="config.note.facebook"/>" class="tooltip"/>
+									<img src="<c:url value='/resources/imgs/info.png'/>" title="<spring:message code="config.note.facebook"/>"/>
 									<form:errors path="facebook" element="div" cssClass="errors"/>
 								</div>
 							</div>
@@ -108,8 +110,19 @@
 								<div class="controls">
 									<form:input path="twitter" id="pubs-twitter" cssClass="inputs" tabindex="6" maxlength="100"/>
 									&nbsp;
-									<img src="<c:url value='/resources/imgs/info.png'/>" title="<spring:message code="config.note.twitter"/>" class="tooltip"/>
+									<img src="<c:url value='/resources/imgs/info.png'/>" title="<spring:message code="config.note.twitter"/>"/>
 									<form:errors path="twitter" element="div" cssClass="errors"/>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="pub-id" class="control-label">
+									Pub Url:
+								</label>
+								<div class="controls">
+									<form:input path="pubId" id="pub-id" cssClass="inputs" tabindex="6" maxlength="100"/>
+									&nbsp;
+									<img src="<c:url value='/resources/imgs/info.png'/>" title="<spring:message code="config.note.urlId"/>"/>
+									<form:errors path="pubId" element="div" cssClass="errors"/>
 								</div>
 							</div>
 							<div class="control-group">

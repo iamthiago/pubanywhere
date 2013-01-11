@@ -2,9 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 		
 		<jsp:include page="default.jsp"/>
-		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-home-07-01-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-home-10-01-13.js' />"></script>
 		
-		<meta property="fb:app_id" content="[FB App ID]" />
+		<jsp:include page="social.jsp"/>
 		
-		<title>Pub Anywhere - ${pub.nome}</title>
+		<title>Pub Anywhere - ${pub.name}</title>
 	</head>

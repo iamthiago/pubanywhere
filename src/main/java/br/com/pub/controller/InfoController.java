@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class InfoController {
 	
-	@RequestMapping("about")
-	public String about() {
-		return "about";
+	@RequestMapping("help")
+	public String help() {
+		return "help";
 	}
 }
