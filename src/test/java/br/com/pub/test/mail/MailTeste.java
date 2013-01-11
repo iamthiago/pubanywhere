@@ -12,7 +12,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 
-public class Teste {
+public class MailTeste {
 
 	final static String username = "pubanywhere@gmail.com";
 	final static String password = "pubanywhere250586!";

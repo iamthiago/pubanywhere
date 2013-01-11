@@ -16,6 +16,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import br.com.pub.annotation.MaxSizeUpload;
+import br.com.pub.annotation.PK;
 
 @Entity
 public class Pub implements Serializable {
@@ -25,17 +26,28 @@ public class Pub implements Serializable {
 	 */
 	private static final long serialVersionUID = -2798520271567297643L;
 	
+	@PK
 	@Id
+	@NotEmpty
 	@Column(name = "PUB_ID", insertable = true, updatable = false)
 	private String pubId;
 	
 	@NotEmpty
-	@Column(name = "NOME")
-	private String nome;
+	@Column(name = "NAME")
+	private String name;
 	
 	@NotEmpty
 	@Column(name = "LOCAL")
 	private String local;
+	
+	@Column(name = "CITY")
+	private String city;
+	
+	@Column(name = "STATE")
+	private String state;
+	
+	@Column(name = "COUNTRY")
+	private String country;
 	
 	@NotEmpty
 	@Length(max = 2000)
@@ -89,12 +101,12 @@ public class Pub implements Serializable {
 		this.pubId = pubId;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getLocal() {
@@ -103,6 +115,30 @@ public class Pub implements Serializable {
 
 	public void setLocal(String local) {
 		this.local = local;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	public String getDescricao() {

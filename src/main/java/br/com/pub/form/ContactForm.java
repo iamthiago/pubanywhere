@@ -29,6 +29,8 @@ public class ContactForm implements Serializable {
 	@NotEmpty
 	@Length(max = 2000)
 	private String description;
+	
+	private String to;
 
 	public String getName() {
 		return name;
@@ -60,5 +62,13 @@ public class ContactForm implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getTo() {
+		return to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
 	}
 }

@@ -30,7 +30,7 @@ public class PubController {
 		return "maps";
 	}
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "registerPub", method = RequestMethod.GET)
 	public String pubs(Map<String, Object> map) {
 		map.put("pubForm", new Pub());
 		return "registerPub";
@@ -44,7 +44,7 @@ public class PubController {
 		return pubService.listNearPubs(lat, lng);
 	}
 	
-	@RequestMapping(value = "registerPub", headers={"content-type=multipart/form-data"})
+	@RequestMapping(value = "registerPub", headers={"content-type=multipart/form-data"}, method = RequestMethod.POST)
 	public String registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result,
 			HttpServletRequest request, Map<String, Object> map) {
 		

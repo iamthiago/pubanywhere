@@ -1,0 +1,14 @@
+#helpAll {
+	display: table;
+	height: 740px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+	position: relative;
+	top: 30px;
+	width: 990px;
+}
+
+.help-margin-left-bottom {
+	margin-left: 30px;
+	margin-bottom: 30px;
+}

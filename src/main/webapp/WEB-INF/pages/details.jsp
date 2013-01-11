@@ -14,7 +14,7 @@
 		<div id="left">
 			<div id="pubHeader">
 				<h1>
-					${pub.nome}
+					${pub.name}
 				</h1>
 				<div id="control-title-description">
 					<h3>
@@ -45,7 +45,7 @@
 				
 					<div class="margin15px center">
 						<h3>
-							<spring:message code="nav.button.contact"/>
+							<spring:message code="details.contact"/>
 						</h3>
 					</div>
 					
