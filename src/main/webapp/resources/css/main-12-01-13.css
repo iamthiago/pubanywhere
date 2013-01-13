@@ -177,3 +177,19 @@ body {
 .center {
 	text-align: center;
 }
+
+#btnEditPub {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#error-page {
+	height: 580px;
+	text-align: center;
+}
+
+#error-msg {
+	margin-top: 100px;
+	font-size: 25px;
+    font-weight: bold;
+}

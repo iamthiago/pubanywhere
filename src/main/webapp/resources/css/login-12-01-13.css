@@ -1,0 +1,134 @@
+/**
+elementos para a tela de login
+*/
+
+.LoginBody {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+    background: rgb(215, 215, 215);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+
+    -webkit-font-smoothing: antialiased;
+
+    overflow: hidden;
+}
+
+#main_login {
+	border: 1px solid black;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 3px 3px 5px 6px #777777;
+	top: 30%;
+	left: 50%;
+	width: 290px;
+	margin-left: -145px;
+	height: 240px;
+	margin-top: -120px;
+	padding: 10px;
+	position: absolute;
+}
+
+.div_login_content {
+	margin: 0 0 1.5em;
+}
+
+.login_h2 {
+	font-size: 16px;
+	height: 16px;
+	line-height: 17px;
+	margin: 0 0 1.2em;
+	position: relative;
+}
+
+#btnLoginButtons {
+	margin-top: 5px;
+}
+
+.input_login {
+	width: 283px;
+	height: 32px;
+	font-size: 16px;
+}
+
+.errorblock {
+	color: #ff0000;
+	background-color: #ffEEEE;
+	border: 1px solid black;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 3px 3px 5px 6px #777777;
+	top: 30%;
+	left: 50%;
+	width: 290px;
+	margin-left: -145px;
+	height: 20px;
+	margin-top: -170px;
+	padding: 10px;
+	position: absolute;
+	text-align: center;
+}
+
+.signup {
+	font-size: 14px;
+	text-align: right;
+  	float: right;
+  	margin-top: 5px;
+}
+
+.ui-button {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+A:LINK, A:VISITED, A:ACTIVE {
+	text-decoration: none;
+}
+
+A:HOVER {
+	text-decoration: underline;
+}
+/**
+fim dos elementos tela de login
+*/
+
+/**
+elementos da tela de criação de usuario
+*/
+#newUser {
+	border: 1px solid black;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 3px 3px 5px 6px #777777;
+	top: 40%;
+	left: 50%;
+	width: 450px;
+	margin-left: -225px;
+	height: 420px;
+	margin-top: -210px;
+	padding: 10px;
+	position: absolute;
+}
+
+#tbInserirUsers {
+	text-align: right;
+}
+
+#createNewUser {
+	margin: 1.5em 0 0 0;
+}
+
+#comboSexo {
+	font-size: 16px;
+	height: 32px;
+	width: 150px;
+}
+
+.dataNascimento {
+	font-size: 16px;
+	height: 32px;
+}
+
+/**
+fim dos elementos da tela de usuarios
+*/
