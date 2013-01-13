@@ -40,6 +40,15 @@ public class PubService {
 		return pubRepository.listAll();
 	}
 	
+	public List<Pub> listAllPubs() {
+		log.info("Listando todos os pubs");
+		return pubRepository.listAll();
+	}
+	
+	public void savePub(Pub pub) {
+		pubRepository.update(pub);
+	}
+	
 	public String registerPub(Pub pub, HttpServletRequest request) {
 		
 		Pub newPub = pubRepository.insert(valid(pub));
@@ -49,7 +58,6 @@ public class PubService {
 			AmazonService.upload(newPub);
 		}
 		
-		//TODO: fazer envio de email asynchronous para não demorar a redirecionar para a pagina de detalhes do pub
 		sendMailToActive(newPub, request);
 		sendMarketMail(newPub, request);
 		

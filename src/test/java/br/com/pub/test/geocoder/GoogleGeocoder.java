@@ -18,8 +18,7 @@ public class GoogleGeocoder {
 		final Geocoder geocoder = new Geocoder();
 
 		GeocoderRequest request = new GeocoderRequestBuilder()
-				.setAddress(
-						"Alameda Rio Negro, 500, Barueri")
+				.setAddress("Grecia 3394, Buenos Aires")
 				.setLanguage("en").getGeocoderRequest();
 
 		GeocodeResponse response = geocoder.geocode(request);

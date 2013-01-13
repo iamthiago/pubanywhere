@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	$.extend(true, $.fn.dataTable.defaults, {
-		"bPaginate" : false,
-		"bLengthChange" : false,
-		"bInfo" : false,
+		"bPaginate" : true,
+		"bLengthChange" : true,
+		"bInfo" : true,
 		"bJQueryUI" : true,
 		"oLanguage" : {
 			"sProcessing" : "Processando...",
