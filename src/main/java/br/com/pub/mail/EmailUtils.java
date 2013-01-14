@@ -22,7 +22,7 @@ import br.com.pub.form.ContactForm;
 public class EmailUtils {
 	
 	final static String username = "pubanywhere@gmail.com";
-	final static String password = "thi287243138@!";
+	final static String password = "thi287243138@";
 	
 	private static Logger log = LoggerFactory.getLogger(EmailUtils.class);
 	
