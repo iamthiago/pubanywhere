@@ -1,9 +1,10 @@
 package br.com.pub.enumeration;
 
 public enum Country {
-	BRAZIL("Brazil");
+	BRAZIL("Brazil"),
+	BRASIL("Brasil");
 	
-	private String descricao;
+	private final String descricao;
 
 	private Country(String descricao) {
 		this.descricao = descricao;
@@ -11,9 +12,5 @@ public enum Country {
 
 	public String getDescricao() {
 		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 }

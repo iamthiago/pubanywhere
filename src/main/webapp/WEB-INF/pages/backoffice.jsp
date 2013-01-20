@@ -5,7 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <jsp:include page="includes/default.jsp"/>
-<script type="text/javascript" src="<c:url value='/resources/js/backoffice-12-01-13.js' />"></script>
+<script type="text/javascript" src="<c:url value='/resources/js/backoffice-20-01-13.js' />"></script>
 
 <body>
 	<jsp:include page="includes/navigator.jsp"/>
@@ -14,11 +14,15 @@
 		<div id="left">
 			<div id="pubHeader">
 				<h1>
-					Back-Office
+					<spring:message code="backoffice.title"/>
+					<div id="div-logout">
+						<c:url value="/logout" var="logout"></c:url>
+						<a href="${logout}" id="btnLogout" class="nav-buttons"><spring:message code="nav.button.logout"/></a>
+					</div>
 				</h1>
 				<div id="control-title-description">
 					<h3>
-						Suitable tools for your pub
+						<spring:message code="backoffice.description"/>
 					</h3>
 				</div>
 			</div>
@@ -27,12 +31,12 @@
 					<table id="tbListPubs" class="data-table">
 						<thead>
 							<tr>
-								<th>PUB_ID</th>
-								<th>NAME</th>
-								<th>CITY</th>
-								<th>COUNTRY</th>
-								<th>ENABLED</th>
-								<th>PUB VIEWS</th>
+								<th><spring:message code="backoffice.table.pubid"/></th>
+								<th><spring:message code="backoffice.table.name"/></th>
+								<th><spring:message code="backoffice.table.city"/></th>
+								<th><spring:message code="backoffice.table.country"/></th>
+								<th><spring:message code="backoffice.table.enabled"/></th>
+								<th><spring:message code="backoffice.table.pubviews"/></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -52,9 +56,28 @@
 			</div>
 			<div id="right" class="pubPanel">
 				<div id="backoffice-buttons">
-					<a href="#" id="btnListBackofficePubs">My Pubs</a>
+					<a href="" id="btnChangePassword"><spring:message code="backoffice.changePassword"/></a>
 				</div>
 			</div>
+		</div>
+	</div>
+	
+	<div id="passwordModal" title="<spring:message code="backoffice.changePassword"/>">
+		<form:form action="/backoffice/changePassword" method="POST" id="passwordForm" commandName="userForm" acceptCharset="UTF-8" enctype="multipart/form-data">
+			<form:hidden path="username" value="${username}" />
+			<div class="passwordClass">
+				<spring:message code="backoffice.password"/> <br>
+				<form:password path="senha" cssClass="inputs"/>
+			</div>
+			<div class="passwordClass">
+				<spring:message code="backoffice.confirmPassword"/> <br>
+				<form:password path="confirmarSenha" cssClass="inputs"/>
+			</div>
+			<input type="button" id="save" value="<spring:message code="backoffice.save"/>"/>
+			<form:errors path="*" />
+		</form:form>
+		<div id="passError">
+			<spring:message code="backoffice.invalidPassword"/>
 		</div>
 	</div>
 	

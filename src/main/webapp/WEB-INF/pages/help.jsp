@@ -113,7 +113,7 @@
 				<div>
 				
 					<div class="margin15px center">
-						<h3>Topics</h3>
+						<h3><spring:message code="help.topics.title"/></h3>
 					</div>
 					<div class="margin15px">
 						<img src="<c:url value='/resources/imgs/work.png'/>">&nbsp;

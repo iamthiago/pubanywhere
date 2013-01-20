@@ -23,6 +23,9 @@
 				<div class="input-box">
 					<input type='text' id="location" name="location" placeholder="<spring:message code="main.search"/>" autocomplete="off" class="location">
 				</div>
+				<div id="ie">
+					<spring:message code="main.ie"/>
+				</div>
 			</form>
 		</div>
 	</div>

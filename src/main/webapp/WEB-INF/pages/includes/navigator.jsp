@@ -12,6 +12,9 @@
 		<%-- <c:url value="/pubs" var="pubs"></c:url>
 		<a href="${pubs}" id="listYourPub" class="nav-buttons"><spring:message code="nav.button.place"/></a> --%>
 		
+		<c:url value="/backoffice" var="backoffice"></c:url>
+		<a href="${backoffice}" id="btnLogin" class="nav-buttons"><spring:message code="nav.button.login"/></a>
+		
 		<c:url value="/help" var="help"></c:url>
 		<a href="${help}" id="btnHelp" class="nav-buttons"><spring:message code="nav.button.help"/></a>
 	</div>
