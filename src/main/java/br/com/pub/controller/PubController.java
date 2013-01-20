@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.pub.domain.Pub;
+import br.com.pub.facade.PubFacade;
 import br.com.pub.service.MessageService;
 import br.com.pub.service.PubService;
 
@@ -26,6 +26,7 @@ import br.com.pub.service.PubService;
 public class PubController {
 	
 	@Autowired private PubService pubService;
+	@Autowired private PubFacade pubFacade;
 	@Autowired private MessageService messageService;
 	
 	@RequestMapping(value = "maps")
@@ -56,7 +57,7 @@ public class PubController {
 		if (result.hasErrors()) {
 			return "registerPub";
 		} else {
-			pubId = pubService.registerPub(form, request);
+			pubId = pubFacade.registerPub(form, request);
 		}
 		
 		return "redirect:/pubs/" + pubId;
@@ -80,19 +81,5 @@ public class PubController {
 	public String activePub(@PathVariable("id") String id) {
 		pubService.activePub(id);
 		return "redirect:/pubs/" + id;
-	}
-	
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	@RequestMapping(value = "editPub/{pubId}", method = RequestMethod.GET)
-	public String editPub(@PathVariable("pubId") String pubId, Map<String, Object> map) {
-		map.put("pub", pubService.findPubById(pubId));
-		return "editPub";
-	}
-	
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	@RequestMapping(value = "savePub", headers={"content-type=multipart/form-data"}, method = RequestMethod.POST)
-	public String savePub(@ModelAttribute("pub") Pub form, Map<String, Object> map) {
-		pubService.savePub(form);
-		return "redirect:/backoffice";
 	}
 }

@@ -11,7 +11,7 @@
 	<jsp:include page="includes/navigator.jsp"/>
 
 	<div class="borderAll">
-		<form:form action="/pubs/savePub" method='POST' modelAttribute="pub" acceptCharset="UTF-8" enctype="multipart/form-data">
+		<form:form action="/backoffice/savePub" method='POST' modelAttribute="pub" acceptCharset="UTF-8" enctype="multipart/form-data">
 		
 		<form:hidden path="pubId"/>
 		<form:hidden path="city"/>
@@ -32,13 +32,20 @@
 					</h1>
 					<div id="control-title-description">
 						<h3>
-							<form:input path="local" cssClass="edit_inputs" id="edit-local"/>
+							<form:input path="local" cssClass="edit_inputs" id="edit-local" disabled="${disabled}"/>
+							<c:if test="${disabled}">
+								<form:hidden path="local"/>
+							</c:if>
 						</h3>
 					</div>
 				</div>
 				<div class="pubPanel panelLeft">
 					<div id="divImg" class="padding">
 						<img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}"/>
+						<div id="editImg">
+							<form:input path="file" id="image" type="file" />
+							<form:errors path="file" element="div" cssClass="errors"/>
+						</div>
 					</div>
 					<div class="title padding">
 						<h3><spring:message code="form.pub.description"/></h3>
@@ -95,10 +102,16 @@
 								</c:if>
 							</span>
 						</div>
-						<div class="title center">
-							<h3>
-								<input type="submit" value="Save" id="btnEditPub">
-							</h3>
+					</div>
+					<div class="title center">
+						<h3>
+							<input type="submit" value="Save" id="btnEditPub">
+						</h3>
+					</div>
+					<div class="title">
+						<div id="notes" class="margin15px">
+							<spring:message code="edit.image1mb"/><br>
+							<spring:message code="edit.puburl"/><br>
 						</div>
 					</div>
 				</div>
