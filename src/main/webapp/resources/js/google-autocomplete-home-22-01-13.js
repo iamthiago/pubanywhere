@@ -2,9 +2,6 @@ var autocomplete;
 
 $(document).ready(function(){
 	
-	/**
-	* autocomplete
-	*/
 	var input = null;
 
 	if(document.getElementById('location') != null) {
