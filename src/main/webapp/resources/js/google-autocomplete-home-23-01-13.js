@@ -20,7 +20,7 @@ $(document).ready(function(){
 	
 	$('#mainForm').submit(function(e) {
 		var place = autocomplete.getPlace();
-	    if (!place.geometry) {
+	    if (!place) {
 	    	var firstResult = $(".pac-container .pac-item:first").text();
 	    	e.preventDefault();
 	    	return;
