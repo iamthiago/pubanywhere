@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="<c:url value='/resources/js/main-20-01-13.js' />"></script>
 		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-home-23-01-13.js' />"></script>
 		
-		<script src="http://maps.google.com/maps/api/js?libraries=places&region=uk&language=en&sensor=false"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 		
 		<jsp:include page="social.jsp"/>
 		
