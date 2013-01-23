@@ -2,11 +2,8 @@ var autocomplete;
 
 $(document).ready(function(){
 	
-	/**
-	* autocomplete
-	*/
 	var input = null;
-	
+
 	if(document.getElementById('location') != null) {
 		input = document.getElementById('location');
 		input.focus();
@@ -20,13 +17,12 @@ $(document).ready(function(){
 	
 	$('#mainForm').submit(function(e) {
 		var place = autocomplete.getPlace();
-	    if (!place) {
-	    	var firstResult = $(".pac-container .pac-item:first").text();
-	    	e.preventDefault();
-	    	return;
+	    if (place == null || place.geometry == null) {
+	      e.preventDefault();
+	      return;
 	    } else {	    	
 	    	$('#lat').val(place.geometry.location.lat());
 	    	$('#lng').val(place.geometry.location.lng());
 	    }
-	});	
+	});
 });
