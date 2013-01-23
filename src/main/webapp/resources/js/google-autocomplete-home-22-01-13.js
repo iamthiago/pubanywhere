@@ -6,7 +6,7 @@ $(document).ready(function(){
 	* autocomplete
 	*/
 	var input = null;
-	
+
 	if(document.getElementById('location') != null) {
 		input = document.getElementById('location');
 		input.focus();
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	
 	$('#mainForm').submit(function(e) {
 		var place = autocomplete.getPlace();
-	    if (!place) {
+	    if (place == null || place.geometry == null) {
 	      e.preventDefault();
 	      return;
 	    } else {	    	
