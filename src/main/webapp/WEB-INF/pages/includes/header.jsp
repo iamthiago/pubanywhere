@@ -11,11 +11,12 @@
 	    <script type="text/javascript" src="<c:url value='/resources/js/jquery-ui-1.8.23.custom.min.js' />"></script>
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/main-20-01-13.js' />"></script>
-		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-home-20-01-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-home-22-01-13.js' />"></script>
 		
 		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 		
 		<jsp:include page="social.jsp"/>
 		
 		<title>Pub Anywhere</title>
+		
 	</head>
