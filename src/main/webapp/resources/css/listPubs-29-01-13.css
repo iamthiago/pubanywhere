@@ -86,5 +86,10 @@ ol#pagination li {
 }
 
 #pubCity {
+	margin-top: 3px;
+}
+
+#pubCity, #pubCountry {
 	font-size: 10px;
+	height: 12px;
 }
