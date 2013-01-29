@@ -28,7 +28,7 @@
 			<div id="left">
 				<div id="pubHeader">
 					<h1>
-						<form:input path="name" cssClass="edit_inputs" maxlength="100" id="edit-name"/>
+						<form:input path="name" cssClass="edit_inputs" maxlength="30" id="edit-name"/>
 					</h1>
 					<div id="control-title-description">
 						<h3>
