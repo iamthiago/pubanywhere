@@ -19,5 +19,4 @@
 		<jsp:include page="social.jsp"/>
 		
 		<title>Pub Anywhere</title>
-		
 	</head>
