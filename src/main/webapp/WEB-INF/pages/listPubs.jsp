@@ -30,6 +30,8 @@
 									</div>
 									<div id="pubCity">
 										${pub.city}
+										<br>
+										${pub.country}
 									</div>
 									<div id="views">
 										${pub.pubViews}

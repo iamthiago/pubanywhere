@@ -41,7 +41,7 @@
 									<spring:message code="form.pub.name"/>
 								</label>
 								<div class="controls">
-									<form:input path="name" id="pubs-name" cssClass="inputs" tabindex="1" maxlength="100"/>
+									<form:input path="name" id="pubs-name" cssClass="inputs" tabindex="1" maxlength="30"/>
 									<form:errors path="name" element="div" cssClass="errors"/>
 								</div>
 							</div>
