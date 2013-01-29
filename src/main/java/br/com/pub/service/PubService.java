@@ -55,6 +55,16 @@ public class PubService {
 		return pubRepository.listPubsByUsername(username);
 	}
 	
+	public List<Pub> listPubsPerCountry(String country) {
+		log.info("Listando pubs por country " + country);
+		return pubRepository.listPubsPerCountry(country);
+	}
+	
+	public List<Pub> listTop100World(){
+		log.info("Listando top 100 pubs no mundo");
+		return pubRepository.listTop100World();
+	}
+	
 	public void setPageCount(Pub pub) {
 		pub.setPubViews(pub.getPubViews() + 1);
 		pubRepository.update(pub);

@@ -5,7 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <jsp:include page="includes/default.jsp"/>
-<script type="text/javascript" src="<c:url value='/resources/js/backoffice-20-01-13.js' />"></script>
+<script type="text/javascript" src="<c:url value='/resources/js/backoffice-29-01-13.js' />"></script>
 
 <body>
 	<jsp:include page="includes/navigator.jsp"/>

@@ -9,8 +9,12 @@
 	</div>
 	
 	<div id="right-buttons">
-		<%-- <c:url value="/pubs" var="pubs"></c:url>
-		<a href="${pubs}" id="listYourPub" class="nav-buttons"><spring:message code="nav.button.place"/></a> --%>
+		<c:url value="/pubs/top100World" var="top100"></c:url>
+		<%-- <a href="${top100}" id="top100" title="Top 100">
+			<img src="<c:url value='/resources/imgs/podium.png'/>" alt="Top 100" title="Top 100">
+		</a> --%>
+		
+		<a href="${top100}" id="top100" class="nav-buttons">Top 100</a>
 		
 		<c:url value="/backoffice" var="backoffice"></c:url>
 		<a href="${backoffice}" id="btnLogin" class="nav-buttons"><spring:message code="nav.button.login"/></a>
