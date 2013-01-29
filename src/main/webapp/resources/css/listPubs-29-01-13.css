@@ -12,7 +12,7 @@ a:ACTIVE {text-decoration: none;}
 a:VISITED {text-decoration: none;}
 
 #main-pubs-list {
-	height: 900px;
+	height: 950px;
 }
 
 #main-pubs-list img {
@@ -49,7 +49,7 @@ ul#ul-list {
 ol#pagination {
 	position: absolute;
 	right: 0;
-	top: 880px;
+	top: 920px;
 }
 
 ol#pagination li {
@@ -73,15 +73,16 @@ ol#pagination li {
 #views {
 	font-size: 30px;
 	font-weight: bold;
-	margin-left: 150px;
-	margin-top: -27px;
+	margin-left: 160px;
+	margin-top: -10px;
 	position: absolute;
 	text-align: right;
 	width: 100px;
 }
 
 #pubName {
-	font-size: 20px;
+	font-size: 16px;
+	width: 260px;
 }
 
 #pubCity {
