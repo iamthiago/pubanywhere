@@ -42,10 +42,6 @@
 				<div class="pubPanel panelLeft">
 					<div id="divImg" class="padding">
 						<img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}"/>
-						<div id="editImg">
-							<form:input path="file" id="image" type="file" />
-							<form:errors path="file" element="div" cssClass="errors"/>
-						</div>
 					</div>
 					<div class="title padding">
 						<h3><spring:message code="form.pub.description"/></h3>
@@ -100,6 +96,12 @@
 								<c:if test="${pub.twitter != ''}">
 									<form:input path="twitter" cssClass="edit_inputs" maxlength="100"/>
 								</c:if>
+							</span>
+							
+							<img src="<c:url value='/resources/imgs/image.png'/>">&nbsp;
+							<span>
+								<form:input path="file" id="image" type="file"/>
+								<form:errors path="file" element="div" cssClass="errors"/>
 							</span>
 						</div>
 					</div>

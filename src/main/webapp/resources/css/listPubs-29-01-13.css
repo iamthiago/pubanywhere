@@ -1,0 +1,89 @@
+/**
+* buttons and icons
+*/
+button, a {
+	font-size: 12px !important;
+	font-weight: bold !important;
+}
+
+a {color: black; text-decoration: none;}
+a:HOVER {text-decoration: underline;}
+a:ACTIVE {text-decoration: none;}
+a:VISITED {text-decoration: none;}
+
+#main-pubs-list {
+	height: 900px;
+}
+
+#main-pubs-list img {
+	height: 150px;
+	width: 260px;
+}
+
+.div-img {
+	height: 150px;
+	width: 260px;
+}
+
+#div-table {
+	height: 950px;
+	margin: 0 auto;
+	position: relative;
+	width: 995px;
+}
+
+ul#ul-list {
+	clear: both;
+	content: "";
+	display: table;
+	margin-left: -55px;
+}
+
+.li-pub-item {
+	float: left;
+	margin-left: 60px;
+	margin-top: 50px;
+	width: 285px;
+}
+
+ol#pagination {
+	position: absolute;
+	right: 0;
+	top: 880px;
+}
+
+ol#pagination li {
+	background: linear-gradient(to bottom, #000000 0%, #45484D 100%) repeat scroll 0 0 transparent;
+	box-shadow: 0 0 5px 5px #777777;
+	color: white;
+	cursor: pointer;
+	float: left;
+	font-size: 11px;
+	font-weight: bold;
+	list-style: none outside none;
+	text-align: center;
+	width: 60px;
+}
+
+#listHeader {
+	margin: 50px auto 0;
+	width: 995px;
+}
+
+#views {
+	font-size: 30px;
+	font-weight: bold;
+	margin-left: 150px;
+	margin-top: -27px;
+	position: absolute;
+	text-align: right;
+	width: 100px;
+}
+
+#pubName {
+	font-size: 20px;
+}
+
+#pubCity {
+	font-size: 10px;
+}

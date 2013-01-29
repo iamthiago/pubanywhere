@@ -48,6 +48,34 @@ public class PubController {
 		return pubService.listNearPubs(lat, lng);
 	}
 	
+	@RequestMapping(value = "country/{country}")
+	public String listPubsPerCountry(@PathVariable("country") String country, Map<String, Object> map, HttpServletRequest request) {
+		List<Pub> pubs = pubService.listPubsPerCountry(country);
+		if (!pubs.isEmpty()) {
+			map.put("pubs", pubs);
+			map.put("windowTitle", country);
+			map.put("listTitle", setCountryTitle(country, request));
+			return "listPubs";
+		} else {
+			map.put("erro", messageService.getMessageFromResource(request, "config.pub.404.country"));
+			return "errorPage";
+		}
+	}
+	
+	@RequestMapping(value = "top100World")
+	public String listTop100World(Map<String, Object> map, HttpServletRequest request) {
+		List<Pub> pubs = pubService.listTop100World();
+		if (!pubs.isEmpty()) {
+			map.put("pubs", pubs);
+			map.put("windowTitle", "Top 100 Pubs");
+			map.put("listTitle", messageService.getMessageFromResource(request, "pub.title.top100world"));
+			return "listPubs";
+		} else {
+			map.put("erro", messageService.getMessageFromResource(request, "config.pub.404.top"));
+			return "errorPage";
+		}
+	}
+	
 	@RequestMapping(value = "registerPub", headers={"content-type=multipart/form-data"}, method = RequestMethod.POST)
 	public String registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result,
 			HttpServletRequest request, Map<String, Object> map) {
@@ -71,7 +99,7 @@ public class PubController {
 			map.put("pub", pub);
 			map.put("fbUrlComments", request.getRequestURL());
 		} else {
-			map.put("erro", messageService.getMessageFromResource(request, "config.pub.404"));
+			map.put("erro", messageService.getMessageFromResource(request, "config.pub.404.pub"));
 			return "errorPage";
 		}		
 		return "details";
@@ -81,5 +109,13 @@ public class PubController {
 	public String activePub(@PathVariable("id") String id) {
 		pubService.activePub(id);
 		return "redirect:/pubs/" + id;
+	}
+	
+	private String setCountryTitle(String country, HttpServletRequest request) {
+		return messageService.getMessageFromResource(request, "pub.title.top100country") + " " + messageService.getMessageFromResource(request, "country." + getCountry(country));
+	}
+	
+	private String getCountry(String country) {
+		return country.trim().toLowerCase().replaceAll("\\s+", "");
 	}
 }

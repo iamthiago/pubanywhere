@@ -6,8 +6,10 @@ import br.com.pub.domain.Pub;
 
 public interface PubRepository extends AbstractRepository<Pub> {
 	
-	public List<Pub> listaPubsJdbc();
-	
 	public List<Pub> listPubsByUsername(String username);
+
+	public List<Pub> listPubsPerCountry(String country);
+	
+	public List<Pub> listTop100World();
 
 }

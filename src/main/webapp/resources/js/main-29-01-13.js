@@ -8,7 +8,7 @@ $(document).ready(function() {
 	});
 	
 	// toolbar
-	$('#listYourPub, #insertPub, #btnHelp, #btnLogin, #btnLogout, #sendMail, #btnEditPub').button();
+	$('#listYourPub, #insertPub, #btnHelp, #btnLogin, #btnLogout, #sendMail, #btnEditPub, #top100').button();
 	
 	//help divs
 	$('#about').show();

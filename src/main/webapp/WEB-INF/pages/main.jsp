@@ -51,6 +51,81 @@
 		</div>
 	</div>
 	
+	<div id="divCountrys">
+		<div class="navigator">
+		</div>
+		<div id="postalPics">
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<a href="<c:url value="/pubs/country/Brazil"></c:url>">
+								<div class="navigator">
+									<img src="<c:url value='/resources/imgs/flags/brazil.jpg'/>">
+								</div>
+								<div class="nav_white">
+									<spring:message code="country.brazil"/>
+								</div>
+							</a>
+						</td>
+						<td>
+							<a href="<c:url value="/pubs/country/United States"></c:url>">
+								<div class="navigator">
+									<img src="<c:url value='/resources/imgs/flags/united_states.jpg'/>">
+								</div>
+								<div class="nav_white">
+									<spring:message code="country.unitedstates"/>
+								</div>
+							</a>
+						</td>
+						<td>
+							<a href="<c:url value="/pubs/country/Argentina"></c:url>">
+								<div class="navigator">
+									<img src="<c:url value='/resources/imgs/flags/argentina.jpg'/>">
+								</div>
+								<div class="nav_white">
+									<spring:message code="country.argentina"/>
+								</div>
+							</a>
+						</td>
+					</tr>
+					<%-- <tr>
+						<td>
+							<a href="${listPubsPerCountry}/Germany">
+								<div class="navigator">
+									<img src="<c:url value='/resources/imgs/flags/germany.jpg'/>">
+								</div>
+								<div class="nav_white">
+									<spring:message code="country.germany"/>
+								</div>
+							</a>
+						</td>
+						<td>
+							<a href="${listPubsPerCountry}/England">
+								<div class="navigator">
+									<img src="<c:url value='/resources/imgs/flags/england.jpg'/>">
+								</div>
+								<div class="nav_white">
+									<spring:message code="country.england"/>
+								</div>
+							</a>
+						</td>
+						<td>
+							<a href="${listPubsPerCountry}/Ireland">
+								<div class="navigator">
+									<img src="<c:url value='/resources/imgs/flags/ireland.jpg'/>">
+								</div>
+								<div class="nav_white">
+									<spring:message code="country.ireland"/>
+								</div>
+							</a>
+						</td>
+					</tr> --%>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
