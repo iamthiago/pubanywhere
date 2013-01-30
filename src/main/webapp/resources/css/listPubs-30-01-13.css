@@ -47,6 +47,7 @@ ul#ul-list {
 }
 
 ol#pagination {
+	margin-right: 110px;
 	position: absolute;
 	right: 0;
 	top: 920px;

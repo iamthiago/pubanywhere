@@ -35,8 +35,9 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 	public List<Pub> listPubsPerCountry(String country) {
 		try {
 			
-			return super.em.createQuery("select p from Pub p where p.country = :country order by p.pubViews desc limit 100")
+			return super.em.createQuery("select p from Pub p where p.country = :country order by p.pubViews desc")
 					.setParameter("country", country)
+					.setMaxResults(100)
 					.getResultList();
 			
 		} catch (NoResultException e) {
@@ -50,7 +51,8 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 	public List<Pub> listTop100World() {
 		try {
 			
-			return super.em.createQuery("select p from Pub p order by p.pubViews desc limit 100")
+			return super.em.createQuery("select p from Pub p order by p.pubViews desc")
+					.setMaxResults(100)
 					.getResultList();
 			
 		} catch (NoResultException e) {
