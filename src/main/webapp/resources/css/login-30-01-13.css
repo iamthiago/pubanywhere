@@ -13,15 +13,13 @@ elementos para a tela de login
     background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
 
     -webkit-font-smoothing: antialiased;
-
-    overflow: hidden;
 }
 
 #main_login {
 	border: 1px solid black;
 	border-radius: 5px 5px 5px 5px;
 	box-shadow: 3px 3px 5px 6px #777777;
-	top: 30%;
+	top: 40%;
 	left: 50%;
 	width: 290px;
 	margin-left: -145px;
@@ -129,6 +127,6 @@ elementos da tela de criação de usuario
 	height: 32px;
 }
 
-/**
-fim dos elementos da tela de usuarios
-*/
+#loginSize {
+	height: 740px;
+}
