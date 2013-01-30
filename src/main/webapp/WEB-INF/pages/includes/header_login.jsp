@@ -5,7 +5,7 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	    <title>Pub Anywhere - Login</title>
 	    <link type="text/css" href="<c:url value='/resources/css/black-tie/jquery-ui-1.8.23.custom.css' />" rel="stylesheet" />
-		<link type="text/css" href="<c:url value='/resources/css/login-29-01-13.css' />" rel="stylesheet" />
+		<link type="text/css" href="<c:url value='/resources/css/login-30-01-13.css' />" rel="stylesheet" />
 		<link type="text/css" href="<c:url value='/resources/css/footer-29-01-13.css' />" rel="stylesheet" />
 		<link type="text/css" href="<c:url value='/resources/css/main-29-01-13.css' />" rel="stylesheet" />
 		
