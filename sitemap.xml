@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.pubanywhere.com/</loc>
+  <changefreq>always</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/top100World</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/login</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/help</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/country/Brazil</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/country/United%20States</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/country/Argentina</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/the_blue_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/kevin_barrys_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/omalleys_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/buddies_american_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/otromundo_argentina</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/botequim_grill</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/culhanes_irish_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rhino_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/the_auld_dubliner_lbc</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_arlington</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/oflahertys_irish_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/the_ale_house</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/academia_barra</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/mr_dennehys</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/kia_ora_pub_barra</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fado_annapolis</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/gallaghers_pub_grill</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/johnny_foleys</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rosiessantacruz</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/kate_obriens</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/clancys_arizona</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/dublin_lm</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/jack_demseys_nyc</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/james_joyce_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/willie_mcbrides_branchburg</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/the_sailor_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/central_bar_nyc</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/eamonns_manhattan</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/recanto_villa</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/irish_times_pub_ny</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/jackie_reillys</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/8bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/kinsale_tavern_nyc</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/afrikan_beer</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rancho_madalena</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rula_bula</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rambling_house</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/willie_mcbrides_hoboken</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/quintal23</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/london_station</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/galway_hooker_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rosie_mccaffreys</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_bezerra</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/moca_bonita_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fracao_pizza</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fado_miami</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/atilio_380</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/riraatlanticcity</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/half_door</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rileysirishpub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/dinossauros_rock_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/john_martins_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/duffy_irish_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/brazen_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/braseiro_gavea</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/kombinado_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/artn_pizza</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_bethesda</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/academia_leblon</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/ned_devines</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_aurora</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fado_seattle</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/st_johns_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/kia_ora_pub_itaim</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/kabala_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/ceolirishpub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_luiz</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/grand_trunk_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/partisans_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/boteco_vila_rica</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/the_pub_sp</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_burlington</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rosieogrand_chesterfield</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/catherine_rooneys</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/adega_santiago</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/morrighans</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/the_auld_dubliner_sw</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/wildroverpub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_charlotte</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/celtic_house_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/santo_bar_musical</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_brahma_hotel_pestana</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_do_nico</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/avelinos_pitangueiras</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_bq_moema</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_nossa_senhora</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/dillons_irish_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/otooles_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/johnnysirishpub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_brasa</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/caos_augusta</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/colemans_irish</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/all_kone</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/sonny_mcleans</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/irelands_32</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/melograno</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/andarilho_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/caffreystavern</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_evansville</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/the_irish_lion</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/contact</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/astros_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_astor_sp</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/baramigogiannotti</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/chico_alaide</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_cubanos</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_astor</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/acai_bar_guaruja</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_lagoa</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/paralelo1227</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/sandubabom</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/jobi</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bracarense</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/republic_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/aldeia_villa</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/red_lion_campinas</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_brahma_aeroclube</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_all_gusto</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_urca</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_gomez</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/loirassa_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_brejas</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/cerveja_gourmet</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/varanda_pizza_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/boteco_sao_bento</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/liverpool_abc</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/tribeca_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/gillans_inn</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/cervejaria_mooca</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/deep_bar_611</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/pavao_azul</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/finnegans_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/capone_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_brahma_alphaville</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/the_queens_head_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/all_black_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_charles</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/pub_ace</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/geninhos_club</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/banana_brasil</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/angelo_antonio</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/velho_rabo</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/tabasco_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_bodega</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/zero_a_zero_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/bar_do_milton</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/porto_madalena</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/botica_quintana</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/verissimo_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/armazem_piola</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/majestade_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/seu_beraldo</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/molly_malones_la</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_louisville</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/paddy_malones_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/hartigans</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/cr_hooligans</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/old_shillelagh</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_atlanta</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/peggy_kinnanes</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fado_austin</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/connollys_charlotte</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rosies_santana_row</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/macs_tavern</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_portsmouth</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/playwright_irish_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_providence</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_portland</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/rira_lasvegas</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/pjoreillys</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/shenanigans</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/jamesons_public_house</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/mikes_venetia</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fado_denver</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/helenfitzgeralds</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/muldoons_irish_pub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/paddy_murphys</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fado_atlanta</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fado_chicago</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/kipspub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fenianspub</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/kennedys_clt</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fado_dc</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fado_columbus</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/fado_philly</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/castlebay</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/krakow_cafebar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.pubanywhere.com/pubs/clara_bar</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+</urlset>
