@@ -5,13 +5,13 @@
 		<title>Pub Anywhere</title>
 		
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	    <link type="text/css" href="<c:url value='/resources/css/main-29-01-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/detail-29-01-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/registerPub-29-01-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/footer-29-01-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/help-29-01-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/backoffice-29-01-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/listPubs-30-01-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/main-31-01-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/detail-31-01-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/registerPub-31-01-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/footer-31-01-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/help-31-01-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/backoffice-31-01-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/listPubs-31-01-13.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/dataTablesCustom.css' />" rel="stylesheet" />
 	    
 	    <link type="text/css" href="<c:url value='/resources/css/black-tie/jquery-ui-1.8.23.custom.css' />" rel="stylesheet" />
@@ -25,4 +25,4 @@
 	    <script type="text/javascript" src="<c:url value='/resources/js/jquery.easyPaginate.js' />"></script>
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/dataTablesDefault.js' />"></script>
-		<script type="text/javascript" src="<c:url value='/resources/js/main-29-01-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/main-31-01-13.js' />"></script>

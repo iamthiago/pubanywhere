@@ -10,6 +10,11 @@
 	
 	<jsp:include page="includes/navigator.jsp"/>
 
+	
+	<div id="editError" hidden="true">
+		<spring:message code="edit.social"/>
+	</div>
+	
 	<div class="borderAll">
 		<form:form action="/backoffice/savePub" method='POST' modelAttribute="pub" acceptCharset="UTF-8" enctype="multipart/form-data">
 		
@@ -61,41 +66,31 @@
 						<div class="margin15px">
 							<img src="<c:url value='/resources/imgs/laptop.png'/>">&nbsp;
 							<span>
-								<c:if test="${pub.website != ''}">
-									<form:input path="website" cssClass="edit_inputs" maxlength="100"/>
-								</c:if>
+								<form:input path="website" cssClass="edit_inputs" maxlength="100"/>
 							</span>
 							<br>
 							
 							<img src="<c:url value='/resources/imgs/phone.png'/>">&nbsp;
 							<span>
-								<c:if test="${pub.phone != ''}">
-									<form:input path="phone" cssClass="edit_inputs" maxlength="100"/>
-								</c:if>
+								<form:input path="phone" cssClass="edit_inputs" maxlength="100"/>
 							</span>
 							<br>
 							
 							<img src="<c:url value='/resources/imgs/mail.png'/>">&nbsp;
 							<span>
-								<c:if test="${pub.email != ''}">
-									<form:input path="email" cssClass="edit_inputs" maxlength="100"/>
-								</c:if>
+								<form:input path="email" cssClass="edit_inputs" maxlength="100"/>
 							</span>
 							<br>
 							
 							<img src="<c:url value='/resources/imgs/facebook.png'/>">&nbsp;
 							<span>
-								<c:if test="${pub.facebook != ''}">
-									<form:input path="facebook" cssClass="edit_inputs" maxlength="100"/>
-								</c:if>
+								<form:input path="facebook" cssClass="edit_inputs" maxlength="100"/>
 							</span>
 							<br>
 							
 							<img src="<c:url value='/resources/imgs/twitter.png'/>">&nbsp;
 							<span>
-								<c:if test="${pub.twitter != ''}">
-									<form:input path="twitter" cssClass="edit_inputs" maxlength="100"/>
-								</c:if>
+								<form:input path="twitter" cssClass="edit_inputs" maxlength="100"/>
 							</span>
 							
 							<img src="<c:url value='/resources/imgs/image.png'/>">&nbsp;
@@ -113,7 +108,7 @@
 					<div class="title">
 						<div id="notes" class="margin15px">
 							<spring:message code="edit.image1mb"/><br>
-							<spring:message code="edit.puburl"/><br>
+							<spring:message code="edit.puburl"/>
 						</div>
 					</div>
 				</div>

@@ -32,4 +32,13 @@ $(document).ready(function() {
 		$('#howItWorks').hide();
 		$('#help').show();
 	});
+	
+	$('#btnEditPub').click(function(e){
+		e.preventDefault();
+		if ($('#facebook').val().match('facebook') || $('#twitter').val().match('twitter')) {
+			$('#editError').show();
+		} else {
+			$(this).parents('form:first').submit();
+		}
+	});
 });
