@@ -20,14 +20,16 @@ public class SitemapController {
 	private PubService pubService;
 	
 	@ResponseBody
-	@RequestMapping(value = "/sitemap.xml", method = RequestMethod.GET, produces = "application/xml")
+	@RequestMapping(value = {"/sitemap.xml"}, produces = "application/xml", method = RequestMethod.GET)
 	public XmlUrlSet getSiteMap() {
 		
 		List<Pub> pubs = pubService.listAllPubs();
-
+		
 		XmlUrlSet xmlUrlSet = new XmlUrlSet();
+		
 		create(xmlUrlSet, "", XmlUrl.Priority.HIGH);
 		create(xmlUrlSet, "/login", XmlUrl.Priority.MEDIUM);
+		create(xmlUrlSet, "/backoffice", XmlUrl.Priority.MEDIUM);
 		create(xmlUrlSet, "/help", XmlUrl.Priority.MEDIUM);
 		create(xmlUrlSet, "/contact", XmlUrl.Priority.MEDIUM);
 		
