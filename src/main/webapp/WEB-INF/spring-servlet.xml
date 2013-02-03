@@ -13,7 +13,6 @@
 	<mvc:resources location="/resources/css/" mapping="/css" />
 	<mvc:resources location="/resources/imgs/" mapping="/imgs" />
 	<mvc:resources location="/resources/js/" mapping="/js" />
-	<mvc:resources location="/resources/xml/" mapping="/xml" />
 	
 	<!-- Register the welcome.properties -->
 	<bean id="messageSource"
