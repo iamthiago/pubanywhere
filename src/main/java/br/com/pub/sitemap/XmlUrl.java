@@ -1,17 +1,18 @@
 package br.com.pub.sitemap;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-
 @XmlAccessorType(value = XmlAccessType.NONE)
-@XmlRootElement(name = "url")
+@XmlRootElement(name = "url", namespace = "http://www.sitemaps.org/schemas/sitemap/0.9")
 public class XmlUrl {
-    public enum Priority {
+    
+	public enum Priority {
         HIGH("1.0"),
         MEDIUM("0.5");
 
@@ -30,7 +31,7 @@ public class XmlUrl {
     private String loc;
 
     @XmlElement
-    private String lastmod = new DateTime().toString(DateTimeFormat.forPattern("yyyy-MM-dd"));
+    private String lastmod = new SimpleDateFormat("yyyy-MM-DD").format(new Date());
 
     @XmlElement
     private String changefreq = "daily";
