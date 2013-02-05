@@ -32,7 +32,7 @@
 	
 	<div id="socialPlugins">
 		<div id="googleOne">
-			<div class="g-plusone"></div>
+			<div class="g-plusone" data-width="300"></div>
 		</div>
 		
 		<div id="twitterFollow">

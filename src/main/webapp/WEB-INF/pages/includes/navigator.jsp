@@ -5,7 +5,7 @@
 	
 	<div id="left-buttons">
 		<c:url value="/" var="home"></c:url>
-		<a href="${home}" id="btnHome" class="icons"/>
+		<a href="${home}" id="btnHome" class="icons"></a>
 	</div>
 	
 	<div id="right-buttons">
