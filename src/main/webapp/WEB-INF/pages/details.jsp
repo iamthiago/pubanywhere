@@ -114,7 +114,17 @@
 						<h3><spring:message code="details.advertising.title"/></h3>
 					</div>
 					<div id="advertising" class="title center padding">
-						<spring:message code="details.advertising.detail"/>
+						<script type="text/javascript"><!--
+							google_ad_client = "ca-pub-9435637599979561";
+							/* detail - unique */
+							google_ad_slot = "1235783690";
+							google_ad_width = 200;
+							google_ad_height = 200;
+							//-->
+						</script>
+						<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+						</script>
 					</div>
 					
 					<div class="title center">

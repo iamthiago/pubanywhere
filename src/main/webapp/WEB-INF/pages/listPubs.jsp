@@ -43,6 +43,36 @@
 				</c:forEach>
 			</ul>
 		</div>
+		
+		<div id="adsTop100">
+			<div id="adsLeftTop100">
+				<script type="text/javascript"><!--
+					google_ad_client = "ca-pub-9435637599979561";
+					/* top100 - left */
+					google_ad_slot = "7421918091";
+					google_ad_width = 120;
+					google_ad_height = 600;
+					//-->
+				</script>
+				<script type="text/javascript"
+					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>
+			
+			<div id="adsRightTop100">
+				<script type="text/javascript"><!--
+					google_ad_client = "ca-pub-9435637599979561";
+					/* top100 - right */
+					google_ad_slot = "8898651298";
+					google_ad_width = 120;
+					google_ad_height = 600;
+					//-->
+				</script>
+				<script type="text/javascript"
+					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>
+		</div>
 	</div>
 	
 	<jsp:include page="includes/footer.jsp"/>

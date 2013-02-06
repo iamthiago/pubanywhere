@@ -49,6 +49,21 @@
 				data-header="false">
 			</div>
 		</div>
+		
+		<div id="adsSocial">
+			<script type="text/javascript">
+				<!--
+					google_ad_client = "ca-pub-9435637599979561";
+					/* Pagina Inicial */
+					google_ad_slot = "9038252098";
+					google_ad_width = 200;
+					google_ad_height = 200;
+				//-->
+			</script>
+			<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+		</div>
 	</div>
 	
 	<div id="divCountrys">
@@ -123,6 +138,36 @@
 					</tr> --%>
 				</tbody>
 			</table>
+			
+			<div id="adsPics">
+				<div id="adsLeft" class="adsPicsLeftRight">
+					<script type="text/javascript"><!--
+						google_ad_client = "ca-pub-9435637599979561";
+						/* main - pics - left */
+						google_ad_slot = "1514985299";
+						google_ad_width = 468;
+						google_ad_height = 60;
+						//-->
+					</script>
+					<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+					</script>
+				</div>
+				
+				<div id="adsRight" class="adsPicsLeftRight">
+					<script type="text/javascript"><!--
+						google_ad_client = "ca-pub-9435637599979561";
+						/* main - pics - right */
+						google_ad_slot = "2991718495";
+						google_ad_width = 468;
+						google_ad_height = 60;
+						//-->
+					</script>
+					<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+					</script>
+				</div>
+			</div>
 		</div>
 		
 		<jsp:include page="includes/footer.jsp"/>
