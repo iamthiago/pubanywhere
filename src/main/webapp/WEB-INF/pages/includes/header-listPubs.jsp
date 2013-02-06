@@ -4,6 +4,6 @@
 		<title>Pub Anywhere - ${windowTitle}</title>
 		
 		<jsp:include page="default.jsp"/>
-		<script type="text/javascript" src="<c:url value='/resources/js/listPubs-31-01-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/listPubs-05-02-13.js' />"></script>
 		
 	</head>
