@@ -11,7 +11,7 @@
 	    <link type="text/css" href="<c:url value='/resources/css/footer-05-02-13.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/help-05-02-13.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/backoffice-05-02-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/listPubs-05-02-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/listPubs-06-02-13.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/dataTablesCustom.css' />" rel="stylesheet" />
 	    
 	    <link type="text/css" href="<c:url value='/resources/css/black-tie/jquery-ui-1.8.23.custom.css' />" rel="stylesheet" />

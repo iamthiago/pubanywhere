@@ -72,6 +72,11 @@ ol#pagination li {
 	width: 60px;
 }
 
+ol#pagination .current {
+	background: none repeat scroll 0 0 white;
+	color: black;
+}
+
 #listHeader {
 	margin: 50px auto 0;
 	width: 995px;
