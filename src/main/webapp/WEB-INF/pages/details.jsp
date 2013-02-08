@@ -26,9 +26,30 @@
 				<div id="divImg" class="padding">
 					<img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}"/>
 				</div>
-				<div class="title padding">
-					<h3><spring:message code="form.pub.description"/></h3>
+				
+				<div id="socialDetail" class="padding">
+					<div id="twitterShare">
+						<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+						<script>
+							!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+							if(!d.getElementById(id)){js=d.createElement(s);
+							js.id=id;js.src="//platform.twitter.com/widgets.js";
+							fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+						</script>
+					</div>
+					
+					<div id="googleOne">
+						<div class="g-plusone" data-size="medium"></div>
+					</div>
+					
+					<div id="facebookLike">
+						<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
+					</div>
 				</div>
+				
+				<div id="descTitle" class="title padding">
+					<h3><spring:message code="form.pub.description"/></h3>
+				</div>				
 				<div id="pubDescription" class="margin15px">
 					${pub.descricao}
 				</div>
@@ -91,43 +112,6 @@
 					</div>
 					
 					<div class="title center">
-						<h3><spring:message code="details.promote"/></h3>
-					</div>
-					<div class="margin15px center">
-						<div id="googleOne">
-							<div class="g-plusone" data-width="300"></div>
-						</div>
-						
-						<div id="facebookLike">
-							<div
-								class="fb-like"
-								data-send="false"
-								data-layout="button_count"
-								data-width="450"
-								data-show-faces="true"
-								data-action="recommend">
-							</div>
-						</div>
-					</div>
-					
-					<div class="title center">
-						<h3><spring:message code="details.advertising.title"/></h3>
-					</div>
-					<div id="advertising" class="title center padding">
-						<script type="text/javascript"><!--
-							google_ad_client = "ca-pub-9435637599979561";
-							/* detail - unique */
-							google_ad_slot = "1235783690";
-							google_ad_width = 200;
-							google_ad_height = 200;
-							//-->
-						</script>
-						<script type="text/javascript"
-							src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-						</script>
-					</div>
-					
-					<div class="title center">
 						<h3><spring:message code="details.follow"/></h3>
 					</div>
 					<div id="fbLikeBox">
@@ -147,6 +131,36 @@
 					</div>
 				</div>
 			</div>
+		</div>		
+	</div>
+	
+	<div id="adsDetail">
+		<div id="adsLeftDetail">
+			<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-9435637599979561";
+				/* Detail - Left */
+				google_ad_slot = "5055377698";
+				google_ad_width = 120;
+				google_ad_height = 600;
+				//-->
+			</script>
+			<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+		</div>
+		
+		<div id="adsRightDetail">
+			<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-9435637599979561";
+				/* Detail - Right */
+				google_ad_slot = "6532110899";
+				google_ad_width = 120;
+				google_ad_height = 600;
+				//-->
+			</script>
+			<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
 		</div>
 	</div>
 	

@@ -5,12 +5,12 @@
 		<title>Pub Anywhere</title>
 		
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	    <link type="text/css" href="<c:url value='/resources/css/main-05-02-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/detail-05-02-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/registerPub-05-02-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/footer-05-02-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/help-05-02-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/backoffice-05-02-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/main-07-02-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/detail-07-02-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/registerPub-07-02-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/footer-07-02-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/help-07-02-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/backoffice-07-02-13.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/listPubs-06-02-13.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/dataTablesCustom.css' />" rel="stylesheet" />
 	    
@@ -25,4 +25,4 @@
 	    <script type="text/javascript" src="<c:url value='/resources/js/jquery.easyPaginate.js' />"></script>
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/dataTablesDefault.js' />"></script>
-		<script type="text/javascript" src="<c:url value='/resources/js/main-05-02-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/main-07-02-13.js' />"></script>
