@@ -5,12 +5,12 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	    <title>Pub Anywhere - Login</title>
 	    <link type="text/css" href="<c:url value='/resources/css/black-tie/jquery-ui-1.8.23.custom.css' />" rel="stylesheet" />
-		<link type="text/css" href="<c:url value='/resources/css/login-05-02-13.css' />" rel="stylesheet" />
-		<link type="text/css" href="<c:url value='/resources/css/footer-05-02-13.css' />" rel="stylesheet" />
-		<link type="text/css" href="<c:url value='/resources/css/main-05-02-13.css' />" rel="stylesheet" />
+		<link type="text/css" href="<c:url value='/resources/css/login-07-02-13.css' />" rel="stylesheet" />
+		<link type="text/css" href="<c:url value='/resources/css/footer-07-02-13.css' />" rel="stylesheet" />
+		<link type="text/css" href="<c:url value='/resources/css/main-07-02-13.css' />" rel="stylesheet" />
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/jquery-1.8.0.min.js' />"></script>
 		<script type="text/javascript" src="<c:url value='/resources/js/jquery-ui-1.8.23.custom.min.js' />"></script>
-		<script type="text/javascript" src="<c:url value='/resources/js/login-05-02-13.js' />"></script>
-		<script type="text/javascript" src="<c:url value='/resources/js/main-05-02-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/login-07-02-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/main-07-02-13.js' />"></script>
 	</head>

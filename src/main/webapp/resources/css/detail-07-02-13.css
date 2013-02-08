@@ -43,10 +43,6 @@
 	margin-bottom: 15px;
 }
 
-#fbLikeBox {
-	margin: 5px 5px 10px;
-}
-
 #divImg {
 	width: 620px;
 	height: 350px;
@@ -59,16 +55,51 @@
 	display: block;
 }
 
-#advertising {
-	height: 200px;
-	width: 270px;
-	display: block;
-}
-
 .title {
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .padding {
 	padding: 10px 15px;
+}
+
+#descTitle {
+	margin-top: 50px;
+}
+
+#socialDetail {
+	position: absolute;
+	width: 620px;
+}
+
+#twitterShare, #facebookLike {
+	float: left;
+	width: 100px;
+}
+
+#twitterShare {
+	margin-left: 200px;
+}
+
+#googleOne {
+	float: left;
+	width: 80px;
+}
+
+#adsDetail {
+	height: 650px;
+	position: absolute;
+	top: 185px;
+	width: 100%;
+	z-index: -1;
+}
+
+#adsLeftDetail {
+	float: left;
+	margin-left: 2%;
+}
+
+#adsRightDetail {
+	float: right;
+	margin-right: 2%;
 }
