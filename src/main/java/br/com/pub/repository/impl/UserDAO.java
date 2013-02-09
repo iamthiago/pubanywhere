@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import com.googlecode.ehcache.annotations.Cacheable;
+
 import br.com.pub.domain.Users;
 import br.com.pub.repository.UserRepository;
 
@@ -14,6 +16,7 @@ public class UserDAO extends AbstractDAO<Users> implements UserRepository {
 
 	private static final Logger log = LoggerFactory.getLogger(UserDAO.class);
 	
+	@Cacheable(cacheName="findUserByUsernameCache")
 	public Users findUserByUsername(String username) {
 		try {
 			

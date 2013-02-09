@@ -39,5 +39,35 @@
 				</span>
 			</h3>
 		</div>
+		
+		<div id="adsMaps">
+			<div id="adsLeft" class="adsPicsLeftRight">
+				<script type="text/javascript"><!--
+					google_ad_client = "ca-pub-9435637599979561";
+					/* Maps - Left */
+					google_ad_slot = "3923394892";
+					google_ad_width = 468;
+					google_ad_height = 60;
+					//-->
+				</script>
+				<script type="text/javascript"
+					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>
+			
+			<div id="adsRight" class="adsPicsLeftRight">
+				<script type="text/javascript"><!--
+					google_ad_client = "ca-pub-9435637599979561";
+					/* Maps - Right */
+					google_ad_slot = "6876861293";
+					google_ad_width = 468;
+					google_ad_height = 60;
+					//-->
+				</script>
+				<script type="text/javascript"
+					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>
+		</div>
 	</body>
 </html>

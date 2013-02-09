@@ -10,6 +10,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.googlecode.ehcache.annotations.Cacheable;
+
 import br.com.pub.repository.AbstractRepository;
 
 public abstract class AbstractDAO<T> implements AbstractRepository<T> {
@@ -36,7 +38,8 @@ public abstract class AbstractDAO<T> implements AbstractRepository<T> {
 	public void delete(Object id) {
 		em.remove(this.em.getReference(clazz, id));
 	}
-
+	
+	@Cacheable(cacheName="abstractFind")
 	@Transactional(propagation = Propagation.REQUIRED)
 	public T find(Object id) {
 		return em.find(clazz, id);
@@ -47,6 +50,7 @@ public abstract class AbstractDAO<T> implements AbstractRepository<T> {
 		return em.merge(t);
 	}
 	
+	@Cacheable(cacheName="abstractFindAll")
 	@SuppressWarnings("unchecked")
 	public List<T> listAll() {
 		return em.createQuery("SELECT x FROM " + clazz.getSimpleName() + " x ").getResultList();

@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 		http://www.springframework.org/schema/tx 
@@ -10,12 +10,23 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context-3.1.xsd
 		http://www.springframework.org/schema/mvc
-		http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+		http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd">
 
 	<context:annotation-config />
 	<context:component-scan base-package="br.com.pub" />
 
 	<mvc:annotation-driven />
+	<ehcache:annotation-driven />
+	
+	<!-- EhCache Configuration -->
+	<ehcache:config cache-manager="cacheManager">
+        <ehcache:evict-expired-elements interval="60" />
+    </ehcache:config>
+    
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+	    <property name="configLocation"  value="/WEB-INF/ehcache.xml"/>
+	</bean>
 	
 	<!-- Invokes Spring MVC @Controller methods -->
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
