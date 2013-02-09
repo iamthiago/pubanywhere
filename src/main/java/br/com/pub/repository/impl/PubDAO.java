@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import com.googlecode.ehcache.annotations.Cacheable;
+
 import br.com.pub.domain.Pub;
 import br.com.pub.repository.PubRepository;
 
@@ -16,6 +18,7 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 
 	private static final Logger log = LoggerFactory.getLogger(PubDAO.class);
 
+	@Cacheable(cacheName="listPubsByUsernameCache")
 	@SuppressWarnings("unchecked")
 	public List<Pub> listPubsByUsername(String username) {
 		try {
@@ -31,6 +34,7 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 		return null;
 	}
 
+	@Cacheable(cacheName="listPubsPerCountryCache")
 	@SuppressWarnings("unchecked")
 	public List<Pub> listPubsPerCountry(String country) {
 		try {
@@ -47,6 +51,7 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 		return null;
 	}
 
+	@Cacheable(cacheName="listTop100WorldCache")
 	@SuppressWarnings("unchecked")
 	public List<Pub> listTop100World() {
 		try {

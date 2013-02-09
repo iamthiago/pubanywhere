@@ -34,9 +34,9 @@
 									<div id="pubCountry">
 										${pub.country}
 									</div>
-									<div id="views">
+									<%-- <div id="views">
 										${pub.pubViews}
-									</div>
+									</div> --%>
 								</div>
 							</a>
 						</li>

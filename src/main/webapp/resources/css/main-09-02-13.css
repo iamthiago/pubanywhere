@@ -238,18 +238,22 @@ body {
 }
 
 /* ads */
-#adsPics {
+#adsPics, #adsMaps {
 	position: absolute;
 	top: 73%;
 	width: 100%;
 }
 
-#adsPics #adsLeft {
+#adsMaps {
+	top: 560px;
+}
+
+#adsLeft {
 	float: left;
 	margin-left: 5%;
 }
 
-#adsPics #adsRight {
+#adsRight {
 	float: right;
 	margin-right: 5%;
 }

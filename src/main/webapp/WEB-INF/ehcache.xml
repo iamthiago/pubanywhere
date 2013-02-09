@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+    <defaultCache eternal="true" maxElementsInMemory="100" overflowToDisk="false" />
+    <cache name="abstractFind" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="abstractFindAll" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="findUserByUsernameCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="listPubsByUsernameCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="listPubsPerCountryCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="listTop100WorldCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+</ehcache>

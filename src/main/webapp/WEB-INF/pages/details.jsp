@@ -45,6 +45,10 @@
 					<div id="facebookLike">
 						<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
 					</div>
+					
+					<div id="pubViews">
+						${pub.pubViews}
+					</div>
 				</div>
 				
 				<div id="descTitle" class="title padding">
