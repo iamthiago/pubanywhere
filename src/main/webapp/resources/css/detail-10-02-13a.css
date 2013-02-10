@@ -72,6 +72,7 @@
 }
 
 #socialDetail {
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	position: absolute;
 	width: 620px;
 }
@@ -83,11 +84,13 @@
 #twitterShare, #facebookLike {
 	float: left;
 	width: 100px;
+	margin-top: 4px;
 }
 
 #googleOne {
 	float: left;
 	width: 80px;
+	margin-top: 4px;
 }
 
 #adsDetail {

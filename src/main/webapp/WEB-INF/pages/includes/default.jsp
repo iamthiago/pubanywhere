@@ -6,7 +6,7 @@
 		
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	    <link type="text/css" href="<c:url value='/resources/css/main-10-02-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/detail-10-02-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/detail-10-02-13a.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/registerPub-10-02-13.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/footer-10-02-13.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/help-10-02-13.css' />" rel="stylesheet" />

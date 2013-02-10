@@ -111,18 +111,18 @@
 							</a>
 						</td>
 						<td>
-							<a href="<c:url value="/pubs/country/Argentina"></c:url>">
+							<a href="<c:url value="/pubs/country/Ireland"></c:url>">
 								<div class="navigator">
-									<img src="<c:url value='/resources/imgs/flags/argentina.jpg'/>">
+									<img src="<c:url value='/resources/imgs/flags/ireland.jpg'/>">
 								</div>
 								<div class="nav_white">
-									<spring:message code="country.argentina"/>
+									<spring:message code="country.ireland"/>
 								</div>
 							</a>
 						</td>
 					</tr>
-					<%-- <tr>
-						<td>
+					<tr>
+						<%-- <td>
 							<a href="${listPubsPerCountry}/Germany">
 								<div class="navigator">
 									<img src="<c:url value='/resources/imgs/flags/germany.jpg'/>">
@@ -141,18 +141,18 @@
 									<spring:message code="country.england"/>
 								</div>
 							</a>
-						</td>
+						</td> --%>
 						<td>
-							<a href="${listPubsPerCountry}/Ireland">
+							<a href="<c:url value="/pubs/country/Argentina"></c:url>">
 								<div class="navigator">
-									<img src="<c:url value='/resources/imgs/flags/ireland.jpg'/>">
+									<img src="<c:url value='/resources/imgs/flags/argentina.jpg'/>">
 								</div>
 								<div class="nav_white">
-									<spring:message code="country.ireland"/>
+									<spring:message code="country.argentina"/>
 								</div>
 							</a>
 						</td>
-					</tr> --%>
+					</tr>
 				</tbody>
 			</table>
 		</div>
