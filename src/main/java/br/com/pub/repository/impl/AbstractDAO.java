@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.googlecode.ehcache.annotations.Cacheable;
+import com.googlecode.ehcache.annotations.TriggersRemove;
 
 import br.com.pub.repository.AbstractRepository;
 
@@ -28,10 +29,33 @@ public abstract class AbstractDAO<T> implements AbstractRepository<T> {
 		clazz = (Class<T>) pt.getActualTypeArguments()[0];
 	}
 	
+	@TriggersRemove(
+			cacheName={
+					"abstractFindCache",
+					"abstractFindAllCache",
+					"findUserByUsernameCache",
+					"listPubsByUsernameCache",
+					"listPubsPerCountryCache",
+					"listTop100WorldCache"},
+					removeAll=true)
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	public T insert(T t) {
 		em.persist(t);
 		return t;
+	}
+	
+	@TriggersRemove(
+			cacheName={
+					"abstractFindCache",
+					"abstractFindAllCache",
+					"findUserByUsernameCache",
+					"listPubsByUsernameCache",
+					"listPubsPerCountryCache",
+					"listTop100WorldCache"},
+					removeAll=true)
+	@Transactional(propagation = Propagation.REQUIRED)
+	public T update(T t) {
+		return em.merge(t);
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
@@ -39,17 +63,13 @@ public abstract class AbstractDAO<T> implements AbstractRepository<T> {
 		em.remove(this.em.getReference(clazz, id));
 	}
 	
+	@Cacheable(cacheName="abstractFindCache")
 	@Transactional(propagation = Propagation.REQUIRED)
 	public T find(Object id) {
 		return em.find(clazz, id);
 	}
-
-	@Transactional(propagation = Propagation.REQUIRED)
-	public T update(T t) {
-		return em.merge(t);
-	}
 	
-	@Cacheable(cacheName="abstractFindAll")
+	@Cacheable(cacheName="abstractFindAllCache")
 	@SuppressWarnings("unchecked")
 	public List<T> listAll() {
 		return em.createQuery("SELECT x FROM " + clazz.getSimpleName() + " x ").getResultList();

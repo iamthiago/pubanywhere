@@ -5,5 +5,4 @@ import br.com.pub.domain.Users;
 public interface UserRepository extends AbstractRepository<Users> {
 	
 	Users findUserByUsername(String username);
-
 }

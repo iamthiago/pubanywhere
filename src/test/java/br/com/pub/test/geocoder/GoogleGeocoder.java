@@ -18,7 +18,7 @@ public class GoogleGeocoder {
 		final Geocoder geocoder = new Geocoder();
 
 		GeocoderRequest request = new GeocoderRequestBuilder()
-				.setAddress("Grecia 3394, Buenos Aires")
+				.setAddress("The Promenade, Lahinch. Co. Clare. Ireland")
 				.setLanguage("en").getGeocoderRequest();
 
 		GeocodeResponse response = geocoder.geocode(request);

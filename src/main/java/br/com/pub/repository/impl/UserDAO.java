@@ -30,5 +30,4 @@ public class UserDAO extends AbstractDAO<Users> implements UserRepository {
 		}
 		return null;
 	}
-
 }
