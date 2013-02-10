@@ -48,6 +48,9 @@
 					
 					<div id="pubViews">
 						${pub.pubViews}
+						<div id="messageView">
+							<spring:message code="details.views"/>
+						</div>
 					</div>
 				</div>
 				
