@@ -39,7 +39,6 @@ public abstract class AbstractDAO<T> implements AbstractRepository<T> {
 		em.remove(this.em.getReference(clazz, id));
 	}
 	
-	@Cacheable(cacheName="abstractFind")
 	@Transactional(propagation = Propagation.REQUIRED)
 	public T find(Object id) {
 		return em.find(clazz, id);
