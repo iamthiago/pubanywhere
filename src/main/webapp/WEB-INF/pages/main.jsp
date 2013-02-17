@@ -55,10 +55,10 @@
 											</a>
 						                </div>
 						                <div id="england">
-						                    <a href="<c:url value="/pubs/country/England"></c:url>">
+						                    <a href="<c:url value="/pubs/country/United Kingdom"></c:url>">
 												<img src="<c:url value='/resources/imgs/flags/england.jpg'/>">
 												<small>
-													<spring:message code="country.england"/>
+													<spring:message code="country.uk"/>
 												</small>
 											</a>
 					                	</div>
