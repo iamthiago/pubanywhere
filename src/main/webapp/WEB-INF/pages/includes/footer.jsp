@@ -1,11 +1,26 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<div id="footer" class="navigator">
-	<div class="div-footer">
-		<a href="http://twitter.com/pubanywhere" target="_blank">Twitter</a> |
-		<a href="http://facebook.com/pubanywhere" target="_blank">Facebook</a> |
-		<a href="<c:url value="/help"/>"><spring:message code="footer.company.help"/></a>
+<div id="footer">
+	<div>
+		<div>
+			Copyright © 2013 Pub Anywhere.
+			<div>
+				<span>Find us on:</span>
+				<ul id="footerSocial">
+					<li class="facebook">
+						<a href="http://facebook.com/pubanywhere" target="_blank">
+							<span></span>
+						</a>
+					</li>
+					<li class="twitter">
+						<a href="http://twitter.com/pubanywhere" target="_blank">
+							<span></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 	
 	<script type="text/javascript">

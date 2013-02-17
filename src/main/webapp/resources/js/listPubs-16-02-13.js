@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
 	$('ul#ul-list').easyPaginate({
-		step:9
+		step:10
 	});
 });

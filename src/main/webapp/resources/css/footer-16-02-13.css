@@ -1,0 +1,43 @@
+#footer {
+	background-color: white;
+	padding-bottom: 110px;
+}
+
+#footer > div {
+	margin: 0 auto;
+	max-width: 960px;
+	width: 100%;
+}
+
+#footer > div > div {
+	color: #999999;
+	float: right;
+	padding-top: 10px;
+	text-align: right;
+}
+
+#footerSocial {
+	float: right;
+	margin-top: 0;
+	padding: 0;
+	list-style: none outside none;
+}
+
+#footerSocial li {
+	float: left;
+}
+
+#footerSocial li a span {
+	display: block;
+	height: 17px;
+	margin-left: 5px;
+	width: 16px;
+}
+
+.twitter span {
+	background-image: url("../imgs/twitter.png");
+}
+
+.facebook span {
+	background-image: url("../imgs/facebook.png");
+}

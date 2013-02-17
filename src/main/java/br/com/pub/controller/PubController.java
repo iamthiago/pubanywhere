@@ -68,7 +68,7 @@ public class PubController {
 		if (!pubs.isEmpty()) {
 			map.put("pubs", pubs);
 			map.put("windowTitle", "Top 100 Pubs");
-			map.put("listTitle", messageService.getMessageFromResource(request, "pub.title.top100world"));
+			map.put("listTitle", messageService.getMessageFromResource(request, "pub.title.top100"));
 			return "listPubs";
 		} else {
 			map.put("erro", messageService.getMessageFromResource(request, "config.pub.404.top"));
@@ -112,7 +112,7 @@ public class PubController {
 	}
 	
 	private String setCountryTitle(String country, HttpServletRequest request) {
-		return messageService.getMessageFromResource(request, "pub.title.top100country") + " " + messageService.getMessageFromResource(request, "country." + getCountry(country));
+		return messageService.getMessageFromResource(request, "pub.title.top100") + " - " + messageService.getMessageFromResource(request, "country." + getCountry(country));
 	}
 	
 	private String getCountry(String country) {

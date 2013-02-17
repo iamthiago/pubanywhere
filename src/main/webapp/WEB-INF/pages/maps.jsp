@@ -4,7 +4,7 @@
 
 <jsp:include page="includes/header-maps.jsp"/>
 	
-	<body onload="initialize()" style="overflow: hidden;">
+	<body id="mapsBody" onload="initialize()" class="degrade">
 	
 		<jsp:include page="includes/navigator.jsp"/>
 	
@@ -69,5 +69,8 @@
 				</script>
 			</div>
 		</div>
+		
+		<jsp:include page="includes/footer.jsp"/>
+		
 	</body>
 </html>
