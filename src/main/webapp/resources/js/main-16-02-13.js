@@ -1,14 +1,7 @@
 $(document).ready(function() {
 	
-	$('#btnHome').button({
-		icons : {
-			primary : 'ui-icon ui-icon-home'
-		},
-		text: false
-	});
-	
 	// toolbar
-	$('#listYourPub, #insertPub, #btnHelp, #btnLogin, #btnLogout, #sendMail, #btnEditPub, #top100').button();
+	$('#listYourPub, #insertPub, #btnLogout, #sendMail, #btnEditPub').button();
 	
 	//help divs
 	$('#about').show();

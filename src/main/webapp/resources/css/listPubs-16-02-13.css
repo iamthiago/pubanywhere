@@ -1,0 +1,176 @@
+#top100Content a {
+	color: black;
+}
+
+.frameAll {
+	display: block;
+	height: 100%;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	position: relative;
+	text-align: left;
+	width: 100%;
+}
+
+.row {
+	min-height: 500px;
+}
+
+#topSection {
+	background-image: linear-gradient(#EEEEEE, #FFFFFF);
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 20px;
+	padding-bottom: 40px;
+	padding-top: 30px;
+}
+
+.topTitle {
+	margin: 0 auto;
+	width: 1170px;
+	position: relative;
+}
+
+.h1 {
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 0;
+	padding-right: 10px;
+}
+
+#container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1170px;
+}
+
+.marginList {
+	margin-bottom: 40px;
+	padding-bottom: 20px;
+}
+
+#top100AdsLeft {
+	width: 250px;
+	float: left;
+}
+
+#top100Content {
+	width: 850px;
+	float: left;
+}
+
+.li-pub-item {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-color: #DDDDDD;
+	border-style: solid;
+	border-width: 1px 1px 1px;
+	margin-bottom: 10px;
+}
+
+.pub-item {
+	padding: 10px;
+	position: relative;
+}
+
+#pubMainPic {
+	width: 26%;
+	display: inline-block;
+}
+
+#pubPicInner {
+	position: relative;
+}
+
+#pubThumb {
+	display: block;
+	height: 190px;
+	overflow: hidden;
+	width: 200px;
+	background: url("../imgs/not_found.png") no-repeat scroll 50% 50% transparent;
+}
+
+#pubThumb img {
+	margin-left: -50px;
+	max-width: 340px;
+	min-height: 200px;
+	border: 0 none;
+	vertical-align: middle;;
+}
+
+#pubMainInfo {
+	min-height: 180px;
+	padding: 10px;
+	vertical-align: top;
+	width: 50%;
+	display: inline-block;
+}
+
+#pubName {
+	margin: 5px 0 10px;
+	font-weight: normal;
+}
+
+#innerName {
+	font-size: 30px;
+}
+
+#pubDesc {
+	height: 55px;
+	overflow: hidden;
+	color: #999999;
+}
+
+.space {
+	margin-top: 5px;
+}
+
+#pubMainViews{
+	border: 50px none;
+	display: inline-block;
+	float: right;
+	margin-top: 5px;
+	text-align: right;
+	vertical-align: top;
+	width: 20%;	
+}
+
+#views {
+	font-size: 30px;
+	padding: 10px;
+}
+
+ol#pagination {
+	float: right;
+	margin-right: 80px;
+	margin-top: 50px;
+	padding-bottom: 20px;
+}
+
+ol#pagination li {
+	background: rgb(0,0,0); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(69,72,77,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(69,72,77,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* W3C */
+	box-shadow: 0 0 5px 5px #777777;
+	color: white;
+	cursor: pointer;
+	float: left;
+	font-size: 11px;
+	font-weight: bold;
+	list-style: none outside none;
+	text-align: center;
+	width: 60px;
+	display: inline;
+}
+
+ol#pagination .current {
+	background: none repeat scroll 0 0 white;
+	color: black;
+}
+
+#top100AdsBottom > div {
+	float: right;
+	margin-right: 125px;
+}

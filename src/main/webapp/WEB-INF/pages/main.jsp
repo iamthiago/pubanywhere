@@ -6,160 +6,97 @@
 
 <jsp:include page="includes/header.jsp"/>
 
-<body class="overflow">
-	
-	<jsp:include page="includes/navigator.jsp"/>
-	
-	<div>
-		<div id="main_content">
-			<div class="div-pub-image">
-				<img src="<c:url value='/resources/imgs/pub-full-logo-beta.png'/>">
-			</div>
-			<div class="div-search-bar">
-				<form action="/pubs/maps" method='POST' id="mainForm">
+<body>
+	<div id="principal">
+		<jsp:include page="includes/navigator.jsp"/>
+		<div id="content" class="degrade">
+			<div>
+				<div class="back_content">
+					<div>
+						<div id="searchPub">
+							<h1><spring:message code="main.title"/></h1>
+							<div id="searchInput">
+								<form action="/pubs/maps" method='POST' id="mainForm">
 				
-					<input type="hidden" id="lat" name="lat">
-	    			<input type="hidden" id="lng" name="lng">
-	    			
-					<div class="input-box">
-						<input type='text' id="location" name="location" placeholder="<spring:message code="main.search"/>" autocomplete="off" class="location">
+								<input type="hidden" id="lat" name="lat">
+				    			<input type="hidden" id="lng" name="lng">
+				    			
+								<span class="input-box">
+									<small id="glass"></small>
+									<input type='text' id="location" name="location" placeholder="<spring:message code="main.search"/>" autocomplete="off" class="location">
+								</span>
+							</div>
+						</div>
 					</div>
-					<div id="ie">
-						<spring:message code="main.ie"/>
+				</div>
+			</div>
+			<div id="mainCountry">
+				<div>
+					<h2><spring:message code="main.country"/></h2>
+					<div id="countryPics">
+						<div id="country-inner">
+							<div id="slides">
+					            <div class="slides_container">
+					                <div id="slide1">
+					                	<div id="usa">
+						                    <a href="<c:url value="/pubs/country/United States"></c:url>">
+												<img src="<c:url value='/resources/imgs/flags/united_states.jpg'/>">
+												<small>
+													<spring:message code="country.unitedstates"/>
+												</small>
+											</a>
+						                </div>
+						                <div id="ireland">
+						                    <a href="<c:url value="/pubs/country/Ireland"></c:url>">
+												<img src="<c:url value='/resources/imgs/flags/ireland.jpg'/>">
+												<small>
+													<spring:message code="country.ireland"/>
+												</small>
+											</a>
+						                </div>
+						                <div id="england">
+						                    <a href="<c:url value="/pubs/country/England"></c:url>">
+												<img src="<c:url value='/resources/imgs/flags/england.jpg'/>">
+												<small>
+													<spring:message code="country.england"/>
+												</small>
+											</a>
+					                	</div>
+					                </div>
+					                <div id="slide2">
+					                	<div id="germany">
+						                    <a href="<c:url value="/pubs/country/Germany"></c:url>">
+												<img src="<c:url value='/resources/imgs/flags/germany.jpg'/>">
+												<small>
+													<spring:message code="country.germany"/>
+												</small>
+											</a>
+					                	</div>
+					                	<div id="brazil">
+						                    <a href="<c:url value="/pubs/country/Brazil"></c:url>">
+												<img src="<c:url value='/resources/imgs/flags/brazil.jpg'/>">
+												<small>
+													<spring:message code="country.brazil"/>
+												</small>
+											</a>
+					                	</div>
+					                	<div id="argentina">
+						                    <a href="<c:url value="/pubs/country/Argentina"></c:url>">
+												<img src="<c:url value='/resources/imgs/flags/argentina.jpg'/>">
+												<small>
+													<spring:message code="country.argentina"/>
+												</small>
+											</a>
+					                	</div>
+					                </div>
+					            </div>
+					        </div>
+						</div>
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
-	</div>
-	
-	<div id="socialPlugins">
-		<div id="googleOne">
-			<div class="g-plusone" data-width="300"></div>
-		</div>
-		
-		<div id="twitterFollow">
-			<a href="https://twitter.com/pubanywhere" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow @pubanywhere</a>
-		</div>
-
-		<div id="facebookLike">
-			<div
-				class="fb-like-box"
-				data-href="http://www.facebook.com/pubanywhere"
-				data-width="292"
-				data-show-faces="false"
-				data-stream="false"
-				data-header="false">
-			</div>
-		</div>
-	</div>
-	
-	<div id="adsPics">
-		<div id="adsLeft" class="adsPicsLeftRight">
-			<script type="text/javascript"><!--
-				google_ad_client = "ca-pub-9435637599979561";
-				/* main - pics - left */
-				google_ad_slot = "1514985299";
-				google_ad_width = 468;
-				google_ad_height = 60;
-				//-->
-			</script>
-			<script type="text/javascript"
-				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
-		</div>
-		
-		<div id="adsRight" class="adsPicsLeftRight">
-			<script type="text/javascript"><!--
-				google_ad_client = "ca-pub-9435637599979561";
-				/* main - pics - right */
-				google_ad_slot = "2991718495";
-				google_ad_width = 468;
-				google_ad_height = 60;
-				//-->
-			</script>
-			<script type="text/javascript"
-				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
-		</div>
-	</div>
-	
-	<div id="divCountrys">
-		<div class="navigator">
-		</div>
-		<div id="postalPics">
-			<table>
-				<tbody>
-					<tr>
-						<td>
-							<a href="<c:url value="/pubs/country/Brazil"></c:url>">
-								<div class="navigator">
-									<img src="<c:url value='/resources/imgs/flags/brazil.jpg'/>">
-								</div>
-								<div class="nav_white">
-									<spring:message code="country.brazil"/>
-								</div>
-							</a>
-						</td>
-						<td>
-							<a href="<c:url value="/pubs/country/United States"></c:url>">
-								<div class="navigator">
-									<img src="<c:url value='/resources/imgs/flags/united_states.jpg'/>">
-								</div>
-								<div class="nav_white">
-									<spring:message code="country.unitedstates"/>
-								</div>
-							</a>
-						</td>
-						<td>
-							<a href="<c:url value="/pubs/country/Ireland"></c:url>">
-								<div class="navigator">
-									<img src="<c:url value='/resources/imgs/flags/ireland.jpg'/>">
-								</div>
-								<div class="nav_white">
-									<spring:message code="country.ireland"/>
-								</div>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<%-- <td>
-							<a href="${listPubsPerCountry}/Germany">
-								<div class="navigator">
-									<img src="<c:url value='/resources/imgs/flags/germany.jpg'/>">
-								</div>
-								<div class="nav_white">
-									<spring:message code="country.germany"/>
-								</div>
-							</a>
-						</td>
-						<td>
-							<a href="${listPubsPerCountry}/England">
-								<div class="navigator">
-									<img src="<c:url value='/resources/imgs/flags/england.jpg'/>">
-								</div>
-								<div class="nav_white">
-									<spring:message code="country.england"/>
-								</div>
-							</a>
-						</td> --%>
-						<td>
-							<a href="<c:url value="/pubs/country/Argentina"></c:url>">
-								<div class="navigator">
-									<img src="<c:url value='/resources/imgs/flags/argentina.jpg'/>">
-								</div>
-								<div class="nav_white">
-									<spring:message code="country.argentina"/>
-								</div>
-							</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		
 		<jsp:include page="includes/footer.jsp"/>
-		
 	</div>
-	
 </body>
 </html>
