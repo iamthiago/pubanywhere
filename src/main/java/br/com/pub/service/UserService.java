@@ -1,8 +1,5 @@
 package br.com.pub.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.RandomStringUtils;
@@ -37,40 +34,18 @@ public class UserService {
 			Authorities auth = rolesRepository.find(Roles.ROLE_USER.getCodigo());
 			if (auth != null) {
 				user.setAuthorities(auth);
-				setPubToUser(pub, user);
 				user = userRepository.insert(user);
 			}
 			
 			EmailMessageCreator.sendUserDetailsMail(pub, user, true, request);
 			
 		} else if (!StringUtils.isEmpty(pub.getEmail()) && user != null) {
-			setPubToUser(pub, user);
 			userRepository.update(user);
 			EmailMessageCreator.sendUserDetailsMail(pub, user, false, request);
 		
 		}
 		
 		return user;
-	}
-
-	private void setPubToUser(Pub pub, Users user) {
-		List<Pub> pubList = new ArrayList<Pub>();
-		if (user.getPubs() == null) {
-			pubList.add(pub);
-			user.setPubs(pubList);
-		} else {
-			boolean isEquals = false;
-			pubList = new ArrayList<Pub>(user.getPubs());
-			for (Pub existPub : pubList) {
-				if (existPub.getPubId().equals(pub.getPubId())) {
-					isEquals = true;
-					break;
-				}
-			}
-			if (!isEquals) {
-				user.getPubs().add(pub);
-			}
-		}
 	}
 
 	public Users findUserByUsername(String username) {

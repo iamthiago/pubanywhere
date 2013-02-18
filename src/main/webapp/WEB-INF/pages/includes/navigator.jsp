@@ -18,6 +18,9 @@
 				
 				<c:url value="/help" var="help"></c:url>
 				<a href="${help}" id="btnHelp" class="nav-buttons"><spring:message code="nav.button.help"/></a>
+				
+				<c:url value="/pubs/registerPub" var="register"></c:url>		
+				<a href="${register}" id="register" class="nav-buttons"><spring:message code="form.pub.title"/></a>
 			</div>
 		</div>
 	</div>

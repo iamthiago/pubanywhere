@@ -34,12 +34,6 @@ public class PubController {
 		return "maps";
 	}
 	
-	@RequestMapping(value = "registerPub", method = RequestMethod.GET)
-	public String pubs(Map<String, Object> map) {
-		map.put("pubForm", new Pub());
-		return "registerPub";
-	}
-	
 	@ResponseBody
 	@RequestMapping(value = "listNearPubs")
 	public List<Pub> listNearPubs(HttpServletRequest request, HttpSession session) {
@@ -74,6 +68,12 @@ public class PubController {
 			map.put("erro", messageService.getMessageFromResource(request, "config.pub.404.top"));
 			return "errorPage";
 		}
+	}
+	
+	@RequestMapping(value = "registerPub", method = RequestMethod.GET)
+	public String pubs(Map<String, Object> map) {
+		map.put("pubForm", new Pub());
+		return "registerPub";
 	}
 	
 	@RequestMapping(value = "registerPub", headers={"content-type=multipart/form-data"}, method = RequestMethod.POST)

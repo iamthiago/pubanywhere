@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
 	// toolbar
-	$('#listYourPub, #insertPub, #btnLogout, #sendMail, #btnEditPub').button();
+	$('#listYourPub, #register, #btnLogout, #sendMail, #btnEditPub').button();
 	
 	//help divs
 	$('#about').show();

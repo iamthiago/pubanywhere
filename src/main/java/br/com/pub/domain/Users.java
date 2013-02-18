@@ -1,19 +1,14 @@
 package br.com.pub.domain;
 
 import java.io.Serializable;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Users implements Serializable {
@@ -40,12 +35,6 @@ public class Users implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "USER_AUTH_FK")
 	private Authorities authorities;
-	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name = "USER_HAS_PUBS",
-		joinColumns = @JoinColumn(name="USER_ID"), 
-		inverseJoinColumns = @JoinColumn(name="PUB_ID"))
-	private List<Pub> pubs;
 
 	public Long getUserId() {
 		return userId;
@@ -85,13 +74,5 @@ public class Users implements Serializable {
 
 	public void setAuthorities(Authorities authorities) {
 		this.authorities = authorities;
-	}
-
-	public List<Pub> getPubs() {
-		return pubs;
-	}
-
-	public void setPubs(List<Pub> pubs) {
-		this.pubs = pubs;
 	}
 }

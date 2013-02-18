@@ -1,13 +1,10 @@
 var autocomplete;
 
 $(document).ready(function(){
-	
-	/**
-	* autocomplete
-	*/
+
 	var input = null;
 	
-	if(document.getElementById('pubs-name') != null) {
+	if(document.getElementById('location_new') != null) {
 		input = document.getElementById('location_new');
 	}
 	
@@ -20,7 +17,22 @@ $(document).ready(function(){
 		}
 	});
     
-	$('#pubForm').submit(function(e) {		
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+		$('#pubForm').submit();
+	});
+	
+	$('#pubForm').submit(function(e) {
+		var place = autocomplete.getPlace();
+	    if (place == null || place.geometry == null) {
+	      e.preventDefault();
+	      return;
+	    } else {	    	
+	    	$('#lat').val(place.geometry.location.lat());
+	    	$('#lng').val(place.geometry.location.lng());
+	    }
+	});
+    
+	/*$('#pubForm').submit(function(e) {
 		var place = autocomplete.getPlace();
 	    if (!place) {
 	    	if (document.getElementById('location_new') != null) {
@@ -34,5 +46,5 @@ $(document).ready(function(){
 	    
 	    $('#lat').val(place.geometry.location.lat());
     	$('#lng').val(place.geometry.location.lng());
-	});
+	});*/
 });
