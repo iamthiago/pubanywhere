@@ -17,7 +17,7 @@ import br.com.pub.validation.MaxSizeUploadValidator;
 @Documented
 public @interface MaxSizeUpload {
 	
-	String message() default "Max upload size 1mb";
+	String message() default "Max upload size 2mb";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
 

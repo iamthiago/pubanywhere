@@ -1,24 +1,29 @@
+#info-site > div {
+	margin-bottom: 10px;
+}
+
+.tipTitle {
+	font-weight: bold;
+}
+
+.tipDesc {
+	font-style: italic;
+}
+
+
+
 /**
 elementos para a tela de pubs
 */
 
 fieldset {
 	border: 0 none;
-	margin: 0;
+	margin: 30px 0 0;
 }
 
 label {
 	display: block;
 	margin-bottom: 5px;
-}
-
-#main {
-	display: table;
-	margin: 0 auto;
-	width: 1050px;
-	clear: both;
-	position: relative;
-	height: 740px;
 }
 
 #control-panel {
@@ -29,23 +34,6 @@ label {
 	width: 700px;
 	top: 30px;
 	position: relative;
-}
-
-#control-title {
-	padding-top: 30px;
-	width: 500px;
-}
-
-#control-title-description {
-    line-height: 24px;
-}
-
-.register-title {
-	padding: 10px 15px;
-}
-
-.control-main {
-	padding-left: 30px;
 }
 
 .control-group {
@@ -62,11 +50,6 @@ label {
 .controls {
 	margin-left: 110px;
 }
-
-.padtop {
-	padding-top: 30px;
-}
-
 
 .buttons {
 	font-size: 10px !important;
@@ -88,11 +71,6 @@ label {
     font-family: inherit;
     height: 225px;
     width: 580px;
-}
-
-.ui-button {
-	font-size: 13px;
-	font-weight: bold;
 }
 
 .errors {

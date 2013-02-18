@@ -28,8 +28,6 @@ public class SitemapController {
 		XmlUrlSet xmlUrlSet = new XmlUrlSet();
 		
 		create(xmlUrlSet, "", XmlUrl.Priority.HIGH);
-		create(xmlUrlSet, "/login", XmlUrl.Priority.MEDIUM);
-		create(xmlUrlSet, "/backoffice", XmlUrl.Priority.MEDIUM);
 		create(xmlUrlSet, "/help", XmlUrl.Priority.MEDIUM);
 		create(xmlUrlSet, "/contact", XmlUrl.Priority.MEDIUM);
 		

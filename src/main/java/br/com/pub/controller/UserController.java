@@ -27,19 +27,19 @@ import br.com.pub.service.UserService;
 import br.com.pub.validation.PubValidations;
 
 @Controller
-@RequestMapping("backoffice")
-public class BackofficeController {
+@RequestMapping("user")
+public class UserController {
 	
 	@Autowired private PubService pubService;
 	@Autowired private UserService userService;
 	
-	private static Logger log = LoggerFactory.getLogger(BackofficeController.class);
+	private static Logger log = LoggerFactory.getLogger(UserController.class);
 	
 	@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
 	@RequestMapping(method = RequestMethod.GET)
-	public String getBackofficeMainPage(HttpSession session, Map<String, Object> map, HttpServletRequest request) {
+	public String getUserMainPage(HttpSession session, Map<String, Object> map, HttpServletRequest request) {
 		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		log.info("Usuario: " + user.getUsername() + " logado no backoffice");
+		log.info("Usuario: " + user.getUsername() + " logado no sistema");
 		
 		if(request.isUserInRole(Roles.ROLE_ADMIN.getDescricao())){
 			map.put("pubList", pubService.listAllPubs());
@@ -52,7 +52,7 @@ public class BackofficeController {
 		return "backoffice";
 	}
 	
-	@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+	@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')") 
 	@RequestMapping(value = "editPub/{pubId}", method = RequestMethod.GET)
 	public String editPub(@PathVariable("pubId") String pubId, Map<String, Object> map, HttpServletRequest request) {
 		if(request.isUserInRole(Roles.ROLE_ADMIN.getDescricao())){

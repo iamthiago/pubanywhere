@@ -22,8 +22,6 @@ public class PubValidations {
 	public static Pub valid(Pub pub) {
 		validWebSite(pub);
 		pub.setEmail(pub.getEmail().toLowerCase().trim());
-		pub.setFacebook(pub.getFacebook().toLowerCase().trim());
-		pub.setTwitter(pub.getTwitter().toLowerCase().trim());
 		
 		pub.setDesde(new Date());
 		pub.setEnabled(false);
@@ -36,11 +34,26 @@ public class PubValidations {
 
 	private static void validWebSite(Pub pub) {
 		pub.setWebsite(pub.getWebsite().toLowerCase().trim());
+		pub.setFacebook(pub.getFacebook().toLowerCase().trim());
+		pub.setTwitter(pub.getTwitter().toLowerCase().trim());
+		
 		if (!pub.getWebsite().contains("http://") && !pub.getWebsite().contains("https://")) {
 			if (StringUtils.isNotEmpty(pub.getWebsite())) {
 				pub.setWebsite("http://" + pub.getWebsite());
 			}
 		}
+		
+		if (!pub.getFacebook().contains("http://") && !pub.getFacebook().contains("https://")) {
+			if (StringUtils.isNotEmpty(pub.getFacebook())) {
+				pub.setFacebook("http://" + pub.getFacebook());
+			}
+		}
+		
+		if (!pub.getTwitter().contains("http://") && !pub.getTwitter().contains("https://")) {
+			if (StringUtils.isNotEmpty(pub.getTwitter())) {
+				pub.setTwitter("http://" + pub.getTwitter());
+			}
+		}		
 	}
 	
 	private static void setGoogleLocation(Pub pub) {
