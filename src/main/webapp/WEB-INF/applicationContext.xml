@@ -44,7 +44,7 @@
 	
 	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 	
-	<bean class="java.net.URI" id="dbUrl">
+	<!-- <bean class="java.net.URI" id="dbUrl">
 	    <constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
 	</bean>
 	
@@ -53,15 +53,15 @@
 	    <property name="url" value="jdbc:postgresql://ec2-23-23-235-211.compute-1.amazonaws.com:6562/d42ag0jdo6jh8p"/>
 	    <property name="username" value="u844auvm5jjpqh"/>
 	    <property name="password" value="pa6839r5nmcmnpc1gmff4ii389m"/>
-	</bean>
+	</bean> -->
 
-	<!-- <bean id="dataSource"
+	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.postgresql.Driver" />
 		<property name="url" value="jdbc:postgresql://localhost:5432/pubanywhere" />
 		<property name="username" value="postgres" />
 		<property name="password" value="root" />
-	</bean> -->
+	</bean>
 	
 	<bean id="myEmf"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
