@@ -29,7 +29,7 @@ function initialize() {
     	if (data[i].website == null || data[i].website == '') {
     		website = '';
 		} else {
-			website = '<img border="0" align="left" src="../resources/imgs/laptop.png">&nbsp; <a href="'+ String(data[i].website) +'" target="_blank">'+ String(data[i].website) +'</a>' + '<br>';
+			website = '<img border="0" align="left" src="../resources/imgs/laptop.png">&nbsp; <a href="'+ String(data[i].website) +'" target="_blank" id="stringMaps">'+ String(data[i].website) +'</a>' + '<br>';
 		}
     	
     	return website;
@@ -53,7 +53,7 @@ function initialize() {
     	if (data[i].email == null || data[i].email == '') {
     		email = '';
 		} else {
-			email = '<img border="0" align="left" src="../resources/imgs/mail.png">&nbsp; <a href="mailto:' + String(data[i].email) + '?subject=Info">' + String(data[i].email) + '</a>';
+			email = '<img border="0" align="left" src="../resources/imgs/mail.png">&nbsp; <a href="mailto:' + String(data[i].email) + '?subject=Info" id="stringMaps">' + String(data[i].email) + '</a>';
 		}
     	
     	return email;
