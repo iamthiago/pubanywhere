@@ -404,3 +404,8 @@ body {
 .floatRight {
 	float: right;
 }
+
+#stringMaps {
+	color: black !important;
+	font-size: 12px !important;
+}
