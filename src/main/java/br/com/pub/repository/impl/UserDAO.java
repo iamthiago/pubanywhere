@@ -7,8 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.googlecode.ehcache.annotations.Cacheable;
-
 import br.com.pub.domain.Users;
 import br.com.pub.repository.UserRepository;
 
@@ -18,7 +16,6 @@ public class UserDAO extends AbstractDAO<Users> implements UserRepository {
 	private static final Logger log = LoggerFactory.getLogger(UserDAO.class);
 	
 	@Transactional
-	@Cacheable(cacheName="findUserByUsernameCache")
 	public Users findUserByUsername(String username) {
 		try {
 			
@@ -34,7 +31,6 @@ public class UserDAO extends AbstractDAO<Users> implements UserRepository {
 	}
 	
 	@Transactional
-	@Cacheable(cacheName="findUserByNameCache")
 	public Users findUserByEmailHash(String name) {
 		try {
 			

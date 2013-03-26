@@ -30,7 +30,6 @@ public class PubWishOrFavoriteService {
 			cacheName={
 					"abstractFindCache",
 					"getWishOrFavoritePubCache",
-					"userHasWishFavoritePubCache",
 					"findByPubAndUserAndTypeCache"},
 					removeAll=true)
 	public List<ResultMessage> saveWishOrFavoritePub(String pubId, Users userSession, String type) {

@@ -3,13 +3,19 @@ package br.com.pub.service;
 import static br.com.pub.constants.PUB_CONSTANTS.MODAL_MESSAGE;
 import static br.com.pub.constants.PUB_CONSTANTS.MODAL_TITLE;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.RandomStringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +29,6 @@ import br.com.pub.repository.RolesRepository;
 import br.com.pub.repository.UserRepository;
 import br.com.pub.utils.ResultMessage;
 
-import com.googlecode.ehcache.annotations.TriggersRemove;
-
 @Service
 public class UserService {
 	
@@ -32,43 +36,58 @@ public class UserService {
 	@Autowired private RolesRepository rolesRepository;
 	@Autowired private MessageService message;
 	
-	@TriggersRemove(
-			cacheName={
-					"abstractFindCache",
-					"findUserByUsernameCache",
-					"findUserByNameCache",
-					"userHasWishFavoritePubCache"},
-					removeAll=true)
-	public void createNewUser(UserForm form) {
-		PubUser pubUser = new PubUser();
-		pubUser.setName(form.getName());
-		pubUser.setEmail(form.getEmail());
-		pubUser.setEmailHash(form.getEmail().split("\\@")[0]);
-		pubUser.setHash("user"+RandomStringUtils.randomAlphanumeric(15));
-		pubUser.setSince(new Date());
+	private static final Logger log = LoggerFactory.getLogger(UserService.class);
+	
+	public List<ResultMessage> createNewUser(UserForm form, HttpServletRequest request) {
 		
-		if (form.getPassword().equals(form.getConfirmPassword())) {
-			Users newUser = new Users();
-			newUser.setUsername(form.getEmail().toLowerCase().trim());
-			newUser.setPassword(form.getPassword().trim());
-			newUser.setEnabled(true);
-			newUser.setPubUser(pubUser);
-			
-			Authorities auth = rolesRepository.find(Roles.ROLE_USER.getCodigo());
-			if (auth != null) {
-				newUser.setAuthorities(auth);
-				userRepository.insert(newUser);
-			}
+		List<ResultMessage> lista = new ArrayList<ResultMessage>();
+		
+		Users userExists = this.findUserByUsername(form.getEmail());
+		if (userExists != null) {
+			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.info")));
+			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered.exist")));
+			return lista;
 		}
+		
+		try {
+			
+			PubUser pubUser = new PubUser();
+			pubUser.setName(form.getName());
+			pubUser.setEmail(form.getEmail());
+			pubUser.setEmailHash(form.getEmail().split("\\@")[0]);
+			pubUser.setHash("user"+RandomStringUtils.randomAlphanumeric(15));
+			pubUser.setSince(new Date());
+			
+			if (form.getPassword().equals(form.getConfirmPassword())) {
+				Users newUser = new Users();
+				newUser.setUsername(form.getEmail().toLowerCase().trim());
+				newUser.setPassword(form.getPassword().trim());
+				newUser.setEnabled(true);
+				newUser.setPubUser(pubUser);
+				
+				Authorities auth = rolesRepository.find(Roles.ROLE_USER.getCodigo());
+				if (auth != null) {
+					newUser.setAuthorities(auth);
+					userRepository.insert(newUser);
+				}
+			}
+			
+			uploadDefaultImage(pubUser.getEmailHash());
+			
+			log.info("criado usuario: " + form.getName() + " - " + form.getEmail());
+			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.success")));
+			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered")));
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
+			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.edit.error")));
+		}
+		
+		return lista;
+		
 	}
 	
-	@TriggersRemove(
-			cacheName={
-					"abstractFindCache",
-					"findUserByUsernameCache",
-					"findUserByNameCache",
-					"userHasWishFavoritePubCache"},
-					removeAll=true)
 	public boolean resetPassword(String emailHash, String hash, HttpServletRequest request) {		
 		Users user = userRepository.findUserByEmailHash(emailHash);
 		if (user != null) {
@@ -95,13 +114,6 @@ public class UserService {
 		return userRepository.findUserByEmailHash(name);
 	}
 
-	@TriggersRemove(
-			cacheName={
-					"abstractFindCache",
-					"findUserByUsernameCache",
-					"findUserByNameCache",
-					"userHasWishFavoritePubCache"},
-					removeAll=true)
 	public List<ResultMessage> updateUserProfile(UserForm form, HttpServletRequest request){
 		List<ResultMessage> lista = new ArrayList<ResultMessage>();
 		
@@ -127,5 +139,16 @@ public class UserService {
 		lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.edit.success")));
 		
 		return lista;
-	}	
+	}
+	
+	private void uploadDefaultImage(String fileName) {
+		try {
+			URL url = new URL("http://www.pubanywhere.com/resources/imgs/user_75x75.gif");
+			File file = new File("user_75x75");
+			FileUtils.copyURLToFile(url, file);
+			AmazonService.uploadStaticFile(file, fileName);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

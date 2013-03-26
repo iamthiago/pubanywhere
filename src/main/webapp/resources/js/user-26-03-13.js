@@ -12,8 +12,10 @@ $(document).ready(function() {
 		
 	$('#btnEditUserProfile').click(function(e){
 		e.preventDefault();
+		showLoading();
 		$.post("/user/saveUserProfile", $("#editUserProfileForm").serialize())
 			.done(function(data) {
+				hideLoading();
 				resultMessageModal(data);
 			});
 	});
