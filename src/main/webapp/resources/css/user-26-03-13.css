@@ -57,8 +57,6 @@
 }
 
 #user-pic {
-	background: none repeat scroll 0 0 #FFFFFF;
-	border: 1px solid #DDDDDD;
 	float: left;
 	margin-right: 10px;
 	padding: 3px;
@@ -67,7 +65,6 @@
 }
 
 #user-pic span {
-	background: url("../imgs/user_75x75.gif") no-repeat scroll 50% 50% transparent;
 	display: block;
 	height: 75px;
 	overflow: hidden;

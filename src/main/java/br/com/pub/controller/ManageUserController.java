@@ -45,10 +45,7 @@ public class ManageUserController {
 		List<ResultMessage> lista = new ArrayList<ResultMessage>();
 		if (!result.hasErrors()) {
 			if (form.getPassword().equals(form.getConfirmPassword())) {
-				userService.createNewUser(form);
-				log.info("criado usuario: " + form.getName() + " - " + form.getEmail());
-				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.success")));
-				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered")));				
+				lista = userService.createNewUser(form, request);
 			} else {
 				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
 				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered.invalidPass")));

@@ -36,7 +36,6 @@ public class PubWishOrFavoriteDAO extends AbstractDAO<PubWishOrFavorite> impleme
 	}
 
 	@Transactional
-	@Cacheable(cacheName="userHasWishFavoritePubCache")
 	@SuppressWarnings("unchecked")
 	public List<PubWishOrFavorite> userHasWishFavoritePub(String pubId, String username) {
 		return super.em.createQuery("SELECT fw FROM PubWishOrFavorite fw WHERE fw.users.username = :username and fw.pub.pubId = :pubId")

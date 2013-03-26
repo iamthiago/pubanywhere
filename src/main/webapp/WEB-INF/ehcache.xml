@@ -6,10 +6,6 @@
     <cache name="abstractFindCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     <cache name="abstractFindAllCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     
-    <!-- user caches -->
-    <cache name="findUserByUsernameCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
-    <cache name="findUserByNameCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
-    
     <!-- pub caches -->
     <cache name="listPubsByUsernameCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     <cache name="listPubsPerCountryCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
@@ -19,6 +15,5 @@
     <cache name="getPubReviewByUserCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     
     <cache name="getWishOrFavoritePubCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
-    <cache name="userHasWishFavoritePubCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     <cache name="findByPubAndUserAndTypeCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
 </ehcache>

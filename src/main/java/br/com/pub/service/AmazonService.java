@@ -1,5 +1,7 @@
 package br.com.pub.service;
 
+import java.io.File;
+
 import org.jets3t.service.S3Service;
 import org.jets3t.service.acl.AccessControlList;
 import org.jets3t.service.acl.GroupGrantee;
@@ -35,6 +37,33 @@ public class AmazonService {
 				S3Object object = new S3Object(fileName, image.getBytes());
 				object.setContentLength(image.getSize());
 				object.setContentType(image.getContentType());
+				object.setAcl(bucketAcl);
+				s3Service.putObject(pubanywhere, object);
+			}
+			
+		} catch (Exception e) {
+			log.error("Problemas ao fazer upload da imagem!", e.getMessage());
+		}
+		
+		log.info("Uploading image: " + fileName + " on amazon");
+		
+		return null;
+	}
+	
+	public static String uploadStaticFile(File file, String fileName) {
+		
+		try {
+			
+			s3Service = new RestS3Service(AWSCREDENTIALS);
+			AccessControlList bucketAcl = s3Service.getBucketAcl("pubanywhere");
+			bucketAcl.grantPermission(GroupGrantee.ALL_USERS, Permission.PERMISSION_READ);
+			pubanywhere = s3Service.getBucket("pubanywhere");
+			
+			if (pubanywhere != null) {
+				S3Object object = new S3Object(pubanywhere, file);
+				object.setContentLength(file.length());
+				object.setContentType("image/gif");
+				object.setName(fileName);
 				object.setAcl(bucketAcl);
 				s3Service.putObject(pubanywhere, object);
 			}

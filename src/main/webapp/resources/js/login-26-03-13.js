@@ -33,8 +33,10 @@ $(document).ready(function() {
 	/*login actions*/	
 	$('#btnCreateNewUser').click(function(e){
 		e.preventDefault();
+		showLoading();
 		$.post("/user/createNewUser", $("#userForm").serialize())
 			.done(function(data) {
+				hideLoading();
 				resultMessageModal(data);
 				$('form#userForm')[0].reset();
 			});
@@ -42,8 +44,10 @@ $(document).ready(function() {
 	
 	$('#btnSendPassword').click(function(e){
 		e.preventDefault();
+		showLoading();
 		$.post("/user/forgotPassword", $("#passwordForm").serialize())
 			.done(function(data) {
+				hideLoading();
 				resultMessageModal(data);
 				$('form#passwordForm')[0].reset();
 			});
