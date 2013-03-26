@@ -310,7 +310,7 @@
 	</repositories>
 
 	<build>
-		<plugins>
+		<!-- <plugins>
 			<plugin>
 				<configuration>
 					<configurationDir>C:\apache-tomcat-7.0.26</configurationDir>
@@ -336,8 +336,8 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-		</plugins>
-		<!-- <plugins>
+		</plugins> -->
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId> 
@@ -369,7 +369,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-		</plugins> -->
+		</plugins>
 		<finalName>pubanywhere</finalName>
 	</build>
 </project>
