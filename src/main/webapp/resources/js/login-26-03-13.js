@@ -36,6 +36,7 @@ $(document).ready(function() {
 		$.post("/user/createNewUser", $("#userForm").serialize())
 			.done(function(data) {
 				resultMessageModal(data);
+				$('form#userForm')[0].reset();
 			});
 	});
 	
@@ -44,6 +45,7 @@ $(document).ready(function() {
 		$.post("/user/forgotPassword", $("#passwordForm").serialize())
 			.done(function(data) {
 				resultMessageModal(data);
+				$('form#passwordForm')[0].reset();
 			});
 	});
 });
