@@ -10,10 +10,9 @@ import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.googlecode.ehcache.annotations.Cacheable;
-import com.googlecode.ehcache.annotations.TriggersRemove;
-
 import br.com.pub.repository.AbstractRepository;
+
+import com.googlecode.ehcache.annotations.Cacheable;
 
 public abstract class AbstractDAO<T> implements AbstractRepository<T> {
 
@@ -29,30 +28,12 @@ public abstract class AbstractDAO<T> implements AbstractRepository<T> {
 		clazz = (Class<T>) pt.getActualTypeArguments()[0];
 	}
 	
-	@TriggersRemove(
-			cacheName={
-					"abstractFindCache",
-					"abstractFindAllCache",
-					"findUserByUsernameCache",
-					"listPubsByUsernameCache",
-					"listPubsPerCountryCache",
-					"listTop100WorldCache"},
-					removeAll=true)
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	public T insert(T t) {
 		em.persist(t);
 		return t;
 	}
 	
-	@TriggersRemove(
-			cacheName={
-					"abstractFindCache",
-					"abstractFindAllCache",
-					"findUserByUsernameCache",
-					"listPubsByUsernameCache",
-					"listPubsPerCountryCache",
-					"listTop100WorldCache"},
-					removeAll=true)
 	@Transactional(propagation = Propagation.REQUIRED)
 	public T update(T t) {
 		return em.merge(t);

@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
     <defaultCache eternal="true" maxElementsInMemory="100" overflowToDisk="false" />
+    
+    <!-- abstract caches -->
     <cache name="abstractFindCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     <cache name="abstractFindAllCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    
+    <!-- user caches -->
     <cache name="findUserByUsernameCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="findUserByNameCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    
+    <!-- pub caches -->
     <cache name="listPubsByUsernameCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     <cache name="listPubsPerCountryCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     <cache name="listTop100WorldCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    
+    <cache name="getPubReviewCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="getPubReviewByUserCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    
+    <cache name="getWishOrFavoritePubCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="userHasWishFavoritePubCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="findByPubAndUserAndTypeCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
 </ehcache>

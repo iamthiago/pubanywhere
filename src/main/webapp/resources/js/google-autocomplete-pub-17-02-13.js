@@ -31,20 +31,4 @@ $(document).ready(function(){
 	    	$('#lng').val(place.geometry.location.lng());
 	    }
 	});
-    
-	/*$('#pubForm').submit(function(e) {
-		var place = autocomplete.getPlace();
-	    if (!place) {
-	    	if (document.getElementById('location_new') != null) {
-	    		newAutocomplete = new google.maps.places.Autocomplete(document.getElementById('location_new'));
-	    		place = newAutocomplete.getPlace();
-			} else {
-				e.preventDefault();
-				return;
-			}
-	    }
-	    
-	    $('#lat').val(place.geometry.location.lat());
-    	$('#lng').val(place.geometry.location.lng());
-	});*/
 });

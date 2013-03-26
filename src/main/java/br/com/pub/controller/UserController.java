@@ -1,93 +1,55 @@
 package br.com.pub.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.com.pub.domain.Pub;
-import br.com.pub.domain.Users;
-import br.com.pub.enumeration.Roles;
-import br.com.pub.form.UserForm;
-import br.com.pub.service.AmazonService;
-import br.com.pub.service.PubService;
-import br.com.pub.service.UserService;
-import br.com.pub.validation.PubValidations;
+import br.com.pub.domain.PubWishOrFavorite;
+import br.com.pub.enumeration.WishOrFavoriteType;
+import br.com.pub.service.MessageService;
+import br.com.pub.service.PubWishOrFavoriteService;
 
+/**
+ * @author Thiago
+ * Classe criada para gerenciar todo o tipo de usuario, logado ou deslogado, não necessitando de permissões para visualizar o conteudo
+ */
 @Controller
 @RequestMapping("user")
 public class UserController {
 	
-	@Autowired private PubService pubService;
-	@Autowired private UserService userService;
+	@Autowired private PubWishOrFavoriteService pubWishFavoriteService;
+	@Autowired private MessageService message;
 	
-	private static Logger log = LoggerFactory.getLogger(UserController.class);
-	
-	@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
-	@RequestMapping(method = RequestMethod.GET)
-	public String getUserMainPage(HttpSession session, Map<String, Object> map, HttpServletRequest request) {
-		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		log.info("Usuario: " + user.getUsername() + " logado no sistema");
-		
-		if(request.isUserInRole(Roles.ROLE_ADMIN.getDescricao())){
-			map.put("pubList", pubService.listAllPubs());
-		} else {
-			map.put("pubList", pubService.listPubsByUsername(user.getUsername()));
+	@RequestMapping(value = "/getFavoriteOrWishListPub/{type}/{emailHash}")
+	public String getFavoriteOrWishListPub(@PathVariable("type") String type, @PathVariable("emailHash") String emailHash, HttpSession session, HttpServletRequest request, Map<String, Object> map) {
+		List<PubWishOrFavorite> wishOrFavoritePub = pubWishFavoriteService.getWishOrFavoritePub(emailHash, type);
+		map.put("favWishPubs", wishOrFavoritePub);
+		setPageParam(type, map, wishOrFavoritePub, request);
+		return "user/userWishFavorite";
+	}
+
+	private void setPageParam(String type, Map<String, Object> map, List<PubWishOrFavorite> wishOrFavoritePub, HttpServletRequest request) {
+		switch (WishOrFavoriteType.valueOf(type)) {
+			case FAVORITE:
+				map.put("favWishTitle", message.getMessageFromResource(request, "user.main.favorite"));
+				break;
+			case WISH_LIST:
+				map.put("favWishTitle", message.getMessageFromResource(request, "user.main.wishlist"));
+				break;
+				
+			default:
+				break;
 		}
 		
-		map.put("userForm", new UserForm());
-		map.put("username", user.getUsername());
-		return "backoffice";
-	}
-	
-	@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')") 
-	@RequestMapping(value = "editPub/{pubId}", method = RequestMethod.GET)
-	public String editPub(@PathVariable("pubId") String pubId, Map<String, Object> map, HttpServletRequest request) {
-		if(request.isUserInRole(Roles.ROLE_ADMIN.getDescricao())){
-			map.put("disabled", false);
-		} else {
-			map.put("disabled", true);
+		if (wishOrFavoritePub.isEmpty()) {
+			map.put("noPubs", message.getMessageFromResource(request, "config.pub.404.favorite"));
 		}
-		
-		map.put("pub", pubService.findPubById(pubId));
-		return "editPub";
-	}
-	
-	@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
-	@RequestMapping(value = "savePub", headers={"content-type=multipart/form-data"}, method = RequestMethod.POST)
-	public String savePub(@ModelAttribute("pub") Pub form, Map<String, Object> map) {
-		
-		pubService.savePub(PubValidations.valid(form));
-		
-		if (!form.getFile().isEmpty() && form.getFile().getSize() < 1000000) {
-			AmazonService.upload(form);
-		}		
-		
-		return "redirect:/backoffice";
-	}
-	
-	@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
-	@RequestMapping(value = "changePassword", method = RequestMethod.POST)
-	public String changePassword(@ModelAttribute("userForm") UserForm form, Map<String, Object> map) {
-		Users user = userService.findUserByUsername(form.getUsername());
-		if (form.getSenha().equals(form.getConfirmarSenha())) {
-			user.setPassword(form.getSenha());
-			userService.updateUser(user);
-		} else {
-			log.error("Password does not match the confirm password");
-		}
-		return "redirect:/backoffice";
 	}
 }

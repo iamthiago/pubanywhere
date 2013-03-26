@@ -10,10 +10,10 @@
     <http auto-config="true" use-expressions="true">
     	
         <!-- Restrict access to ALL other pages -->
-        <intercept-url pattern="/backoffice*" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
+        <intercept-url pattern="/user*" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
  
         <!-- Set the login page and what to do if login fails -->
-        <form-login login-page="/login" default-target-url="/backoffice" authentication-failure-url="/loginfailed" />
+        <form-login login-page="/login" default-target-url="/me" authentication-failure-url="/loginfailed" />
 		<logout logout-success-url="/logout" />
     </http>
 

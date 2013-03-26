@@ -20,7 +20,6 @@
 	background-color: white;
 	border-bottom: 1px solid #CCCCCC;
 	margin-bottom: 20px;
-	padding-bottom: 40px;
 	padding-top: 30px;
 }
 
@@ -33,7 +32,7 @@
 .h1 {
 	font-size: 25px;
 	font-weight: bold;
-	margin-bottom: 0;
+	margin-top: -20px;
 	padding-right: 10px;
 }
 
@@ -80,7 +79,7 @@
 	position: relative;
 }
 
-#pubThumb {
+.pubThumb {
 	display: block;
 	height: 190px;
 	overflow: hidden;
@@ -88,7 +87,7 @@
 	background: url("../imgs/not_found.png") no-repeat scroll 50% 50% transparent;
 }
 
-#pubThumb img {
+.pubThumb img {
 	margin-left: -50px;
 	max-width: 340px;
 	min-height: 200px;
@@ -100,8 +99,13 @@
 	min-height: 180px;
 	padding: 10px;
 	vertical-align: top;
-	width: 50%;
+	width: 70%;
 	display: inline-block;
+}
+
+#list-rating {
+	font-size: 10px;
+	font-weight: bold;
 }
 
 #pubName {
@@ -115,23 +119,13 @@
 }
 
 #pubDesc {
-	height: 55px;
+	height: 50px;
 	overflow: hidden;
 	color: #999999;
 }
 
 .space {
 	margin-top: 5px;
-}
-
-#pubMainViews{
-	border: 50px none;
-	display: inline-block;
-	float: right;
-	margin-top: 5px;
-	text-align: right;
-	vertical-align: top;
-	width: 20%;	
 }
 
 #views {

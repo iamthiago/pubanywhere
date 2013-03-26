@@ -12,8 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import br.com.pub.domain.Pub;
-
 public class AmazonService {
 	
 	private static final Logger log = LoggerFactory.getLogger(AmazonService.class);
@@ -24,9 +22,7 @@ public class AmazonService {
 	private static S3Service s3Service;
 	private static S3Bucket pubanywhere;
 	
-	public static String upload(Pub pub) {
-		
-		CommonsMultipartFile image = pub.getFile();
+	public static String upload(CommonsMultipartFile image, String fileName) {
 		
 		try {
 			
@@ -36,17 +32,18 @@ public class AmazonService {
 			pubanywhere = s3Service.getBucket("pubanywhere");
 			
 			if (pubanywhere != null) {
-				S3Object object = new S3Object(pub.getPubId(), image.getBytes());
+				S3Object object = new S3Object(fileName, image.getBytes());
 				object.setContentLength(image.getSize());
 				object.setContentType(image.getContentType());
 				object.setAcl(bucketAcl);
 				s3Service.putObject(pubanywhere, object);
-				log.info("Upload da imagem do pub: " + pub.getName() + " feita na amazon");
 			}
 			
 		} catch (Exception e) {
 			log.error("Problemas ao fazer upload da imagem!", e.getMessage());
 		}
+		
+		log.info("Uploading image: " + fileName + " on amazon");
 		
 		return null;
 	}

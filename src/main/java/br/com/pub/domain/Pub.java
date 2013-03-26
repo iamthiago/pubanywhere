@@ -92,8 +92,14 @@ public class Pub implements Serializable {
 	@Column(name = "PUBVIEWS")
 	private long pubViews;
 	
-	@Column(name = "PUBRATING")
-	private long pubRating;
+	@Column(name = "PUB_VALUE_RATING")
+	private double pubValueRating;
+	
+	@Column(name = "PUB_COUNT_RATING")
+	private int pubCountRating;
+	
+	@Column(name = "PUB_TOTAL_RATING")
+	private double pubTotalRating;
 
 	public String getPubId() {
 		return pubId;
@@ -239,11 +245,27 @@ public class Pub implements Serializable {
 		this.pubViews = pubViews;
 	}
 
-	public long getPubRating() {
-		return pubRating;
+	public double getPubValueRating() {
+		return pubValueRating;
 	}
 
-	public void setPubRating(long pubRating) {
-		this.pubRating = pubRating;
+	public void setPubValueRating(double pubValueRating) {
+		this.pubValueRating = pubValueRating;
+	}
+
+	public int getPubCountRating() {
+		return pubCountRating;
+	}
+
+	public void setPubCountRating(int pubCountRating) {
+		this.pubCountRating = pubCountRating;
+	}
+
+	public double getPubTotalRating() {
+		return pubTotalRating;
+	}
+
+	public void setPubTotalRating(double pubTotalRating) {
+		this.pubTotalRating = pubTotalRating;
 	}
 }

@@ -6,7 +6,7 @@
 		<div>
 			Copyright © 2013 Pub Anywhere.
 			<div>
-				<span>Find us on:</span>
+				<span><spring:message code="footer.findus"/></span>
 				<ul id="footerSocial">
 					<li class="facebook">
 						<a href="http://facebook.com/pubanywhere" target="_blank">
@@ -21,6 +21,11 @@
 				</ul>
 			</div>
 		</div>
+	</div>
+	
+	<div id="resultMessageModal"></div>
+	<div id="loading" title="Loading">
+		<img src="<c:url value='/resources/imgs/loading.gif'/>">
 	</div>
 	
 	<script type="text/javascript">

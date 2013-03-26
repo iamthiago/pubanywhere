@@ -10,7 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.pub.domain.Pub;
+import br.com.pub.mail.EmailMessageCreator;
 import br.com.pub.repository.PubRepository;
+import br.com.pub.validation.PubValidations;
+
+import com.googlecode.ehcache.annotations.TriggersRemove;
 
 @Service
 public class PubService {
@@ -19,18 +23,43 @@ public class PubService {
 	
 	private static Logger log = LoggerFactory.getLogger(PubService.class);
 	
+	@TriggersRemove(
+			cacheName={
+					"abstractFindCache",
+					"listPubsByUsernameCache",
+					"listPubsPerCountryCache",
+					"listTop100WorldCache",
+					"getPubReviewCache",
+					"getPubReviewByUserCache"},
+					removeAll=true)
 	public String registerPub(Pub pub, HttpServletRequest request) {
-		Pub newPub = pubRepository.insert(pub);
-		log.info("Pub: " + newPub.getName() + " inserido na base");		
+		Pub newPub = pubRepository.insert(PubValidations.valid(pub));
+		log.info("Pub: " + newPub.getName() + " inserido na base");
+		
+		if (!pub.getFile().isEmpty()) {
+			AmazonService.upload(pub.getFile(), pub.getPubId());
+		}
+		
+		EmailMessageCreator.sendPubMail(pub, request);
+		
 		return newPub.getPubId();
 	}
-
+	
 	public void activePub(String id) {
 		Pub pub = pubRepository.find(id);
 		pub.setEnabled(true);
-		pubRepository.update(pub);
+		this.savePub(pub);
 	}
 	
+	@TriggersRemove(
+			cacheName={
+					"abstractFindCache",
+					"listPubsByUsernameCache",
+					"listPubsPerCountryCache",
+					"listTop100WorldCache",
+					"getPubReviewCache",
+					"getPubReviewByUserCache"},
+					removeAll=true)
 	public void savePub(Pub pub) {
 		pubRepository.update(pub);
 	}
@@ -67,6 +96,6 @@ public class PubService {
 	
 	public void setPageCount(Pub pub) {
 		pub.setPubViews(pub.getPubViews() + 1);
-		pubRepository.update(pub);
+		this.savePub(pub);
 	}
 }

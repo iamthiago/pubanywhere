@@ -1,7 +1,13 @@
 $(document).ready(function() {
 	
+	//loading dialog
+	$('#loading').dialog({ autoOpen: false });
+	
+	//tooltips
+	$(document).tooltip();
+	
 	// toolbar
-	$('#listYourPub, #register, #btnLogout, #sendMail, #btnEditPub').button();
+	$('#listYourPub, #insertPub, #sendMail, #writeReview').button();
 	
 	//help divs
 	$('#about').show();
@@ -34,4 +40,61 @@ $(document).ready(function() {
 			$(this).parents('form:first').submit();
 		}
 	});
+	
 });
+
+//function resultMessageModal (modal padrão para mensagem de retorno do controller do tipo ResultMessage.class)
+function resultMessageModal(data) {
+	$('#resultMessageModal').empty();
+	$('#resultMessageModal').append('<div>'+ data[1].value +'</div>');
+	
+	$('#resultMessageModal').dialog({
+		dialogClass: "no-close",
+		autoOpen: false,
+		modal: true,
+		draggable: false,
+		resizable: false,
+		height: 150,
+		width: 550,
+		title: data[0].value,
+		 buttons : [{
+			text : "Ok",
+			click : function() {
+				$(this).dialog("close");
+			}
+		}]
+	}).dialog('open');
+}
+
+function verifyUserProfileImg() {
+	$('.userImgProfile').each(function(i){
+		var url = $(this).attr('src');
+		$(this).remove();
+		$.ajax({
+			url : url,
+			cache : false,
+			complete : function() {
+				$('#user-pic-span').append('<img src="'+ url +'?'+ new Date().getTime() +'" id="user-pic-img" class="userImgProfile"/>');
+				hideLoading();
+			}
+		});
+	});
+}
+
+function showLoading() {
+	$('#loading').dialog({
+		dialogClass: "no-close",
+		closeOnEscape: false,
+		autoOpen: false,
+		modal: true,
+		draggable: false,
+		resizable: false,
+		height: 250,
+		width: 550
+	}).dialog('open');
+}
+
+function hideLoading() {
+	$('#loading').dialog("destroy");
+	$('#loading').dialog({ autoOpen: false });
+}
