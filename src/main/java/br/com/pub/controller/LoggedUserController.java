@@ -56,7 +56,7 @@ public class LoggedUserController {
 
 			return "user/user";
 		} else {
-			map.put("erro", message.getMessageFromResource(request, "config.pub.404.user") + hash);
+			map.put("erro", message.getMessageFromResource(request, "config.pub.404.user"));
 			return "errorPage";
 		}		
 	}
