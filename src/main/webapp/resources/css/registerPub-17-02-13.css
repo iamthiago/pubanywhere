@@ -79,3 +79,8 @@ label {
 	font-weight: bold;
 	margin-top: 5px;
 }
+
+.fixedTips {
+	position: fixed;
+	width: 375px;
+}

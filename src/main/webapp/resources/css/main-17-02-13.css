@@ -1,3 +1,18 @@
+/* loading */
+#loading {
+	overflow: hidden;
+}
+
+#loading > img {
+	margin-top: -110px;
+}
+
+/* jquery dialog */
+.no-close .ui-dialog-titlebar-close {
+	display: none;
+}
+
+/* html objects */
 ul, ol {
   padding: 0;
 }
@@ -13,16 +28,25 @@ ul {
     padding: 0;
 }
 
-a {color: white; text-decoration: none;}
+a {color: white; text-decoration: none; cursor: pointer;}
 a:HOVER {text-decoration: none;}
 a:ACTIVE {text-decoration: none;}
 a:VISITED {text-decoration: none;}
+
+.fmtDate {
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.padding10px {
+	padding: 10px;
+}
 
 /**
 * buttons and icons
 */
 button, a {
-	font-size: 11px !important;
+	font-size: 10px !important;
 	font-weight: bold !important;
 }
 
@@ -40,7 +64,6 @@ body {
     color: #333333;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 13px;
-    line-height: 18px;
     margin: 0;
 }
 
@@ -230,31 +253,6 @@ body {
     clear: both;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #legend {
 	background: white;
 	border: 3px solid #000000;
@@ -267,8 +265,9 @@ body {
 }
 
 #left-buttons {
-	position: absolute;
+	float: left;
 	margin-left: 10px;
+	margin-top: 5px;
 }
 
 #btnEditPub {
@@ -345,4 +344,63 @@ body {
 	position: relative;
 	text-align: center;
 	width: 480px;
+}
+
+/* user */
+#myProfileName {
+	margin-left: 50px;
+}
+
+#userFavoriteReview {
+	height: 430px;
+}
+
+.div-favorite {
+	background: url("../imgs/noImagePubUser.png") no-repeat scroll 50% 50% transparent;
+	float: left;
+	height: 200px;
+	margin-left: 60px;
+	overflow: hidden;
+	position: relative;
+	width: 200px;
+}
+
+.div-favorite img {
+	border: 0 none;
+	margin-left: -50px;
+	max-width: 300px;
+	min-height: 170px;
+	vertical-align: middle;
+}
+
+.favoriteName {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+	bottom: 30px;
+	left: 0;
+	padding: 4px;
+	position: absolute;
+}
+
+#userFavoriteReview ol#pagination {
+	float: right;
+	margin-right: 50px;
+	margin-top: 10px;
+	padding-bottom: 20px;
+}
+
+.fileUpload {
+	display: none;
+}
+
+#fileDesc {
+	margin-left: 100px;
+	margin-top: -22px;
+	overflow: hidden;
+	position: absolute;
+	text-align: left;
+	width: 340px;
+}
+
+.floatRight {
+	float: right;
 }

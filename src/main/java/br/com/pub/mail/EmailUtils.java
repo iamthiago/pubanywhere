@@ -75,19 +75,26 @@ public class EmailUtils {
 		return contactForm.getTo();
 	}
 
-	public static String createURL(HttpServletRequest request, String string) {
+	public static String createURLToActive(HttpServletRequest request, String string) {
 		String path = request.getRequestURL().toString();
 		String newPath = path.replace("/registerPub", "/activePub/");
 		return newPath.concat(string);
 	}
 	
-	public static void validEmail(String email) throws AddressException {
+	public static String createURLToResetPassword(HttpServletRequest request, String emailHash, String hash) {
+		String path = request.getRequestURL().toString();
+		return path.replace("/user/forgotPassword", "/user/forgotPassword/" + emailHash + "/" + hash);
+	}
+	
+	public static boolean validEmail(String email) {
+		boolean isValid = false;
 		try {
 			InternetAddress mail = new InternetAddress(email);
 			mail.validate();
+			isValid = true;
 		} catch (AddressException e) {
 			log.error(e.getMessage());
-			throw new AddressException("Invalid Email");
-		}
+		}		
+		return isValid;
 	}
 }

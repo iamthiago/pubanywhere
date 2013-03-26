@@ -17,17 +17,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.pub.domain.Pub;
-import br.com.pub.facade.PubFacade;
+import br.com.pub.domain.Users;
+import br.com.pub.enumeration.WishOrFavoriteType;
+import br.com.pub.form.MessageForm;
 import br.com.pub.service.MessageService;
+import br.com.pub.service.PubMessageService;
 import br.com.pub.service.PubService;
+import br.com.pub.service.PubWishOrFavoriteService;
 
 @Controller
 @RequestMapping("pubs")
 public class PubController {
 	
 	@Autowired private PubService pubService;
-	@Autowired private PubFacade pubFacade;
+	@Autowired private PubMessageService pubMessageService;
 	@Autowired private MessageService messageService;
+	@Autowired private PubWishOrFavoriteService wishOrFavoriteService;
 	
 	@RequestMapping(value = "maps")
 	public String maps() {
@@ -85,23 +90,47 @@ public class PubController {
 		if (result.hasErrors()) {
 			return "registerPub";
 		} else {
-			pubId = pubFacade.registerPub(form, request);
+			pubId = pubService.registerPub(form, request);
 		}
 		
 		return "redirect:/pubs/" + pubId;
 	}
 	
 	@RequestMapping(value = "{pubId}", method = RequestMethod.GET)
-	public String pubDetails(@PathVariable("pubId") String pubId, Map<String, Object> map, HttpServletRequest request) {
+	public String pubDetails(@PathVariable("pubId") String pubId, Map<String, Object> map, HttpServletRequest request, HttpSession session) {
 		Pub pub = pubService.findPubById(pubId);
+		
 		if (pub != null) {
-			pubService.setPageCount(pub);
 			map.put("pub", pub);
-			map.put("fbUrlComments", request.getRequestURL());
+			map.put("messageForm", new MessageForm());
+			map.put("pubReview", pubMessageService.getPubReviewByPub(pubId));
 		} else {
 			map.put("erro", messageService.getMessageFromResource(request, "config.pub.404.pub"));
 			return "errorPage";
-		}		
+		}
+		
+		Users loggedUser = (Users) session.getAttribute("loggedUser");
+		if (loggedUser != null) {
+			WishOrFavoriteType type = wishOrFavoriteService.userHasWishFavoritePub(pubId, loggedUser);
+			switch (type) {
+				case BOTH:
+					map.put("favCheckedClass", "title-h3-checked");
+					map.put("wishCheckedClass", "title-h3-checked");
+					break;
+					
+				case FAVORITE:
+					map.put("favCheckedClass", "title-h3-checked");
+					break;
+						
+				case WISH_LIST:
+					map.put("wishCheckedClass", "title-h3-checked");
+					break;
+	
+				default:
+					break;
+				}
+		}
+		
 		return "details";
 	}
 	

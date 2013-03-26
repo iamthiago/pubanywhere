@@ -42,8 +42,8 @@
 											<div id="pubMainPic">
 												<div id="pubPicInner">
 													<a href="${pubDetails}">
-														<span id="pubThumb">
-															<img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}"/>
+														<span class="pubThumb">
+															<img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}" class="pubImgTopList"/>
 														</span>
 													</a>
 												</div>
@@ -56,6 +56,12 @@
 														</div>
 													</a>
 												</div>
+												<div id="list-rating">
+													<div class="space star-list" data-number="${pub.pubTotalRating}"></div>
+													<div>
+														${pub.pubCountRating} reviews
+													</div>
+												</div>
 												<div id="pubCity" class="space">${pub.city}</div>
 												<div id="pubCountry" class="space">${pub.country}</div>
 												<div id="pubDesc" class="space">
@@ -63,9 +69,6 @@
 														${pub.descricao}
 													</div>
 												</div>
-											</div>
-											<div id="pubMainViews">
-												<div id="views">${pub.pubViews}</div>
 											</div>
 										</div>
 									</li>

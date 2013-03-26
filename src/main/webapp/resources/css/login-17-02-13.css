@@ -2,29 +2,40 @@
 elementos para a tela de login
 */
 
-.LoginBody {
+.loginBody {
     font-family: 'PT Sans', sans-serif;
-    min-height: 740px;
-    background: rgb(215, 215, 215);
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-
-    -webkit-font-smoothing: antialiased;
+    min-height: 700px;
 }
 
-#main_login {
-	border: 1px solid black;
-	border-radius: 5px 5px 5px 5px;
-	box-shadow: 3px 3px 5px 6px #777777;
+#div-signIn {
 	top: 40%;
 	left: 50%;
-	width: 290px;
-	margin-left: -145px;
-	height: 240px;
-	margin-top: -120px;
+	width: 330px;
+	margin-left: -165px;
+	height: 260px;
+	margin-top: -130px;
+	padding: 10px;
+	position: absolute;
+}
+
+#div-password {
+	top: 40%;
+	left: 50%;
+	width: 330px;
+	margin-left: -165px;
+	height: 170px;
+	margin-top: -85px;
+	padding: 10px;
+	position: absolute;
+}
+
+#div-signUp {
+	top: 40%;
+	left: 50%;
+	width: 640px;
+	margin-left: -320px;
+	height: 260px;
+	margin-top: -130px;
 	padding: 10px;
 	position: absolute;
 }
@@ -41,8 +52,9 @@ elementos para a tela de login
 	position: relative;
 }
 
-#btnLoginButtons {
-	margin-top: 5px;
+#btnLogin, #btnCreateNewUser, #btnSendPassword {
+	font-size: 10px !important;
+	font-weight: bold !important;
 }
 
 .input_login {
@@ -52,81 +64,49 @@ elementos para a tela de login
 }
 
 .errorblock {
-	color: #ff0000;
-	background-color: #ffEEEE;
+	background-color: #FFEEEE;
 	border: 1px solid black;
-	border-radius: 5px 5px 5px 5px;
 	box-shadow: 3px 3px 5px 6px #777777;
-	top: 40%;
-	left: 50%;
-	width: 290px;
-	margin-left: -145px;
+	color: #FF0000;
+	font-weight: bold;
 	height: 20px;
+	left: 50%;
+	margin-left: -165px;
 	margin-top: -170px;
 	padding: 10px;
 	position: absolute;
 	text-align: center;
+	top: 37%;
+	width: 330px;
 }
 
 .signup {
-	font-size: 14px;
 	text-align: right;
   	float: right;
   	margin-top: 5px;
 }
 
-.ui-button {
-	font-size: 13px;
-	font-weight: bold;
-}
-
-A:LINK, A:VISITED, A:ACTIVE {
-	text-decoration: none;
-}
-
-A:HOVER {
-	text-decoration: underline;
-}
-/**
-fim dos elementos tela de login
-*/
-
-/**
-elementos da tela de criação de usuario
-*/
-#newUser {
-	border: 1px solid black;
-	border-radius: 5px 5px 5px 5px;
-	box-shadow: 3px 3px 5px 6px #777777;
-	top: 40%;
-	left: 50%;
-	width: 450px;
-	margin-left: -225px;
-	height: 420px;
-	margin-top: -210px;
-	padding: 10px;
-	position: absolute;
-}
-
-#tbInserirUsers {
-	text-align: right;
-}
-
-#createNewUser {
-	margin: 1.5em 0 0 0;
-}
-
-#comboSexo {
-	font-size: 16px;
-	height: 32px;
-	width: 150px;
-}
-
-.dataNascimento {
-	font-size: 16px;
-	height: 32px;
-}
-
 #loginSize {
-	height: 740px;
+	height: 700px;
+}
+
+#bodyLogin #footer {
+	padding-top: 50px;
+}
+
+.float {
+	float: left;
+}
+
+.marginR {
+	margin-right: 20px;
+}
+
+.padding20px {
+	padding: 20px;
+}
+
+.a_color {
+	color: red !important;
+	font-size: 13px !important;
 }

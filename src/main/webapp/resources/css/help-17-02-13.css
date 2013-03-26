@@ -14,12 +14,12 @@
 	padding: 10px;
 }
 
-#detailsRight a {
+.paddingHelp a {
 	color: black !important;
 	font-size: 13px !important;
 }
 
-#detailsRight span {
+.paddingHelp span {
 	bottom: 5px;
 	position: relative;
 }

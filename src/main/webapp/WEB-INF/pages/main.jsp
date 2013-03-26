@@ -17,14 +17,14 @@
 							<h1><spring:message code="main.title"/></h1>
 							<div id="searchInput">
 								<form action="/pubs/maps" method='POST' id="mainForm">
-				
-								<input type="hidden" id="lat" name="lat">
-				    			<input type="hidden" id="lng" name="lng">
-				    			
-								<span class="input-box">
-									<small id="glass"></small>
-									<input type='text' id="location" name="location" placeholder="<spring:message code="main.search"/>" autocomplete="off" class="location">
-								</span>
+									<input type="hidden" id="lat" name="lat">
+					    			<input type="hidden" id="lng" name="lng">
+					    			
+									<span class="input-box">
+										<small id="glass"></small>
+										<input type='text' id="location" name="location" placeholder="<spring:message code="main.search"/>" autocomplete="off" class="location">
+									</span>
+								</form>
 							</div>
 						</div>
 					</div>

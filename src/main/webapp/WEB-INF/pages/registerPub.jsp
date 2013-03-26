@@ -145,8 +145,8 @@
 							</div>
 						</div>
 						<div id="detailsRight">
-							<div id="detailsInfo" class="whiteBorder">
-								<h3><spring:message code="form.pub.tips"/></h3>
+							<div id="detailsInfo" class="whiteBorder fixedTips">
+								<h3 class="title-h3"><spring:message code="form.pub.tips"/></h3>
 								<div id="innerInfo">
 									<div id="info-site">
 										<div id="tipName">

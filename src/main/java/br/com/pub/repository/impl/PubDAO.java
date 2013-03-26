@@ -7,6 +7,7 @@ import javax.persistence.NoResultException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.googlecode.ehcache.annotations.Cacheable;
 
@@ -18,6 +19,7 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 
 	private static final Logger log = LoggerFactory.getLogger(PubDAO.class);
 
+	@Transactional
 	@Cacheable(cacheName="listPubsByUsernameCache")
 	@SuppressWarnings("unchecked")
 	public List<Pub> listPubsByUsername(String username) {
@@ -29,40 +31,42 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 			
 		} catch (NoResultException e) {
 			log.info("No pub found!");
-			e.printStackTrace();
+			e.getMessage();
 		}
 		return null;
 	}
-
+	
+	@Transactional
 	@Cacheable(cacheName="listPubsPerCountryCache")
 	@SuppressWarnings("unchecked")
 	public List<Pub> listPubsPerCountry(String country) {
 		try {
 			
-			return super.em.createQuery("select p from Pub p where p.country = :country order by p.pubViews desc")
+			return super.em.createQuery("select p from Pub p where p.country = :country order by p.pubTotalRating desc, p.pubCountRating desc")
 					.setParameter("country", country)
 					.setMaxResults(100)
 					.getResultList();
 			
 		} catch (NoResultException e) {
 			log.info("No pub found!");
-			e.printStackTrace();
+			e.getMessage();
 		}
 		return null;
 	}
 
+	@Transactional
 	@Cacheable(cacheName="listTop100WorldCache")
 	@SuppressWarnings("unchecked")
 	public List<Pub> listTop100World() {
 		try {
 			
-			return super.em.createQuery("select p from Pub p order by p.pubViews desc")
+			return super.em.createQuery("select p from Pub p order by p.pubTotalRating desc, p.pubCountRating desc")
 					.setMaxResults(100)
 					.getResultList();
 			
 		} catch (NoResultException e) {
 			log.info("No pub found!");
-			e.printStackTrace();
+			e.getMessage();
 		}
 		return null;
 	}

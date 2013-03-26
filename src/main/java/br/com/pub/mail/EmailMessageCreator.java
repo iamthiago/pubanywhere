@@ -27,27 +27,10 @@ public class EmailMessageCreator {
 				"Pub: " + pub.getName() + "<br/>" +
 				"Location: " + pub.getLocal() + "<br/>" +
 				"Description: " + pub.getDescricao() + "<br/><br/>" +
-				"<a href="+ EmailUtils.createURL(request, pub.getPubId()) + ">" + EmailUtils.createURL(request, pub.getPubId()) +"</a>");
+				"<a href="+ EmailUtils.createURLToActive(request, pub.getPubId()) + ">" + EmailUtils.createURLToActive(request, pub.getPubId()) +"</a>");
 		
 		EmailUtils.sendMail(form, request);
 		log.info("enviando email para ativação do pub: " + pub.getName());
-	}
-	
-	public static void sendUserDetailsMail(Pub pub, Users pubUser, boolean isNewUser, HttpServletRequest request) {
-		if (isNewUser) {
-			ContactForm form = new ContactForm();
-			form.setEmail("pubanywhere@gmail.com");
-			form.setTo(pub.getEmail());
-			if (pub.getCountry().equals(Country.BRAZIL.getDescricao()) || pub.getCountry().equals(Country.BRASIL.getDescricao())) {
-				form.setSubject("Senha de acesso ao Pub Anywhere");
-				form.setDescription("<div style='font-weight: bold; font-size: 14px;'><h2>Senha de acesso ao Pub Anywhere!</h2><br><br>Você acaba de receber sua senha de acesso ao pub anywhere, através do botão login você pode:<br><br>- Alterar os dados do seu bar/pub<br>- Quantidade de vezes que seu bar/pub foi visualizado<br>- Alterar sua senha(recomendado logo após o primeiro acesso)<br><br>Caso possua dúvidas ou sugestões, sinta-se a vontade para nos contatar.<br><br>Lembre-se, divulgue para os amigos, compartilhe no facebook e twitter, ganhe o mundo!<br><br> Dados de acesso: <br><br>Usuario: " + pubUser.getUsername() + "<br>Senha: " + pubUser.getPassword() + "<br><br><br><br>Obrigado<br>Thiago - Fundador<br>www.pubanywhere.com</div>");
-			} else {
-				form.setSubject("Pub Anywhere access detail");
-				form.setDescription("<div style='font-weight: bold; font-size: 14px;'><h2>Pub Anywhere access detail!</h2><br><br>You just received your password to pub anywhere, through login button you can:<br><br>- Change bar/pub info<br>- Number os times your bar/pub was visualized<br>- Change your password(Recommended after first login)<br><br>If you have any questions or suggestions, feel free to contact us.<br><br>Remember share with your friends, share on facebook and twitter, get the world!<br><br> Access info: <br><br>User: " + pubUser.getUsername() + "<br>Password: " + pubUser.getPassword() + "<br><br><br><br>Best Regards<br>Thiago - Founder<br>www.pubanywhere.com</div>");
-			}
-			EmailUtils.sendMail(form, request);
-			log.info("Enviado email com detalhes do usuario ao pub: " + pub.getName());
-		}
 	}
 	
 	private static void sendMarketMail(Pub pub, HttpServletRequest request) {
@@ -71,5 +54,25 @@ public class EmailMessageCreator {
 			msg.append("<div style='font-weight: bold; font-size: 14px;'><h2>Welcome to Pub Anywhere!</h2><br><br>You have received this mail for some reasons:<br><br>- We registered your bar/pub in our data base<br>- You have registered in our website<br>- Someone who like your bar/pub, registered it<br><br><br>Pub Anywhere is a bars/pubs global website, aiming for help people to find the nearest place of where they are to enjoy a beer.<br><br>Understand better in: www.pubanywhere.com<br><br>Completely free, beyond the registration and map visualization, you also has a dedicated page. Abuse it, share with your friends, share on facebook and twitter, get the world!<br><br>www.pubanywhere.com/pubs/" + pub.getPubId() + "<br><br><br><br>Best Regards<br>Thiago - Founder<br>www.pubanywhere.com</div>");
 		}
 		return msg.toString();
+	}
+	
+	public static void confirmResetPassword(Users user, HttpServletRequest request) {
+		ContactForm form = new ContactForm();
+		form.setEmail("pubanywhere@gmail.com");
+		form.setTo(user.getPubUser().getEmail());
+		form.setSubject("Confirm Password Reset");
+		form.setDescription("<div style='font-weight: bold; font-size: 14px;'><h2>Confirm your Password Reset!</h2><br><br>Click here: <a href="+ EmailUtils.createURLToResetPassword(request, user.getPubUser().getEmailHash(), user.getPubUser().getHash()) + ">" + EmailUtils.createURLToResetPassword(request, user.getPubUser().getEmailHash(), user.getPubUser().getHash()) +"</a></div>");
+		EmailUtils.sendMail(form, request);
+		log.info("Email sent to confirm password reset for: " + user.getPubUser().getEmailHash());		
+	}
+	
+	public static void resetPassword(String email, String newPassword, HttpServletRequest request) {
+		ContactForm form = new ContactForm();
+		form.setEmail("pubanywhere@gmail.com");
+		form.setTo(email);
+		form.setSubject("Password Reset");
+		form.setDescription("<div style='font-weight: bold; font-size: 14px;'><h2>Password Reset Successful!</h2><br><br>Your new password is: " + newPassword + "</div>");
+		EmailUtils.sendMail(form, request);
+		log.info("Password successful reset for: " + email);
 	}
 }
