@@ -23,8 +23,7 @@
 								</a>
 							</div>
 							<a href="${pubDetails}">
-								<%-- <img src="https://s3.amazonaws.com/pubanywhere/${f.pub.pubId}"/> --%>
-								<img src="https://s3.amazonaws.com/pubanywhere/java_pub"/>
+								<img src="https://s3.amazonaws.com/pubanywhere/${f.pub.pubId}"/>
 							</a>
 						</div>
 					</li>
