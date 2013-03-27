@@ -157,7 +157,7 @@
 										<div id="info-facebook">
 											<span>
 												<c:if test="${pub.facebook != ''}">
-													<a href="http://facebook.com/${pub.facebook}" target="_blank">
+													<a href="${pub.facebook}" target="_blank">
 														<img src="<c:url value='/resources/imgs/facebook.png'/>" title="facebook">
 													</a>
 												</c:if>
@@ -166,7 +166,7 @@
 										<div id="info-twitter">
 											<span>
 												<c:if test="${pub.twitter != ''}">
-													<a href="http://twitter.com/${pub.twitter}" target="_blank">
+													<a href="${pub.twitter}" target="_blank">
 														<img src="<c:url value='/resources/imgs/twitter.png'/>" title="twitter">
 													</a>
 												</c:if>

@@ -36,7 +36,7 @@ public class PubService {
 		Pub newPub = pubRepository.insert(PubValidations.valid(pub));
 		log.info("Pub: " + newPub.getName() + " inserido na base");
 		
-		if (!pub.getFile().isEmpty()) {
+		if (pub.getFile() != null) {
 			AmazonService.upload(pub.getFile(), pub.getPubId());
 		}
 		

@@ -25,7 +25,7 @@
 							<div id="innerLeft" class="whiteBorder">
 								<div class="innerDetails">
 									<div id="pubForm">
-										<form:form action="/pubs/registerPub" method='POST' id="pubForm" commandName="pubForm" acceptCharset="UTF-8" enctype="multipart/form-data">
+										<form:form action="#" method='POST' id="pubForm" commandName="pubForm" acceptCharset="UTF-8" enctype="multipart/form-data">
 										
 											<form:hidden path="lat" id="lat"/>
 											<form:hidden path="lng" id="lng"/>
@@ -132,7 +132,9 @@
 															
 															<div class="control-group">
 																<span>
-																	<input id="insertPub" type="submit" name="submit" value="<spring:message code="form.pub.button.send"/>" class="buttons"/>
+																	<a id="btnInsertPubAjax" class="buttons">
+																		<spring:message code="form.pub.button.send"/>
+																	</a>
 																</span>
 															</div>
 														</div>
@@ -190,5 +192,8 @@
 			</div>
 		</div>
 	</div>
+	
+	<jsp:include page="includes/footer.jsp"/>
+	
 </body>
 </html>

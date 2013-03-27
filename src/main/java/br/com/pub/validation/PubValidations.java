@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 
 import br.com.pub.domain.Pub;
+import br.com.pub.service.PubUtils;
 
 import com.google.code.geocoder.Geocoder;
 import com.google.code.geocoder.GeocoderRequestBuilder;
@@ -28,7 +29,7 @@ public class PubValidations {
 		
 		setGoogleLocation(pub);
 		
-		pub.setPubId(pub.getPubId().toLowerCase().trim());
+		pub.setPubId(PubUtils.removeInvalidCharacters(pub.getPubId().toLowerCase().trim()));
 		return pub;
 	}
 
