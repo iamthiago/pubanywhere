@@ -7,6 +7,6 @@ public class PubUtils {
 	}
 	
 	public static String removeInvalidCharacters(String string) {
-		return string.replaceAll("[^A-Za-z0-9()\\[\\]]", "-");
+		return string.replaceAll("[^A-Za-z0-9()\\[\\]]", "");
 	}
 }

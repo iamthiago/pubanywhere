@@ -7,7 +7,7 @@ $(document).ready(function() {
 	$(document).tooltip();
 	
 	// toolbar
-	$('#listYourPub, #insertPub, #sendMail, #writeReview').button();
+	$('#listYourPub, #sendMail, #writeReview, #btnInsertPubAjax').button();
 	
 	//help divs
 	$('#about').show();
@@ -41,6 +41,30 @@ $(document).ready(function() {
 		}
 	});
 	
+	$('#btnInsertPubAjax').click(function(e){
+		e.preventDefault()
+		showLoading();
+		
+		if ($('#image').val() == "") {
+			$.post("/pubs/registerPub", $("form#pubForm").serialize())
+				.done(function(data) {
+					hideLoading();
+					resultMessageModal(data);
+					$('form#pubForm')[0].reset();
+				});
+		} else {
+			var options = {
+				url : '/pubs/registerPub',
+				success : function(data) {
+					hideLoading();
+					resultMessageModal(data);
+					$('form#pubForm')[0].reset();
+				}
+			};
+			
+			$("form#pubForm").ajaxSubmit(options);
+		}
+	});
 });
 
 //function resultMessageModal (modal padrão para mensagem de retorno do controller do tipo ResultMessage.class)

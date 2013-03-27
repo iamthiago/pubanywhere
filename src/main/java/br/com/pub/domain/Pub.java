@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
@@ -85,7 +84,6 @@ public class Pub implements Serializable {
 	@Column(name = "ENABLED")
 	private boolean enabled;
 	
-	@Transient
 	@MaxSizeUpload
 	private CommonsMultipartFile file;
 	
