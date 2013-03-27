@@ -54,7 +54,7 @@ public class UserService {
 			PubUser pubUser = new PubUser();
 			pubUser.setName(form.getName());
 			pubUser.setEmail(form.getEmail());
-			pubUser.setEmailHash(form.getEmail().split("\\@")[0]);
+			pubUser.setEmailHash(PubUtils.removeInvalidCharacters(form.getEmail().toLowerCase().split("\\@")[0]));
 			pubUser.setHash("user"+RandomStringUtils.randomAlphanumeric(15));
 			pubUser.setSince(new Date());
 			
