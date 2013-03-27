@@ -7,7 +7,7 @@ public class TestUtils {
 	
 	public static void main(String[] args) {
 		Pub pub = new Pub();
-		pub.setName(" Thiago's é outro ");
-		System.out.println(PubUtils.removeInvalidCharacters(pub.getName().toLowerCase()));
+		pub.setName("rene.egomes88@gmail.com");
+		System.out.println(PubUtils.removeInvalidCharacters(pub.getName().toLowerCase().split("\\@")[0]));
 	}
 }
