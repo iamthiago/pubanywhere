@@ -210,7 +210,7 @@
 			</div>
 			<div id="star-modal"></div>
 			<div>
-				<form:textarea path="message" rows="20" cols="40" cssClass="text-area-detail" tabindex="1" maxlength="300"/>
+				<form:textarea path="message" rows="20" cols="40" cssClass="text-area-detail" tabindex="1" maxlength="450"/>
 			</div>
 			<div>
 				<input id="shareReview" type="submit" name="submit" value="<spring:message code="details.button.sharereview"/>" class="buttons"/>

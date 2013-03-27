@@ -39,7 +39,7 @@ public class PubMessages  implements Serializable {
 	@Column(name = "MESSAGE_RATING")
 	private int messageRating;
 	
-	@Column(name = "MESSAGE_REVIEW")
+	@Column(name = "MESSAGE_REVIEW", length = 500)
 	private String messageReview;
 	
 	@Temporal(TemporalType.TIMESTAMP)
