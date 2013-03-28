@@ -1,5 +1,9 @@
 package br.com.pub.service;
 
+import static br.com.pub.constants.PUB_CONSTANTS.MODAL_MESSAGE;
+import static br.com.pub.constants.PUB_CONSTANTS.MODAL_TITLE;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,11 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
 import br.com.pub.domain.Pub;
 import br.com.pub.mail.EmailMessageCreator;
 import br.com.pub.repository.PubRepository;
+import br.com.pub.utils.ResultMessage;
 import br.com.pub.validation.PubValidations;
 
 import com.googlecode.ehcache.annotations.TriggersRemove;
@@ -20,6 +27,7 @@ import com.googlecode.ehcache.annotations.TriggersRemove;
 public class PubService {
 	
 	@Autowired private PubRepository pubRepository;
+	@Autowired private MessageService message;
 	
 	private static Logger log = LoggerFactory.getLogger(PubService.class);
 	
@@ -32,17 +40,39 @@ public class PubService {
 					"getPubReviewCache",
 					"getPubReviewByUserCache"},
 					removeAll=true)
-	public String registerPub(Pub pub, HttpServletRequest request) {
-		Pub newPub = pubRepository.insert(PubValidations.valid(pub));
-		log.info("Pub: " + newPub.getName() + " inserido na base");
+	public List<ResultMessage> registerPub(Pub pub, HttpServletRequest request, BindingResult result) {
 		
-		if (pub.getFile() != null) {
-			AmazonService.upload(pub.getFile(), pub.getPubId());
+		List<ResultMessage> lista = new ArrayList<ResultMessage>();
+		
+		if (result.hasErrors()) {
+			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
+			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered.error")));
+			
+		} else {
+			
+			try {
+				
+				Pub newPub = pubRepository.insert(PubValidations.valid(pub));
+				
+				if (pub.getFile() != null) {
+					AmazonService.upload(pub.getFile(), pub.getPubId());
+				}
+				
+				log.info("Pub: " + newPub.getName() + " inserido na base");
+				
+				EmailMessageCreator.sendPubMail(pub, request);
+				
+				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.success")));
+				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.pub.register.success", new Object[]{newPub.getPubId()})));
+			
+			} catch (DataIntegrityViolationException e) {
+				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
+				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.pub.register.pudIdExists")));
+			}
 		}
 		
-		EmailMessageCreator.sendPubMail(pub, request);
+		return lista;
 		
-		return newPub.getPubId();
 	}
 	
 	public void activePub(String id) {
