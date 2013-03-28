@@ -34,11 +34,11 @@ import br.com.pub.utils.ResultMessage;
 @RequestMapping("pubs")
 public class PubController {
 	
+	@Autowired private MessageService message;
 	@Autowired private PubService pubService;
 	@Autowired private PubMessageService pubMessageService;
 	@Autowired private MessageService messageService;
 	@Autowired private PubWishOrFavoriteService wishOrFavoriteService;
-	@Autowired private MessageService message;
 	
 	@RequestMapping(value = "maps")
 	public String maps() {
