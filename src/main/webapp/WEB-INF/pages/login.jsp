@@ -79,13 +79,13 @@
 					<div>
 						<div class="div_login_content float marginR">
 							<label for="name">
-								<spring:message code="login.signup.name"/>
+								<spring:message code="login.signup.name"/><span class="mandatory"> *</span>
 							</label>
 							<form:input path="name" cssClass="input_login" tabindex="1"/>
 						</div>
 						<div class="div_login_content">
 							<label for="email">
-								Email
+								Email<span class="mandatory"> *</span>
 							</label>
 							<form:input path="email" cssClass="input_login" tabindex="2"/>
 						</div>
@@ -93,13 +93,13 @@
 					<div>
 						<div class="div_login_content float marginR">
 							<label for="password">
-								<spring:message code="login.signup.password"/>
+								<spring:message code="login.signup.password"/><span class="mandatory"> *</span>
 							</label>
 							<form:password path="password" cssClass="input_login" tabindex="3"/>
 						</div>
 						<div class="div_login_content">
 							<label for="confirmPassword">
-								<spring:message code="login.signup.confirmPassword"/>
+								<spring:message code="login.signup.confirmPassword"/><span class="mandatory"> *</span>
 							</label>
 							<form:password path="confirmPassword" cssClass="input_login" tabindex="4"/>
 						</div>

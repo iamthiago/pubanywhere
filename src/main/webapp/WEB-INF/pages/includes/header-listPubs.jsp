@@ -4,7 +4,7 @@
 		<title>${windowTitle}</title>
 		
 		<jsp:include page="default.jsp"/>
-		<script type="text/javascript" src="<c:url value='/resources/js/listPubs-26-03-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/listPubs-27-03-13.js' />"></script>
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/jquery/jquery.raty.js' />"></script>
 		

@@ -42,6 +42,15 @@
 								</div>
 							</div>
 							<div id="innerLeft-social" class="whiteBorder">
+								
+								<div id="facebookLike">
+									<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
+								</div>
+								
+								<div id="googleOne">
+									<div class="g-plusone" data-size="medium"></div>
+								</div>
+								
 								<div id="twitterShare">
 									<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
 									<script>
@@ -50,14 +59,6 @@
 										js.id=id;js.src="//platform.twitter.com/widgets.js";
 										fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 									</script>
-								</div>
-								
-								<div id="googleOne">
-									<div class="g-plusone" data-size="medium"></div>
-								</div>
-								
-								<div id="facebookLike">
-									<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
 								</div>
 								
 								<div id="pubViews">

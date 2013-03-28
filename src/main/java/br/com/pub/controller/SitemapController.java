@@ -36,6 +36,9 @@ public class SitemapController {
 		create(xmlUrlSet, "/pubs/country/Brazil", XmlUrl.Priority.MEDIUM);
 		create(xmlUrlSet, "/pubs/country/United%20States", XmlUrl.Priority.MEDIUM);
 		create(xmlUrlSet, "/pubs/country/Argentina", XmlUrl.Priority.MEDIUM);
+		create(xmlUrlSet, "/pubs/country/Ireland", XmlUrl.Priority.MEDIUM);
+		create(xmlUrlSet, "/pubs/country/United%20Kingdom", XmlUrl.Priority.MEDIUM);
+		create(xmlUrlSet, "/pubs/country/Germany", XmlUrl.Priority.MEDIUM);
 
 		for (Pub pub : pubs) {
 			create(xmlUrlSet, "/pubs/" + pub.getPubId(), XmlUrl.Priority.HIGH);
