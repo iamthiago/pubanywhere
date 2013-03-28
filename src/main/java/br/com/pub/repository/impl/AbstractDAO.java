@@ -28,7 +28,7 @@ public abstract class AbstractDAO<T> implements AbstractRepository<T> {
 		clazz = (Class<T>) pt.getActualTypeArguments()[0];
 	}
 	
-	@Transactional(propagation = Propagation.REQUIRES_NEW)
+	@Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
 	public T insert(T t) {
 		em.persist(t);
 		return t;

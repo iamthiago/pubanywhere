@@ -20,10 +20,13 @@ $(document).ready(function() {
 	
 	$('#shareReview').click(function(e){
 		e.preventDefault();
+		showLoading();
 		$.post("/user/postPubReview", $("#reviewForm").serialize())
 			.done(function(data) {
 				$('#insertMessage').dialog('destroy');
 				$('#divUserReview').load("/user/getPubReviewsAjax/" + $('#pubId').val());
+				$('#insertMessage').hide();
+				hideLoading();
 			});
 	});
 	

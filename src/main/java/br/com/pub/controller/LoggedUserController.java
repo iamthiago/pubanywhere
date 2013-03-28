@@ -36,7 +36,7 @@ import br.com.pub.utils.ResultMessage;
  */
 @Controller
 @RequestMapping("user")
-public class LoggedUserController {
+public class LoggedUserController extends UserCommons {
 	
 	@Autowired private UserService userService;
 	@Autowired private PubMessageService pubMessageService;
@@ -46,6 +46,9 @@ public class LoggedUserController {
 	@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
 	@RequestMapping(value = "/{hash}", method = RequestMethod.GET)
 	public String getUserPage(@PathVariable("hash") String hash, HttpSession session, Map<String, Object> map, HttpServletRequest request) {
+		
+		getUserSession(session);
+		
 		Users user = userService.findUserByEmailHash(hash);
 		if (user != null) {
 			
