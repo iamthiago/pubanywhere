@@ -98,4 +98,9 @@ public class PubService {
 		pub.setPubViews(pub.getPubViews() + 1);
 		this.savePub(pub);
 	}
+	
+	/*teste para mobile*/
+	public List<Pub> lastPubs() {
+		return pubRepository.lastPubs();
+	}
 }

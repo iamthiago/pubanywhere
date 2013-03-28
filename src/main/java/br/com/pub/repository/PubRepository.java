@@ -12,4 +12,7 @@ public interface PubRepository extends AbstractRepository<Pub> {
 	
 	public List<Pub> listTop100World();
 
+	/*teste para mobile*/
+	public List<Pub> lastPubs();
+
 }

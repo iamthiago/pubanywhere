@@ -70,4 +70,21 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 		}
 		return null;
 	}
+
+	/*teste para mobile*/
+	@SuppressWarnings("unchecked")
+	public List<Pub> lastPubs() {
+		try {
+			
+			return super.em.createQuery("select p from Pub p")
+					.setMaxResults(5)
+					.getResultList();
+			
+		} catch (Exception e) {
+			log.info("No pub found!");
+			e.getMessage();
+		}
+		
+		return null;
+	}
 }
