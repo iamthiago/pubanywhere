@@ -1,9 +1,5 @@
 package br.com.pub.controller;
 
-import static br.com.pub.constants.PUB_CONSTANTS.MODAL_MESSAGE;
-import static br.com.pub.constants.PUB_CONSTANTS.MODAL_TITLE;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -34,7 +30,6 @@ import br.com.pub.utils.ResultMessage;
 @RequestMapping("pubs")
 public class PubController {
 	
-	@Autowired private MessageService message;
 	@Autowired private PubService pubService;
 	@Autowired private PubMessageService pubMessageService;
 	@Autowired private MessageService messageService;
@@ -90,26 +85,7 @@ public class PubController {
 	@ResponseBody
 	@RequestMapping(value = "registerPub", method = RequestMethod.POST)
 	public List<ResultMessage> registerPub(@ModelAttribute("pubForm") @Valid Pub form, BindingResult result, HttpServletRequest request, Map<String, Object> map) {
-		
-		String pubId = null;
-		List<ResultMessage> lista = new ArrayList<ResultMessage>();
-		
-		if (result.hasErrors()) {
-			
-			if (result.hasFieldErrors("pubId")) {
-				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
-				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.pub.register.pudIdExists")));
-			} else {
-				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
-				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered.error")));
-			}
-		} else {
-			pubId = pubService.registerPub(form, request);
-			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.success")));
-			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.pub.register.success", new Object[]{pubId})));
-		}
-		
-		return lista;
+		return pubService.registerPub(form, request, result);
 	}
 	
 	@RequestMapping(value = "{pubId}", method = RequestMethod.GET)

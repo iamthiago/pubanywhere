@@ -107,15 +107,6 @@
 																</div>
 															</div>
 															<div class="control-group">
-																<label for="pub-id" class="control-label">
-																	Pub Url:<span class="mandatory"> *</span>
-																</label>
-																<div class="controls">
-																	<form:input path="pubId" id="pub-id" cssClass="inputs" tabindex="6" maxlength="100"/>
-																	<form:errors path="pubId" element="div" cssClass="errors"/>
-																</div>
-															</div>
-															<div class="control-group">
 																<label for="file" class="control-label">
 																	<spring:message code="form.pub.image"/>
 																</label>

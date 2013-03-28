@@ -17,7 +17,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import br.com.pub.annotation.MaxSizeUpload;
-import br.com.pub.annotation.PK;
 
 @Entity
 public class Pub implements Serializable {
@@ -27,9 +26,7 @@ public class Pub implements Serializable {
 	 */
 	private static final long serialVersionUID = -2798520271567297643L;
 	
-	@PK
 	@Id
-	@NotEmpty
 	@Column(name = "PUB_ID", insertable = true, updatable = false)
 	private String pubId;
 	
