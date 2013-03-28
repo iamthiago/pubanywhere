@@ -84,3 +84,8 @@ label {
 	position: fixed;
 	width: 375px;
 }
+
+.mandatory {
+	color: red;
+	font-weight: bold;
+}

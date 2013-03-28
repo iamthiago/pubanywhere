@@ -32,16 +32,11 @@
 										
 											<div>
 												<div>
-													<div class="register-title">
-														<p>
-															<span class="errors"><c:out value="${pubSuccess}"/></span>
-														</p>
-													</div>
 													<fieldset>
 														<div>
 															<div class="control-group">
 																<label for="pubs-name" class="control-label">
-																	<spring:message code="form.pub.name"/>
+																	<spring:message code="form.pub.name"/><span class="mandatory"> *</span>
 																</label>
 																<div class="controls">
 																	<form:input path="name" id="pubs-name" cssClass="inputs" tabindex="1" maxlength="30"/>
@@ -50,7 +45,7 @@
 															</div>
 															<div class="control-group">
 																<label for="location_new" class="control-label">
-																	<spring:message code="form.pub.location"/>
+																	<spring:message code="form.pub.location"/><span class="mandatory"> *</span>
 																</label>
 																<div class="controls">
 																	<form:input path="local" id="location_new" cssClass="inputs" tabindex="2"/>
@@ -59,7 +54,7 @@
 															</div>
 															<div class="control-group">
 																<label for="pubs-description" class="control-label">
-																	<spring:message code="form.pub.description"/>:
+																	<spring:message code="form.pub.description"/>:<span class="mandatory"> *</span>
 																</label>
 																<div class="controls">
 																	<form:textarea path="descricao" id="pubs-description" rows="20" cols="40" cssClass="text-area-input" tabindex="3" maxlength="3000"/>
@@ -113,7 +108,7 @@
 															</div>
 															<div class="control-group">
 																<label for="pub-id" class="control-label">
-																	Pub Url:
+																	Pub Url:<span class="mandatory"> *</span>
 																</label>
 																<div class="controls">
 																	<form:input path="pubId" id="pub-id" cssClass="inputs" tabindex="6" maxlength="100"/>

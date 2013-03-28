@@ -7,15 +7,15 @@
 		<title><spring:message code="window.main"/></title>
 		
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	    <link type="text/css" href="<c:url value='/resources/css/main-26-03-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/detail-26-03-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/registerPub-26-03-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/footer-26-03-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/help-26-03-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/backoffice-26-03-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/listPubs-26-03-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/login-26-03-13.css' />" rel="stylesheet" />
-	    <link type="text/css" href="<c:url value='/resources/css/user-26-03-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/main-27-03-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/detail-27-03-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/registerPub-27-03-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/footer-27-03-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/help-27-03-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/backoffice-27-03-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/listPubs-27-03-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/login-27-03-13.css' />" rel="stylesheet" />
+	    <link type="text/css" href="<c:url value='/resources/css/user-27-03-13.css' />" rel="stylesheet" />
 	    <link type="text/css" href="<c:url value='/resources/css/dataTablesCustom.css' />" rel="stylesheet" />
 	    
 	    <link type="text/css" href="<c:url value='/resources/css/black-tie/jquery-ui-1.10.2.custom.css' />" rel="stylesheet" />
@@ -31,4 +31,4 @@
 	    <script type="text/javascript" src="<c:url value='/resources/js/jquery/jquery.form.js' />"></script>
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/dataTablesDefault.js' />"></script>
-		<script type="text/javascript" src="<c:url value='/resources/js/main-26-03-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/main-27-03-13.js' />"></script>
