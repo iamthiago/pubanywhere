@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import br.com.pub.domain.Pub;
+import br.com.pub.enumeration.StaticImage;
 import br.com.pub.mail.EmailMessageCreator;
 import br.com.pub.repository.PubRepository;
 import br.com.pub.utils.ResultMessage;
@@ -55,7 +56,9 @@ public class PubService {
 				Pub newPub = pubRepository.insert(PubValidations.valid(pub));
 				
 				if (pub.getFile() != null) {
-					AmazonService.upload(pub.getFile(), pub.getPubId());
+					AmazonService.upload(pub.getFile(), newPub.getPubId());
+				} else {
+					PubUtils.uploadDefaultImage(StaticImage.PUB, newPub.getPubId());
 				}
 				
 				log.info("Pub: " + newPub.getName() + " inserido na base");
