@@ -22,6 +22,8 @@
 		
 		<title><spring:message code="window.main"/></title>
 		
+		<link rel="image_src" href="https://s3.amazonaws.com/pubanywhere/pub-logo-mini.png" />
+		
 		<meta property="og:title" content="Pub Anywhere" />
 		<meta property="og:url" content="http://www.pubanywhere.com/" />
 		<meta property="og:image" content="https://s3.amazonaws.com/pubanywhere/pub-logo-mini.png" />
