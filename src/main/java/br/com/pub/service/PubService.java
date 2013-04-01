@@ -35,6 +35,7 @@ public class PubService {
 	@TriggersRemove(
 			cacheName={
 					"abstractFindCache",
+					"abstractFindAllCache",
 					"listPubsByUsernameCache",
 					"listPubsPerCountryCache",
 					"listTop100WorldCache",
@@ -87,6 +88,7 @@ public class PubService {
 	@TriggersRemove(
 			cacheName={
 					"abstractFindCache",
+					"abstractFindAllCache",
 					"listPubsByUsernameCache",
 					"listPubsPerCountryCache",
 					"listTop100WorldCache",
