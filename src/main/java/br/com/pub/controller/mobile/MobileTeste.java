@@ -38,4 +38,10 @@ public class MobileTeste {
 	public String setName(@PathVariable("name") String name) {
 		return "Your name is: " + name;
 	}
+	
+	@ResponseBody
+	@RequestMapping(value = "pubs/country/{country}")
+	public List<Pub> listPubsPerCountry(@PathVariable("country") String country) {
+		return pubService.listPubsPerCountry(country);
+	}
 }
