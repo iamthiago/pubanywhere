@@ -23,7 +23,6 @@ public class PubMessageService {
 	
 	@TriggersRemove(
 			cacheName={
-					"abstractFindCache",
 					"listPubsByUsernameCache",
 					"listPubsPerCountryCache",
 					"listTop100WorldCache",
