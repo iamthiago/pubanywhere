@@ -116,7 +116,7 @@
 												<ul id="ul-list">
 													<c:forEach items="${topUser}" var="user">
 														<li class="li-pub-item floatLeft">
-															<div class="pub-item">
+															<div class="pub-item width75px">
 																<div>
 																	<span class="user-pic-span">
 																		<img src="https://s3.amazonaws.com/pubanywhere/${user.pubUser.emailHash}" class="userImgProfile"/>
