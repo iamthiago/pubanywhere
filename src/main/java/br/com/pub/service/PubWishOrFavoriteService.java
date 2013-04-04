@@ -28,7 +28,6 @@ public class PubWishOrFavoriteService {
 	
 	@TriggersRemove(
 			cacheName={
-					"abstractFindCache",
 					"getWishOrFavoritePubCache",
 					"findByPubAndUserAndTypeCache"},
 					removeAll=true)

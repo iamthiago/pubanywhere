@@ -22,6 +22,7 @@ import br.com.pub.repository.PubRepository;
 import br.com.pub.utils.ResultMessage;
 import br.com.pub.validation.PubValidations;
 
+import com.googlecode.ehcache.annotations.Cacheable;
 import com.googlecode.ehcache.annotations.TriggersRemove;
 
 @Service
@@ -34,8 +35,6 @@ public class PubService {
 	
 	@TriggersRemove(
 			cacheName={
-					"abstractFindCache",
-					"abstractFindAllCache",
 					"listPubsByUsernameCache",
 					"listPubsPerCountryCache",
 					"listTop100WorldCache",
@@ -87,8 +86,6 @@ public class PubService {
 	
 	@TriggersRemove(
 			cacheName={
-					"abstractFindCache",
-					"abstractFindAllCache",
 					"listPubsByUsernameCache",
 					"listPubsPerCountryCache",
 					"listTop100WorldCache",
@@ -103,6 +100,7 @@ public class PubService {
 		return pubRepository.find(pubId);
 	}
 	
+	@Cacheable(cacheName="listNearPubsCache")
 	public List<Pub> listNearPubs(Double lat, Double lng) {
 		//TODO: listar somente pubs ativos
 		log.info("Listando todos os pubs");

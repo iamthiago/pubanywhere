@@ -12,8 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.pub.repository.AbstractRepository;
 
-import com.googlecode.ehcache.annotations.Cacheable;
-
 public abstract class AbstractDAO<T> implements AbstractRepository<T> {
 
 	@PersistenceContext
@@ -44,13 +42,11 @@ public abstract class AbstractDAO<T> implements AbstractRepository<T> {
 		em.remove(this.em.getReference(clazz, id));
 	}
 	
-	@Cacheable(cacheName="abstractFindCache")
 	@Transactional(propagation = Propagation.REQUIRED)
 	public T find(Object id) {
 		return em.find(clazz, id);
 	}
 	
-	@Cacheable(cacheName="abstractFindAllCache")
 	@SuppressWarnings("unchecked")
 	public List<T> listAll() {
 		return em.createQuery("SELECT x FROM " + clazz.getSimpleName() + " x ").getResultList();

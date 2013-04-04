@@ -58,6 +58,9 @@
 																		</a>
 																	</div>
 																	<div class="pubInfo">
+																		<div class="paddingMain countryName">
+																			${pub.name}
+																		</div>
 																		<div class="paddingMain">
 																			<div class="star-list" data-number="${pub.pubTotalRating}"></div>
 																			<div class="ratingMainCount">
@@ -89,7 +92,7 @@
 																			</span>
 																		</a>
 																	</div>
-																	<div class="pubInfo">
+																	<div class="pubInfo marginTop28px">
 																		<div class="paddingMain countryName">
 																			<spring:message code="${c.springCode}"/>
 																		</div>
