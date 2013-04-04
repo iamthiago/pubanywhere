@@ -30,67 +30,119 @@
 					</div>
 				</div>
 			</div>
-			<div id="mainCountry">
+			
+			<div id="content" class="degrade marginList row">
 				<div>
-					<h2><spring:message code="main.country"/></h2>
-					<div id="countryPics">
-						<div id="country-inner">
-							<div id="slides">
-					            <div class="slides_container">
-					                <div id="slide1">
-					                	<div id="usa">
-						                    <a href="<c:url value="/pubs/country/United States"></c:url>">
-												<img src="<c:url value='/resources/imgs/flags/united_states.jpg'/>">
-												<small>
-													<spring:message code="country.unitedstates"/>
-												</small>
-											</a>
-						                </div>
-						                <div id="ireland">
-						                    <a href="<c:url value="/pubs/country/Ireland"></c:url>">
-												<img src="<c:url value='/resources/imgs/flags/ireland.jpg'/>">
-												<small>
-													<spring:message code="country.ireland"/>
-												</small>
-											</a>
-						                </div>
-						                <div id="england">
-						                    <a href="<c:url value="/pubs/country/United Kingdom"></c:url>">
-												<img src="<c:url value='/resources/imgs/flags/england.jpg'/>">
-												<small>
-													<spring:message code="country.unitedkingdom"/>
-												</small>
-											</a>
-					                	</div>
-					                </div>
-					                <div id="slide2">
-					                	<div id="germany">
-						                    <a href="<c:url value="/pubs/country/Germany"></c:url>">
-												<img src="<c:url value='/resources/imgs/flags/germany.jpg'/>">
-												<small>
-													<spring:message code="country.germany"/>
-												</small>
-											</a>
-					                	</div>
-					                	<div id="brazil">
-						                    <a href="<c:url value="/pubs/country/Brazil"></c:url>">
-												<img src="<c:url value='/resources/imgs/flags/brazil.jpg'/>">
-												<small>
-													<spring:message code="country.brazil"/>
-												</small>
-											</a>
-					                	</div>
-					                	<div id="argentina">
-						                    <a href="<c:url value="/pubs/country/Argentina"></c:url>">
-												<img src="<c:url value='/resources/imgs/flags/argentina.jpg'/>">
-												<small>
-													<spring:message code="country.argentina"/>
-												</small>
-											</a>
-					                	</div>
-					                </div>
-					            </div>
-					        </div>
+					<div id="container" class="row">
+						<div class="row marginTop20px">							
+							<div id="detailLeft" class="tabs tabLeft">
+								<div id="leftTabs">
+									<ul>
+										<li><a href="#tabs-1"><spring:message code="main.rated"/></a></li>
+										<li><a href="#tabs-2"><spring:message code="main.country"/></a></li>
+									</ul>
+									<div id="tabs-1">
+										<div class="inner">
+											<div class="innerDetails">
+												<ul id="ul-list">
+													<c:forEach items="${topPubs}" var="pub">
+														<c:url value="/pubs/${pub.pubId}" var="pubDetails"></c:url>
+														<li class="li-pub-item floatLeft">
+															<div class="pub-item">
+																<div id="pubMainPic">
+																	<div id="pubPicInner">
+																		<a href="${pubDetails}">
+																			<span class="pubThumb">
+																				<img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}" class="pubImgTopList"/>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="pubInfo">
+																		<div class="paddingMain">
+																			<div class="star-list" data-number="${pub.pubTotalRating}"></div>
+																			<div class="ratingMainCount">
+																				${pub.pubCountRating} reviews
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</li>
+													</c:forEach>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div id="tabs-2">
+										<div class="inner">
+											<div class="innerDetails">
+												<ul id="ul-list">
+													<c:forEach items="${countries}" var="c">
+														<c:url value="/pubs/country/${c.name}" var="countryUrl"></c:url>
+														<li class="li-pub-item floatLeft">
+															<div class="pub-item">
+																<div id="pubMainPic">
+																	<div id="pubPicInner">
+																		<a href="${countryUrl}">
+																			<span class="pubThumb">
+																				<img src="https://s3.amazonaws.com/pubanywhere/${c.imgName}" class="countryImg">
+																			</span>
+																		</a>
+																	</div>
+																	<div class="pubInfo">
+																		<div class="paddingMain countryName">
+																			<spring:message code="${c.springCode}"/>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</li>
+													</c:forEach>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div id="detailsRight" class="tabs">
+								<div id="rightTabs" class="tabRight">
+									<ul>
+										<li><a href="#tabs-1"><spring:message code="main.brewmaster"/></a></li>
+									</ul>
+									<div id="tabs-1">
+										<div class="inner marginLeft20px">
+											<div id="topUser">
+												<ul id="ul-list">
+													<c:forEach items="${topUser}" var="user">
+														<li class="li-pub-item floatLeft">
+															<div class="pub-item">
+																<div>
+																	<span class="user-pic-span">
+																		<img src="https://s3.amazonaws.com/pubanywhere/${user.pubUser.emailHash}" class="userImgProfile"/>
+																	</span>
+																</div>
+																<div class="topUserInfo">
+																	<div class="topUserName">
+																		<c:url value="/user/${user.pubUser.emailHash}" var="userProfile"></c:url>
+																		<a href="${userProfile}" class="userProfileLink">
+																			${user.pubUser.name}
+																		</a>
+																	</div>
+																</div>
+															</div>
+														</li>
+													</c:forEach>
+												</ul>
+											</div>
+										</div>										
+									</div>
+								</div>
+								
+								<div id="media" class="tabRight">
+									<div class="fb-like-box" data-href="http://www.facebook.com/pubanywhere" data-width="292" data-show-faces="true" data-stream="false" data-header="false"></div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

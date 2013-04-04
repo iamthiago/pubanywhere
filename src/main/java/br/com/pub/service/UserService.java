@@ -18,10 +18,12 @@ import org.springframework.stereotype.Service;
 import br.com.pub.domain.Authorities;
 import br.com.pub.domain.PubUser;
 import br.com.pub.domain.Users;
+import br.com.pub.dto.TopUserDTO;
 import br.com.pub.enumeration.Roles;
 import br.com.pub.enumeration.StaticImage;
 import br.com.pub.form.UserForm;
 import br.com.pub.mail.EmailMessageCreator;
+import br.com.pub.repository.PubMessageRepository;
 import br.com.pub.repository.RolesRepository;
 import br.com.pub.repository.UserRepository;
 import br.com.pub.utils.ResultMessage;
@@ -31,6 +33,7 @@ public class UserService {
 	
 	@Autowired private UserRepository userRepository;
 	@Autowired private RolesRepository rolesRepository;
+	@Autowired private PubMessageRepository pubMessageRepository;
 	@Autowired private MessageService message;
 	
 	private static final Logger log = LoggerFactory.getLogger(UserService.class);
@@ -136,5 +139,16 @@ public class UserService {
 		lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.edit.success")));
 		
 		return lista;
+	}
+	
+	public List<Users> getTopUsers() {
+		List<Users> list = new ArrayList<Users>();
+		List<TopUserDTO> topUsers = pubMessageRepository.getTopUsers();
+		for (TopUserDTO topUserDTO : topUsers) {
+			Users userFound = userRepository.findUserByUsername(topUserDTO.getUsername());
+			list.add(userFound);
+		}
+		
+		return list;
 	}
 }

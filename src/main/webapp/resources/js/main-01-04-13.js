@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	$('#leftTabs, #rightTabs').tabs();
+	
 	//loading dialog
 	$('#loading').dialog({ autoOpen: false });
 	
@@ -64,6 +66,16 @@ $(document).ready(function() {
 			
 			$("form#pubForm").ajaxSubmit(options);
 		}
+	});
+	
+	$('.star-list').each(function() {
+		$(this).raty({
+			hints: ['', '', '', '', ''],
+			path: '/resources/imgs',
+			readOnly : true,
+			halfShow: false,
+			score : $(this).attr('data-number')
+		});
 	});
 });
 

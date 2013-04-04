@@ -5,6 +5,6 @@
 		
 		<jsp:include page="default.jsp"/>
 		
-		<script type="text/javascript" src="<c:url value='/resources/js/user-27-03-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/user-01-04-13.js' />"></script>
 		<script type="text/javascript" src="<c:url value='/resources/js/jquery/jquery.raty.js' />"></script>
 	</head>

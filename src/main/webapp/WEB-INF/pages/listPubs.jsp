@@ -57,7 +57,7 @@
 													</a>
 												</div>
 												<div id="list-rating">
-													<div class="space star-list" data-number="${pub.pubTotalRating}"></div>
+													<div class="star-list space" data-number="${pub.pubTotalRating}"></div>
 													<div>
 														${pub.pubCountRating} reviews
 													</div>

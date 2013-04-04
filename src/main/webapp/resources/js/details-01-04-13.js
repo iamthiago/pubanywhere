@@ -49,6 +49,7 @@ $(document).ready(function() {
 	});
 	
 	$('#star-modal').raty({
+		hints: ['', '', '', '', ''],
 		path: '/resources/imgs',
 		click: function(score, evt) {
 			$('#setRating').val(score);
@@ -57,6 +58,7 @@ $(document).ready(function() {
 	
 	$('#star-pub').each(function() {
 		$(this).raty({
+			hints: ['', '', '', '', ''],
 			path: '/resources/imgs',
 			readOnly : true,
 			halfShow: false,

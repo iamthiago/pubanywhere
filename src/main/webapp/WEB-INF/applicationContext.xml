@@ -61,7 +61,7 @@
 		<property name="url" value="jdbc:postgresql://localhost:5432/pubanywhere" />
 		<property name="username" value="postgres" />
 		<property name="password" value="root" />
-	</bean> -->
+	</bean>  -->
 	
 	<bean id="myEmf"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
