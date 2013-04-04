@@ -92,7 +92,7 @@
 																			</span>
 																		</a>
 																	</div>
-																	<div class="pubInfo marginTop28px">
+																	<div class="pubInfo marginTop25px">
 																		<div class="paddingMain countryName">
 																			<spring:message code="${c.springCode}"/>
 																		</div>
