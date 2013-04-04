@@ -64,14 +64,14 @@
 	z-index: 100;
 }
 
-#user-pic span {
+.user-pic-span {
 	display: block;
 	height: 75px;
 	overflow: hidden;
 	width: 75px;
 }
 
-#user-pic span img {
+.userImgProfile {
 	border: 0 none;
 	max-width: 100%;
 	vertical-align: middle;

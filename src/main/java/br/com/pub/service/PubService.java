@@ -129,9 +129,9 @@ public class PubService {
 		return pubRepository.listTop100World();
 	}
 	
-	public void setPageCount(Pub pub) {
-		pub.setPubViews(pub.getPubViews() + 1);
-		this.savePub(pub);
+	public List<Pub> listTop6(){
+		log.info("Listando top 6 pubs no mundo");
+		return pubRepository.top6();
 	}
 	
 	/*teste para mobile*/

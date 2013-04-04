@@ -70,6 +70,26 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 		}
 		return null;
 	}
+	
+	@Transactional
+	@SuppressWarnings("unchecked")
+	public List<Pub> top6() {
+		try {
+			
+			return super.em.createNativeQuery("select *, ((pub_count_rating * pub_total_rating) / 5) as new_rating from pub order by new_rating desc", Pub.class)
+					.setMaxResults(6)
+					.getResultList();
+			
+		} catch (NoResultException e) {
+			log.info("No pub found!");
+			e.getMessage();
+		}
+		return null;
+	}
+	
+	
+	
+	
 
 	/*teste para mobile*/
 	@SuppressWarnings("unchecked")

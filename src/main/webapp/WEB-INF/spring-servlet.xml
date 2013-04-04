@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<!-- Handles HTTP GET requests for by efficiently serving up static resources -->
-	<mvc:view-controller path="/" view-name="index"/>
+	<!-- <mvc:view-controller path="/" view-name="index"/> -->
 	
 	<mvc:resources location="/resources/css/" mapping="/css" />
 	<mvc:resources location="/resources/imgs/" mapping="/imgs" />

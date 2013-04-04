@@ -11,6 +11,11 @@ public interface PubRepository extends AbstractRepository<Pub> {
 	public List<Pub> listPubsPerCountry(String country);
 	
 	public List<Pub> listTop100World();
+	
+	public List<Pub> top6();
+	
+	
+	
 
 	/*teste para mobile*/
 	public List<Pub> lastPubs();

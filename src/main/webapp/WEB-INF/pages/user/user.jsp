@@ -21,7 +21,7 @@
 					<div class="user-info">
 						<div id="user-left">
 							<div id="user-pic">
-								<span id="user-pic-span">
+								<span class="user-pic-span">
 									<img src="https://s3.amazonaws.com/pubanywhere/${user.pubUser.emailHash}" class="userImgProfile"/>
 								</span>
 							</div>

@@ -45,7 +45,7 @@
 				<li>
 					<div>
 						<div id="user-pic">
-							<span>
+							<span class="user-pic-span">
 								<img src="https://s3.amazonaws.com/pubanywhere/${review.users.pubUser.emailHash}" class="userImgProfile"/>
 							</span>
 						</div>
@@ -68,7 +68,7 @@
 				<li>
 					<div>
 						<div id="user-pic">
-							<span>
+							<span class="user-pic-span">
 								<img src="https://s3.amazonaws.com/pubanywhere/${review.users.pubUser.emailHash}" class="userImgProfile"/>
 							</span>
 						</div>

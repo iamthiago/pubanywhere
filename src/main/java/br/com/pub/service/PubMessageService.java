@@ -6,14 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.googlecode.ehcache.annotations.TriggersRemove;
-
 import br.com.pub.domain.Pub;
 import br.com.pub.domain.PubMessages;
 import br.com.pub.domain.Users;
 import br.com.pub.form.MessageForm;
 import br.com.pub.repository.PubMessageRepository;
 import br.com.pub.repository.PubRepository;
+
+import com.googlecode.ehcache.annotations.TriggersRemove;
 
 @Service
 public class PubMessageService {

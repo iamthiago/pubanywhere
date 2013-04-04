@@ -95,7 +95,6 @@ body {
 }
 
 #nav-inside {
-	max-width: 960px;
 	width: 1170px;
 	margin-left: auto;
 	margin-right: auto;
@@ -262,6 +261,7 @@ body {
 
 #right-buttons {
 	float: right;
+	margin-right: 10px;
 }
 
 #left-buttons {
@@ -408,4 +408,83 @@ body {
 #stringMaps {
 	color: black !important;
 	font-size: 12px !important;
+}
+
+.marginTop20px {
+	margin-top: 20px;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.pubInfo {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
+	margin-top: -30px;
+	overflow: hidden;
+	position: absolute;
+	width: 200px;
+}
+
+.paddingMain {
+	padding: 5px;
+}
+
+.ratingMainCount {
+	color: white;
+	float: right;
+	font-size: 9px;
+	font-weight: bold;
+	margin-top: -15px;
+	text-align: right;
+	width: 100px;
+}
+
+.inner {
+	margin-bottom: 10px;
+	margin-left: 30px;
+}
+
+.topUserInfo {
+	text-align: center;
+}
+
+#detailTop {
+	margin-bottom: 10px;
+}
+
+#innerTop {
+	margin-bottom: 0px;
+}
+
+.tabs > div {
+	float: left;
+	margin-bottom: 20px;
+	padding: 0px !important;
+}
+
+.tabLeft {
+	width: 770px;
+}
+
+.tabRight {
+	text-align: center;
+	width: 375px;
+}
+
+.countryImg {
+	max-width: 300px !important;
+}
+
+.countryName {
+	color: white !important;
+	font-weight: bold !important;
+}
+
+.marginLeft20px {
+	margin-left: 20px !important;
+}
+
+.marginTop33px {
+	margin-top: -33px !important;
 }
