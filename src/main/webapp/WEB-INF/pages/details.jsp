@@ -10,7 +10,6 @@
 <body onload="initialize()">
 	
 	<input type="hidden" value="${pub.pubId}" id="pubId"/>
-	
 	<input type="hidden" value="${pub.name}" id="pubName">
 	<input type="hidden" value="${pub.lat}" id="pubLat">
 	<input type="hidden" value="${pub.lng}" id="pubLng">
@@ -31,6 +30,16 @@
 								<div class="innerDetails">
 									<div id="address">
 										<p>${pub.local}</p>
+										<sec:authorize access="hasRole('ROLE_USER')">
+											<div id="pubAction">
+												<a id="btnAddFavorite" href="">
+													<spring:message code="details.button.addFavorite"/>
+												</a>
+												<a id="btnAddWishList" href="">
+													<spring:message code="details.button.addWishList"/>
+												</a>
+											</div>
+										</sec:authorize>
 									</div>
 									<div id="imageDiv">
 										<div>
@@ -106,22 +115,6 @@
 						</div>
 						
 						<div id="detailsRight">
-							<sec:authorize access="hasRole('ROLE_USER')">
-								<div id="pubAction">
-									<h3 class="title-h3 action-h3">
-										<a id="btnAddFavorite" href="">
-											<div id="favorite" class="div-action ${favCheckedClass}">
-												<spring:message code="details.button.addFavorite"/>
-											</div>
-										</a>
-										<a id="btnAddWishList" href="">
-											<div id="wishList" class="div-action ${wishCheckedClass}">
-												<spring:message code="details.button.addWishList"/>
-											</div>
-										</a>
-									</h3>
-								</div>
-							</sec:authorize>
 							<div id="detailMap" class="whiteBorder">
 								<div id="pubMap"></div>
 							</div>
