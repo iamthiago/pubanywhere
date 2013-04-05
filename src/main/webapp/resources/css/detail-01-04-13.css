@@ -250,12 +250,8 @@
 }
 
 #pubAction {
-	margin-top: -15px;
-}
-
-#btnAddFavorite, #btnAddWishList {
-	color: black !important;
-	font-size: 12px !important;
+	float: right;
+	margin-top: -35px;
 }
 
 .li-pub-action {

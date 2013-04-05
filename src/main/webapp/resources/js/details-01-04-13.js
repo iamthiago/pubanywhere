@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	$('#shareReview').button();
+	$('#shareReview, #btnAddFavorite, #btnAddWishList').button();
 	
 	$('#insertMessage').dialog({ autoOpen: false });
 	

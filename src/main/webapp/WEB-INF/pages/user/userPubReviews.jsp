@@ -44,14 +44,16 @@
 				</li>
 				<li>
 					<div>
+						<c:url value="/user/${review.users.pubUser.emailHash}" var="userProfile"></c:url>
 						<div id="user-pic">
 							<span class="user-pic-span">
-								<img src="https://s3.amazonaws.com/pubanywhere/${review.users.pubUser.emailHash}" class="userImgProfile"/>
+								<a href="${userProfile}" class="userProfileLink">
+									<img src="https://s3.amazonaws.com/pubanywhere/${review.users.pubUser.emailHash}" class="userImgProfile"/>
+								</a>
 							</span>
 						</div>
 						<div class="user-review">
 							<div class="username-review">
-								<c:url value="/user/${review.users.pubUser.emailHash}" var="userProfile"></c:url>
 								<a href="${userProfile}" class="userProfileLink">
 									${review.users.pubUser.name}
 								</a>
@@ -67,14 +69,16 @@
 			<c:otherwise>
 				<li>
 					<div>
+						<c:url value="/user/${review.users.pubUser.emailHash}" var="userProfile"></c:url>
 						<div id="user-pic">
 							<span class="user-pic-span">
-								<img src="https://s3.amazonaws.com/pubanywhere/${review.users.pubUser.emailHash}" class="userImgProfile"/>
+								<a href="${userProfile}" class="userProfileLink">
+									<img src="https://s3.amazonaws.com/pubanywhere/${review.users.pubUser.emailHash}" class="userImgProfile"/>
+								</a>
 							</span>
 						</div>
 						<div class="user-review">
 							<div class="username-review">
-								<c:url value="/user/${review.users.pubUser.emailHash}" var="userProfile"></c:url>
 								<a href="${userProfile}" class="userProfileLink">
 									${review.users.pubUser.name}
 								</a>
