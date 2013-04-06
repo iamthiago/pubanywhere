@@ -132,8 +132,9 @@ public class PubService {
 		return pubRepository.top6();
 	}
 	
-	/*teste para mobile*/
-	public List<Pub> lastPubs() {
-		return pubRepository.lastPubs();
+	
+	/*MOBILE*/
+	public List<Pub> listTop10Mobile() {
+		return pubRepository.listTop10Mobile();
 	}
 }

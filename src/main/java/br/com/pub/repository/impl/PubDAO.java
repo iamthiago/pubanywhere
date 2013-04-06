@@ -88,23 +88,21 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 	}
 	
 	
-	
-	
 
-	/*teste para mobile*/
+	/*MOBILE*/
+	@Transactional
 	@SuppressWarnings("unchecked")
-	public List<Pub> lastPubs() {
+	public List<Pub> listTop10Mobile() {
 		try {
 			
-			return super.em.createQuery("select p from Pub p")
-					.setMaxResults(5)
+			return super.em.createNativeQuery("select *, ((pub_count_rating * pub_total_rating) / 5) as new_rating from pub order by new_rating desc", Pub.class)
+					.setMaxResults(10)
 					.getResultList();
 			
-		} catch (Exception e) {
+		} catch (NoResultException e) {
 			log.info("No pub found!");
 			e.getMessage();
 		}
-		
 		return null;
 	}
 }
