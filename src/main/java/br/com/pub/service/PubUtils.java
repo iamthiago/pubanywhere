@@ -11,7 +11,7 @@ import br.com.pub.enumeration.StaticImage;
 public class PubUtils {
 	
 	public static String replaceSpaceByUnderline(String string) {
-		return string.replace(" ", "_");
+		return string.replaceAll(" ", "_");
 	}
 	
 	public static String removeInvalidCharacters(String string) {
@@ -31,7 +31,8 @@ public class PubUtils {
 			.replaceAll("[úùû]", "u")
 			.replaceAll("[ÚÙÛ]", "U")
 			.replaceAll("[ç]", "c")
-			.replaceAll("[Ç]", "C");
+			.replaceAll("[Ç]", "C")
+			.replaceAll(" ", "");
 	}
 	
 	public static void uploadDefaultImage(StaticImage staticImg, String fileName) {
