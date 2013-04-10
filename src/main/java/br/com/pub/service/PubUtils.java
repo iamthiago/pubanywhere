@@ -18,6 +18,22 @@ public class PubUtils {
 		return string.replaceAll("[^A-Za-z0-9()\\[\\]]", "");
 	}
 	
+	public static String retiraAcentoRegex(String string) {
+		return string
+			.replaceAll("[áàâãª]", "a")
+			.replaceAll("[ÁÀÂÃ]", "A")
+			.replaceAll("[éèêë]", "e")
+			.replaceAll("[ÉÈÊË]", "E")
+			.replaceAll("[íìî]", "i")
+			.replaceAll("[ÍÌÎ]", "I")
+			.replaceAll("[óòôõº]", "o")
+			.replaceAll("[ÓÒÔÕ]", "O")
+			.replaceAll("[úùû]", "u")
+			.replaceAll("[ÚÙÛ]", "U")
+			.replaceAll("[ç]", "c")
+			.replaceAll("[Ç]", "C");
+	}
+	
 	public static void uploadDefaultImage(StaticImage staticImg, String fileName) {
 		try {
 			URL url = new URL("http://www.pubanywhere.com/resources/imgs/" + staticImg.getPath());
