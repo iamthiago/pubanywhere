@@ -29,7 +29,7 @@ public class PubValidations {
 		
 		setGoogleLocation(pub);
 		
-		pub.setPubId(PubUtils.removeInvalidCharacters(pub.getName().toLowerCase().trim()));
+		pub.setPubId(PubUtils.retiraAcentoRegex(pub.getName().toLowerCase().trim()));
 		return pub;
 	}
 
