@@ -26,6 +26,7 @@ public class TesteRegex {
 			.replaceAll("[úùû]", "u")
 			.replaceAll("[ÚÙÛ]", "U")
 			.replaceAll("[ç]", "c")
-			.replaceAll("[Ç]", "C");
+			.replaceAll("[Ç]", "C")
+			.replaceAll(" ", "");
 	}
 }
