@@ -14,20 +14,30 @@
 	<mvc:resources location="/resources/imgs/" mapping="/imgs" />
 	<mvc:resources location="/resources/js/" mapping="/js" />
 	
-	<!-- Register the welcome.properties -->
-	<bean id="messageSource"
-		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="messages" />
-	</bean>
-
-    <bean id="viewResolver"
+	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
         <property name="prefix" value="/WEB-INF/pages/" />
         <property name="suffix" value=".jsp" />
     </bean>
-    
+	
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:/messages" />
+	</bean>
+	
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="en_US" />
+    </bean>
+	
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="lang"></property>
+		</bean>
+	</mvc:interceptors>
+	    
     <bean id="multipartResolver"
 	    class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	</bean>

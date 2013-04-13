@@ -7,7 +7,7 @@
 		<div id="nav-inside" class="gradient">
 			<div id="left-buttons">
 				<c:url value="/" var="home"></c:url>
-				<a href="${home}" id="btnHome" class="nav-buttons" title="<spring:message code="window.main.pubanywhere"/>">Pub Anywhere</a>				
+				<a href="${home}" id="btnHome" class="nav-buttons" title="<spring:message code="window.main.pubanywhere"/>">Pub Anywhere</a>
 			</div>
 			
 			<div id="right-buttons">
@@ -29,6 +29,13 @@
 					<c:url value="/me" var="userProfile"></c:url>
 					<a href="${userProfile}" id="myProfileName" title="<spring:message code="window.userpage"/>">${loggedUser.pubUser.name}</a>
 				</sec:authorize>
+				
+				<a href="?lang=en_US" class="marginLeft20px">
+					<img src="<c:url value='/resources/imgs/usa.png'/>">&nbsp;
+				</a>
+				<a href="?lang=pt_BR">
+					<img src="<c:url value='/resources/imgs/brazil.png'/>">&nbsp;
+				</a>
 			</div>
 		</div>
 	</div>
