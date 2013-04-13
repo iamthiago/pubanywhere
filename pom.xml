@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.pub</groupId>
 	<artifactId>pubanywhere</artifactId>
-	<version>3.2.2-SNAPSHOT</version>
+	<version>3.3.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	
 	<name>console Maven Webapp</name>
@@ -336,7 +336,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-		</plugins> --> 
+		</plugins> -->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
