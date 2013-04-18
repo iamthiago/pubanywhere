@@ -9,15 +9,39 @@
 	width: 100%;
 }
 
-#footer > div > div {
+#footer #footerLeft {
+	float: left;
+}
+
+#footer #footerLeft > div {
+	float: left;
+	margin-right: 30px;
+}
+
+#footer #footerLeft h5 {
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+#footer #footerLeft a {
+	color: black !important;
+	font-size: 12px !important;
+}
+
+#footer #footerRight {
 	color: #999999;
 	float: right;
 	padding-top: 10px;
-	text-align: right;
+}
+
+.spanCopyright {
+	float: left;
+	margin-top: 3px;
+	position: relative;
 }
 
 #footerSocial {
-	float: right;
+	float: left;
 	margin-top: 0;
 	padding: 0;
 	list-style: none outside none;
