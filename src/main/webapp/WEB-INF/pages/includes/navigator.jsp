@@ -7,7 +7,7 @@
 		<div id="nav-inside" class="gradient">
 			<div id="left-buttons">
 				<c:url value="/" var="home"></c:url>
-				<a href="${home}" id="btnHome" class="nav-buttons" title="<spring:message code="window.main.pubanywhere"/>">Pub Anywhere</a>
+				<a href="${home}" id="btnHome" class="nav-buttons">Pub Anywhere</a>
 			</div>
 			
 			<div id="right-buttons">
@@ -19,15 +19,15 @@
 				<c:url value="/pubs/top100World" var="top100"></c:url>		
 				<a href="${top100}" id="top100" class="nav-buttons">Top 100</a>
 				
-				<c:url value="/help" var="help"></c:url>
-				<a href="${help}" id="btnHelp" class="nav-buttons"><spring:message code="nav.button.help"/></a>
+				<c:url value="/info#help" var="info"></c:url>
+				<a href="${info}" id="btnNavHelp" class="nav-buttons"><spring:message code="nav.button.help"/></a>
 				
 				<c:url value="/pubs/registerPub" var="register"></c:url>
 				<a href="${register}" id="listYourPub" class="nav-buttons"><spring:message code="form.pub.title"/></a>
 				
 				<sec:authorize access="hasRole('ROLE_USER')">
 					<c:url value="/me" var="userProfile"></c:url>
-					<a href="${userProfile}" id="myProfileName" title="<spring:message code="window.userpage"/>">${loggedUser.pubUser.name}</a>
+					<a href="${userProfile}" id="myProfileName">${loggedUser.pubUser.name}</a>
 				</sec:authorize>
 				
 				<a href="?lang=en_US" class="marginLeft20px">

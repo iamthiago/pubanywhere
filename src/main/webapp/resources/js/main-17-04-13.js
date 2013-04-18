@@ -11,29 +11,6 @@ $(document).ready(function() {
 	// toolbar
 	$('#listYourPub, #sendMail, #writeReview, #btnInsertPubAjax').button();
 	
-	//help divs
-	$('#about').show();
-	$('#howItWorks').hide();
-	$('#help').hide();
-	
-	$('#btnHowItWorks').click(function(){
-		$('#about').hide();
-		$('#howItWorks').show();
-		$('#help').hide();
-	});
-	
-	$('#btnAbout').click(function(){
-		$('#about').show();
-		$('#howItWorks').hide();
-		$('#help').hide();
-	});
-	
-	$('#btnHelpPage').click(function(){
-		$('#about').hide();
-		$('#howItWorks').hide();
-		$('#help').show();
-	});
-	
 	$('#btnEditPub').click(function(e){
 		e.preventDefault();
 		if ($('#facebook').val().match('facebook') || $('#twitter').val().match('twitter')) {
@@ -104,13 +81,12 @@ function resultMessageModal(data) {
 
 function verifyUserProfileImg() {
 	$('.userImgProfile').each(function(i){
-		var url = $(this).attr('src');
+		var url = $(this).attr('src') + '?' + new Date().getTime();
 		$(this).remove();
 		$.ajax({
 			url : url,
-			cache : false,
 			complete : function() {
-				$('#user-pic-span').append('<img src="'+ url +'?'+ new Date().getTime() +'" id="user-pic-img" class="userImgProfile"/>');
+				$('.user-pic-span').append('<img src="'+ url +'" id="user-pic-img" class="userImgProfile"/>');
 				hideLoading();
 			}
 		});

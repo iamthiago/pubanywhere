@@ -1,5 +1,6 @@
 package br.com.pub.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,10 +12,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.pub.constants.PUB_CONSTANTS;
 import br.com.pub.form.ContactForm;
 import br.com.pub.service.ContactService;
+import br.com.pub.utils.ResultMessage;
 
 @Controller
 @RequestMapping("contact")
@@ -22,23 +24,10 @@ public class ContactController {
 	
 	@Autowired private ContactService contactService;
 	
+	@ResponseBody
 	@RequestMapping(method = RequestMethod.POST)
-	public String sendSuggestion(@ModelAttribute("contactForm") @Valid ContactForm form, BindingResult result,
-			HttpServletRequest request, Map<String, Object> map) {
-		
-		if (result.hasErrors()) {
-			return "contact";
-		} else {
-			map.put(PUB_CONSTANTS.EMAIL_MSG, contactService.sendMessage(form, request));
-			map.put("contactForm", new ContactForm());
-		}
-		
-		return "contact";
-	}
-	
-	@RequestMapping(method = RequestMethod.GET)
-	public String contact(Map<String, Object> map) {
+	public List<ResultMessage> sendSuggestion(@ModelAttribute("contactForm") @Valid ContactForm form, BindingResult result, HttpServletRequest request, Map<String, Object> map) {
 		map.put("contactForm", new ContactForm());
-		return "contact";
+		return contactService.sendMessage(form, request, result);
 	}
 }

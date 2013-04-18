@@ -4,6 +4,6 @@
 		<title>Pub Anywhere - Login</title>
 		
 		<jsp:include page="default.jsp"/>
-		<script type="text/javascript" src="<c:url value='/resources/js/login-01-04-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/login-17-04-13.js' />"></script>
 		
 	</head>

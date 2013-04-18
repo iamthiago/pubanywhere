@@ -3,10 +3,62 @@
 
 <div id="footer">
 	<div>
-		<div>
+		<div id="footerLeft">
+			<div>
+				<h5><spring:message code="help.topics.about"/></h5>
+				<ul>
+					<li>
+						<a href="info#about" class="btnAbout">
+							<spring:message code="info.menu.about"/>
+						</a>
+					</li>
+					<li>
+						<a href="info#team" class="btnTeam">
+							<spring:message code="info.menu.team"/>
+						</a>
+					</li>
+					<li>
+						<a href="info#story" class="btnStory">
+							<spring:message code="info.menu.story"/>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h5><spring:message code="info.menu.help"/></h5>
+				<ul>
+					<li>
+						<a href="info#help" class=btnHelp>
+							<spring:message code="help.topics.help"/>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h5>Feedback</h5>
+				<ul>
+					<li>
+						<a href="info#feedback" class="btnFeedback">
+							<spring:message code="form.contact.title"/>
+						</a>
+					</li>
+					<li>
+						<a href="http://facebook.com/pubanywhere" target="_blank">
+							Facebook
+						</a>
+					</li>
+					<li>
+						<a href="http://twitter.com/pubanywhere" target="_blank">
+							Twitter
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="footerRight">
 			Copyright © 2013 Pub Anywhere.
 			<div>
-				<span><spring:message code="footer.findus"/></span>
+				<span class="spanCopyright"><spring:message code="footer.findus"/></span>
 				<ul id="footerSocial">
 					<li class="facebook">
 						<a href="http://facebook.com/pubanywhere" target="_blank">

@@ -6,7 +6,7 @@
 		
 	    <jsp:include page="default.jsp"/>
 		
-		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-pub-01-04-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-pub-17-04-13.js' />"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 	    
 	    <script language="javascript" src="<c:url value='/resources/js/jquery/jquery.maxlenght.min.js' />"></script>

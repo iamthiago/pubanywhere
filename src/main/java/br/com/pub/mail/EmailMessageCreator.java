@@ -21,7 +21,7 @@ public class EmailMessageCreator {
 
 	private static void sendMailToActive(Pub pub, HttpServletRequest request) {
 		ContactForm form = new ContactForm();
-		form.setEmail("pubanywhere@gmail.com");
+		form.setFrom("pubanywhere@gmail.com");
 		form.setSubject("Register " + pub.getName());
 		form.setDescription(
 				"Pub: " + pub.getName() + "<br/>" +
@@ -36,7 +36,7 @@ public class EmailMessageCreator {
 	private static void sendMarketMail(Pub pub, HttpServletRequest request) {
 		if (pub.getEmail() != null) {
 			ContactForm form = new ContactForm();
-			form.setEmail("pubanywhere@gmail.com");
+			form.setFrom("pubanywhere@gmail.com");
 			form.setTo(pub.getEmail());
 			form.setDescription(getMessageMarket(pub, form));
 			EmailUtils.sendMail(form, request);
@@ -58,7 +58,7 @@ public class EmailMessageCreator {
 	
 	public static void confirmResetPassword(Users user, HttpServletRequest request) {
 		ContactForm form = new ContactForm();
-		form.setEmail("pubanywhere@gmail.com");
+		form.setFrom("pubanywhere@gmail.com");
 		form.setTo(user.getPubUser().getEmail());
 		form.setSubject("Confirm Password Reset");
 		form.setDescription("<div style='font-weight: bold; font-size: 14px;'><h2>Confirm your Password Reset!</h2><br><br>Click here: <a href="+ EmailUtils.createURLToResetPassword(request, user.getPubUser().getEmailHash(), user.getPubUser().getHash()) + ">" + EmailUtils.createURLToResetPassword(request, user.getPubUser().getEmailHash(), user.getPubUser().getHash()) +"</a></div>");
@@ -68,7 +68,7 @@ public class EmailMessageCreator {
 	
 	public static void resetPassword(String email, String newPassword, HttpServletRequest request) {
 		ContactForm form = new ContactForm();
-		form.setEmail("pubanywhere@gmail.com");
+		form.setFrom("pubanywhere@gmail.com");
 		form.setTo(email);
 		form.setSubject("Password Reset");
 		form.setDescription("<div style='font-weight: bold; font-size: 14px;'><h2>Password Reset Successful!</h2><br><br>Your new password is: " + newPassword + "</div>");

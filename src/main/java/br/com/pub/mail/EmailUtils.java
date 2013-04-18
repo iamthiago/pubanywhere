@@ -22,7 +22,7 @@ import br.com.pub.form.ContactForm;
 public class EmailUtils {
 	
 	final static String username = "pubanywhere@gmail.com";
-	final static String password = "thi287243138@";
+	final static String password = "thi287243138!";
 	
 	private static Logger log = LoggerFactory.getLogger(EmailUtils.class);
 	
@@ -43,10 +43,15 @@ public class EmailUtils {
 		try {
 			
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress(contactForm.getEmail()));
+			message.setFrom(new InternetAddress(contactForm.getFrom()));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(setTo(contactForm)));
 			message.setSubject(contactForm.getSubject());
-			message.setContent(setName(contactForm) + contactForm.getDescription(), "text/html");
+			message.setContent(
+					"From: " + contactForm.getFrom() + 
+					"Name: " + contactForm.getName() +
+					"Subject: " + contactForm.getSubject() +
+					"Description:" + contactForm.getDescription(),
+					"text/html");
 			
 			Transport.send(message);
 			
@@ -59,16 +64,10 @@ public class EmailUtils {
 		}
 		
 	}
-
-	private static String setName(ContactForm contactForm) {
-		if (!StringUtils.isEmpty(contactForm.getName())) {
-			return "Name: " + contactForm.getName() + "<br>";
-		}
-		return "";
-	}
 	
 	private static String setTo(ContactForm contactForm) {
 		if (StringUtils.isEmpty(contactForm.getTo())) {
+			//TODO: alterar email para o contato@pubanywhere.com
 			return "thiagoandrade6@gmail.com";
 		}
 		

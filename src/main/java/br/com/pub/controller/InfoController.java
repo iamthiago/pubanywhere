@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.pub.form.ContactForm;
 import br.com.pub.service.CountryService;
 import br.com.pub.service.PubService;
 import br.com.pub.service.UserService;
@@ -25,8 +26,9 @@ public class InfoController {
 		return "main";
 	}
 	
-	@RequestMapping("help")
-	public String help() {
-		return "help";
+	@RequestMapping("info")
+	public String info(Map<String, Object> map) {
+		map.put("contactForm", new ContactForm());
+		return "info";
 	}
 }
