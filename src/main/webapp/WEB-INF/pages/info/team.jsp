@@ -29,46 +29,6 @@
 		<li class="founder floatLeft">
 			<div class="image floatLeft">
 				<span>
-					<img src="https://s3.amazonaws.com/pubanywhere/dgoandrade88"/>
-				</span>
-			</div>
-			<div class="summary floatRight">
-				<div class="name">
-					<h3 class="justify">
-						<spring:message code="info.diego.title"/>
-					</h3>
-				</div>
-				<div class="description">
-					<h3 class="justify">
-						<spring:message code="info.diego"/>
-					</h3>
-				</div>
-			</div>
-		</li>
-		
-		<li class="founder floatLeft">
-			<div class="image floatLeft">
-				<span>
-					<img src="https://s3.amazonaws.com/pubanywhere/sergioooalves"/>
-				</span>
-			</div>
-			<div class="summary floatRight">
-				<div class="name">
-					<h3 class="justify">
-						<spring:message code="info.sergio.title"/>
-					</h3>
-				</div>
-				<div class="description">
-					<h3 class="justify">
-						<spring:message code="info.sergio"/>
-					</h3>
-				</div>
-			</div>
-		</li>
-		
-		<li class="founder floatLeft">
-			<div class="image floatLeft">
-				<span>
 					<img src="https://s3.amazonaws.com/pubanywhere/lsrjr89"/>
 				</span>
 			</div>
