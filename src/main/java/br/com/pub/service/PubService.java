@@ -19,6 +19,7 @@ import br.com.pub.domain.Pub;
 import br.com.pub.enumeration.StaticImage;
 import br.com.pub.mail.EmailMessageCreator;
 import br.com.pub.repository.PubRepository;
+import br.com.pub.utils.PubUtils;
 import br.com.pub.utils.ResultMessage;
 import br.com.pub.validation.PubValidations;
 

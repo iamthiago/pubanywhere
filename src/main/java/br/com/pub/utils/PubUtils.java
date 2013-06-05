@@ -1,4 +1,4 @@
-package br.com.pub.service;
+package br.com.pub.utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,6 +7,7 @@ import java.net.URL;
 import org.apache.commons.io.FileUtils;
 
 import br.com.pub.enumeration.StaticImage;
+import br.com.pub.service.AmazonService;
 
 public class PubUtils {
 	
@@ -32,7 +33,8 @@ public class PubUtils {
 			.replaceAll("[ÚÙÛ]", "U")
 			.replaceAll("[ç]", "c")
 			.replaceAll("[Ç]", "C")
-			.replaceAll(" ", "");
+			.replaceAll(" ", "")
+			.replaceAll("'", "");
 	}
 	
 	public static void uploadDefaultImage(StaticImage staticImg, String fileName) {

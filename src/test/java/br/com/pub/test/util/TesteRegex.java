@@ -11,6 +11,7 @@ public class TesteRegex {
 		System.out.println(retiraAcentoRegex("útima chamada"));
 		System.out.println(retiraAcentoRegex("caçador de vampiros"));
 		System.out.println(retiraAcentoRegex("não vamos mais"));
+		System.out.println(retiraAcentoRegex("O'Donoghues Bar"));
 	}
 
 	private static String retiraAcentoRegex(String string) {
@@ -27,6 +28,7 @@ public class TesteRegex {
 			.replaceAll("[ÚÙÛ]", "U")
 			.replaceAll("[ç]", "c")
 			.replaceAll("[Ç]", "C")
-			.replaceAll(" ", "");
+			.replaceAll(" ", "")
+			.replaceAll("'", "");
 	}
 }

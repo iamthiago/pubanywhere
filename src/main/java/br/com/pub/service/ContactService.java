@@ -32,7 +32,14 @@ public class ContactService {
 			
 		} else {
 			try {
-				EmailUtils.sendMail(form, request);
+				
+				form.setDescription(
+						"From: " + form.getFrom() + "<br>" + 
+						"Name: " + form.getName() + "<br>" +
+						"Subject: " + form.getSubject() + "<br>" +
+						"Description:" + form.getDescription());
+				
+				EmailUtils.sendMail(form, request, false);
 				
 				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.success")));
 				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "message.email.success")));
