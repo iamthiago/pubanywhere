@@ -1,9 +1,9 @@
 package br.com.pub.mail;
 
+import java.io.FileNotFoundException;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
-import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.util.ResourceUtils;
 
 import br.com.pub.form.ContactForm;
 
@@ -26,7 +28,7 @@ public class EmailUtils {
 	
 	private static Logger log = LoggerFactory.getLogger(EmailUtils.class);
 	
-	public static void sendMail(ContactForm contactForm, HttpServletRequest request) {
+	public static void sendMail(ContactForm contactForm, HttpServletRequest request, boolean hasImage) {
 		
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -42,16 +44,15 @@ public class EmailUtils {
 		
 		try {
 			
-			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress(contactForm.getFrom()));
-			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(setTo(contactForm)));
-			message.setSubject(contactForm.getSubject());
-			message.setContent(
-					"From: " + contactForm.getFrom() + 
-					"Name: " + contactForm.getName() +
-					"Subject: " + contactForm.getSubject() +
-					"Description:" + contactForm.getDescription(),
-					"text/html");
+			MimeMessage message = new MimeMessage(session);
+			MimeMessageHelper helper = new MimeMessageHelper(message, true);			
+			helper.setTo(InternetAddress.parse(setTo(contactForm)));
+			helper.setSubject(contactForm.getSubject());
+			helper.setText(contactForm.getDescription(), true);
+			
+			if (hasImage) {
+				helper.addInline("publogo", ResourceUtils.getFile("classpath:pub-logo-mini.png"));				
+			}
 			
 			Transport.send(message);
 			
@@ -59,6 +60,9 @@ public class EmailUtils {
 			log.error(e.getMessage());
 			e.printStackTrace();
 		} catch (MessagingException e) {
+			log.error(e.getMessage());
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
 			log.error(e.getMessage());
 			e.printStackTrace();
 		}

@@ -1,6 +1,6 @@
 package br.com.pub.test.util;
 
-import br.com.pub.service.PubUtils;
+import br.com.pub.utils.PubUtils;
 
 public class TestUtils {
 	

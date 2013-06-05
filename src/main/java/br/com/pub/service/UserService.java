@@ -26,6 +26,7 @@ import br.com.pub.mail.EmailMessageCreator;
 import br.com.pub.repository.PubMessageRepository;
 import br.com.pub.repository.RolesRepository;
 import br.com.pub.repository.UserRepository;
+import br.com.pub.utils.PubUtils;
 import br.com.pub.utils.ResultMessage;
 
 @Service

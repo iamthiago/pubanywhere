@@ -7,7 +7,7 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 
 import br.com.pub.domain.Pub;
-import br.com.pub.service.PubUtils;
+import br.com.pub.utils.PubUtils;
 
 import com.google.code.geocoder.Geocoder;
 import com.google.code.geocoder.GeocoderRequestBuilder;
