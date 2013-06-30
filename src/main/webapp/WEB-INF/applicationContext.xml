@@ -53,13 +53,6 @@
         <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }" />
         <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }" />
     </bean>
-	
-	 <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	 	<property name="driverClassName" value="org.postgresql.Driver" />
-	    <property name="url" value="jdbc:postgresql://ec2-23-23-235-211.compute-1.amazonaws.com:6562/d42ag0jdo6jh8p"/>
-	    <property name="username" value="u844auvm5jjpqh"/>
-	    <property name="password" value="pa6839r5nmcmnpc1gmff4ii389m"/>
-	</bean> -->
 
 	<!-- <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">

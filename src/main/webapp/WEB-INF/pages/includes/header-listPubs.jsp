@@ -4,7 +4,7 @@
 		<title>${windowTitle} - Pub Anywhere</title>
 		
 		<jsp:include page="default.jsp"/>
-		<script type="text/javascript" src="<c:url value='/resources/js/listPubs-17-04-13.js' />"></script>
+		<script type="text/javascript" src="<c:url value='/resources/js/listPubs-29-06-13.js' />"></script>
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/jquery/jquery.raty.js' />"></script>
 		

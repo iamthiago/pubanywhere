@@ -19,7 +19,4 @@
 		<meta property="og:description" content="Pub Anywhere brings to you all bars/pubs in the world!"/>
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/jquery/jquery.raty.js' />"></script>
-		
-		<script type="text/javascript" src="<c:url value='/resources/js/google-autocomplete-home-17-04-13.js' />"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 	</head>

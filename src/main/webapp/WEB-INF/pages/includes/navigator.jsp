@@ -8,6 +8,18 @@
 			<div id="left-buttons">
 				<c:url value="/" var="home"></c:url>
 				<a href="${home}" id="btnHome" class="nav-buttons">Pub Anywhere</a>
+				
+				<div id="searchNav">
+					<form action="/pubs/maps" method='POST' id="navForm">
+						<input type="hidden" id="navlat" name="lat">
+		    			<input type="hidden" id="navlng" name="lng">
+		    			
+						<span class="nav-input-box">
+							<small id="small-glass"></small>
+							<input type='text' id="nav-location" name="nav-location" placeholder="<spring:message code="main.search"/>" autocomplete="off" class="location">
+						</span>
+					</form>
+				</div>
 			</div>
 			
 			<div id="right-buttons">
