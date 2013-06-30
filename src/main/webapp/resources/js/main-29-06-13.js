@@ -54,6 +54,15 @@ $(document).ready(function() {
 			score : $(this).attr('data-number')
 		});
 	});
+	
+	//mapSearch	
+	$('#nav-location').keydown(function() {
+		getMap('nav-location', '#navForm', '#navlat', '#navlng');
+	});
+	
+	$('#location_new').keydown(function() {
+		getMap('location_new', '#pubForm', '#lat', '#lng');
+	});
 });
 
 //function resultMessageModal (modal padrão para mensagem de retorno do controller do tipo ResultMessage.class)

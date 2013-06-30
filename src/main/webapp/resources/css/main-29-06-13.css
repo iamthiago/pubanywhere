@@ -102,6 +102,33 @@ body {
 	text-shadow: 0 0 15px #FFFFFF, 0 -1px 10px #FFFFFF;
 }
 
+#searchNav {
+	margin-left: 150px;
+	margin-top: -20px;
+	position: absolute;
+}
+
+#nav-location {
+	border: medium none;
+	font-family: helvetica,arial;
+	font-weight: normal;
+	margin-bottom: 0;
+	padding: 5px 5px 5px 25px;
+	vertical-align: middle;
+	width: 360px;
+}
+
+#small-glass {
+	background: url("../imgs/small-glass.png") repeat scroll 0 0 transparent;
+	border-radius: 15px 0 0 15px;
+	display: block;
+	height: 17px;
+	margin-left: 5px;
+	margin-top: 5px;
+	position: absolute;
+	width: 17px;
+}
+
 /* main page */
 #content {
 	width: 100%;
@@ -152,7 +179,6 @@ body {
 #location {
 	background-color: transparent;
 	border: medium none;
-	color: #AAAAAA;
 	font-family: helvetica,arial;
 	font-size: 16px;
 	font-weight: normal;

@@ -13,7 +13,6 @@
 	<div id="loginSize">
 		<div id="main_login">
 			
-			
 			<div id="div-signIn" class="whiteBorder">
 				<form name='f' action="<c:url value='j_spring_security_check' />" method='POST' class="padding20px">
 					<h2 class="login_h2">
