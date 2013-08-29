@@ -13,7 +13,7 @@
                                 	<span class="menuparent nolink">Pub Anywhere</span>
                                     <ul>
                                         <li><a href="<c:url value='/about'/>"><spring:message code="nav.pub.about"/></a></li>
-                                        <li><a href="<c:url value='/team'/>"><spring:message code="nav.pub.team"/></a></li>
+                                        <%-- <li><a href="<c:url value='/team'/>"><spring:message code="nav.pub.team"/></a></li> --%>
                                     </ul>
                                 </li>
                                 <li class="menuparent">
