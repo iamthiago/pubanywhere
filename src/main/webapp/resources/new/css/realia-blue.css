@@ -4900,6 +4900,8 @@ body.header-dark #header-inner .site-email a {
 
 /* ------------------------------------------------------ */
 
+.no-close .ui-dialog-titlebar-close {display: none }
+
 #loading {
 	overflow: hidden;
 }
