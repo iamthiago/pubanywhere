@@ -28,7 +28,7 @@
     <div>
         <div id="main">
             <div class="faq">
-			    <h2 class="page-header">Frequently asked questions</h2>
+			    <h2 class="page-header"><spring:message code="faq.title"/></h2>
 			    <div class="content">
 			        <div class="row">
 			            <div class="span6">

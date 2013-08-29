@@ -22,8 +22,6 @@ import br.com.pub.repository.UserRepository;
 import br.com.pub.utils.PubUtils;
 import br.com.pub.utils.ResultMessage;
 
-import com.googlecode.ehcache.annotations.TriggersRemove;
-
 @Service
 public class PubMessageService {
 
@@ -32,12 +30,6 @@ public class PubMessageService {
 	@Autowired private MessageService message;
 	@Autowired private UserRepository userRepository;
 	
-	@TriggersRemove(
-			cacheName={
-					"listPubsPerCountryCache",
-					"listAllPubsPerCountryCache",
-					"listTop100WorldCache"},
-					removeAll=true)
 	public List<ResultMessage> registerReview(MessageForm messageForm, HttpServletRequest request, Users userSession) {
 		
 		List<ResultMessage> lista = new LinkedList<ResultMessage>();
