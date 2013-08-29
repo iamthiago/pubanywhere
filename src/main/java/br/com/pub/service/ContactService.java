@@ -3,7 +3,7 @@ package br.com.pub.service;
 import static br.com.pub.constants.PUB_CONSTANTS.MODAL_MESSAGE;
 import static br.com.pub.constants.PUB_CONSTANTS.MODAL_TITLE;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,11 +24,11 @@ public class ContactService {
 
 	public List<ResultMessage> sendMessage(ContactForm form, HttpServletRequest request, BindingResult result) {
 		
-		List<ResultMessage> lista = new ArrayList<ResultMessage>();
+		List<ResultMessage> lista = new LinkedList<ResultMessage>();
 		
 		if (result.hasErrors()) {
 			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
-			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered.error")));
+			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.error.fields")));
 			
 		} else {
 			try {
@@ -36,7 +36,7 @@ public class ContactService {
 				form.setDescription(
 						"From: " + form.getFrom() + "<br>" + 
 						"Name: " + form.getName() + "<br>" +
-						"Subject: " + form.getSubject() + "<br>" +
+						"Subject: " + EmailUtils.validSubject(form.getSubject()) + "<br>" +
 						"Description:" + form.getDescription());
 				
 				EmailUtils.sendMail(form, request, false);
@@ -47,7 +47,7 @@ public class ContactService {
 			} catch (Exception e) {
 				e.printStackTrace();
 				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
-				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "message.error")));
+				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "message.email.error")));
 			}
 		}
 		return lista;

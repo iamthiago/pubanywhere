@@ -17,7 +17,7 @@ import br.com.pub.validation.MaxSizeUploadValidator;
 @Documented
 public @interface MaxSizeUpload {
 	
-	String message() default "{config.maxUploadSize}";
+	String message() default "{config.error.maxUploadSize}";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
 

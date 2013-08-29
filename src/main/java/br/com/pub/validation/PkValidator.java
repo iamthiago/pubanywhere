@@ -31,7 +31,7 @@ public class PkValidator implements ConstraintValidator<PK, Object>{
 			Pub pub = pubService.findPubById(pubId);
 			if (pub != null) {
 				context.disableDefaultConstraintViolation();
-				context.buildConstraintViolationWithTemplate(messageService.getMessageFromResource(request, "config.nameExists")).addConstraintViolation();
+				context.buildConstraintViolationWithTemplate(messageService.getMessageFromResource(request, "config.error.nameExists")).addConstraintViolation();
 				return false;
 			}
 		}

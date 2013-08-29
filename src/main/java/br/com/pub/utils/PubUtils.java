@@ -1,13 +1,19 @@
 package br.com.pub.utils;
 
+import static br.com.pub.constants.PUB_CONSTANTS.*;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.FileUtils;
 
 import br.com.pub.enumeration.StaticImage;
 import br.com.pub.service.AmazonService;
+import br.com.pub.service.MessageService;
 
 public class PubUtils {
 	
@@ -46,5 +52,55 @@ public class PubUtils {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static String setCountryTitle(MessageService messageService, String country, HttpServletRequest request) {
+		return messageService.getMessageFromResource(request, "top100") + " - " + messageService.getMessageFromResource(request, "country." + getCountry(country));
+	}
+	
+	private static String getCountry(String country) {
+		return country.trim().toLowerCase().replaceAll("\\s+", "");
+	}
+	
+	public static void resolvePage(int page, int maxResults, Map<String, Object> map, HttpServletRequest request) {
+		map.put("pageUrl", request.getRequestURL().toString());
+		map.put("pageNum", page);
+		map.put("maxPages", getMaxPages(maxResults));
+	}
+	
+	public static int getMaxPages(int size) {
+		if (size / MAX_ITEMS_PER_PAGE > MAX_PAGES_TO_DISPLAY) {
+			return MAX_PAGES_TO_DISPLAY;
+		} else {
+			if (size % MAX_ITEMS_PER_PAGE == 0) {
+				return size / MAX_ITEMS_PER_PAGE;
+			} else {
+				return (size / MAX_ITEMS_PER_PAGE) + 1;
+			}
+		}
+	}
+	
+	public static int maxItemsPerPage(int page, int multiple) {
+		return (page * multiple) - multiple;
+	}
+	
+	public static String setFacebookUser(String username) {
+		return FACEBOOK_ + username;
+	}
+
+	public static int setRank(int reviews) {
+		if (reviews <= 50) {
+			return 1;
+		} else if (reviews > 50 && reviews <= 200) {
+			return 2;
+		} else if (reviews > 200 && reviews <= 400) {
+			return 3;
+		} else if (reviews > 400 && reviews <= 600) {
+			return 4;
+		} else if (reviews > 600) {
+			return 5;
+		}
+		
+		return 0;
 	}
 }

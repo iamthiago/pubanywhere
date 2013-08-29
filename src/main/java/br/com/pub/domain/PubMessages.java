@@ -39,9 +39,6 @@ public class PubMessages  implements Serializable {
 	@Column(name = "MESSAGE_RATING")
 	private int messageRating;
 	
-	@Column(name = "MESSAGE_REVIEW", length = 500)
-	private String messageReview;
-	
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern="dd/MM/yyyy hh:mm:ss")
 	@Column(name = "CREATED")
@@ -77,14 +74,6 @@ public class PubMessages  implements Serializable {
 
 	public void setMessageRating(int messageRating) {
 		this.messageRating = messageRating;
-	}
-
-	public String getMessageReview() {
-		return messageReview;
-	}
-
-	public void setMessageReview(String messageReview) {
-		this.messageReview = messageReview;
 	}
 
 	public Date getCreated() {
