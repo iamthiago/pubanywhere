@@ -10,8 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.googlecode.ehcache.annotations.Cacheable;
-
 import br.com.pub.domain.RegisteredCountry;
 import br.com.pub.repository.CountryRepository;
 
@@ -21,7 +19,6 @@ public class CountryDAO extends AbstractDAO<RegisteredCountry> implements Countr
 	private static Logger log = LoggerFactory.getLogger(CountryDAO.class);
 	
 	@Transactional
-	@Cacheable(cacheName="listRegisteredCountry")
 	@SuppressWarnings("unchecked")
 	public List<RegisteredCountry> listRegisteredCountry(int from) {
 		try {

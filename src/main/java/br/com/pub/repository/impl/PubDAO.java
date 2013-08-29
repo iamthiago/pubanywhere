@@ -14,8 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.pub.domain.Pub;
 import br.com.pub.repository.PubRepository;
 
-import com.googlecode.ehcache.annotations.Cacheable;
-
 @Repository
 public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 
@@ -26,7 +24,6 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 		return super.insert(pub);
 	}
 
-	@Cacheable(cacheName="listPubsPerCountryCache")
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<Pub> listPubsPerCountry(String country, int from) {
@@ -45,7 +42,6 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 		return null;
 	}
 	
-	@Cacheable(cacheName="listAllPubsPerCountryCache")
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<Pub> listAllPubsPerCountry(String country) {
@@ -62,7 +58,6 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 		return null;
 	}
 
-	@Cacheable(cacheName="listTop100WorldCache")
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<Pub> listTop100World(int from) {

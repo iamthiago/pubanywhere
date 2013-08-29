@@ -55,7 +55,7 @@
 
                     <div class="content">
                         <ul class="menu nav">
-                            <li class="first leaf"><a href=""><spring:message code="nav.pub.about"/></a></li>
+                            <li class="first leaf"><a href="<c:url value='/about'/>"><spring:message code="nav.pub.about"/></a></li>
                             <%-- <li class="leaf"><a href=""><spring:message code="nav.pub.team"/></a></li> --%>
                             <li class="leaf"><a href="<c:url value='/pubs/top100World/1'/>"><spring:message code="nav.top.top100"/></a></li>
                             <%-- <li class="leaf"><a href="<c:url value='/country/getAll/1'/>"><spring:message code="nav.top.covered"/></a></li> --%>

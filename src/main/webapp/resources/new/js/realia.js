@@ -13,17 +13,12 @@ $(document).ready(function() {
     InitLast3();
     InitSendMail();
     registerPub();
-    login();
-    register();
 });
 
 function InitConfig() {
 	$().maxlength();
 	
 	$('#loading').dialog({ autoOpen: false });
-	$('#login').dialog({ autoOpen: false });
-	$('#register').dialog({ autoOpen: false });
-	$('#alreadyVoted').dialog({ autoOpen : false });
 	
     $('.ellipsis').ellipsis({
         row: 2
@@ -476,39 +471,12 @@ function InitLast3() {
     });
 }
 
-function login() {
-	$('#btnLogin').click(function(e){
-		$('#login').dialog({
-			autoOpen: false,
-			modal: true,
-			draggable: false,
-			resizable: false,
-			height: 250,
-			width: 550,
-			title: 'Login'
-		}).dialog('open');
-	});
-}
-
-function register() {
-	$('#btnRegistration').click(function(e){
-		$('#register').dialog({
-			autoOpen: false,
-			modal: true,
-			draggable: false,
-			resizable: false,
-			height: 390,
-			width: 550,
-			title: 'Register'
-		}).dialog('open');
-	});
-}
-
 function imgError(image){
 	image.onerror = "";
     image.src = "";
     return true;
 }
+
 
 
 
@@ -553,10 +521,7 @@ function revokeAppIfNeeded(data) {
 		    console.log('access revoked: ' + response); 
 		});
 	}
-}	
-
-
-
+}
 
 
 
@@ -577,7 +542,7 @@ function resultMessageModal(data) {
 	$('#resultMessageModal').append('<div>'+ data[1].value +'</div>');
 	
 	$('#resultMessageModal').dialog({
-		dialogClass: "no-close",
+		dialogClass: 'no-close',
 		autoOpen: false,
 		modal: true,
 		draggable: false,
@@ -596,7 +561,7 @@ function resultMessageModal(data) {
 
 function showLoading() {
 	$('#loading').dialog({
-		dialogClass: "no-close",
+		dialogClass: 'no-close',
 		closeOnEscape: false,
 		autoOpen: false,
 		modal: true,
