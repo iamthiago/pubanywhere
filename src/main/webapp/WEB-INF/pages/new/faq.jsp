@@ -87,7 +87,7 @@
 			            	<div class="accordion" id="faq2">
 			                    <div class="accordion-group">
 			                        <div class="accordion-heading">
-			                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq1" href="#collapse1">
+			                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq2" href="#collapse4">
 			                                <span class="sign"></span>
 			                                <spring:message code="faq.facebook.1.title"/>
 			                            </a>
@@ -102,7 +102,7 @@
 			                    
 			                    <div class="accordion-group">
 			                        <div class="accordion-heading">
-			                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq1" href="#collapse1">
+			                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq2" href="#collapse5">
 			                                <span class="sign"></span>
 			                                <spring:message code="faq.facebook.2.title"/>
 			                            </a>
