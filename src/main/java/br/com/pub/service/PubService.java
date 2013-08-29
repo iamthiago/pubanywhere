@@ -61,7 +61,7 @@ public class PubService {
 				EmailMessageCreator.sendPubMail(pub, request);
 				
 				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.success")));
-				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.pub.register.success", new Object[]{newPub.getPubId()})));
+				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.success.pub.success", new Object[]{newPub.getPubId()})));
 			
 			} catch (DataIntegrityViolationException e) {
 				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
