@@ -21,10 +21,9 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 
 	private static final Logger log = LoggerFactory.getLogger(PubDAO.class);
 	
-	@Override
 	@PreAuthorize("hasAnyRole('ROLE_CONTRIBUTOR', 'ROLE_ADMIN')")
-	public Pub insert(Pub t) {
-		return super.insert(t);
+	public Pub registerPub(Pub pub) {
+		return super.insert(pub);
 	}
 
 	@Cacheable(cacheName="listPubsPerCountryCache")

@@ -36,6 +36,7 @@ public class PubService {
 	
 	@TriggersRemove(
 			cacheName={
+					"listNearPubsCache",
 					"listPubsPerCountryCache",
 					"listAllPubsPerCountryCache",
 					"listTop100WorldCache"},
