@@ -16,8 +16,6 @@ public class ContactForm implements Serializable {
 	@NotEmpty
 	private String name;
 	
-	@NotEmpty
-	@Length(max = 200)
 	private String subject;
 	
 	@NotEmpty

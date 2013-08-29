@@ -33,9 +33,15 @@ public class Users implements Serializable {
 	private Authorities authorities;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "PUB_USER_ID")
-	private PubUser pubUser;
-
+	@JoinColumn(name = "FACEBOOK_USER_ID")
+	private FacebookUser facebookUser;
+	
+	@Column(name = "REVIEWS")
+	private int reviews;
+	
+	@Column(name = "RANK")
+	private int rank;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -68,11 +74,27 @@ public class Users implements Serializable {
 		this.authorities = authorities;
 	}
 
-	public PubUser getPubUser() {
-		return pubUser;
+	public FacebookUser getFacebookUser() {
+		return facebookUser;
 	}
 
-	public void setPubUser(PubUser pubUser) {
-		this.pubUser = pubUser;
+	public void setFacebookUser(FacebookUser facebookUser) {
+		this.facebookUser = facebookUser;
+	}
+
+	public int getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(int reviews) {
+		this.reviews = reviews;
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
 	}
 }

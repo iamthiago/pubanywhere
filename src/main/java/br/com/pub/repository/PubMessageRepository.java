@@ -9,8 +9,5 @@ public interface PubMessageRepository extends AbstractRepository<PubMessages> {
 	
 	List<PubMessages> getPubReviewByPub(String pubId);
 
-	List<PubMessages> getPubReviewByUser(String username);
-	
 	List<TopUserDTO> getTopUsers();
-
 }

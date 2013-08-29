@@ -26,7 +26,7 @@ public class MaxSizeUploadValidator implements ConstraintValidator<MaxSizeUpload
 		if (file != null) {
 			if (file.getSize() > 2000000) {
 				context.disableDefaultConstraintViolation();
-				context.buildConstraintViolationWithTemplate(messageService.getMessageFromResource(request, "config.maxUploadSize")).addConstraintViolation();
+				context.buildConstraintViolationWithTemplate(messageService.getMessageFromResource(request, "config.error.maxUploadSize")).addConstraintViolation();
 				return false;
 			}
 		}

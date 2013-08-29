@@ -24,6 +24,12 @@ public class ContactController {
 	
 	@Autowired private ContactService contactService;
 	
+	@RequestMapping(method = RequestMethod.GET)
+	public String info(Map<String, Object> map) {
+		map.put("contactForm", new ContactForm());
+		return "new/contact-us";
+	}
+	
 	@ResponseBody
 	@RequestMapping(method = RequestMethod.POST)
 	public List<ResultMessage> sendSuggestion(@ModelAttribute("contactForm") @Valid ContactForm form, BindingResult result, HttpServletRequest request, Map<String, Object> map) {

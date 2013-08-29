@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import br.com.pub.domain.Pub;
-import br.com.pub.domain.Users;
 import br.com.pub.enumeration.Country;
 import br.com.pub.form.ContactForm;
 
@@ -54,25 +53,5 @@ public class EmailMessageCreator {
 			msg.append("<html><body><center><img src='cid:publogo'><div style='font-weight: bold; font-size: 14px;'><h2>Welcome to Pub Anywhere!</h2><br><br>Pub Anywhere is a pub global website, looking for help people to find the nearest place to enjoy a beer.<br><br>Understand better in: www.pubanywhere.com<br><br>Now you have a dedicated page. Abuse it, share with your friends, share on facebook and twitter, get the world!<br><br>www.pubanywhere.com/pubs/" + pub.getPubId() + "<br><br><br><br>Best Regards<br>Thiago - Founder<br>www.pubanywhere.com</div></center></body></html>");
 		}
 		return msg.toString();
-	}
-	
-	public static void confirmResetPassword(Users user, HttpServletRequest request) {
-		ContactForm form = new ContactForm();
-		form.setFrom("pubanywhere@gmail.com");
-		form.setTo(user.getPubUser().getEmail());
-		form.setSubject("Confirm Password Reset");
-		form.setDescription("<div style='font-weight: bold; font-size: 14px;'><h2>Confirm your Password Reset!</h2><br><br>Click here: <a href="+ EmailUtils.createURLToResetPassword(request, user.getPubUser().getEmailHash(), user.getPubUser().getHash()) + ">" + EmailUtils.createURLToResetPassword(request, user.getPubUser().getEmailHash(), user.getPubUser().getHash()) +"</a></div>");
-		EmailUtils.sendMail(form, request, false);
-		log.info("Email sent to confirm password reset for: " + user.getPubUser().getEmailHash());		
-	}
-	
-	public static void resetPassword(String email, String newPassword, HttpServletRequest request) {
-		ContactForm form = new ContactForm();
-		form.setFrom("pubanywhere@gmail.com");
-		form.setTo(email);
-		form.setSubject("Password Reset");
-		form.setDescription("<div style='font-weight: bold; font-size: 14px;'><h2>Password Reset Successful!</h2><br><br>Your new password is: " + newPassword + "</div>");
-		EmailUtils.sendMail(form, request, false);
-		log.info("Password successful reset for: " + email);
 	}
 }

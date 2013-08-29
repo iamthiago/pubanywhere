@@ -16,8 +16,6 @@ import br.com.pub.dto.TopUserDTO;
 import br.com.pub.mapper.TopUserMapper;
 import br.com.pub.repository.PubMessageRepository;
 
-import com.googlecode.ehcache.annotations.Cacheable;
-
 @Repository
 public class PubMessageDAO extends AbstractDAO<PubMessages> implements PubMessageRepository {
 
@@ -26,7 +24,6 @@ public class PubMessageDAO extends AbstractDAO<PubMessages> implements PubMessag
 	@Autowired private JdbcTemplate jdbcTemplate;
 	
 	@Transactional
-	@Cacheable(cacheName="getPubReviewCache")
 	@SuppressWarnings("unchecked")
 	public List<PubMessages> getPubReviewByPub(String pubId) {
 		try {
@@ -37,25 +34,6 @@ public class PubMessageDAO extends AbstractDAO<PubMessages> implements PubMessag
 			
 		} catch (NoResultException e) {
 			log.info("No review found for " + pubId);
-			e.getMessage();
-		}
-
-		return null;
-	}
-	
-	@Transactional
-	@Cacheable(cacheName="getPubReviewByUserCache")
-	@SuppressWarnings("unchecked")
-	public List<PubMessages> getPubReviewByUser(String username) {
-		try {
-			
-			return super.em.createQuery("SELECT m FROM PubMessages m WHERE m.users.username = :username order by m.created desc")
-					.setParameter("username", username)
-					.setMaxResults(3)
-					.getResultList();
-			
-		} catch (NoResultException e) {
-			log.info("No review found for " + username);
 			e.getMessage();
 		}
 

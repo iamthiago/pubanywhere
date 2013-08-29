@@ -10,9 +10,9 @@
 	<!-- Handles HTTP GET requests for by efficiently serving up static resources -->
 	<!-- <mvc:view-controller path="/" view-name="index"/> -->
 	
-	<mvc:resources location="/resources/css/" mapping="/css" />
-	<mvc:resources location="/resources/imgs/" mapping="/imgs" />
-	<mvc:resources location="/resources/js/" mapping="/js" />
+	<mvc:resources location="/resources/new/css/" mapping="/css" />
+	<mvc:resources location="/resources/new/imgs/" mapping="/imgs" />
+	<mvc:resources location="/resources/new/js/" mapping="/js" />
 	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -40,6 +40,14 @@
 	    
     <bean id="multipartResolver"
 	    class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="customArgumentResolvers">
+			<list>
+				<bean class="org.springframework.data.web.PageableArgumentResolver" />
+			</list>
+		</property>
 	</bean>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 

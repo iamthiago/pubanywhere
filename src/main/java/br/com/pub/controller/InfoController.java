@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.pub.form.ContactForm;
-import br.com.pub.service.CountryService;
 import br.com.pub.service.PubService;
 import br.com.pub.service.UserService;
 
@@ -16,19 +14,26 @@ public class InfoController {
 	
 	@Autowired private PubService pubService;
 	@Autowired private UserService userService;
-	@Autowired private CountryService countryService;
 	
 	@RequestMapping("/")
 	public String home(Map<String, Object> map) {
 		map.put("topPubs", pubService.listTop6());
 		map.put("topUser", userService.getTopUsers());
-		map.put("countries", countryService.getRegisteredCountries());
-		return "main";
+		return "new/index";
 	}
 	
-	@RequestMapping("info")
-	public String info(Map<String, Object> map) {
-		map.put("contactForm", new ContactForm());
-		return "info";
+	@RequestMapping("/about")
+	public String about() {
+		return "new/about-us";
+	}
+	
+	@RequestMapping("/team")
+	public String team() {
+		return "new/team";
+	}
+	
+	@RequestMapping("/faq")
+	public String faq() {
+		return "new/faq";
 	}
 }

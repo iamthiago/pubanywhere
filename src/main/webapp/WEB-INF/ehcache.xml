@@ -4,13 +4,9 @@
     
     <!-- pub caches -->
     <cache name="listNearPubsCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
-    <cache name="listPubsByUsernameCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     <cache name="listPubsPerCountryCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="listAllPubsPerCountryCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     <cache name="listTop100WorldCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
     
-    <cache name="getPubReviewCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
-    <cache name="getPubReviewByUserCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
-    
-    <cache name="getWishOrFavoritePubCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
-    <cache name="findByPubAndUserAndTypeCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
+    <cache name="listRegisteredCountry" maxElementsInMemory="10000" eternal="true" overflowToDisk="false" />
 </ehcache>

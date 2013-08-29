@@ -1,32 +1,31 @@
 package br.com.pub.service;
 
-import static br.com.pub.constants.PUB_CONSTANTS.MODAL_MESSAGE;
-import static br.com.pub.constants.PUB_CONSTANTS.MODAL_TITLE;
-
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.FacebookProfile;
 import org.springframework.stereotype.Service;
 
 import br.com.pub.domain.Authorities;
-import br.com.pub.domain.PubUser;
+import br.com.pub.domain.FacebookUser;
 import br.com.pub.domain.Users;
 import br.com.pub.dto.TopUserDTO;
 import br.com.pub.enumeration.Roles;
-import br.com.pub.enumeration.StaticImage;
-import br.com.pub.form.UserForm;
-import br.com.pub.mail.EmailMessageCreator;
 import br.com.pub.repository.PubMessageRepository;
 import br.com.pub.repository.RolesRepository;
 import br.com.pub.repository.UserRepository;
-import br.com.pub.utils.PubUtils;
 import br.com.pub.utils.ResultMessage;
 
 @Service
@@ -35,76 +34,63 @@ public class UserService {
 	@Autowired private UserRepository userRepository;
 	@Autowired private RolesRepository rolesRepository;
 	@Autowired private PubMessageRepository pubMessageRepository;
-	@Autowired private MessageService message;
 	
 	private static final Logger log = LoggerFactory.getLogger(UserService.class);
 	
-	public List<ResultMessage> createNewUser(UserForm form, HttpServletRequest request) {
+	public List<ResultMessage> createNewUser(Facebook facebook, HttpServletRequest request) {
 		
-		List<ResultMessage> lista = new ArrayList<ResultMessage>();
+		FacebookProfile facebookProfile = facebook.userOperations().getUserProfile();
 		
-		Users userExists = this.findUserByUsername(form.getEmail());
+		List<ResultMessage> lista = new LinkedList<ResultMessage>();
+		
+		Users userExists = this.findUserByUsername(facebookProfile.getEmail());
 		if (userExists != null) {
-			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.info")));
-			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered.exist")));
+			lista.add(new ResultMessage("FB_LOGIN_SUCCESS", true));
+			setUserSpringContext(userExists);
 			return lista;
 		}
 		
 		try {
 			
-			PubUser pubUser = new PubUser();
-			pubUser.setName(form.getName());
-			pubUser.setEmail(form.getEmail());
-			pubUser.setEmailHash(PubUtils.removeInvalidCharacters(form.getEmail().toLowerCase().split("\\@")[0]));
-			pubUser.setHash("user"+RandomStringUtils.randomAlphanumeric(15));
-			pubUser.setSince(new Date());
+			Users newUser = new Users();
+			newUser.setUsername(facebookProfile.getEmail().toLowerCase().trim());
 			
-			if (form.getPassword().equals(form.getConfirmPassword())) {
-				Users newUser = new Users();
-				newUser.setUsername(form.getEmail().toLowerCase().trim());
-				newUser.setPassword(form.getPassword().trim());
-				newUser.setEnabled(true);
-				newUser.setPubUser(pubUser);
+			newUser.setEnabled(true);
+			
+			Authorities auth = rolesRepository.find(Roles.ROLE_USER.getCodigo());
+			if (auth != null) {
+				newUser.setAuthorities(auth);
 				
-				Authorities auth = rolesRepository.find(Roles.ROLE_USER.getCodigo());
-				if (auth != null) {
-					newUser.setAuthorities(auth);
-					userRepository.insert(newUser);
-				}
+				FacebookUser facebookUser = new FacebookUser();
+				facebookUser.setFacebookProfileId(Long.parseLong(facebookProfile.getId()));
+				facebookUser.setFirstName(facebookProfile.getFirstName());
+				facebookUser.setLastName(facebookProfile.getLastName());
+				facebookUser.setFullName(facebookProfile.getName());
+				facebookUser.setGender(facebookProfile.getGender());
+				facebookUser.setEmail(facebookProfile.getEmail());
+				
+				newUser.setFacebookUser(facebookUser);
+				
+				userRepository.insert(newUser);
 			}
 			
-			PubUtils.uploadDefaultImage(StaticImage.USER, pubUser.getEmailHash());
+			setUserSpringContext(newUser);
 			
-			log.info("criado usuario: " + form.getName() + " - " + form.getEmail());
-			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.success")));
-			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered")));
-		
+			log.info("criado usuario: " + facebookProfile.getName() + " - " + facebookProfile.getEmail());
+					
 		} catch (Exception e) {
-			e.printStackTrace();
-			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
-			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.edit.error")));
+			log.error(e.getMessage());
+			lista.add(new ResultMessage("FB_REVOKE_ACCESS", true));
 		}
 		
 		return lista;
-		
 	}
 	
-	public boolean resetPassword(String emailHash, String hash, HttpServletRequest request) {		
-		Users user = userRepository.findUserByEmailHash(emailHash);
-		if (user != null) {
-			if (user.getPubUser().getHash().equals(hash)) {
-				String newPassword = RandomStringUtils.randomAlphanumeric(15);
-				user.setPassword(newPassword);	
-				userRepository.update(user);
-				EmailMessageCreator.resetPassword(user.getPubUser().getEmail(), newPassword, request);
-			} else {
-				return false;
-			}
-		} else {
-			return false;
-		}
-		
-		return true;
+	private void setUserSpringContext(Users user) {
+		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		authorities.add(new SimpleGrantedAuthority(user.getAuthorities().getAuthority()));
+		Authentication authentication = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword(), authorities);
+		SecurityContextHolder.getContext().setAuthentication(authentication);
 	}
 
 	public Users findUserByUsername(String username) {
@@ -113,33 +99,6 @@ public class UserService {
 	
 	public Users findUserByEmailHash(String name) {
 		return userRepository.findUserByEmailHash(name);
-	}
-
-	public List<ResultMessage> updateUserProfile(UserForm form, HttpServletRequest request){
-		List<ResultMessage> lista = new ArrayList<ResultMessage>();
-		
-		if (!form.getPassword().equals(form.getConfirmPassword())) {
-			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
-			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered.invalidPass")));
-			return lista;
-		}
-		
-		try {
-			Users user = userRepository.findUserByUsername(form.getEmail());
-			user.getPubUser().setName(form.getName());
-			user.getPubUser().setEmail(form.getEmail());
-			user.setPassword(form.getPassword());
-			userRepository.update(user);
-		} catch (Exception e) {
-			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
-			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.edit.error")));
-			e.printStackTrace();
-		}
-		
-		lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.success")));
-		lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.edit.success")));
-		
-		return lista;
 	}
 	
 	public List<Users> getTopUsers() {

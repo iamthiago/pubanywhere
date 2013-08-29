@@ -3,7 +3,7 @@ package br.com.pub.service;
 import static br.com.pub.constants.PUB_CONSTANTS.MODAL_MESSAGE;
 import static br.com.pub.constants.PUB_CONSTANTS.MODAL_TITLE;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,11 +12,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import br.com.pub.domain.Pub;
-import br.com.pub.enumeration.StaticImage;
 import br.com.pub.mail.EmailMessageCreator;
 import br.com.pub.repository.PubRepository;
 import br.com.pub.utils.PubUtils;
@@ -36,19 +36,17 @@ public class PubService {
 	
 	@TriggersRemove(
 			cacheName={
-					"listPubsByUsernameCache",
 					"listPubsPerCountryCache",
-					"listTop100WorldCache",
-					"getPubReviewCache",
-					"getPubReviewByUserCache"},
+					"listAllPubsPerCountryCache",
+					"listTop100WorldCache"},
 					removeAll=true)
 	public List<ResultMessage> registerPub(Pub pub, HttpServletRequest request, BindingResult result) {
 		
-		List<ResultMessage> lista = new ArrayList<ResultMessage>();
+		List<ResultMessage> lista = new LinkedList<ResultMessage>();
 		
 		if (result.hasErrors()) {
 			lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
-			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.user.registered.error")));
+			lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.error.fields")));
 			
 		} else {
 			
@@ -58,11 +56,7 @@ public class PubService {
 				
 				if (pub.getFile() != null) {
 					AmazonService.upload(pub.getFile(), newPub.getPubId());
-				} else {
-					PubUtils.uploadDefaultImage(StaticImage.PUB, newPub.getPubId());
 				}
-				
-				log.info("Pub: " + newPub.getName() + " inserido na base");
 				
 				EmailMessageCreator.sendPubMail(pub, request);
 				
@@ -71,7 +65,10 @@ public class PubService {
 			
 			} catch (DataIntegrityViolationException e) {
 				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.error")));
-				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.pub.register.pudIdExists")));
+				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.error.pubExists")));
+			} catch (AccessDeniedException e) {
+				lista.add(new ResultMessage(MODAL_TITLE, message.getMessageFromResource(request, "config.denied")));
+				lista.add(new ResultMessage(MODAL_MESSAGE, message.getMessageFromResource(request, "config.error.pubdenied")));
 			}
 		}
 		
@@ -87,11 +84,9 @@ public class PubService {
 	
 	@TriggersRemove(
 			cacheName={
-					"listPubsByUsernameCache",
 					"listPubsPerCountryCache",
-					"listTop100WorldCache",
-					"getPubReviewCache",
-					"getPubReviewByUserCache"},
+					"listAllPubsPerCountryCache",
+					"listTop100WorldCache"},
 					removeAll=true)
 	public void savePub(Pub pub) {
 		pubRepository.update(pub);
@@ -113,29 +108,32 @@ public class PubService {
 		return pubRepository.listAll();
 	}
 	
-	public List<Pub> listPubsByUsername(String username) {
-		log.info("Listando pubs por usuario");
-		return pubRepository.listPubsByUsername(username);
-	}
-	
-	public List<Pub> listPubsPerCountry(String country) {
-		log.info("Listando pubs por country " + country);
-		return pubRepository.listPubsPerCountry(country);
-	}
-	
-	public List<Pub> listTop100World(){
-		log.info("Listando top 100 pubs no mundo");
-		return pubRepository.listTop100World();
-	}
-	
 	public List<Pub> listTop6(){
 		log.info("Listando top 6 pubs no mundo");
 		return pubRepository.top6();
 	}
 	
+	public List<Pub> listLast3() {
+		log.info("Listando ultimos 3 pubs cadastrados");
+		return pubRepository.last3();
+	}
 	
-	/*MOBILE*/
-	public List<Pub> listTop10Mobile() {
-		return pubRepository.listTop10Mobile();
+	public List<Pub> listPubsPerCountry(String country, int page) {
+		log.info("Listando pubs por country " + country);
+		return pubRepository.listPubsPerCountry(country, PubUtils.maxItemsPerPage(page, 5));
+	}
+	
+	public List<Pub> listAllPubsPerCountry(String country) {
+		log.info("Listando all pubs por country " + country);
+		return pubRepository.listAllPubsPerCountry(country);
+	}
+	
+	public List<Pub> listTop100World(int page){
+		log.info("Listando top 100 pubs no mundo");
+		return pubRepository.listTop100World(PubUtils.maxItemsPerPage(page, 5));
+	}
+	
+	public int getTotalPubsPerCountry(String country) {
+		return pubRepository.getTotalPubsPerCountry(country);
 	}
 }

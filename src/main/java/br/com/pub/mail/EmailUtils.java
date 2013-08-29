@@ -47,7 +47,7 @@ public class EmailUtils {
 			MimeMessage message = new MimeMessage(session);
 			MimeMessageHelper helper = new MimeMessageHelper(message, true);			
 			helper.setTo(InternetAddress.parse(setTo(contactForm)));
-			helper.setSubject(contactForm.getSubject());
+			helper.setSubject(validSubject(contactForm.getSubject()));
 			helper.setText(contactForm.getDescription(), true);
 			
 			if (hasImage) {
@@ -99,5 +99,12 @@ public class EmailUtils {
 			log.error(e.getMessage());
 		}		
 		return isValid;
+	}
+	
+	public static String validSubject(String subject) {
+		if (StringUtils.isEmpty(subject)) {
+			return "Contact";
+		}
+		return subject;
 	}
 }
