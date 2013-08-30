@@ -11,6 +11,8 @@
                                 <div class="navbar-inner">
                                     <div class="row">
                                         <div class="logo-wrapper span4">
+                                            <a href="#nav" class="hidden-desktop" id="btn-nav">Toggle navigation</a>
+
                                             <div class="logo">
                                                 <a href="/" title="Home">
                                                     <img id="imgLogo" src="<c:url value='/resources/imgs/pub-logo-mini.png'/>" alt="Home">
