@@ -26,8 +26,23 @@ public class Pub implements Serializable {
 	 */
 	private static final long serialVersionUID = -2798520271567297643L;
 	
-	//TODO: ADD USER INSIDE PUB TO SHOW WHO REGISTERED THE PUB AND FUTURE, SEE WHO IS THE OWNER
-	//TODO: CREATE LOGIC FOR RANKS LIKE CONTRIBUTOR - TOP CONTRIBUTOR - ETC
+	//TODO: traduzir restante dos textos(user ranks - pub overview)
+	//TODO: testar parte de upload de imagem statica para pub
+	//TODO: revisar countries vindo por mobile
+	//TODO: retornar uma msg depois que o voto do pub foi realizado com sucesso
+	//TODO: destacar e explicar como a pessoa realiza votos no pub... talvez tooltip
+	
+	public Pub() {}
+	
+	public Pub(String name, String local, String descricao, String phone, String email, String website) {
+		super();
+		this.name = name;
+		this.local = local;
+		this.descricao = descricao;
+		this.phone = phone;
+		this.email = email;
+		this.website = website;
+	}
 	
 	@Id
 	@Column(name = "PUB_ID", insertable = true, updatable = false)

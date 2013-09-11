@@ -65,27 +65,23 @@ public class PubUtils {
 	public static void resolvePage(int page, int maxResults, Map<String, Object> map, HttpServletRequest request) {
 		map.put("pageUrl", request.getRequestURL().toString());
 		map.put("pageNum", page);
-		map.put("maxPages", getMaxPages(maxResults));
+		map.put("maxPages", getMaxPages(maxResults, MAX_ITEMS_PER_PAGE, MAX_PAGES_TO_DISPLAY));
 	}
 	
-	public static int getMaxPages(int size) {
-		if (size / MAX_ITEMS_PER_PAGE > MAX_PAGES_TO_DISPLAY) {
-			return MAX_PAGES_TO_DISPLAY;
+	public static int getMaxPages(int size, int maxItems, int maxPages) {
+		if (size / maxItems > maxPages) {
+			return maxPages;
 		} else {
-			if (size % MAX_ITEMS_PER_PAGE == 0) {
-				return size / MAX_ITEMS_PER_PAGE;
+			if (size % maxItems == 0) {
+				return size / maxItems;
 			} else {
-				return (size / MAX_ITEMS_PER_PAGE) + 1;
+				return (size / maxItems) + 1;
 			}
 		}
 	}
 	
 	public static int maxItemsPerPage(int page, int multiple) {
 		return (page * multiple) - multiple;
-	}
-	
-	public static String setFacebookUser(String username) {
-		return FACEBOOK_ + username;
 	}
 
 	public static int setRank(int reviews) {

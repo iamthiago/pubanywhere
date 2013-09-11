@@ -1,13 +1,18 @@
 package br.com.pub.repository.impl;
 
 import java.math.BigInteger;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.persistence.NoResultException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,11 +24,8 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 
 	private static final Logger log = LoggerFactory.getLogger(PubDAO.class);
 	
-	@PreAuthorize("hasAnyRole('ROLE_CONTRIBUTOR', 'ROLE_ADMIN')")
-	public Pub registerPub(Pub pub) {
-		return super.insert(pub);
-	}
-
+	@Autowired private JdbcTemplate jdbcTemplate;
+	
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<Pub> listPubsPerCountry(String country, int from) {
@@ -121,4 +123,46 @@ public class PubDAO extends AbstractDAO<Pub> implements PubRepository {
 		}
 		return 0;
 	}
+
+	@Transactional
+	public void registerListPub(final List<Pub> pubs) {
+		
+		String sql = "INSERT INTO pub(" +
+				            " pub_id, name, local, city, state, country, descricao," + 
+				            " lat, lng, phone, website, desde, email, enabled, " +
+				            " pub_count_rating, pub_value_rating, pub_total_rating, pubviews )" +
+				    " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		
+		
+		jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
+			
+			@Override
+			public void setValues(PreparedStatement ps, int i) throws SQLException {
+				Pub pub = pubs.get(i);
+				ps.setString(1, pub.getPubId());
+				ps.setString(2, pub.getName());
+				ps.setString(3, pub.getLocal());
+				ps.setString(4, pub.getCity());
+				ps.setString(5, pub.getState());
+				ps.setString(6, pub.getCountry());
+				ps.setString(7, pub.getDescricao());
+				ps.setDouble(8, pub.getLat());
+				ps.setDouble(9, pub.getLng());
+				ps.setString(10, pub.getPhone());
+				ps.setString(11, pub.getWebsite());
+				ps.setDate(12, new Date(pub.getDesde().getTime()));
+				ps.setString(13, pub.getEmail());
+				ps.setBoolean(14, pub.isEnabled());
+				ps.setInt(15, 0);
+				ps.setDouble(16, 0);
+				ps.setDouble(17, 0);
+				ps.setLong(18, 0);
+			}
+			
+			@Override
+			public int getBatchSize() {
+				return pubs.size();
+			}
+		});
+	}	
 }
