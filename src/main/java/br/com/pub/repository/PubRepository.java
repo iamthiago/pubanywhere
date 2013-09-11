@@ -18,6 +18,6 @@ public interface PubRepository extends AbstractRepository<Pub> {
 
 	public int getTotalPubsPerCountry(String country);
 	
-	public Pub registerPub(Pub pub);
+	public void registerListPub(List<Pub> pubs);
 
 }

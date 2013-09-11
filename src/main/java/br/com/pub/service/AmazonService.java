@@ -42,7 +42,7 @@ public class AmazonService {
 			}
 			
 		} catch (Exception e) {
-			log.error("Problemas ao fazer upload da imagem!", e.getMessage());
+			log.error("Error uploading image: " + fileName, e.getMessage());
 		}
 		
 		log.info("Uploading image: " + fileName + " on amazon");
@@ -65,14 +65,16 @@ public class AmazonService {
 				object.setContentType("image/gif");
 				object.setName(fileName);
 				object.setAcl(bucketAcl);
-				s3Service.putObject(pubanywhere, object);
+				
+				if (!s3Service.isObjectInBucket("pubanywhere", object.getName())) {
+					s3Service.putObject(pubanywhere, object);
+					log.info("Uploading image: " + fileName + " on amazon");
+				}
 			}
 			
 		} catch (Exception e) {
-			log.error("Problemas ao fazer upload da imagem!", e.getMessage());
+			log.error("Error uploading image: " + fileName, e.getMessage());
 		}
-		
-		log.info("Uploading image: " + fileName + " on amazon");
 		
 		return null;
 	}

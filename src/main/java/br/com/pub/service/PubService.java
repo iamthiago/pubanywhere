@@ -3,8 +3,10 @@ package br.com.pub.service;
 import static br.com.pub.constants.PUB_CONSTANTS.MODAL_MESSAGE;
 import static br.com.pub.constants.PUB_CONSTANTS.MODAL_TITLE;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import br.com.pub.domain.Pub;
+import br.com.pub.enumeration.StaticImage;
 import br.com.pub.mail.EmailMessageCreator;
 import br.com.pub.repository.PubRepository;
 import br.com.pub.utils.PubUtils;
@@ -43,10 +46,12 @@ public class PubService {
 			
 			try {
 				
-				Pub newPub = pubRepository.insert(PubValidations.valid(pub));
+				Pub newPub = pubRepository.insert(PubValidations.valid(pub, true));
 				
 				if (pub.getFile() != null) {
 					AmazonService.upload(pub.getFile(), newPub.getPubId());
+				} else {
+					PubUtils.uploadDefaultImage(StaticImage.PUB, newPub.getPubId());
 				}
 				
 				EmailMessageCreator.sendPubMail(pub, request);
@@ -66,6 +71,37 @@ public class PubService {
 		return lista;
 		
 	}
+	
+	public void registerPubSelenium(final List<Pub> listPubs) {
+		try {
+			pubRepository.registerListPub(listPubs);
+			uploadImageAsync(listPubs);
+		} catch (Exception e) {
+			List<Pub> repeatList = new ArrayList<Pub>();
+			for (Pub pub : listPubs) {
+				final Pub found = pubRepository.find(pub.getPubId());
+				if (found == null && pub.getLat() != null && pub.getLng() != null) {
+					repeatList.add(pub);
+				}
+			}
+			
+			pubRepository.registerListPub(repeatList);
+			uploadImageAsync(repeatList);
+		}
+	}
+
+	public void uploadImageAsync(final List<Pub> listPubs) {
+		Executors.newSingleThreadExecutor().submit(new Runnable() {
+			@Override
+			public void run() {
+				for (Pub pub : listPubs) {
+					PubUtils.uploadDefaultImage(StaticImage.PUB, pub.getPubId());
+				}
+			}
+		});
+	}
+	
+	
 	
 	public void activePub(String id) {
 		Pub pub = pubRepository.find(id);
