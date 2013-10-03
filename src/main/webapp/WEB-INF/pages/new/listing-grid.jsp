@@ -52,7 +52,6 @@
 								</div>
 							</div>
 						</c:forEach>
-
 					</div>
 				</div><!-- /.properties-grid -->
 				
