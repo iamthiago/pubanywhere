@@ -424,25 +424,12 @@ function registerPub() {
 		e.preventDefault()
 		showLoading();
 		
-		if ($('#image').val() == "") {
-			$.post("/pubs/registerPub", $("form#pubForm").serialize())
-				.done(function(data) {
-					hideLoading();
-					resultMessageModal(data);
-					$('form#pubForm')[0].reset();
-				});
-		} else {
-			var options = {
-				url : '/pubs/registerPub',
-				success : function(data) {
-					hideLoading();
-					resultMessageModal(data);
-					$('form#pubForm')[0].reset();
-				}
-			};
-			
-			$("form#pubForm").ajaxSubmit(options);
-		}
+		$.post("/pubs/registerPub", $('#pubForm').serialize())
+			.done(function(data) {
+				hideLoading();
+				resultMessageModal(data);
+				$('form#pubForm')[0].reset();
+			});
 	});
 }
 

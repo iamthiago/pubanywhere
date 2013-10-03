@@ -35,10 +35,25 @@
 
                 <div class="carousel property">
                     <div class="preview">
-                        <img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}"/>
+                        <img src="https://s3.amazonaws.com/pubanywhere/abcde_1"/>
                     </div><!-- /.preview -->
-                </div>
-                <!-- /.carousel -->
+					<div class="content">
+
+						<a class="carousel-prev" href="#">Previous</a> <a
+							class="carousel-next" href="#">Next</a>
+						<ul>
+							<li class="active">
+								<img src="https://s3.amazonaws.com/pubanywhere/abcde_1"/>
+							</li>
+							<li>
+								<img src="https://s3.amazonaws.com/pubanywhere/abcde_2"/>
+							</li>
+							<li>
+								<img src="https://s3.amazonaws.com/pubanywhere/abcde_3"/>
+							</li>
+						</ul>
+					</div>
+				</div><!-- /.carousel -->
 
                 <div class="property-detail">
                     <div class="pull-left overview">

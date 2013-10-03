@@ -39,7 +39,7 @@
             </div><!-- /.span8 -->
         </div><!-- /.row -->
 
-        <form:form action="#" method='POST' id="pubForm" commandName="pubForm" acceptCharset="UTF-8" enctype="multipart/form-data">
+        <form:form action="#" method='POST' id="pubForm" commandName="pubForm" acceptCharset="UTF-8">
 										
 			<form:hidden path="lat" id="lat"/>
 			<form:hidden path="lng" id="lng"/>
@@ -106,7 +106,7 @@
 				</div><!-- /.span4 -->
 
                 <div class="span4">
-                    <div class="fileupload fileupload-new control-group" data-provides="fileupload">
+                    <%-- <div class="fileupload fileupload-new control-group" data-provides="fileupload">
                         <label class="control-label" for="inputPropertyPrice">
                             <spring:message code="form.image"/>
                         </label>
@@ -123,7 +123,7 @@
                                                 </span>
                             <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
                         </div><!-- /.input-append -->
-                    </div><!-- .fileupload -->
+                    </div><!-- .fileupload --> --%>
                     <div class="control-group">
                         <label class="control-label" for="pubs-facebook">
                             Facebook

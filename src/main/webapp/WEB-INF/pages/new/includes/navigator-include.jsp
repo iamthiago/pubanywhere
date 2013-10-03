@@ -20,11 +20,11 @@
                                 	<span class="menuparent nolink">Top Pubs</span>
                                 	<ul>
                                 		<li>
-		                                	<a href="<c:url value='/pubs/top100World/1'/>"><spring:message code="nav.top.top100"/></a>
+		                                	<a href="<c:url value='/pubs/top100World'/>"><spring:message code="nav.top.top100"/></a>
 		                                </li>
-		                                <%-- <li>
-		                                	<a href="<c:url value='/country/getAll/1'/>"><spring:message code="nav.top.covered"/></a>
-		                                </li> --%>
+		                                <li>
+		                                	<a href="<c:url value='/country/findAll'/>"><spring:message code="nav.top.covered"/></a>
+		                                </li>
                                 	</ul>                                	
                                 </li>
                                 <li>
