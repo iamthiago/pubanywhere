@@ -43,7 +43,7 @@ public class PubController extends UserCommons {
 	}
 	
 	@RequestMapping(value = "country/{country}", method = RequestMethod.GET)
-	public String findByCountry(@PathVariable("country") String country, @PageableDefault(page = 1, sort = "rating") Pageable pageable, ModelMap map, HttpServletRequest request) {
+	public String findByCountry(@PathVariable("country") String country, @PageableDefault(page = 0, sort = "rating") Pageable pageable, ModelMap map, HttpServletRequest request) {
 		final Page<Pub> page = pubMongoService.findByCountry(country, pageable);
 		if (!page.getContent().isEmpty()) {
 			map.put("pubs", page.getContent());
@@ -57,7 +57,7 @@ public class PubController extends UserCommons {
 	}
 	
 	@RequestMapping(value = "top100")
-	public String findAll(@PageableDefault(page = 1, sort = "rating") Pageable pageable, ModelMap map, HttpServletRequest request) {
+	public String findAll(@PageableDefault(page = 0, sort = "rating") Pageable pageable, ModelMap map, HttpServletRequest request) {
 		final Page<Pub> page = pubMongoService.findAll(pageable);
 		if (!page.getContent().isEmpty()) {
 			map.put("pubs", page.getContent());

@@ -26,6 +26,8 @@ public class PubValidations {
 		pub.setDesde(new Date());
 		pub.setEnabled(true);
 		
+		pub.setPubImages(1);
+		
 		GeocoderUtils.setGoogleLocation(pub, isLatLng);
 		
 		if (pub.getLat() != null && pub.getLng() != null) {

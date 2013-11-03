@@ -35,7 +35,7 @@
 					<div class="row">
 
 						<c:forEach items="${countries}" var="c">
-							<c:url value='/pubs/country/${c.name}/1' var="countryList"></c:url>
+							<c:url value='/pubs/country/${c.name}' var="countryList"></c:url>
 
 							<div class="property span3">
 								<div class="image">

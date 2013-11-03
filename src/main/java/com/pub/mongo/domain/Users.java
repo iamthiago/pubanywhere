@@ -22,7 +22,7 @@ public class Users implements Serializable {
 	
 	private String password;
 	private boolean enabled;
-	private List<Authorities> authorities;
+	private List<String> authorities;
 	private FacebookUser facebookUser;
 	private int reviews;
 	private int rank;
@@ -30,7 +30,7 @@ public class Users implements Serializable {
 	public Users(){}
 	
 	public Users(String username, String password, boolean enabled,
-			List<Authorities> authorities, FacebookUser facebookUser, int reviews) {
+			List<String> authorities, FacebookUser facebookUser, int reviews) {
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
@@ -65,10 +65,10 @@ public class Users implements Serializable {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	public List<Authorities> getAuthorities() {
+	public List<String> getAuthorities() {
 		return authorities;
 	}
-	public void setAuthorities(List<Authorities> authorities) {
+	public void setAuthorities(List<String> authorities) {
 		this.authorities = authorities;
 	}
 	public FacebookUser getFacebookUser() {

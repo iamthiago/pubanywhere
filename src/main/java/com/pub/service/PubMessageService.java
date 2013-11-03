@@ -11,7 +11,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import com.pub.form.MessageForm;
@@ -28,7 +28,7 @@ import com.pub.utils.ResultMessage;
 public class PubMessageService {
 
 	@Autowired private MessageService message;
-	@Autowired private MongoOperations mongoOperations;
+	@Autowired private MongoTemplate mongoTemplate;
 	@Autowired private PubMongoRepository pubMongoRepository;
 	@Autowired private UserMongoRepository userMongoRepository;
 	
@@ -71,7 +71,7 @@ public class PubMessageService {
 			
 			pubFound.setMessages(Arrays.asList(messages));
 			
-			mongoOperations.save(messages);
+			mongoTemplate.save(messages);
 			pubMongoRepository.save(pubFound);
 			userMongoRepository.save(userSession);
 		}
