@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Transient;
-
 import org.bson.types.ObjectId;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
@@ -13,9 +11,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
-
-import com.pub.annotation.MaxSizeUpload;
 
 public class Pub implements Serializable {
 	
@@ -66,10 +61,6 @@ public class Pub implements Serializable {
 	
 	@Email
 	private String email;
-	
-	@Transient
-	@MaxSizeUpload
-	private CommonsMultipartFile file;
 
 	private String phone;
 	private String website;
@@ -83,6 +74,7 @@ public class Pub implements Serializable {
 	private double pubValueRating;
 	private int pubCountRating;
 	private double pubTotalRating;
+	private int pubImages;
 	
 	private List<Messages> messages;
 	
@@ -188,12 +180,6 @@ public class Pub implements Serializable {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	public CommonsMultipartFile getFile() {
-		return file;
-	}
-	public void setFile(CommonsMultipartFile file) {
-		this.file = file;
-	}
 	public long getPubViews() {
 		return pubViews;
 	}
@@ -235,5 +221,11 @@ public class Pub implements Serializable {
 	}
 	public void setLocation(double[] location) {
 		this.location = location;
+	}
+	public int getPubImages() {
+		return pubImages;
+	}
+	public void setPubImages(int pubImages) {
+		this.pubImages = pubImages;
 	}
 }

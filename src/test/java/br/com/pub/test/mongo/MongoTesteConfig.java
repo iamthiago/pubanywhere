@@ -16,8 +16,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 import com.mongodb.Mongo;
 import com.mongodb.WriteConcern;
-import com.pub.enumeration.Roles;
-import com.pub.mongo.domain.Authorities;
 import com.pub.mongo.domain.FacebookUser;
 import com.pub.mongo.domain.Messages;
 import com.pub.mongo.domain.Pub;
@@ -25,7 +23,6 @@ import com.pub.mongo.domain.RegisteredCountry;
 import com.pub.mongo.domain.Users;
 import com.pub.repository.CountryMongoRepository;
 import com.pub.repository.PubMongoRepository;
-import com.pub.repository.RolesMongoRepository;
 
 @Configuration
 @EnableMongoRepositories(basePackages="com.pub.repository")
@@ -47,14 +44,12 @@ public class MongoTesteConfig {
 		AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(MongoTesteConfig.class);
 		MongoTemplate mongoTemplate = mongoTemplate(mongo());
 		deleteAllCollections(mongoTemplate);
-		addAuthorities(ctx);
 		addCountries(ctx);
 		
 		ctx.close();
 	}
     
     public static void deleteAllCollections(MongoTemplate mongoTemplate) throws UnknownHostException {
-		mongoTemplate.dropCollection(Authorities.class);
 		mongoTemplate.dropCollection(FacebookUser.class);
 		mongoTemplate.dropCollection(Messages.class);
 		mongoTemplate.dropCollection(Pub.class);
@@ -70,15 +65,6 @@ public class MongoTesteConfig {
 			update.set("location", new double [] {pub.getLat(), pub.getLng()});
 			mongoTemplate.updateFirst(new Query(Criteria.where("pubId").is(pub.getPubId())), update, Pub.class);
 			System.out.println("updated: " + pub.getPubId());
-		}
-	}
-	
-	public static void addAuthorities(AbstractApplicationContext ctx) {
-		RolesMongoRepository rolesMongoRepository = ctx.getBean(RolesMongoRepository.class);
-		for (Roles role : Roles.values()) {
-			Authorities authorities = new Authorities(role.getCodigo(), role.getDescricao());
-			rolesMongoRepository.save(authorities);
-			System.out.println("inserted: " + authorities.getAuthority());
 		}
 	}
 	

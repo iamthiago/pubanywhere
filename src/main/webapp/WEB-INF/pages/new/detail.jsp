@@ -35,9 +35,9 @@
 
                 <div class="carousel property">
                     <div class="preview">
-                        <img src="https://s3.amazonaws.com/pubanywhere/abcde_1"/>
+                        <img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}"/>
                     </div><!-- /.preview -->
-					<div class="content">
+					<!-- <div class="content">
 
 						<a class="carousel-prev" href="#">Previous</a> <a
 							class="carousel-next" href="#">Next</a>
@@ -52,7 +52,7 @@
 								<img src="https://s3.amazonaws.com/pubanywhere/abcde_3"/>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 				</div><!-- /.carousel -->
 
                 <div class="property-detail">

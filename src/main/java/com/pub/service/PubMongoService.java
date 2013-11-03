@@ -15,7 +15,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.geo.Distance;
 import org.springframework.data.mongodb.core.geo.GeoResult;
 import org.springframework.data.mongodb.core.geo.GeoResults;
@@ -40,7 +40,7 @@ public class PubMongoService {
 	@Autowired private MessageService message;
 	@Autowired private PubMongoRepository pubMongoRepository;
 	@Autowired private PubCustomMongoRepository pubCustomMongoRepository;
-	@Autowired private MongoOperations mongoOperations;
+	@Autowired private MongoTemplate mongoTemplate;
 	
 	public Pub findByPubId(String pubId) {
 		return pubMongoRepository.findByPubId(pubId);
@@ -98,11 +98,7 @@ public class PubMongoService {
 				
 				Pub newPub = pubMongoRepository.save(PubValidations.valid(pub, true));
 				
-				if (pub.getFile() != null) {
-					AmazonService.upload(pub.getFile(), newPub.getPubId());
-				} else {
-					PubUtils.uploadStaticImage(StaticImage.PUB, newPub.getPubId(), ContentTypeEnum.JPG);
-				}
+				PubUtils.uploadStaticImage(StaticImage.PUB, newPub.getPubId(), ContentTypeEnum.JPG);
 				
 				EmailMessageCreator.sendPubMail(pub, request);
 				

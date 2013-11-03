@@ -72,7 +72,7 @@ public class PubUtils {
 	public static void resolvePage(Page<?> page, ModelMap map, HttpServletRequest request) {
 		map.put("pageUrl", request.getRequestURL().toString());
 		map.put("pageNum", page.getNumber());
-		map.put("maxPages", page.getTotalPages() - 1);
+		map.put("maxPages", page.getTotalPages());
 	}
 	
 	public static int getMaxPages(int size, int maxItems, int maxPages) {

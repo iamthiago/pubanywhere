@@ -1,4 +1,4 @@
-package com.pub.config;
+/*package com.pub.config;
 
 import java.util.Map;
 
@@ -72,3 +72,4 @@ public class PersistenceConfig {
 		return new JdbcTemplate(dataSource());
 	}
 }
+*/

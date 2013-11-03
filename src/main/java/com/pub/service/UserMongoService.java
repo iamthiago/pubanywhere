@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,10 +21,8 @@ import org.springframework.social.facebook.api.FacebookProfile;
 import org.springframework.stereotype.Service;
 
 import com.pub.enumeration.Roles;
-import com.pub.mongo.domain.Authorities;
 import com.pub.mongo.domain.FacebookUser;
 import com.pub.mongo.domain.Users;
-import com.pub.repository.RolesMongoRepository;
 import com.pub.repository.UserCustomMongoRepository;
 import com.pub.repository.UserMongoRepository;
 import com.pub.utils.ResultMessage;
@@ -35,9 +33,8 @@ public class UserMongoService {
 	
 	private static final Logger log = LoggerFactory.getLogger(UserMongoService.class);
 	
-	@Autowired private MongoOperations mongoOperations;
+	@Autowired private MongoTemplate mongoTemplate;
 	@Autowired private UserMongoRepository userMongoRepository;
-	@Autowired private RolesMongoRepository rolesMongoRepository;
 	@Autowired private UserCustomMongoRepository userCustomMongoRepository;
 	
 	public List<ResultMessage> createNewUser(Facebook facebook, HttpServletRequest request) {
@@ -60,28 +57,25 @@ public class UserMongoService {
 			
 			newUser.setEnabled(true);
 			
-			Authorities auth = rolesMongoRepository.findByAuthoritiesId(Roles.ROLE_USER.getCodigo());
-			if (auth != null) {
-				newUser.setAuthorities(Arrays.asList(auth));
-				
-				FacebookUser facebookUser = new FacebookUser();
-				facebookUser.setFacebookProfileId(Long.parseLong(facebookProfile.getId()));
-				facebookUser.setFirstName(facebookProfile.getFirstName());
-				facebookUser.setLastName(facebookProfile.getLastName());
-				facebookUser.setFullName(facebookProfile.getName());
-				facebookUser.setGender(facebookProfile.getGender());
-				facebookUser.setEmail(facebookProfile.getEmail());
-				
-				newUser.setFacebookUser(facebookUser);
-				
-				mongoOperations.save(facebookUser);
-				userMongoRepository.save(newUser);
-			}
+			newUser.setAuthorities(Arrays.asList(Roles.ROLE_USER.getDescricao()));
+			
+			FacebookUser facebookUser = new FacebookUser();
+			facebookUser.setFacebookProfileId(Long.parseLong(facebookProfile.getId()));
+			facebookUser.setFirstName(facebookProfile.getFirstName());
+			facebookUser.setLastName(facebookProfile.getLastName());
+			facebookUser.setFullName(facebookProfile.getName());
+			facebookUser.setGender(facebookProfile.getGender());
+			facebookUser.setEmail(facebookProfile.getEmail());
+			
+			newUser.setFacebookUser(facebookUser);
+			
+			mongoTemplate.save(facebookUser);
+			userMongoRepository.save(newUser);
 			
 			setUserSpringContext(newUser);
 			
 			log.info("criado usuario: " + facebookProfile.getName() + " - " + facebookProfile.getEmail());
-					
+
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			lista.add(new ResultMessage("FB_REVOKE_ACCESS", true));
@@ -92,7 +86,9 @@ public class UserMongoService {
 	
 	private void setUserSpringContext(Users user) {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		authorities.add(new SimpleGrantedAuthority(user.getAuthorities().get(0).getAuthority()));
+		for (String authority : user.getAuthorities()) {
+			authorities.add(new SimpleGrantedAuthority(authority));
+		}
 		Authentication authentication = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword(), authorities);
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 	}

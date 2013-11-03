@@ -33,7 +33,9 @@ public class MongoUserDetailService implements UserDetailsService {
 		}
 		
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		authorities.add(new SimpleGrantedAuthority(user.getAuthorities().get(0).getAuthority()));
+		for (String authority : user.getAuthorities()) {
+			authorities.add(new SimpleGrantedAuthority(authority));
+		}
 		
 		return new User(user.getUsername(), user.getPassword(), enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
 	}
