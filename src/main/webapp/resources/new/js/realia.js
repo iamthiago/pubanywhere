@@ -452,7 +452,8 @@ function InitLast3() {
     	type: 'GET',
     	success: function(data) {
         	for(var i = 0; i < data.length; i++) {
-        		$('#last3').append('<div class="property"><div class="image pubImg75"><a href="/pubs/' + data[i].pubId + '"></a><img src="https://s3.amazonaws.com/pubanywhere/' + data[i].pubId + '" class="pubImgTopList" onError="imgError(this);"/></div><div class="wrapper"><div class="title"><h3><a href="/pubs/' + data[i].pubId + '">' + data[i].name + '</a></h3></div><div class="location">'+ data[i].country + '</div></div></div>');
+//        		$('#last3').append('<div class="property"><div class="image pubImg75"><a href="/pubs/' + data[i].pubId + '"></a><img src="https://s3.amazonaws.com/pubanywhere/' + data[i].pubId + '" class="pubImgTopList" onError="imgError(this);"/></div><div class="wrapper"><div class="title"><h3><a href="/pubs/' + data[i].pubId + '">' + data[i].name + '</a></h3></div><div class="location">'+ data[i].country + '</div></div></div>');
+        		$('#last3').append('<div class="property"><div class="image pubImg75"><a href="/pubs/' + data[i].pubId + '"></a></div><div class="wrapper"><div class="title"><h3><a href="/pubs/' + data[i].pubId + '">' + data[i].name + '</a></h3></div><div class="location">'+ data[i].country + '</div></div></div>');
         	}
     	}
     });
