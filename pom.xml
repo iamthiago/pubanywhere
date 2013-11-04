@@ -394,7 +394,7 @@
                     <wtpversion>2.0</wtpversion>
                 </configuration>
             </plugin>
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.0.5.v20130815</version>
@@ -403,7 +403,7 @@
                         <contextPath>/</contextPath>
                     </webApp>
                 </configuration>
-            </plugin>
+            </plugin> -->
             <plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-dependency-plugin</artifactId>
@@ -415,9 +415,9 @@
 			            <configuration>
 			                <artifactItems>
 			                    <artifactItem>
-			                        <groupId>org.eclipse.jetty</groupId>
-					                <artifactId>jetty-maven-plugin</artifactId>
-					                <version>9.0.5.v20130815</version>
+			                        <groupId>org.mortbay.jetty</groupId>
+			                        <artifactId>jetty-runner</artifactId>
+			                        <version>7.4.5.v20110725</version>
 			                        <destFileName>jetty-runner.jar</destFileName>
 			                    </artifactItem>
 			                </artifactItems>
