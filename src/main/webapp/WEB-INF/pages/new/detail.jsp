@@ -35,7 +35,7 @@
 
                 <div class="carousel property">
                     <div class="preview">
-                        <img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}"/>
+                        <%-- <img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}"/> --%>
                     </div><!-- /.preview -->
 					<!-- <div class="content">
 

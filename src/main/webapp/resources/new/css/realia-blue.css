@@ -4958,7 +4958,7 @@ body.header-dark #header-inner .site-email a {
 	display: block;
 	height: 190px;
 	overflow: hidden;
-	background: url("../imgs/not_found.png") no-repeat scroll 50% 50% transparent;
+	/* background: url("../imgs/not_found.png") no-repeat scroll 50% 50% transparent; */
 }
 
 .pubThumb img {

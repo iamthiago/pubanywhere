@@ -42,7 +42,7 @@
 									<div class="image span3">
 										<div class="content pubDiv200">
 											<a href="${pubDetails}"></a>
-											<img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}" class="pubImg270" alt=""/>
+											<%-- <img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}" class="pubImg270" alt=""/> --%>
 										</div><!-- /.content -->
 									</div><!-- /.image -->
 		

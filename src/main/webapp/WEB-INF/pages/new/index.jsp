@@ -66,7 +66,7 @@
 	                <div class="content">
 	                    <a href="${pubDetails}"></a>
 						<span class="pubThumb">
-							<img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}" class="pubImgTopList"/>
+							<%-- <img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}" class="pubImgTopList"/> --%>
 						</span>
 	                </div><!-- /.content -->
 	            </div><!-- /.image -->
@@ -124,80 +124,80 @@
         <ul>
             <li>
                 <div class="image">
-                    <a href="<c:url value='/pubs/country/United States/1'/>"></a>
+                    <a href="<c:url value='/pubs/country/United States'/>"></a>
 					<img src="https://s3.amazonaws.com/pubanywhere/united_states.jpg" class="pubImg270" alt=""/>
                 </div><!-- /.image -->
                 <div class="title">
-                    <h3><a href="<c:url value='/pubs/country/United States/1'/>"><spring:message code="country.unitedstates"/></a></h3>
+                    <h3><a href="<c:url value='/pubs/country/United States'/>"><spring:message code="country.unitedstates"/></a></h3>
                 </div><!-- /.title -->
             </li>
             <li>
                 <div class="image">
-                    <a href="<c:url value='/pubs/country/Ireland/1'/>"></a>
+                    <a href="<c:url value='/pubs/country/Ireland'/>"></a>
                     <img src="https://s3.amazonaws.com/pubanywhere/ireland.jpg" class="pubImg270" alt=""/>
                 </div><!-- /.image -->
                 <div class="title">
-                    <h3><a href="<c:url value='/pubs/country/Ireland/1'/>"><spring:message code="country.ireland"/></a></h3>
+                    <h3><a href="<c:url value='/pubs/country/Ireland'/>"><spring:message code="country.ireland"/></a></h3>
                 </div><!-- /.title -->
             </li>
 
             <li>
                 <div class="image">
-                    <a href="<c:url value='/pubs/country/Germany/1'/>"></a>
+                    <a href="<c:url value='/pubs/country/Germany'/>"></a>
                     <img src="https://s3.amazonaws.com/pubanywhere/germany.jpg" class="pubImg270" alt=""/>
                 </div><!-- /.image -->
                 <div class="title">
-                    <h3><a href="<c:url value='/pubs/country/Germany/1'/>"><spring:message code="country.germany"/></a></h3>
+                    <h3><a href="<c:url value='/pubs/country/Germany'/>"><spring:message code="country.germany"/></a></h3>
                 </div><!-- /.title -->
             </li>
 
             <li>
                 <div class="image">
-                    <a href="<c:url value='/pubs/country/United Kingdom/1'/>"></a>
+                    <a href="<c:url value='/pubs/country/United Kingdom'/>"></a>
                     <img src="https://s3.amazonaws.com/pubanywhere/england.jpg" class="pubImg270" alt=""/>
                 </div><!-- /.image -->
                 <div class="title">
-                    <h3><a href="<c:url value='/pubs/country/United Kingdom/1'/>"><spring:message code="country.unitedkingdom"/></a></h3>
+                    <h3><a href="<c:url value='/pubs/country/United Kingdom'/>"><spring:message code="country.unitedkingdom"/></a></h3>
                 </div><!-- /.title -->
             </li>
 
             <li>
                 <div class="image">
-                    <a href="<c:url value='/pubs/country/The Netherlands/1'/>"></a>
+                    <a href="<c:url value='/pubs/country/The Netherlands'/>"></a>
                     <img src="https://s3.amazonaws.com/pubanywhere/netherlands.jpg" class="pubImg270" alt=""/>
                 </div><!-- /.image -->
                 <div class="title">
-                    <h3><a href="<c:url value='/pubs/country/The Netherlands/1'/>"><spring:message code="country.thenetherlands"/></a></h3>
+                    <h3><a href="<c:url value='/pubs/country/The Netherlands'/>"><spring:message code="country.thenetherlands"/></a></h3>
                 </div><!-- /.title -->
             </li>
             
             <li>
                 <div class="image">
-                    <a href="<c:url value='/pubs/country/Czech Republic/1'/>"></a>
+                    <a href="<c:url value='/pubs/country/Czech Republic'/>"></a>
                     <img src="https://s3.amazonaws.com/pubanywhere/praga.jpg" class="pubImg270" alt=""/>
                 </div><!-- /.image -->
                 <div class="title">
-                    <h3><a href="<c:url value='/pubs/country/Czech Republic/1'/>"><spring:message code="country.czechrepublic"/></a></h3>
+                    <h3><a href="<c:url value='/pubs/country/Czech Republic'/>"><spring:message code="country.czechrepublic"/></a></h3>
                 </div><!-- /.title -->
             </li>
             
             <li>
                 <div class="image">
-                    <a href="<c:url value='/pubs/country/Brazil/1'/>"></a>
+                    <a href="<c:url value='/pubs/country/Brazil'/>"></a>
                     <img src="https://s3.amazonaws.com/pubanywhere/brazil.jpg" class="pubImg270" alt=""/>
                 </div><!-- /.image -->
                 <div class="title">
-                    <h3><a href="<c:url value='/pubs/country/Brazil/1'/>"><spring:message code="country.brazil"/></a></h3>
+                    <h3><a href="<c:url value='/pubs/country/Brazil'/>"><spring:message code="country.brazil"/></a></h3>
                 </div><!-- /.title -->
             </li>
             
             <li>
                 <div class="image">
-                    <a href="<c:url value='/pubs/country/Argentina/1'/>"></a>
+                    <a href="<c:url value='/pubs/country/Argentina'/>"></a>
                     <img src="https://s3.amazonaws.com/pubanywhere/argentina.jpg" class="pubImg270" alt=""/>
                 </div><!-- /.image -->
                 <div class="title">
-                    <h3><a href="<c:url value='/pubs/country/Argentina/1'/>"><spring:message code="country.argentina"/></a></h3>
+                    <h3><a href="<c:url value='/pubs/country/Argentina'/>"><spring:message code="country.argentina"/></a></h3>
                 </div><!-- /.title -->
             </li>
         </ul>

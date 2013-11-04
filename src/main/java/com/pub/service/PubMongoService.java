@@ -120,7 +120,6 @@ public class PubMongoService {
 	public void registerPubSelenium(final List<Pub> listPubs) {
 		try {
 			pubMongoRepository.save(listPubs);
-			uploadImageList(listPubs);
 		} catch (Exception e) {
 			List<Pub> repeatList = new ArrayList<Pub>();
 			for (Pub pub : listPubs) {
@@ -131,13 +130,6 @@ public class PubMongoService {
 			}
 			
 			pubMongoRepository.save(repeatList);
-			uploadImageList(repeatList);
-		}
-	}
-
-	public void uploadImageList(final List<Pub> listPubs) {
-		for (Pub pub : listPubs) {
-			PubUtils.uploadStaticImage(StaticImage.PUB, pub.getPubId(), ContentTypeEnum.JPG);
 		}
 	}
 }
