@@ -65,8 +65,13 @@ public class SeleniumController {
 		
 		for (int i = 1; i <= maxPages; i++) {
 			if (i != 1) {
-				changePage(driver);
-				Thread.sleep(2000);
+				WebElement page = changePage(driver);
+				if (page != null) {
+					page.click();
+					Thread.sleep(2000);
+				} else {
+					break;
+				}
 			}
 			
 			totalPubs.addAll(getPubs(driver));
@@ -77,8 +82,8 @@ public class SeleniumController {
 		driver.quit();
 	}
 
-	private void changePage(WebDriver driver) {
-		driver.findElement(By.xpath("//td[@class='b']/a/div[@id='nn']")).click();
+	private WebElement changePage(WebDriver driver) {
+		return driver.findElement(By.xpath("//td[@class='b']/a/div[@id='nn']"));
 	}
 
 	private List<Pub> getPubs(WebDriver driver) {
