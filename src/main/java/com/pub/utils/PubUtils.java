@@ -72,11 +72,11 @@ public class PubUtils {
 	public static void resolvePage(Page<?> page, ModelMap map, HttpServletRequest request) {
 		map.put("pageUrl", request.getRequestURL().toString());
 		map.put("pageNum", page.getNumber());
-		map.put("maxPages", page.getTotalPages());
+		map.put("maxPages", getMaxPages((int) page.getTotalElements(), 10, 20));
 	}
 	
 	public static int getMaxPages(int size, int maxItems, int maxPages) {
-		if (size / maxItems > maxPages) {
+		if ((size / maxItems) > maxPages) {
 			return maxPages;
 		} else {
 			if (size % maxItems == 0) {
