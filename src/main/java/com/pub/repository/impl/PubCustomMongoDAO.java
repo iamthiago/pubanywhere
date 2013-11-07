@@ -18,7 +18,7 @@ public class PubCustomMongoDAO implements PubCustomMongoRepository {
 	
 	@Override
 	public GeoResults<Pub> findByLatAndByLng(double lat, double lng, Distance distance) {
-		Point location = new Point(lat, lng);
+		Point location = new Point(lng, lat);
 		NearQuery query = NearQuery.near(location).maxDistance(distance);
 		return mongoTemplate.geoNear(query, Pub.class);
 	}

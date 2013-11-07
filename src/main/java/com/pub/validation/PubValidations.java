@@ -31,7 +31,7 @@ public class PubValidations {
 		GeocoderUtils.setGoogleLocation(pub, isLatLng);
 		
 		if (pub.getLat() != null && pub.getLng() != null) {
-			pub.setLocation(new double[] {pub.getLat(), pub.getLng()});
+			pub.setLocation(new double[] {pub.getLng(), pub.getLat()});
 		}
 		
 		pub.setPubId(PubUtils.retiraAcentoRegex(pub.getName().toLowerCase().trim()));
