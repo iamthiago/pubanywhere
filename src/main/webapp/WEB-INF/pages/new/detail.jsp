@@ -103,8 +103,7 @@
 						
 						<div class="widget our-agents">	
 						    <div class="content">
-								<c:url value="/pubs/${pub.pubId}" var="commentUrl"></c:url>
-								<div class="fb-comments" data-href="${commentUrl}" data-width="720" num_posts="10" order_by="reverse_time"></div>
+								<div class="fb-comments" data-href="http://www.pubanywhere.com/pubs/${pub.pubId}" data-width="720" num_posts="10" order_by="reverse_time"></div>
 						    </div>
 						</div>
 					</form:form>
