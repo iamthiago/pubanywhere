@@ -49,7 +49,7 @@ public class PubController extends UserCommons {
 			map.put("pubs", page.getContent());
 			map.put("listTitle", PubUtils.setCountryTitle(messageService, country, request));
 			
-			PubUtils.resolvePage(page, map, request);
+			PubUtils.resolvePage(10, 20, page, map, request);
 			return "new/listing-rows";
 		} else {
 			return "new/404";
@@ -63,7 +63,7 @@ public class PubController extends UserCommons {
 			map.put("pubs", page.getContent());
 			map.put("listTitle", messageService.getMessageFromResource(request, "nav.top.top100"));
 			
-			PubUtils.resolvePage(page, map, request);
+			PubUtils.resolvePage(10, 20, page, map, request);
 			return "new/listing-rows";
 		} else {
 			return "new/404";
@@ -82,6 +82,14 @@ public class PubController extends UserCommons {
 		Double lat = Double.parseDouble(request.getParameter("lat"));
 		Double lng = Double.parseDouble(request.getParameter("lng"));
 		return pubMongoService.findNearPubs(lat, lng);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "listNearPubs/{distance}")
+	public List<Pub> listNearPubs(@PathVariable("distance") Double distance, HttpServletRequest request) {
+		Double lat = Double.parseDouble(request.getParameter("lat"));
+		Double lng = Double.parseDouble(request.getParameter("lng"));
+		return pubMongoService.findNearPubs(lat, lng, distance);
 	}
 	
 	@RequestMapping(value = "registerPub", method = RequestMethod.GET)
