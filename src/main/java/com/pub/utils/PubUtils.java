@@ -69,10 +69,10 @@ public class PubUtils {
 		return country.trim().toLowerCase().replaceAll("\\s+", "");
 	}
 	
-	public static void resolvePage(Page<?> page, ModelMap map, HttpServletRequest request) {
+	public static void resolvePage(int maxItems, int maxPages, Page<?> page, ModelMap map, HttpServletRequest request) {
 		map.put("pageUrl", request.getRequestURL().toString());
 		map.put("pageNum", page.getNumber());
-		map.put("maxPages", getMaxPages((int) page.getTotalElements(), 10, 20));
+		map.put("maxPages", getMaxPages((int) page.getTotalElements(), maxItems, maxPages));
 	}
 	
 	public static int getMaxPages(int size, int maxItems, int maxPages) {

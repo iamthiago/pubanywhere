@@ -84,6 +84,16 @@ public class PubMongoService {
 		return returnList;
 	}
 	
+	public List<Pub> findNearPubs(double lat, double lng, double distance) {
+		List<Pub> returnList = new ArrayList<>();
+		final GeoResults<Pub> geoResults = pubCustomMongoRepository.findByLatAndByLng(lat, lng, new Distance(distance, Metrics.KILOMETERS));
+		final List<GeoResult<Pub>> pubs = geoResults.getContent();
+		for (GeoResult<Pub> geoResult : pubs) {
+			returnList.add(geoResult.getContent());
+		}
+		return returnList;
+	}
+	
 	public List<ResultMessage> registerPub(Pub pub, HttpServletRequest request, BindingResult result) {
 		
 		List<ResultMessage> lista = new LinkedList<ResultMessage>();

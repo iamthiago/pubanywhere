@@ -26,14 +26,14 @@ public class CountryController {
 	private Logger log = LoggerFactory.getLogger(CountryController.class);
 	
 	@RequestMapping(value = "findAll")
-	public String listRegisteredCountries(@PageableDefault(size = 6) Pageable pageable, ModelMap map, HttpServletRequest request) {
+	public String listRegisteredCountries(@PageableDefault(page = 0, size = 6) Pageable pageable, ModelMap map, HttpServletRequest request) {
 		
 		try {
 			
 			final Page<RegisteredCountry> page = countryMongoService.findAll(pageable);
 			if (!page.getContent().isEmpty()) {
 				map.put("countries", page.getContent());
-				PubUtils.resolvePage(page, map, request);
+				PubUtils.resolvePage(6, 20, page, map, request);
 				return "new/listing-grid";
 			} else {
 				return "new/404";
