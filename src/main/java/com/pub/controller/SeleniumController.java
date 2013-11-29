@@ -27,6 +27,8 @@ public class SeleniumController {
 	private static final int MAX_ITEMS_PER_PAGE = 10;
 	private static final int MAX_PAGES_TO_DISPLAY = 20;
 	
+	private List<Pub> totalPubs;
+	
 	@Autowired private PubMongoService pubMongoService;
 	
 	@ResponseBody
@@ -38,6 +40,8 @@ public class SeleniumController {
 			execute("Pubs in " + city + ", " + country);
 			
 		} catch (Exception e) {
+			pubMongoService.registerPubSelenium(totalPubs);
+			System.out.println("pubs inserted before error: " + totalPubs.size());
 			System.out.println(e.getMessage());
 			return "fail";
 		}
@@ -47,7 +51,7 @@ public class SeleniumController {
 
 	public void execute(String search) throws InterruptedException {
 		
-		List<Pub> totalPubs = new ArrayList<Pub>();
+		totalPubs = new ArrayList<Pub>();
 		
 		WebDriver driver = new FirefoxDriver();
 		driver.get("https://maps.google.ie/maps?hl=en&tab=ll");
@@ -58,7 +62,7 @@ public class SeleniumController {
 		query.sendKeys(search);
 		query.submit();
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		String numbers = driver.findElement(By.xpath("//span[@class='num_results']/b")).getText();
 		int maxPages = PubUtils.getMaxPages(Integer.parseInt(numbers.replaceAll("[^0-9]", "")), MAX_ITEMS_PER_PAGE, MAX_PAGES_TO_DISPLAY);
@@ -68,7 +72,7 @@ public class SeleniumController {
 				WebElement page = changePage(driver);
 				if (page != null) {
 					page.click();
-					Thread.sleep(2000);
+					Thread.sleep(3000);
 				} else {
 					break;
 				}
