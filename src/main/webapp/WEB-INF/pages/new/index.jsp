@@ -37,12 +37,14 @@
 	                        		<spring:message code="index.apps"/>
                         		</h2>
                         	</div>
-                            <div id="apple" class="control-group">
+                            <%-- <div id="apple" class="control-group">
                             	<img src="<c:url value='/resources/new/img/apple.png'/>"/>
-                            </div>
+                            </div> --%>
                             
                             <div id="google" class="control-group">
-                            	<img src="<c:url value='/resources/new/img/android.png'/>"/>
+                            	<a href="https://play.google.com/store/apps/details?id=com.pubanywhere.activity" target="_blank">
+                            		<img src="<c:url value='/resources/new/img/android.png'/>"/>
+                            	</a>
                             </div>
                         </div><!-- /.content -->
                     </div><!-- /.property-filter -->
