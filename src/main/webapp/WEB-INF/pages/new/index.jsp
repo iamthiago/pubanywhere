@@ -74,7 +74,7 @@
 	            </div><!-- /.image -->
 	
 	            <div class="title">
-	                <h2><a href="detail.html">${pub.name}</a></h2>
+	                <h2><a href="${pubDetails}">${pub.name}</a></h2>
 	            </div><!-- /.title -->
 	
 	            <div class="location">${pub.country}</div><!-- /.location -->
