@@ -5,25 +5,30 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.SortDefault;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pub.dto.LayoutDTO;
 import com.pub.service.PubMongoService;
 import com.pub.service.UserMongoService;
 
 
 @Controller
-public class HomeController {
+@RequestMapping("layout")
+public class LayoutController {
 	
 	@Autowired private PubMongoService pubMongoService; 
 	@Autowired private UserMongoService userMongoService;
 	
-	@RequestMapping("/")
-	public String home(@SortDefault(sort = "rating", direction = Direction.DESC) Sort sortPubs, ModelMap map) {
-		
-		map.put("topPubs", pubMongoService.findTopPubs(sortPubs));
-		map.put("topUser", userMongoService.findTopUsers());
-		return "new/index";
+	@RequestMapping("home")
+	public String getHomeLayout() {
+		return "home";
+	}
+	
+	public LayoutDTO home(@SortDefault(sort = "rating", direction = Direction.DESC) Sort sortPubs) {
+		LayoutDTO dto = new LayoutDTO();
+		dto.getObjects().add(pubMongoService.findTopPubs(sortPubs));
+		dto.getObjects().add(userMongoService.findTopUsers());
+		return dto;
 	}
 	
 	@RequestMapping("/about")

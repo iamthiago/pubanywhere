@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
 <div class="map-wrapper">
 	<div class="map">
 		<div class="map-inner back_content"></div>
@@ -19,7 +25,7 @@
 								<a
 									href="https://play.google.com/store/apps/details?id=com.pubanywhere.activity"
 									target="_blank"> <img
-									src="<c:url value='/resources/new/img/android.png'/>" />
+									src="<c:url value='/resources/img/android.png'/>" />
 								</a>
 							</div>
 						</div>
@@ -45,8 +51,8 @@
 							<div class="property span3">
 								<div class="image padding10px">
 									<div class="content">
-										<a href="${pubDetails}"></a> <span class="pubThumb"> <%-- <img src="https://s3.amazonaws.com/pubanywhere/${pub.pubId}" class="pubImgTopList"/> --%>
-										</span>
+										<a href="${pubDetails}"></a>
+										<span class="pubThumb"></span>
 									</div>
 								</div>
 								<div class="title">
@@ -55,7 +61,6 @@
 									</h2>
 								</div>
 								<div class="location">${pub.country}</div>
-								<!-- /.location -->
 								<div class="location">
 									<div class="star-index star"
 										data-number="${pub.pubTotalRating}"></div>
@@ -231,7 +236,7 @@
 					<div class="row">
 						<div class="icon span1">
 							<img
-								src="<c:url value='/resources/new/img/icons/features-seo.png'/>"
+								src="<c:url value='/resources/img/icons/features-seo.png'/>"
 								alt="">
 						</div>
 						<div class="text span3">
@@ -249,7 +254,7 @@
 					<div class="row">
 						<div class="icon span1">
 							<img
-								src="<c:url value='/resources/new/img/icons/features-retina.png'/>"
+								src="<c:url value='/resources/img/icons/features-retina.png'/>"
 								alt="">
 						</div>
 
@@ -268,7 +273,7 @@
 					<div class="row">
 						<div class="icon span1">
 							<img
-								src="<c:url value='/resources/new/img/icons/features-custom-widgets.png'/>"
+								src="<c:url value='/resources/img/icons/features-custom-widgets.png'/>"
 								alt="">
 						</div>
 
@@ -288,7 +293,7 @@
 					<div class="row">
 						<div class="icon span1">
 							<img
-								src="<c:url value='/resources/new/img/icons/features-bootstrap.png'/>"
+								src="<c:url value='/resources/img/icons/features-bootstrap.png'/>"
 								alt="">
 						</div>
 
@@ -307,7 +312,7 @@
 					<div class="row">
 						<div class="icon span1">
 							<img
-								src="<c:url value='/resources/new/img/icons/features-pencil.png'/>"
+								src="<c:url value='/resources/img/icons/features-pencil.png'/>"
 								alt="">
 						</div>
 
@@ -325,9 +330,7 @@
 				<div class="item span4">
 					<div class="row">
 						<div class="icon span1">
-							<img
-								src="<c:url value='/resources/new/img/icons/features-responsive.png'/>"
-								alt="">
+							<img src="<c:url value='/resources/img/icons/features-responsive.png'/>" alt="">
 						</div>
 
 						<div class="text span3">
