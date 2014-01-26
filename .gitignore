@@ -3,3 +3,6 @@ target
 .externalToolBuilders/
 .classpath
 bin/
+
+src/main/resources/config.properties
+src/main/webapp/WEB-INF/pages/new/includes/social.jsp
