@@ -3,3 +3,4 @@ target
 .externalToolBuilders/
 .classpath
 bin/
+src/main/resources/config.properties
