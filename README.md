@@ -16,6 +16,3 @@
 + Facebook API
 + Maven
 + Tomcat
-
-#Live
-http://www.pubanywhere.com/
