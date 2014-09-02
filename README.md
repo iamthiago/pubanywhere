@@ -1,3 +1,6 @@
+#TODO: Should be refactored
+
+
 #Pub Anywhere
 +	A website community to help people to find the best pub anywhere.
 +	The application is running on Heroku and we also have an amazon S3 to storage images.
